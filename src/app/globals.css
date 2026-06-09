@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --teal: #159AA2;
+  --teal-dark: #0d7880;
+  --teal-light: #e8f7f8;
+  --magenta: #EA1B7E;
+  --navy: #1A1A2E;
+  --green: #086A61;
+  --green-deep: #005C53;
+  --cream: #F1F1F1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--navy);
+}
