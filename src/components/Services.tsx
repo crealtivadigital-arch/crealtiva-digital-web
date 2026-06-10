@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const services = [
   {
     number: "01",
@@ -6,16 +8,16 @@ const services = [
       "Gestión integral de redes sociales, creación de contenido con propósito y construcción de comunidades activas alrededor de tu marca.",
     highlights: ["Estrategia de contenido", "Community management", "Calendario editorial", "Reporte mensual"],
     color: "teal",
-    href: "https://crealtivadigital.com/marketing-digital/",
+    href: "/marketing-digital",
   },
   {
     number: "02",
     title: "Producción Multimedia",
     description:
-      "Fotografía profesional para productos y negocios, video UGC con modelos y producción audiovisual que conecta con tu audiencia.",
+      "Fotografía profesional para productos y negocios, video UGC con actores y producción audiovisual que conecta con tu audiencia.",
     highlights: ["Fotografía de producto", "Video UGC", "Reels y contenido social", "Edición profesional"],
     color: "magenta",
-    href: "https://crealtivadigital.com/produccion-multimedia/",
+    href: "/produccion-multimedia",
   },
   {
     number: "03",
@@ -24,7 +26,7 @@ const services = [
       "Campañas de pauta pagada en Meta Ads, Google Ads y TikTok Ads gestionadas por especialistas con enfoque en retorno de inversión.",
     highlights: ["Meta Ads", "Google Ads", "TikTok Ads", "Optimización continua"],
     color: "green",
-    href: "https://crealtivadigital.com/trafficker-digital/",
+    href: "/trafficker-digital",
   },
   {
     number: "04",
@@ -33,16 +35,16 @@ const services = [
       "Sitios web que no solo se ven bien — están diseñados para convertir visitantes en clientes con hosting y dominio siempre a tu nombre.",
     highlights: ["Diseño UX/UI", "Desarrollo a medida", "E-commerce", "Hosting incluido"],
     color: "teal",
-    href: "https://crealtivadigital.com/diseno-y-desarrollo-web/",
+    href: "/diseno-web",
   },
   {
     number: "05",
-    title: "Optimización de Procesos",
+    title: "Automatización de Procesos AI",
     description:
-      "Automatizaciones, CRM y flujos de trabajo que liberan tu tiempo, reducen errores y preparan tu empresa para escalar.",
-    highlights: ["Automatización", "CRM y seguimiento", "Flujos de ventas", "Integraciones digitales"],
+      "Automatizaciones, agentes IA y flujos de trabajo que liberan tu tiempo, reducen errores y preparan tu empresa para escalar.",
+    highlights: ["Automatización", "Agentes IA", "Flujos de ventas", "Apps a medida"],
     color: "magenta",
-    href: "https://crealtivadigital.com/optimizacion-de-procesos/",
+    href: "/optimizacion-procesos",
   },
 ];
 
@@ -88,11 +90,9 @@ export default function Services() {
           {services.map((s) => {
             const c = colorMap[s.color];
             return (
-              <a
+              <Link
                 key={s.number}
                 href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 className={`group bg-white/3 border ${c.border} rounded-block p-7 flex flex-col gap-5 transition-all duration-200 hover:bg-white/5`}
               >
                 <div className="flex items-center justify-between">
@@ -118,7 +118,7 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
-              </a>
+              </Link>
             );
           })}
 

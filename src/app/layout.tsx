@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -15,21 +17,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Crealtiva Digital — Departamento de Marketing Externo",
+  title: {
+    default: "Crealtiva Digital — Agencia de Marketing Digital en Quito",
+    template: "%s | Crealtiva Digital",
+  },
   description:
-    "Agencia de marketing digital en Quito, Ecuador. Gestión de redes sociales, producción audiovisual, diseño web y pauta digital para empresarios del mercado medio-premium.",
+    "Agencia de marketing digital en Quito, Ecuador. Gestión de redes sociales, producción audiovisual, pauta digital, diseño web y automatización de procesos para empresas.",
   keywords: [
-    "marketing digital",
-    "agencia marketing Quito",
-    "redes sociales Ecuador",
-    "diseño web",
-    "Meta Ads",
-    "Google Ads",
-    "TikTok Ads",
-    "fotografía para negocios",
+    "agencia marketing digital Quito",
+    "marketing digital Ecuador",
+    "gestión redes sociales Quito",
+    "diseño web Ecuador",
+    "producción audiovisual Quito",
+    "Meta Ads Ecuador",
   ],
   openGraph: {
-    title: "Crealtiva Digital",
+    title: "Crealtiva Digital — Departamento de Marketing Externo",
     description: "Tu departamento de marketing externo en Quito, Ecuador.",
     url: "https://crealtivadigital.com",
     siteName: "Crealtiva Digital",
@@ -38,14 +41,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${spaceGrotesk.variable} ${inter.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

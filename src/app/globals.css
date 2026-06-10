@@ -15,9 +15,10 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 72px;
 }
 
 body {
-  background-color: var(--cream);
+  background-color: var(--navy);
   color: var(--navy);
 }
