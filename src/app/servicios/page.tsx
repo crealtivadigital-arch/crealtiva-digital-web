@@ -1,77 +1,56 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import PageHeader from "@/components/site/PageHeader";
-import FilterGrid from "@/components/site/FilterGrid";
-import PackageCard from "@/components/site/PackageCard";
-import SectionTitle from "@/components/site/SectionTitle";
+import ServiceLineSection from "@/components/site/ServiceLineSection";
 import CTABanner from "@/components/CTABanner";
 import { getPackages, getServiceLines } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Servicios y paquetes — Marketing, producción, pauta y web",
+  title: "Servicios — Marketing, producción, pauta, web y automatización",
   description:
-    "Catálogo de servicios de Crealtiva Digital en Quito: marketing digital, producción multimedia, video UGC, fotografía de producto, trafficker digital, diseño web y automatización con IA.",
+    "Servicios de Crealtiva Digital en Quito: marketing digital, producción multimedia, video UGC, fotografía de producto, trafficker digital, diseño web y automatización con IA.",
   alternates: { canonical: "/servicios" },
 };
 
 export default async function ServiciosPage() {
   const [lines, packages] = await Promise.all([getServiceLines(), getPackages()]);
-  const lineName = Object.fromEntries(lines.map((l) => [l.slug, l.name]));
 
   return (
     <main>
       <PageHeader
         eyebrow="Servicios"
         title="Todo lo que tu marca necesita, en un solo equipo"
-        intro="Elige una línea de servicio o explora todos los paquetes. Cada uno indica qué incluye y su precio; si necesitas algo a medida, lo cotizamos contigo."
+        intro="Siete líneas de servicio conectadas entre sí. Conoce lo clave de cada una y entra a ver todos sus paquetes, con lo que incluyen y su precio."
         crumbs={[{ label: "Inicio", href: "/" }, { label: "Servicios" }]}
       />
 
-      {/* Líneas de servicio */}
-      <section className="bg-cream py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <SectionTitle eyebrow="Líneas de servicio" title="Siete pilares conectados" />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {lines.map((l, i) => (
-              <Link
-                key={l.slug}
-                href={`/servicios/${l.slug}`}
-                className="group flex flex-col rounded-card bg-white p-6 ring-1 ring-navy/5 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/5"
+      {/* Índice de líneas: fijo bajo el menú para saltar entre secciones */}
+      <nav aria-label="Líneas de servicio" className="sticky top-16 z-40 border-b border-navy/5 bg-cream/95 backdrop-blur-sm">
+        <ul className="no-scrollbar mx-auto flex max-w-6xl gap-2 overflow-x-auto px-6 py-3">
+          {lines.map((l) => (
+            <li key={l.slug} className="shrink-0">
+              <a
+                href={`#${l.slug}`}
+                className="block rounded-full bg-white px-4 py-2 text-sm font-semibold text-navy/70 ring-1 ring-navy/5 transition-colors hover:bg-teal hover:text-white"
               >
-                <span className="text-xs font-semibold text-teal">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="mt-3 text-lg font-bold leading-snug text-navy">{l.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-navy/60">{l.summary}</p>
-                <span className="mt-auto pt-5 text-sm font-semibold text-magenta transition-transform group-hover:translate-x-1">
-                  {packages.filter((p) => p.lineSlug === l.slug).length} paquetes →
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+                {l.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
-      {/* Galería de productos */}
-      <section id="paquetes" className="bg-cream pb-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <SectionTitle
-            eyebrow="Galería de productos"
-            title="Paquetes y planes"
-            intro="Filtra por línea para comparar. Los precios están en USD."
-          />
-          <FilterGrid
-            options={lines.map((l) => ({ value: l.slug, label: l.name }))}
-            items={packages.map((p) => ({
-              key: `${p.lineSlug}/${p.slug}`,
-              tags: [p.lineSlug],
-              node: <PackageCard pkg={p} lineName={lineName[p.lineSlug]} />,
-            }))}
-          />
-        </div>
-      </section>
+      {lines.map((line, i) => (
+        <ServiceLineSection
+          key={line.slug}
+          line={line}
+          index={i}
+          packages={packages.filter((p) => p.lineSlug === line.slug)}
+        />
+      ))}
 
       <CTABanner
-        headline="¿No sabes qué paquete necesitas?"
-        subtitle="En un diagnóstico de 45 minutos revisamos tu situación y te recomendamos la combinación adecuada para tu marca."
+        headline="¿No sabes por dónde empezar?"
+        subtitle="En un diagnóstico de 45 minutos revisamos tu situación y te recomendamos la combinación de servicios adecuada para tu marca."
       />
     </main>
   );

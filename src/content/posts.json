@@ -6,7 +6,10 @@
       "excerpt": "Armar un equipo propio de estrategia, producción, pauta y comunidad cuesta más de lo que parece. Te explicamos cuándo conviene tercerizarlo.",
       "category": "Estrategia",
       "lineSlug": "marketing-digital",
-      "cover": { "src": "https://crealtivadigital.com/wp-content/uploads/2026/03/equipo-crealtiva-digital.png", "alt": "Equipo de Crealtiva Digital" },
+      "cover": {
+        "src": "https://crealtivadigital.com/wp-content/uploads/2026/03/equipo-crealtiva-digital.png",
+        "alt": "Equipo de Crealtiva Digital"
+      },
       "publishedAt": "2026-10-01",
       "readingMinutes": 4,
       "featured": true,
@@ -18,7 +21,10 @@
       "excerpt": "Cada plataforma resuelve un objetivo distinto. Una guía práctica para elegir según lo que vendes y a quién le vendes.",
       "category": "Pauta",
       "lineSlug": "trafficker-digital",
-      "cover": { "src": "https://crealtivadigital.com/wp-content/uploads/2026/02/portada-nico-y-alexis.webp", "alt": "Gestión de campañas de pauta digital" },
+      "cover": {
+        "src": "https://crealtivadigital.com/wp-content/uploads/2026/02/portada-nico-y-alexis.webp",
+        "alt": "Gestión de campañas de pauta digital"
+      },
       "publishedAt": "2026-09-24",
       "readingMinutes": 5,
       "featured": false,
@@ -30,7 +36,10 @@
       "excerpt": "El brief es la diferencia entre fotos bonitas y fotos que venden. Esto es lo que definimos antes de encender la cámara.",
       "category": "Producción",
       "lineSlug": "fotografia-de-producto",
-      "cover": { "src": "https://crealtivadigital.com/wp-content/uploads/2026/05/DSC_0387.avif", "alt": "Fotografía gastronómica de producto" },
+      "cover": {
+        "src": "https://crealtivadigital.com/wp-content/uploads/2026/05/DSC_0387.avif",
+        "alt": "Fotografía gastronómica de producto"
+      },
       "publishedAt": "2026-09-17",
       "readingMinutes": 3,
       "featured": false,
@@ -42,7 +51,10 @@
       "excerpt": "Los videos con personas reales generan confianza inmediata. Qué incluye una producción UGC profesional y qué cuidar en los derechos de imagen.",
       "category": "Producción",
       "lineSlug": "video-ugc",
-      "cover": { "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/EMLIA-BOOK-16-scaled.webp", "alt": "Actriz de contenido UGC" },
+      "cover": {
+        "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/EMLIA-BOOK-16-scaled.webp",
+        "alt": "Actriz de contenido UGC"
+      },
       "publishedAt": "2026-09-10",
       "readingMinutes": 4,
       "featured": false,
@@ -54,7 +66,10 @@
       "excerpt": "Una landing para campañas no es una web corporativa resumida. Estos son los elementos que separan una página que vende de una que solo informa.",
       "category": "Web",
       "lineSlug": "diseno-web",
-      "cover": { "src": "https://crealtivadigital.com/wp-content/uploads/2026/06/portada-paginas-web.jpg", "alt": "Diseño de páginas web" },
+      "cover": {
+        "src": "https://crealtivadigital.com/wp-content/uploads/2026/06/ECOMMERCE.jpg",
+        "alt": "Página web de tienda online en laptop y celular"
+      },
       "publishedAt": "2026-09-03",
       "readingMinutes": 4,
       "featured": false,
@@ -66,7 +81,10 @@
       "excerpt": "Primero auditamos, después automatizamos. Cómo identificar las tareas que más tiempo le roban a tu equipo y resolverlas sin complicarte.",
       "category": "Automatización",
       "lineSlug": "optimizacion-procesos",
-      "cover": { "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/produccion-multimedia-scaled.webp", "alt": "Equipo trabajando en procesos digitales" },
+      "cover": {
+        "src": "https://crealtivadigital.com/wp-content/uploads/2026/06/portada-paginas-web.jpg",
+        "alt": "Equipo trabajando con herramientas digitales"
+      },
       "publishedAt": "2026-08-27",
       "readingMinutes": 4,
       "featured": false,

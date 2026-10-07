@@ -42,6 +42,7 @@ export interface ServiceLine {
   tagline: string;
   summary: string; // 1–2 frases para tarjetas y meta description
   intro: string; // párrafo de cabecera de la página de la línea
+  keyPoints: string[]; // lo clave de la línea, 3–4 frases cortas
   cover?: Img;
   highlights: Detail[]; // cifras clave (ej. "4K" / "Calidad de grabación")
   alwaysIncluded: Topic[]; // lo que trae todo paquete de la línea

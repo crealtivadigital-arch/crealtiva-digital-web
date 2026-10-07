@@ -56,3 +56,7 @@ body {
 .article-body li::marker { color: var(--teal); }
 .article-body strong { color: var(--navy); font-weight: 600; }
 .article-body a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Carril con scroll horizontal sin barra visible (índices de chips) */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }

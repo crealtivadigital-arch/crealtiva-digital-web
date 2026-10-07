@@ -85,7 +85,17 @@
         }
       ],
       "order": 1,
-      "visible": true
+      "visible": true,
+      "keyPoints": [
+        "Estrategia y calendario antes de publicar",
+        "Jornada mensual de producción de videos y gráficas",
+        "Community manager en Facebook e Instagram",
+        "Reporte mensual de métricas que se traduce en decisiones"
+      ],
+      "cover": {
+        "src": "https://crealtivadigital.com/wp-content/uploads/2026/02/portada-nico-y-alexis.webp",
+        "alt": "Estratega de Crealtiva Digital planificando contenido"
+      }
     },
     {
       "slug": "produccion-multimedia",
@@ -175,7 +185,17 @@
         }
       ],
       "order": 2,
-      "visible": true
+      "visible": true,
+      "keyPoints": [
+        "Grabación nativa en 4K con ópticas profesionales",
+        "Audio profesional y postproducción completa",
+        "Videos institucionales, corporativos y para redes",
+        "Movilización en Quito y Valles incluida"
+      ],
+      "cover": {
+        "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/fotografa-scaled.webp",
+        "alt": "Fotógrafa de Crealtiva con cámara profesional"
+      }
     },
     {
       "slug": "video-ugc",
@@ -245,7 +265,17 @@
         }
       ],
       "order": 3,
-      "visible": true
+      "visible": true,
+      "keyPoints": [
+        "Actores reales con derechos de imagen incluidos",
+        "Guiones pensados para enganchar en segundos",
+        "Formato vertical 9:16 listo para Reels y TikTok",
+        "Exclusividad de nicho en el plan corporativo"
+      ],
+      "cover": {
+        "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/creacion-d-econtenido-scaled.webp",
+        "alt": "Creadora de contenido grabando un video UGC en un restaurante"
+      }
     },
     {
       "slug": "fotografia-de-producto",
@@ -334,7 +364,17 @@
         }
       ],
       "order": 4,
-      "visible": true
+      "visible": true,
+      "keyPoints": [
+        "Brief visual aprobado antes de cada sesión",
+        "Paquetes para premium, e-commerce, moda y gastronomía",
+        "Edición incluida y entrega en 3 a 7 días hábiles",
+        "Fondos limpios o ambientados según el canal de venta"
+      ],
+      "cover": {
+        "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/produccion-fotos.webp",
+        "alt": "Set de fotografía de producto con iluminación de estudio"
+      }
     },
     {
       "slug": "trafficker-digital",
@@ -417,7 +457,17 @@
         }
       ],
       "order": 5,
-      "visible": true
+      "visible": true,
+      "keyPoints": [
+        "Meta, Google y TikTok Ads",
+        "Tarifa de gestión fija, sin porcentaje sobre tu inversión",
+        "Tus cuentas publicitarias siempre a tu nombre",
+        "Creativos, píxeles y reportes incluidos"
+      ],
+      "cover": {
+        "src": "https://crealtivadigital.com/wp-content/uploads/2026/02/NICO-PORTADA-scaled.webp",
+        "alt": "Especialista de pauta digital revisando campañas"
+      }
     },
     {
       "slug": "diseno-web",
@@ -511,7 +561,17 @@
         }
       ],
       "order": 6,
-      "visible": true
+      "visible": true,
+      "keyPoints": [
+        "Landing pages y webs corporativas de pago único",
+        "SEO técnico y velocidad optimizada",
+        "Leads directo a tu CRM en tiempo real",
+        "Módulos adicionales: usuarios, chatbot y cupones"
+      ],
+      "cover": {
+        "src": "https://crealtivadigital.com/wp-content/uploads/2026/06/ECOMMERCE.jpg",
+        "alt": "Tienda online en laptop y celular"
+      }
     },
     {
       "slug": "optimizacion-procesos",
@@ -569,7 +629,17 @@
         }
       ],
       "order": 7,
-      "visible": true
+      "visible": true,
+      "keyPoints": [
+        "Primero auditamos, después automatizamos",
+        "Automatizaciones con n8n, Make y Zapier",
+        "Agentes con IA para atención y seguimiento",
+        "Capacitación para que tu equipo sea autónomo"
+      ],
+      "cover": {
+        "src": "https://crealtivadigital.com/wp-content/uploads/2026/06/portada-paginas-web.jpg",
+        "alt": "Equipo trabajando con herramientas digitales"
+      }
     }
   ],
   "packages": [

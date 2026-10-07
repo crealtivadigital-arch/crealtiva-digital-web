@@ -496,6 +496,79 @@ const faqs = {
 };
 for (const l of lines) l.faqs = (faqs[l.slug] ?? []).map(([q, a]) => ({ q, a }));
 
+// ── Lo clave de cada línea + portada (imágenes del sitio actual, temporal hasta Cloudinary) ──
+const WP = "https://crealtivadigital.com/wp-content/uploads/";
+const extra = {
+  "marketing-digital": {
+    cover: ["2026/02/portada-nico-y-alexis.webp", "Estratega de Crealtiva Digital planificando contenido"],
+    keyPoints: [
+      "Estrategia y calendario antes de publicar",
+      "Jornada mensual de producción de videos y gráficas",
+      "Community manager en Facebook e Instagram",
+      "Reporte mensual de métricas que se traduce en decisiones",
+    ],
+  },
+  "produccion-multimedia": {
+    cover: ["2026/04/fotografa-scaled.webp", "Fotógrafa de Crealtiva con cámara profesional"],
+    keyPoints: [
+      "Grabación nativa en 4K con ópticas profesionales",
+      "Audio profesional y postproducción completa",
+      "Videos institucionales, corporativos y para redes",
+      "Movilización en Quito y Valles incluida",
+    ],
+  },
+  "video-ugc": {
+    cover: ["2026/04/creacion-d-econtenido-scaled.webp", "Creadora de contenido grabando un video UGC en un restaurante"],
+    keyPoints: [
+      "Actores reales con derechos de imagen incluidos",
+      "Guiones pensados para enganchar en segundos",
+      "Formato vertical 9:16 listo para Reels y TikTok",
+      "Exclusividad de nicho en el plan corporativo",
+    ],
+  },
+  "fotografia-de-producto": {
+    cover: ["2026/04/produccion-fotos.webp", "Set de fotografía de producto con iluminación de estudio"],
+    keyPoints: [
+      "Brief visual aprobado antes de cada sesión",
+      "Paquetes para premium, e-commerce, moda y gastronomía",
+      "Edición incluida y entrega en 3 a 7 días hábiles",
+      "Fondos limpios o ambientados según el canal de venta",
+    ],
+  },
+  "trafficker-digital": {
+    cover: ["2026/02/NICO-PORTADA-scaled.webp", "Especialista de pauta digital revisando campañas"],
+    keyPoints: [
+      "Meta, Google y TikTok Ads",
+      "Tarifa de gestión fija, sin porcentaje sobre tu inversión",
+      "Tus cuentas publicitarias siempre a tu nombre",
+      "Creativos, píxeles y reportes incluidos",
+    ],
+  },
+  "diseno-web": {
+    cover: ["2026/06/ECOMMERCE.jpg", "Tienda online en laptop y celular"],
+    keyPoints: [
+      "Landing pages y webs corporativas de pago único",
+      "SEO técnico y velocidad optimizada",
+      "Leads directo a tu CRM en tiempo real",
+      "Módulos adicionales: usuarios, chatbot y cupones",
+    ],
+  },
+  "optimizacion-procesos": {
+    cover: ["2026/06/portada-paginas-web.jpg", "Equipo trabajando con herramientas digitales"],
+    keyPoints: [
+      "Primero auditamos, después automatizamos",
+      "Automatizaciones con n8n, Make y Zapier",
+      "Agentes con IA para atención y seguimiento",
+      "Capacitación para que tu equipo sea autónomo",
+    ],
+  },
+};
+for (const l of lines) {
+  const e = extra[l.slug];
+  l.keyPoints = e.keyPoints;
+  l.cover = { src: WP + e.cover[0], alt: e.cover[1] };
+}
+
 // Validaciones: slugs únicos por línea y precios bien formados
 const seen = new Set();
 for (const p of packages) {
