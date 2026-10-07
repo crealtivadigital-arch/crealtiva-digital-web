@@ -51,7 +51,7 @@ export default async function ProyectoPage({ params }: Props) {
             <Link
               key={s}
               href={`/servicios/${s}`}
-              className="rounded-full border border-white/20 px-4 py-1.5 text-sm text-white/80 transition-colors hover:border-teal hover:text-teal"
+              className="rounded-full border border-white/20 px-4 py-1.5 text-sm text-cream/80 transition-colors hover:border-teal hover:text-teal"
             >
               {lineNames[s] ?? s}
             </Link>
@@ -61,7 +61,7 @@ export default async function ProyectoPage({ params }: Props) {
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-teal px-4 py-1.5 text-sm font-semibold text-white hover:bg-teal-dark"
+              className="rounded-full bg-teal px-4 py-1.5 text-sm font-semibold text-cream hover:bg-teal-dark"
             >
               Ver sitio ↗
             </a>
@@ -92,9 +92,9 @@ export default async function ProyectoPage({ params }: Props) {
               {usedPackage && (
                 <Link
                   href={`/servicios/${usedPackage.lineSlug}/${usedPackage.slug}`}
-                  className="group rounded-card bg-navy p-6 text-white"
+                  className="group rounded-card bg-navy p-6 text-cream"
                 >
-                  <h2 className="text-xs font-semibold uppercase tracking-widest text-white/50">Paquete utilizado</h2>
+                  <h2 className="text-xs font-semibold uppercase tracking-widest text-cream/50">Paquete utilizado</h2>
                   <p className="mt-3 text-lg font-bold">{usedPackage.name}</p>
                   <span className="mt-4 inline-block text-sm font-semibold text-teal group-hover:translate-x-1">Ver paquete →</span>
                 </Link>

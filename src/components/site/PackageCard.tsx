@@ -18,7 +18,7 @@ export default function PackageCard({ pkg, lineName }: PackageCardProps) {
       }`}
     >
       {pkg.featured && (
-        <span className="absolute -top-3 right-6 rounded-full bg-magenta px-3 py-1 text-[11px] font-semibold text-white">
+        <span className="absolute -top-3 right-6 rounded-full bg-magenta px-3 py-1 text-[11px] font-semibold text-cream">
           Más elegido
         </span>
       )}

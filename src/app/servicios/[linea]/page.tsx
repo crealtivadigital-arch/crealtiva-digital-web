@@ -54,7 +54,7 @@ export default async function LineaPage({ params }: Props) {
           {line.highlights.map((h) => (
             <div key={h.label}>
               <span className="block text-2xl font-bold text-teal">{h.value}</span>
-              <span className="text-xs text-white/50">{h.label}</span>
+              <span className="text-xs text-cream/50">{h.label}</span>
             </div>
           ))}
         </div>
@@ -62,7 +62,7 @@ export default async function LineaPage({ params }: Props) {
           href={wa(`Hola, quiero cotizar ${line.name} con Crealtiva Digital.`)}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-10 inline-flex rounded-full bg-magenta px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-magenta-light"
+          className="mt-10 inline-flex rounded-full bg-magenta px-7 py-3.5 text-sm font-semibold text-cream transition-colors hover:bg-magenta-light"
         >
           Cotizar {line.name.toLowerCase()} →
         </a>
@@ -148,7 +148,7 @@ export default async function LineaPage({ params }: Props) {
               eyebrow="Portafolio"
               title="Trabajos de esta línea"
               action={
-                <Link href="/portafolio" className="text-sm font-semibold text-teal hover:text-white">
+                <Link href="/portafolio" className="text-sm font-semibold text-teal hover:text-cream">
                   Ver todo el portafolio →
                 </Link>
               }

@@ -32,7 +32,7 @@ export default function ServiceLineSection({ line, packages, index }: ServiceLin
               sizes="(min-width: 1024px) 540px, 100vw"
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <span className="absolute left-5 top-5 rounded-full bg-navy/70 px-4 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
+            <span className="absolute left-5 top-5 rounded-full bg-navy/70 px-4 py-1.5 text-xs font-semibold text-cream backdrop-blur-sm">
               {packages.length} paquetes
             </span>
           </Link>
@@ -82,7 +82,7 @@ export default function ServiceLineSection({ line, packages, index }: ServiceLin
 
           <Link
             href={lineHref}
-            className="mt-8 inline-flex rounded-full bg-magenta px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-magenta-light"
+            className="mt-8 inline-flex rounded-full bg-magenta px-7 py-3.5 text-sm font-semibold text-cream transition-colors hover:bg-magenta-light"
           >
             Ver todos los paquetes de {line.name} →
           </Link>

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { WA_DIAGNOSTICO } from "@/lib/constants";
@@ -23,16 +24,15 @@ export default function Navbar() {
 
   const linkClass = (href: string) =>
     `px-3 py-2 rounded-lg transition-colors hover:text-teal hover:bg-white/5 ${
-      isActive(href) ? "text-teal" : "text-white/70"
+      isActive(href) ? "text-teal" : "text-cream/70"
     }`;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-sm border-b border-white/5">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="font-grotesk font-bold text-white text-base tracking-tight flex items-center gap-2">
-          <span className="w-7 h-7 rounded-full bg-teal flex items-center justify-center text-xs font-black text-white">C</span>
-          Crealtiva Digital
+        <Link href="/" aria-label="Crealtiva Digital — Inicio" className="shrink-0">
+          <Image src="/brand/logo-horizontal.png" alt="Crealtiva Digital" width={1082} height={127} priority className="h-6 w-auto md:h-7" />
         </Link>
 
         {/* Desktop nav */}
@@ -48,14 +48,14 @@ export default function Navbar() {
           href={WA_DIAGNOSTICO}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden lg:inline-flex items-center gap-2 bg-magenta text-white font-grotesk font-semibold text-sm px-5 py-2 rounded-full hover:bg-magenta-light transition-colors"
+          className="hidden lg:inline-flex items-center gap-2 bg-magenta text-cream font-grotesk font-semibold text-sm px-5 py-2 rounded-full hover:bg-magenta-light transition-colors"
         >
           {CTA_LABEL}
         </a>
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden text-white/70 hover:text-white"
+          className="lg:hidden text-cream/70 hover:text-cream"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menú"
           aria-expanded={mobileOpen}
@@ -87,7 +87,7 @@ export default function Navbar() {
             href={WA_DIAGNOSTICO}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 flex justify-center bg-magenta text-white font-grotesk font-semibold px-5 py-2.5 rounded-full hover:bg-magenta-light transition-colors"
+            className="mt-2 flex justify-center bg-magenta text-cream font-grotesk font-semibold px-5 py-2.5 rounded-full hover:bg-magenta-light transition-colors"
           >
             {CTA_LABEL}
           </a>

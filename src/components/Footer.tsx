@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getServiceLines } from "@/lib/content";
 import { EMAIL, WA } from "@/lib/constants";
@@ -15,8 +16,8 @@ const legal = [
   { label: "Política de cookies", href: "/politica-de-cookies" },
 ];
 
-const heading = "mb-5 text-xs font-semibold uppercase tracking-widest text-white/60";
-const link = "text-sm text-white/50 transition-colors hover:text-teal";
+const heading = "mb-5 text-xs font-semibold uppercase tracking-widest text-cream/60";
+const link = "text-sm text-cream/50 transition-colors hover:text-teal";
 
 export default async function Footer() {
   const lines = await getServiceLines();
@@ -26,11 +27,14 @@ export default async function Footer() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="mb-4 flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-teal text-xs font-black text-white">C</span>
-              <span className="text-base font-bold text-white">Crealtiva Digital</span>
-            </div>
-            <p className="max-w-xs text-sm leading-relaxed text-white/40">
+            <Image
+              src="/brand/logo-vertical.png"
+              alt="Crealtiva Digital — Agencia de marketing"
+              width={407}
+              height={313}
+              className="mb-5 h-24 w-auto"
+            />
+            <p className="max-w-xs text-sm leading-relaxed text-cream/40">
               Tu departamento de marketing externo en Quito, Ecuador: estrategia, producción, pauta y métricas.
             </p>
           </div>
@@ -74,12 +78,12 @@ export default async function Footer() {
                   {EMAIL}
                 </a>
               </li>
-              <li className="text-sm text-white/50">Quito, Ecuador</li>
+              <li className="text-sm text-cream/50">Quito, Ecuador</li>
             </ul>
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-6 text-xs text-white/30 md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-6 text-xs text-cream/30 md:flex-row">
           <span>© {new Date().getFullYear()} Crealtiva Digital. Todos los derechos reservados.</span>
           <ul className="flex flex-wrap justify-center gap-x-5 gap-y-2">
             {legal.map((l) => (

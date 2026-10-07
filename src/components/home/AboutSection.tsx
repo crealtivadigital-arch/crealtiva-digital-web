@@ -29,7 +29,7 @@ export default function AboutSection() {
           <h2 className="mt-3 font-display text-3xl leading-tight text-navy md:text-5xl">
             No somos una agencia más. Somos el equipo que tu marca necesitaba.
           </h2>
-          <p className="mt-6 text-lg leading-relaxed text-navy/65">
+          <p className="mt-6 text-lg font-light leading-relaxed text-navy/65">
             Crealtiva Digital nació en Quito con una convicción clara: las marcas ecuatorianas merecen estrategia
             digital de calidad, no solo publicaciones bonitas. Trabajamos con empresarios que ya tienen un negocio
             sólido y quieren escalarlo en digital con autoridad y criterio.

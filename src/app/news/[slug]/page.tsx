@@ -54,7 +54,7 @@ export default async function ArticuloPage({ params }: Props) {
         intro={post.excerpt}
         crumbs={[{ label: "Inicio", href: "/" }, { label: "News", href: "/news" }, { label: post.category }]}
       >
-        <p className="text-sm text-white/50">
+        <p className="text-sm text-cream/50">
           {formatDate(post.publishedAt)} · {post.readingMinutes} min de lectura
         </p>
       </PageHeader>
@@ -72,10 +72,10 @@ export default async function ArticuloPage({ params }: Props) {
           />
 
           {line && (
-            <aside className="mx-auto mt-14 max-w-2xl rounded-block bg-navy p-8 text-white">
+            <aside className="mx-auto mt-14 max-w-2xl rounded-block bg-navy p-8 text-cream">
               <p className="text-xs font-semibold uppercase tracking-widest text-teal">Servicio relacionado</p>
               <h2 className="mt-3 font-display text-2xl">{line.name}</h2>
-              <p className="mt-2 text-white/60">{line.summary}</p>
+              <p className="mt-2 text-cream/60">{line.summary}</p>
               <Link
                 href={`/servicios/${line.slug}`}
                 className="mt-6 inline-flex rounded-full bg-magenta px-6 py-3 text-sm font-semibold transition-colors hover:bg-magenta-light"

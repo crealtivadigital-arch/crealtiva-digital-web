@@ -23,13 +23,13 @@ export default function ProjectCard({ project, lineNames }: ProjectCardProps) {
       <div className="absolute inset-x-0 bottom-0 p-5">
         <div className="mb-2 flex flex-wrap gap-1.5">
           {project.lineSlugs.map((s) => (
-            <span key={s} className="rounded-full bg-white/15 px-2.5 py-0.5 text-[11px] font-semibold text-white backdrop-blur-sm">
+            <span key={s} className="rounded-full bg-white/15 px-2.5 py-0.5 text-[11px] font-semibold text-cream backdrop-blur-sm">
               {lineNames[s] ?? s}
             </span>
           ))}
         </div>
         <p className="text-xs font-semibold uppercase tracking-wide text-teal">{project.client}</p>
-        <h3 className="mt-1 text-lg font-bold leading-snug text-white">
+        <h3 className="mt-1 text-lg font-bold leading-snug text-cream">
           <Link href={`/portafolio/${project.slug}`} className="after:absolute after:inset-0">
             {project.title}
           </Link>

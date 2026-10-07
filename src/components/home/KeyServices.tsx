@@ -41,9 +41,9 @@ export default function KeyServices({ lines }: { lines: ServiceLine[] }) {
               <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-navy/5" />
               <div className="relative">
                 <p className="text-xs font-semibold text-teal">{l.tagline}</p>
-                <h3 className={`mt-1 font-bold leading-tight text-white ${i === 0 ? "text-3xl" : "text-xl"}`}>{l.name}</h3>
-                <p className={`mt-2 text-sm leading-relaxed text-white/70 ${i === 0 ? "max-w-md" : "line-clamp-2"}`}>{l.summary}</p>
-                <span className="mt-4 inline-block text-sm font-semibold text-white transition-transform group-hover:translate-x-1">
+                <h3 className={`mt-1 font-bold leading-tight text-cream ${i === 0 ? "text-3xl" : "text-xl"}`}>{l.name}</h3>
+                <p className={`mt-2 text-sm leading-relaxed text-cream/70 ${i === 0 ? "max-w-md" : "line-clamp-2"}`}>{l.summary}</p>
+                <span className="mt-4 inline-block text-sm font-semibold text-cream transition-transform group-hover:translate-x-1">
                   Conocer más →
                 </span>
               </div>

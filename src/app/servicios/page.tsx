@@ -30,7 +30,7 @@ export default async function ServiciosPage() {
             <li key={l.slug} className="shrink-0">
               <a
                 href={`#${l.slug}`}
-                className="block rounded-full bg-white px-4 py-2 text-sm font-semibold text-navy/70 ring-1 ring-navy/5 transition-colors hover:bg-teal hover:text-white"
+                className="block rounded-full bg-white px-4 py-2 text-sm font-semibold text-navy/70 ring-1 ring-navy/5 transition-colors hover:bg-teal hover:text-cream"
               >
                 {l.name}
               </a>

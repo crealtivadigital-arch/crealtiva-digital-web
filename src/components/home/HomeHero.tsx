@@ -22,10 +22,10 @@ export default function HomeHero() {
           <span className="inline-block rounded-full bg-teal/15 px-4 py-1.5 text-xs font-semibold tracking-wide text-teal">
             Departamento de marketing externo · Quito, Ecuador
           </span>
-          <h1 className="mt-6 font-display text-4xl leading-[1.05] text-white md:text-6xl">
+          <h1 className="mt-6 font-display text-4xl leading-[1.05] text-cream md:text-6xl">
             ¿Tu marca proyecta el éxito que tu empresa <span className="text-teal">ya alcanzó?</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/65">
+          <p className="mt-6 max-w-xl text-lg font-light leading-relaxed text-cream/65">
             Integramos estrategia, producción, pauta y web en un solo equipo que opera como tu propio
             departamento de marketing: con orden, criterio y resultados medibles.
           </p>
@@ -35,19 +35,19 @@ export default function HomeHero() {
               href={WA_DIAGNOSTICO}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex rounded-full bg-magenta px-7 py-3.5 font-semibold text-white transition-colors hover:bg-magenta-light"
+              className="inline-flex rounded-full bg-magenta px-7 py-3.5 font-semibold text-cream transition-colors hover:bg-magenta-light"
             >
               Agenda tu diagnóstico gratuito
             </a>
             <Link
               href="/servicios"
-              className="inline-flex rounded-full border border-white/20 px-7 py-3.5 font-semibold text-white/85 transition-colors hover:border-teal hover:text-teal"
+              className="inline-flex rounded-full border border-white/20 px-7 py-3.5 font-semibold text-cream/85 transition-colors hover:border-teal hover:text-teal"
             >
               Ver servicios →
             </Link>
           </div>
 
-          <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/55">
+          <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm text-cream/55">
             {proof.map((p) => (
               <li key={p} className="flex items-center gap-2">
                 <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-teal" />

@@ -34,7 +34,7 @@ export default function FilterGrid({
 
   const chip = (selected: boolean) =>
     `rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
-      selected ? "bg-teal text-white" : "bg-white text-navy/70 hover:bg-teal/10 hover:text-teal"
+      selected ? "bg-teal text-cream" : "bg-white text-navy/70 hover:bg-teal/10 hover:text-teal"
     }`;
 
   return (

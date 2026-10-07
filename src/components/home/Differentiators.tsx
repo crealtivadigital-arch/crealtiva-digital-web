@@ -44,8 +44,8 @@ export default function Differentiators() {
           {pillars.map((p, i) => (
             <div key={p.title} className="rounded-card border border-white/10 bg-white/[0.03] p-6">
               <span className="font-display text-3xl text-teal">{String(i + 1).padStart(2, "0")}</span>
-              <h3 className="mt-3 font-bold text-white">{p.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/60">{p.detail}</p>
+              <h3 className="mt-3 font-bold text-cream">{p.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-cream/60">{p.detail}</p>
             </div>
           ))}
         </div>
@@ -55,10 +55,10 @@ export default function Differentiators() {
             <caption className="sr-only">Comparación entre una agencia tradicional y Crealtiva Digital</caption>
             <thead>
               <tr>
-                <th scope="col" className="w-1/2 bg-white/[0.04] px-6 py-4 font-semibold text-white/50">
+                <th scope="col" className="w-1/2 bg-white/[0.04] px-6 py-4 font-semibold text-cream/50">
                   Lo habitual en el mercado
                 </th>
-                <th scope="col" className="w-1/2 bg-teal px-6 py-4 font-semibold text-white">
+                <th scope="col" className="w-1/2 bg-teal px-6 py-4 font-semibold text-cream">
                   Con Crealtiva Digital
                 </th>
               </tr>
@@ -66,11 +66,11 @@ export default function Differentiators() {
             <tbody>
               {comparison.map(([them, us]) => (
                 <tr key={us} className="border-t border-white/10">
-                  <td className="px-6 py-4 text-white/45">
-                    <span aria-hidden className="mr-2 text-white/30">✕</span>
+                  <td className="px-6 py-4 text-cream/45">
+                    <span aria-hidden className="mr-2 text-cream/30">✕</span>
                     {them}
                   </td>
-                  <td className="bg-teal/[0.08] px-6 py-4 font-medium text-white">
+                  <td className="bg-teal/[0.08] px-6 py-4 font-medium text-cream">
                     <span aria-hidden className="mr-2 text-teal">✓</span>
                     {us}
                   </td>

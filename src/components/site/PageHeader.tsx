@@ -29,7 +29,7 @@ export default function PageHeader({ eyebrow, title, intro, crumbs, children }: 
 
       <div className="relative mx-auto max-w-6xl px-6">
         {crumbs && crumbs.length > 0 && (
-          <nav aria-label="Ruta de navegación" className="mb-6 text-xs text-white/40">
+          <nav aria-label="Ruta de navegación" className="mb-6 text-xs text-cream/40">
             <ol className="flex flex-wrap items-center gap-1.5">
               {crumbs.map((c, i) => (
                 <li key={c.label} className="flex items-center gap-1.5">
@@ -39,7 +39,7 @@ export default function PageHeader({ eyebrow, title, intro, crumbs, children }: 
                       {c.label}
                     </Link>
                   ) : (
-                    <span className="text-white/60">{c.label}</span>
+                    <span className="text-cream/60">{c.label}</span>
                   )}
                 </li>
               ))}
@@ -53,9 +53,9 @@ export default function PageHeader({ eyebrow, title, intro, crumbs, children }: 
           </span>
         )}
 
-        <h1 className="max-w-3xl font-display text-4xl leading-[1.08] text-white md:text-6xl">{title}</h1>
+        <h1 className="max-w-3xl font-display text-4xl leading-[1.08] text-cream md:text-6xl">{title}</h1>
 
-        {intro && <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/60">{intro}</p>}
+        {intro && <p className="mt-6 max-w-2xl text-lg font-light leading-relaxed text-cream/60">{intro}</p>}
 
         {children && <div className="mt-8">{children}</div>}
       </div>

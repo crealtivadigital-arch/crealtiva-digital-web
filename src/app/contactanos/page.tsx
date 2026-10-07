@@ -49,13 +49,13 @@ export default function Contacto() {
       {/* Hero */}
       <section className="bg-navy pt-32 pb-20">
         <div className="max-w-5xl mx-auto px-6">
-          <span className="inline-block bg-white/8 text-white/60 text-xs font-grotesk font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wide">
+          <span className="inline-block bg-white/8 text-cream/60 text-xs font-grotesk font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wide">
             Diagnóstico Gratuito · Sin Compromiso · 45 minutos
           </span>
-          <h1 className="font-grotesk font-bold text-white text-4xl md:text-5xl leading-[1.1] mb-5 max-w-2xl">
+          <h1 className="font-grotesk font-bold text-cream text-4xl md:text-5xl leading-[1.1] mb-5 max-w-2xl">
             Hablemos sobre tu <span className="text-teal">negocio.</span>
           </h1>
-          <p className="font-sans text-white/55 text-lg leading-relaxed max-w-xl">
+          <p className="font-sans text-cream/55 text-lg leading-relaxed max-w-xl">
             No necesitas saber exactamente qué necesitas. Cuéntanos en qué estás y nosotros te proponemos el camino.
           </p>
         </div>
@@ -115,7 +115,7 @@ export default function Contacto() {
 
           {/* Services quick links */}
           <div className="bg-navy rounded-block p-8">
-            <h2 className="font-grotesk font-bold text-white text-xl mb-6">
+            <h2 className="font-grotesk font-bold text-cream text-xl mb-6">
               ¿Qué servicio te interesa?
             </h2>
             <div className="grid sm:grid-cols-2 gap-3">
@@ -125,22 +125,22 @@ export default function Contacto() {
                   href={s.href}
                   className="flex items-center justify-between bg-white/5 border border-white/8 rounded-card px-5 py-3.5 hover:border-teal/40 hover:bg-white/8 transition-all group"
                 >
-                  <span className="font-sans text-white/70 text-sm group-hover:text-white transition-colors">
+                  <span className="font-sans text-cream/70 text-sm group-hover:text-cream transition-colors">
                     {s.label}
                   </span>
-                  <span className="text-white/30 group-hover:text-teal transition-colors text-sm">→</span>
+                  <span className="text-cream/30 group-hover:text-teal transition-colors text-sm">→</span>
                 </a>
               ))}
             </div>
             <div className="mt-6 pt-6 border-t border-white/8 text-center">
-              <p className="font-sans text-white/40 text-sm mb-4">
+              <p className="font-sans text-cream/40 text-sm mb-4">
                 ¿No sabes por dónde empezar? Agenda el diagnóstico y lo definimos juntos.
               </p>
               <a
                 href={WA_DIAGNOSTICO}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-teal text-white font-grotesk font-bold text-sm px-7 py-3.5 rounded-full hover:bg-teal-dark transition-colors"
+                className="inline-flex items-center gap-2 bg-teal text-cream font-grotesk font-bold text-sm px-7 py-3.5 rounded-full hover:bg-teal-dark transition-colors"
               >
                 Agendar Diagnóstico Gratuito →
               </a>

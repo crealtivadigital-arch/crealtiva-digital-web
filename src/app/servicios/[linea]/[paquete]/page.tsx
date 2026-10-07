@@ -135,17 +135,17 @@ export default async function PaquetePage({ params }: Props) {
 
           {/* Precio y CTA */}
           <aside className="lg:sticky lg:top-24 lg:self-start">
-            <div className="rounded-block bg-navy p-8 text-white">
-              {price.prefix && <span className="block text-xs font-semibold uppercase tracking-wide text-white/50">{price.prefix}</span>}
+            <div className="rounded-block bg-navy p-8 text-cream">
+              {price.prefix && <span className="block text-xs font-semibold uppercase tracking-wide text-cream/50">{price.prefix}</span>}
               <span className="font-display text-5xl">{price.main}</span>
-              {price.suffix && <span className="ml-1 text-white/60">{price.suffix}</span>}
-              {pkg.price.note && <p className="mt-2 text-sm text-white/50">{pkg.price.note}</p>}
+              {price.suffix && <span className="ml-1 text-cream/60">{price.suffix}</span>}
+              {pkg.price.note && <p className="mt-2 text-sm text-cream/50">{pkg.price.note}</p>}
 
               {pkg.details.length > 0 && (
                 <dl className="mt-6 space-y-3 border-t border-white/10 pt-6 text-sm">
                   {pkg.details.map((d) => (
                     <div key={d.label} className="flex justify-between gap-4">
-                      <dt className="text-white/50">{d.label}</dt>
+                      <dt className="text-cream/50">{d.label}</dt>
                       <dd className="text-right font-semibold">{d.value}</dd>
                     </div>
                   ))}
@@ -160,7 +160,7 @@ export default async function PaquetePage({ params }: Props) {
               >
                 Cotizar este paquete
               </a>
-              <Link href="/contactanos" className="mt-3 flex justify-center text-sm text-white/60 hover:text-teal">
+              <Link href="/contactanos" className="mt-3 flex justify-center text-sm text-cream/60 hover:text-teal">
                 o escríbenos por el formulario
               </Link>
             </div>

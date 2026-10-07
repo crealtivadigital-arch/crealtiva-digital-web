@@ -20,16 +20,16 @@ export default function CTABanner({
   return (
     <section className="bg-navy py-20">
       <div className="max-w-5xl mx-auto px-6">
-        <div className="bg-gradient-to-br from-teal to-green-deep rounded-block px-8 md:px-14 py-14 text-center relative overflow-hidden">
+        <div className="bg-green rounded-block px-8 md:px-14 py-14 text-center relative overflow-hidden">
           <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-white/5 translate-x-1/2 -translate-y-1/2 pointer-events-none" />
           <div className="relative">
-            <span className="inline-block bg-white/15 text-white text-xs font-grotesk font-semibold px-4 py-1.5 rounded-full mb-5 tracking-wide">
+            <span className="inline-block bg-white/15 text-cream text-xs font-grotesk font-semibold px-4 py-1.5 rounded-full mb-5 tracking-wide">
               Sin costo · Sin compromiso · 45 minutos
             </span>
-            <h2 className="font-grotesk font-bold text-white text-3xl md:text-4xl leading-tight mb-4 max-w-xl mx-auto">
+            <h2 className="font-grotesk font-bold text-cream text-3xl md:text-4xl leading-tight mb-4 max-w-xl mx-auto">
               {headline}
             </h2>
-            <p className="font-sans text-white/70 text-base leading-relaxed mb-8 max-w-lg mx-auto">
+            <p className="font-sans text-cream/70 text-base leading-relaxed mb-8 max-w-lg mx-auto">
               {subtitle}
             </p>
             <div className="flex flex-wrap justify-center gap-3">
@@ -46,7 +46,7 @@ export default function CTABanner({
               </a>
               <a
                 href={`mailto:${EMAIL}`}
-                className="inline-flex items-center border border-white/30 text-white font-grotesk font-semibold text-sm px-7 py-3.5 rounded-full hover:border-white hover:bg-white/10 transition-colors"
+                className="inline-flex items-center border border-white/30 text-cream font-grotesk font-semibold text-sm px-7 py-3.5 rounded-full hover:border-white hover:bg-white/10 transition-colors"
               >
                 {EMAIL}
               </a>

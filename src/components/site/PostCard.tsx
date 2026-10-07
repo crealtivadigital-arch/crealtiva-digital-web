@@ -40,17 +40,17 @@ export default function PostCard({ post, variant = "standard" }: PostCardProps) 
 
       <div className="relative mt-auto w-full p-6 md:p-7">
         <div className="mb-3 flex items-center gap-3 text-xs">
-          <span className="rounded-full bg-magenta px-3 py-1 font-semibold text-white">{post.category}</span>
-          <span className="text-white/60">
+          <span className="rounded-full bg-magenta px-3 py-1 font-semibold text-cream">{post.category}</span>
+          <span className="text-cream/60">
             {formatDate(post.publishedAt)} · {post.readingMinutes} min
           </span>
         </div>
-        <h3 className={`font-bold leading-tight text-white ${titleSize[variant]}`}>
+        <h3 className={`font-bold leading-tight text-cream ${titleSize[variant]}`}>
           <Link href={`/news/${post.slug}`} className="after:absolute after:inset-0">
             {post.title}
           </Link>
         </h3>
-        {variant !== "standard" && <p className="mt-3 line-clamp-2 max-w-xl text-sm leading-relaxed text-white/70">{post.excerpt}</p>}
+        {variant !== "standard" && <p className="mt-3 line-clamp-2 max-w-xl text-sm leading-relaxed text-cream/70">{post.excerpt}</p>}
       </div>
     </article>
   );

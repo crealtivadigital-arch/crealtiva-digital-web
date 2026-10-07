@@ -20,7 +20,7 @@ export default function FAQ({ items, title = "Preguntas Frecuentes", bg = "navy"
     <section className={`${isDark ? "bg-navy" : "bg-cream"} py-20`}>
       <div className="max-w-3xl mx-auto px-6">
         <h2
-          className={`font-grotesk font-bold text-2xl md:text-3xl mb-10 ${isDark ? "text-white" : "text-navy"}`}
+          className={`font-grotesk font-bold text-2xl md:text-3xl mb-10 ${isDark ? "text-cream" : "text-navy"}`}
         >
           {title}
         </h2>
@@ -36,14 +36,14 @@ export default function FAQ({ items, title = "Preguntas Frecuentes", bg = "navy"
             >
               <button
                 className={`w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-grotesk font-semibold text-sm md:text-base ${
-                  isDark ? "text-white" : "text-navy"
+                  isDark ? "text-cream" : "text-navy"
                 }`}
                 onClick={() => setOpen(open === i ? null : i)}
               >
                 <span>{item.q}</span>
                 <span
                   className={`flex-shrink-0 w-6 h-6 rounded-full border flex items-center justify-center text-xs transition-transform ${
-                    isDark ? "border-white/20 text-white/50" : "border-navy/20 text-navy/50"
+                    isDark ? "border-white/20 text-cream/50" : "border-navy/20 text-navy/50"
                   } ${open === i ? "rotate-45" : ""}`}
                 >
                   +
@@ -52,7 +52,7 @@ export default function FAQ({ items, title = "Preguntas Frecuentes", bg = "navy"
               {open === i && (
                 <div
                   className={`px-6 pb-5 font-sans text-sm leading-relaxed ${
-                    isDark ? "text-white/55" : "text-navy/60"
+                    isDark ? "text-cream/55" : "text-navy/60"
                   }`}
                 >
                   {item.a}
