@@ -9,7 +9,7 @@ export default function KeyServices({ lines }: { lines: ServiceLine[] }) {
       <div className="mx-auto max-w-6xl px-6">
         <SectionTitle
           eyebrow="Servicios clave"
-          title="Siete pilares conectados en un solo ecosistema"
+          title={`${lines.length} servicios conectados en un solo ecosistema`}
           intro="Cada servicio funciona solo, pero rinde más junto a los demás: la estrategia define el contenido, la producción alimenta la pauta y la web convierte."
           action={
             <Link href="/servicios" className="text-sm font-semibold text-teal hover:text-navy">
@@ -24,9 +24,9 @@ export default function KeyServices({ lines }: { lines: ServiceLine[] }) {
               key={l.slug}
               href={`/servicios/${l.slug}`}
               className={`group relative flex min-h-[300px] flex-col justify-end overflow-hidden rounded-block bg-navy p-6 ${
-                // 7 tarjetas en 4 columnas: la primera ocupa 2×2 y las dos últimas 2 columnas,
-                // así la grilla cierra sin huecos.
-                i === 0 ? "sm:col-span-2 lg:row-span-2 lg:min-h-[620px]" : i >= 5 ? "lg:col-span-2" : ""
+                // En 4 columnas la primera ocupa 2×2 y las demás rellenan; si sobran 3 en la última fila,
+                // la primera de ellas toma 2 columnas para que la grilla cierre sin huecos.
+                i === 0 ? "sm:col-span-2 lg:row-span-2 lg:min-h-[620px]" : (lines.length - 5) % 4 === 3 && i === 5 ? "lg:col-span-2" : (lines.length - 5) % 4 === 2 && i >= 5 ? "lg:col-span-2" : ""
               }`}
             >
               {l.cover && (

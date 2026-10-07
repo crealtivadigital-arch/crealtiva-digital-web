@@ -19,7 +19,7 @@ export default async function ServiciosPage() {
       <PageHeader
         eyebrow="Servicios"
         title="Todo lo que tu marca necesita, en un solo equipo"
-        intro="Siete líneas de servicio conectadas entre sí. Conoce lo clave de cada una y entra a ver todos sus paquetes, con lo que incluyen y su precio."
+        intro={`${lines.length} líneas de servicio conectadas entre sí. Conoce lo clave de cada una y entra a ver todos sus paquetes, con lo que incluyen y su precio.`}
         crumbs={[{ label: "Inicio", href: "/" }, { label: "Servicios" }]}
       />
 

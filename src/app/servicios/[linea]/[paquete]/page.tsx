@@ -118,6 +118,27 @@ export default async function PaquetePage({ params }: Props) {
               </div>
             )}
 
+            {pkg.addons.length > 0 && (
+              <div>
+                <h2 className="font-display text-2xl text-navy">Complementos opcionales</h2>
+                <p className="mt-1 text-sm font-light text-navy/60">Súmalos a tu paquete cuando los necesites.</p>
+                <ul className="mt-5 grid gap-4 md:grid-cols-2">
+                  {pkg.addons.map((a) => {
+                    const p = a.price ? formatPrice(a.price) : null;
+                    return (
+                      <li key={a.name} className="flex flex-col rounded-card border border-teal/20 bg-white p-5">
+                        <div className="flex items-start justify-between gap-4">
+                          <h3 className="font-semibold text-navy">{a.name}</h3>
+                          {p && <span className="shrink-0 font-bold text-teal">+{p.main}</span>}
+                        </div>
+                        <p className="mt-2 text-sm leading-relaxed text-navy/60">{a.detail}</p>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            )}
+
             {line.conditions.length > 0 && (
               <div>
                 <h2 className="text-lg font-bold text-navy">Condiciones del servicio</h2>

@@ -65,6 +65,7 @@ export interface Package {
   excludes: string[];
   idealFor: string[];
   details: Detail[]; // capacidad, vigencia, tiempos, inversión sugerida...
+  addons: Extra[]; // complementos opcionales con su PVP (nunca costos internos)
   price: Price;
   featured: boolean;
   order: number;
