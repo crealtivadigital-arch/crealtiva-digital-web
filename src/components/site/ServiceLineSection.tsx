@@ -1,4 +1,4 @@
-import Image from "next/image";
+import NaturalImage from "@/components/site/NaturalImage";
 import Link from "next/link";
 import { formatPrice } from "@/lib/content/format";
 import type { Package, ServiceLine } from "@/lib/content/types";
@@ -20,21 +20,18 @@ export default function ServiceLineSection({ line, packages, index }: ServiceLin
     <section id={line.slug} className={`scroll-mt-32 py-20 md:py-24 ${reversed ? "bg-white" : "bg-cream"}`}>
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16">
         {line.cover && (
-          <Link
-            href={lineHref}
-            className={`group relative block aspect-[4/3] overflow-hidden rounded-block bg-navy ${reversed ? "lg:order-2" : ""}`}
-            aria-label={`Ver ${line.name}`}
-          >
-            <Image
-              src={line.cover.src}
-              alt={line.cover.alt}
-              fill
+          <Link href={lineHref} className={`group block ${reversed ? "lg:order-2" : ""}`} aria-label={`Ver ${line.name}`}>
+            <NaturalImage
+              img={line.cover}
               sizes="(min-width: 1024px) 540px, 100vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <span className="absolute left-5 top-5 rounded-full bg-navy/70 px-4 py-1.5 text-xs font-semibold text-cream backdrop-blur-sm">
-              {packages.length} paquetes
-            </span>
+              maxHeight={520}
+              className="mx-auto rounded-block bg-navy"
+              imgClassName="transition-opacity duration-300 group-hover:opacity-90"
+            >
+              <span className="absolute left-4 top-4 rounded-full bg-navy/70 px-4 py-1.5 text-xs font-semibold text-cream backdrop-blur-sm">
+                {packages.length} paquetes
+              </span>
+            </NaturalImage>
           </Link>
         )}
 

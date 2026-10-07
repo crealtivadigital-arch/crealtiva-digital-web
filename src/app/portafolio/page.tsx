@@ -30,6 +30,7 @@ export default async function PortafolioPage() {
       <section className="bg-cream py-20">
         <div className="mx-auto max-w-6xl px-6">
           <FilterGrid
+            gridClassName="columns-1 gap-6 sm:columns-2 lg:columns-3"
             options={usedLines.map((l) => ({ value: l.slug, label: l.name }))}
             items={projects.map((p) => ({
               key: p.slug,

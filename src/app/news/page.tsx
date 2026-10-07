@@ -12,13 +12,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/news" },
 };
 
-// Ritmo de la grilla bento: el más reciente ocupa 2×2, luego una tarjeta alta,
-// una fila de tres y una ancha. Después se repite en tarjetas estándar.
-const rhythm = ["hero", "tall", "standard", "standard", "standard", "wide", "standard"] as const;
-
 export default async function NewsPage() {
   const posts = await getPosts();
-  const categories = [...new Set(posts.map((p) => p.category))];
+  const [lead, ...rest] = posts;
+  const categories = [...new Set(rest.map((p) => p.category))];
 
   return (
     <main>
@@ -31,19 +28,22 @@ export default async function NewsPage() {
 
       <section className="bg-cream py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-6">
-          {posts.length === 0 ? (
+          {!lead ? (
             <p className="text-navy/50">Pronto publicaremos nuestros primeros artículos.</p>
           ) : (
-            <FilterGrid
-              options={categories.map((c) => ({ value: c, label: c }))}
-              gridClassName="grid grid-flow-dense gap-5 md:auto-rows-[270px] md:grid-cols-3"
-              emptyText="Aún no hay artículos en esta categoría."
-              items={posts.map((p, i) => ({
-                key: p.slug,
-                tags: [p.category],
-                node: <PostCard post={p} variant={rhythm[i] ?? "standard"} />,
-              }))}
-            />
+            <>
+              <PostCard post={lead} featured />
+              {rest.length > 0 && (
+                <div className="mt-14">
+                  <FilterGrid
+                    options={categories.map((c) => ({ value: c, label: c }))}
+                    gridClassName="columns-1 gap-6 md:columns-2 lg:columns-3"
+                    emptyText="Aún no hay artículos en esta categoría."
+                    items={rest.map((p) => ({ key: p.slug, tags: [p.category], node: <PostCard post={p} /> }))}
+                  />
+                </div>
+              )}
+            </>
           )}
         </div>
       </section>

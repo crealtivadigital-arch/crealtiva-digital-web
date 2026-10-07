@@ -60,7 +60,7 @@ export default async function Home() {
                 </Link>
               }
             />
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="columns-1 gap-6 sm:columns-2 lg:columns-3">
               {projects.slice(0, 3).map((p) => (
                 <ProjectCard key={p.slug} project={p} lineNames={lineNames} />
               ))}
@@ -81,7 +81,7 @@ export default async function Home() {
                 </Link>
               }
             />
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="columns-1 gap-6 md:columns-2 lg:columns-3">
               {posts.map((p) => (
                 <PostCard key={p.slug} post={p} />
               ))}

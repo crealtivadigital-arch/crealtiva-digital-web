@@ -1,8 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
+import NaturalImage from "@/components/site/NaturalImage";
 import SectionTitle from "@/components/site/SectionTitle";
 import type { ServiceLine } from "@/lib/content/types";
 
+// Mampostería: cada foto en su proporción original, con el texto debajo.
 export default function KeyServices({ lines }: { lines: ServiceLine[] }) {
   return (
     <section className="bg-white py-20 md:py-28">
@@ -18,31 +19,26 @@ export default function KeyServices({ lines }: { lines: ServiceLine[] }) {
           }
         />
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {lines.map((l, i) => (
+        <div className="columns-1 gap-5 sm:columns-2 lg:columns-4">
+          {lines.map((l) => (
             <Link
               key={l.slug}
               href={`/servicios/${l.slug}`}
-              className={`group relative flex min-h-[300px] flex-col justify-end overflow-hidden rounded-block bg-navy p-6 ${
-                // En 4 columnas la primera ocupa 2×2 y las demás rellenan; si sobran 3 en la última fila,
-                // la primera de ellas toma 2 columnas para que la grilla cierre sin huecos.
-                i === 0 ? "sm:col-span-2 lg:row-span-2 lg:min-h-[620px]" : (lines.length - 5) % 4 === 3 && i === 5 ? "lg:col-span-2" : (lines.length - 5) % 4 === 2 && i >= 5 ? "lg:col-span-2" : ""
-              }`}
+              className="group mb-5 block break-inside-avoid overflow-hidden rounded-block bg-navy"
             >
               {l.cover && (
-                <Image
-                  src={l.cover.src}
-                  alt={l.cover.alt}
-                  fill
-                  sizes={i === 0 ? "(min-width: 1024px) 560px, 100vw" : "(min-width: 1024px) 280px, 50vw"}
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                <NaturalImage
+                  img={l.cover}
+                  sizes="(min-width: 1024px) 270px, (min-width: 640px) 50vw, 100vw"
+                  maxHeight={380}
+                  className="mx-auto"
+                  imgClassName="transition-opacity duration-300 group-hover:opacity-85"
                 />
               )}
-              <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-navy/5" />
-              <div className="relative">
+              <div className="p-5">
                 <p className="text-xs font-semibold text-teal">{l.tagline}</p>
-                <h3 className={`mt-1 font-bold leading-tight text-cream ${i === 0 ? "text-3xl" : "text-xl"}`}>{l.name}</h3>
-                <p className={`mt-2 text-sm leading-relaxed text-cream/70 ${i === 0 ? "max-w-md" : "line-clamp-2"}`}>{l.summary}</p>
+                <h3 className="mt-1 text-xl font-bold leading-tight text-cream">{l.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-cream/65">{l.summary}</p>
                 <span className="mt-4 inline-block text-sm font-semibold text-cream transition-transform group-hover:translate-x-1">
                   Conocer más →
                 </span>

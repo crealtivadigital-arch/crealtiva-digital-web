@@ -54,6 +54,20 @@ export interface ServiceLine {
   visible: boolean;
 }
 
+export type Stage = "arranque" | "crecimiento" | "consolidacion";
+
+// Cómo conseguir algo que el paquete no incluye: un complemento del mismo paquete,
+// otro paquete concreto o una línea de servicio completa.
+export type ExclusionSolution =
+  | { type: "addon"; name: string; price: Price }
+  | { type: "package"; lineSlug: string; slug: string; name: string; price: Price }
+  | { type: "line"; lineSlug: string; name: string; fromPrice: number | null };
+
+export interface Exclusion {
+  text: string;
+  solution?: ExclusionSolution;
+}
+
 export interface Package {
   slug: string;
   lineSlug: string;
@@ -61,8 +75,10 @@ export interface Package {
   tagline?: string;
   badge?: string;
   summary: string;
+  solves: string; // qué problema resuelve, en una frase
+  stage: Stage; // fase de crecimiento a la que apunta
   includes: string[];
-  excludes: string[];
+  excludes: Exclusion[];
   idealFor: string[];
   details: Detail[]; // capacidad, vigencia, tiempos, inversión sugerida...
   addons: Extra[]; // complementos opcionales con su PVP (nunca costos internos)

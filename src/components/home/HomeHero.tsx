@@ -1,4 +1,4 @@
-import Image from "next/image";
+import NaturalImage from "@/components/site/NaturalImage";
 import Link from "next/link";
 import { WA_DIAGNOSTICO } from "@/lib/constants";
 
@@ -57,16 +57,15 @@ export default function HomeHero() {
           </ul>
         </div>
 
-        <div className="relative aspect-[1500/940] w-full overflow-hidden rounded-t-block bg-black">
-          <Image
-            src="https://crealtivadigital.com/wp-content/uploads/2026/03/equipo-crealtiva-digital.png"
-            alt="Equipo de Crealtiva Digital: estrategia, producción, diseño, pauta y contenido"
-            fill
-            priority
-            sizes="(min-width: 1024px) 540px, 100vw"
-            className="object-cover"
-          />
-        </div>
+        <NaturalImage
+          img={{
+            src: "https://crealtivadigital.com/wp-content/uploads/2026/03/equipo-crealtiva-digital.png",
+            alt: "Equipo de Crealtiva Digital: estrategia, producción, diseño, pauta y contenido",
+          }}
+          sizes="(min-width: 1024px) 540px, 100vw"
+          priority
+          className="mx-auto rounded-t-block bg-black"
+        />
       </div>
     </section>
   );

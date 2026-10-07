@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import NaturalImage from "@/components/site/NaturalImage";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHeader from "@/components/site/PageHeader";
@@ -71,9 +71,7 @@ export default async function ProyectoPage({ params }: Props) {
 
       <section className="bg-cream py-16">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="relative aspect-[16/9] overflow-hidden rounded-block">
-            <Image src={project.cover.src} alt={project.cover.alt} fill priority sizes="(min-width: 1152px) 1104px, 100vw" className="object-cover" />
-          </div>
+          <NaturalImage img={project.cover} priority sizes="(min-width: 1152px) 1104px, 100vw" maxHeight={680} className="mx-auto rounded-block" />
 
           {(project.challenge || project.solution || usedPackage) && (
             <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -105,16 +103,12 @@ export default async function ProyectoPage({ params }: Props) {
           {project.gallery.length > 0 && (
             <div className="mt-12 columns-1 gap-4 sm:columns-2 lg:columns-3">
               {project.gallery.map((img) => (
-                <div key={img.src} className="mb-4 break-inside-avoid overflow-hidden rounded-card">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    width={800}
-                    height={600}
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                    className="h-auto w-full"
-                  />
-                </div>
+                <NaturalImage
+                  key={img.src}
+                  img={img}
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="mx-auto mb-4 break-inside-avoid rounded-card"
+                />
               ))}
             </div>
           )}
@@ -125,7 +119,7 @@ export default async function ProyectoPage({ params }: Props) {
         <section className="bg-navy py-20">
           <div className="mx-auto max-w-6xl px-6">
             <SectionTitle dark eyebrow="Portafolio" title="Proyectos relacionados" />
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="columns-1 gap-6 sm:columns-2 lg:columns-3">
               {related.map((p) => (
                 <ProjectCard key={p.slug} project={p} lineNames={lineNames} />
               ))}

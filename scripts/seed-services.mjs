@@ -651,6 +651,90 @@ const lines = [
   },
 ].map(({ cover, ...l }) => ({ ...l, cover: { src: WP + cover[0], alt: cover[1] }, visible: true }));
 
+// ── Qué resuelve y fase de crecimiento de cada paquete ────────────────────
+// arranque: empezar o regularizar la presencia · crecimiento: más alcance, clientes y ventas ·
+// consolidacion: operar como marca líder, con sistema completo y escala.
+const profile = {
+  "Crealtiva Bite Meta": ["arranque", "Tu marca no tiene una presencia constante ni ordenada en Facebook e Instagram."],
+  "Crealtiva Bite TikTok": ["arranque", "Quieres entrar a TikTok con dirección y constancia, sin improvisar contenido."],
+  "Crealtiva Bite LinkedIn": ["arranque", "Tu empresa necesita autoridad profesional en LinkedIn para captar clientes B2B."],
+  "Crealtiva Tasty Popular": ["crecimiento", "Publicas, pero tu marca no se posiciona como la opción preferida de tu público."],
+  "Crealtiva Tasty Business": ["crecimiento", "Necesitas posicionarte frente a empresas y profesionales, además de tu público en Meta."],
+  "Crealtiva Elemental": ["crecimiento", "Llegaste al techo de una sola red y necesitas crecer en varias plataformas con pauta."],
+  "Crealtiva Full House": ["consolidacion", "Necesitas un departamento de marketing completo, con ventas y seguimiento de clientes integrados."],
+  "Identidad Institucional": ["arranque", "Tu empresa no tiene un video que la presente con la calidad que merece."],
+  "Contenido Starter": ["crecimiento", "Te falta material de video constante para tus redes o tus campañas."],
+  "Full Content Mensual": ["consolidacion", "Necesitas cubrir toda la parrilla del mes y varios embudos de venta con video profesional."],
+  "Video Reels Start": ["arranque", "Tu contenido no genera confianza porque no muestra personas reales."],
+  "Brand Growth": ["crecimiento", "Necesitas una narrativa de marca coherente que combine promoción, enseñanza e identidad."],
+  "Corporate Retainer": ["consolidacion", "Tu organización necesita un video institucional sólido en formato horizontal y vertical."],
+  "Modelo para Fotografía": ["arranque", "Tus productos se ven sin contexto porque nadie los usa en las fotos."],
+  "Modelo para Videos de Redes Sociales": ["arranque", "Tus videos necesitan un rostro que conecte con tu público."],
+  "Contenido para Campañas Publicitarias": ["crecimiento", "Necesitas material con modelo que puedas usar legalmente en tus anuncios."],
+  "Contenido Influencer Made": ["crecimiento", "Quieres llegar a la audiencia de un influencer con contenido auténtico."],
+  "Fotografía de Productos": ["crecimiento", "Tus productos premium no transmiten su calidad real en las fotos."],
+  "E-commerce Catálogo Completo": ["crecimiento", "Tu tienda online tiene fotos disparejas que restan confianza y ventas."],
+  "Fotografía de Moda": ["crecimiento", "Tus prendas no muestran su caída ni su color real en las fotos."],
+  "Fotografía Gastronómica": ["arranque", "Tus platos no se ven tan bien como saben en la carta, el delivery y las redes."],
+  "Meta Ads Starter": ["arranque", "Nunca has pautado o tus anuncios no generan conversaciones reales."],
+  "Google Ads Búsqueda": ["arranque", "Tus clientes te buscan en Google y encuentran primero a tu competencia."],
+  "TikTok Spark": ["arranque", "Quieres probar TikTok Ads con una campaña de alta retención."],
+  "Despunte con Meta": ["crecimiento", "Atraes visitas, pero no cierras ventas con quienes ya interactuaron con tu marca."],
+  "Google Ads Multimedia y Video": ["crecimiento", "Necesitas presencia en Google y YouTube al mismo tiempo para captar más demanda."],
+  "TikTok Trend Authority": ["crecimiento", "Quieres descubrir qué ganchos y públicos funcionan en TikTok con pruebas A/B."],
+  "Meta Ads Pro Crecimiento": ["crecimiento", "Necesitas más leads y reconocimiento de marca con dos campañas en paralelo."],
+  "Landing Page de Conversión": ["arranque", "Tus anuncios llevan a un perfil o una web que no convierte."],
+  "Web Institucional Express": ["arranque", "Tu negocio todavía no tiene una web propia que lo valide en internet."],
+  "Web Corporativa Started": ["crecimiento", "Tu web no refleja la autoridad de tu empresa ni te deja publicar novedades."],
+  "Portafolio Comercial Digital": ["crecimiento", "Necesitas mostrar tus productos y publicar noticias desde un solo panel."],
+  "Sistemas Institucionales a Medida": ["consolidacion", "Tu operación necesita usuarios, pagos en línea, reservas o inventarios en una sola plataforma."],
+  Automatizaciones: ["arranque", "Tu equipo pierde horas en tareas repetitivas que podrían hacerse solas."],
+  "Agentes con IA": ["crecimiento", "Necesitas atender, dar seguimiento y analizar datos sin sumar personal."],
+  Ecosistemas: ["consolidacion", "Quieres que departamentos completos operen de forma coordinada y autónoma."],
+};
+for (const p of packages) {
+  const pr = profile[p.name];
+  if (!pr) throw new Error(`Falta "qué resuelve" y fase para: ${p.name}`);
+  [p.stage, p.solves] = pr;
+}
+
+// ── "No incluye" → cómo conseguirlo ───────────────────────────────────────
+const lineBySlug = Object.fromEntries(lines.map((l) => [l.slug, l]));
+const findPkg = (slug) => packages.find((p) => p.slug === slug);
+const asPackage = (p) => p && { type: "package", lineSlug: p.lineSlug, slug: p.slug, name: p.name, price: p.price };
+const asLine = (slug) => {
+  const prices = packages.filter((p) => p.lineSlug === slug && p.price.amount !== null).map((p) => p.price.amount);
+  return { type: "line", lineSlug: slug, name: lineBySlug[slug].name, fromPrice: prices.length ? Math.min(...prices) : null };
+};
+const addon = (pkg, re) => {
+  const a = pkg.addons.find((x) => re.test(x.name));
+  return a && { type: "addon", name: a.name, price: a.price };
+};
+
+function solve(text, pkg) {
+  const t = text.toLowerCase();
+  // Lo que nunca se vende: presupuestos de terceros, alquileres, insumos y restricciones de uso
+  if (/presupuesto|valor(es)? de pauta|pago directo|pauta comercial|alquiler|locaci|indumentaria|platos de producci|replicaci|difusión de imagen después|^páginas adicionales|exclusividad|mensajes de (clientes|las plataformas)/.test(t)) return undefined;
+  if (/derechos de imagen de por vida/.test(t)) return addon(pkg, /extendido/i);
+  if (/uso de imagen en campaña/.test(t)) return addon(pkg, /campañas ads/i);
+  if (/pauta|campañas? de (pauta|ads)|gestión de (las )?campañas|programación de ads/.test(t))
+    return addon(pkg, /campaña de ads/i) ?? (pkg.lineSlug !== "trafficker-digital" ? asLine("trafficker-digital") : undefined);
+  const tk = /tiktok/.test(t), li = /linkedin/.test(t), me = /meta\b/.test(t);
+  if ((tk && li) || (me && li) || (me && tk)) return asPackage(findPkg("crealtiva-elemental"));
+  if (tk) return addon(pkg, /tiktok/i) ?? (pkg.lineSlug === "marketing-digital" ? asPackage(findPkg("crealtiva-bite-tiktok")) : asLine("marketing-digital"));
+  if (li) return asPackage(findPkg("crealtiva-bite-linkedin"));
+  if (/fotograf/.test(t) && pkg.lineSlug !== "fotografia-de-producto") return asLine("fotografia-de-producto");
+  if (/modelos|personas que salgan|honorarios de modelo/.test(t) && pkg.lineSlug !== "modelos-e-influencers") return asLine("modelos-e-influencers");
+  if (/pasarela|e-commerce|carrito/.test(t)) return asPackage(findPkg("sistemas-institucionales-a-medida"));
+  if (/blogs?|panel autogestionable|páginas internas|subpáginas/.test(t) && pkg.slug !== "web-corporativa-started")
+    return asPackage(findPkg("web-corporativa-started"));
+  if (/sitios? web|página web|gestión de página/.test(t) && pkg.lineSlug !== "diseno-web") return asLine("diseno-web");
+  if (/redes sociales|contenido orgánico|community|manejo de redes|gestión de contenido|perfiles en redes/.test(t) && pkg.lineSlug !== "marketing-digital")
+    return asLine("marketing-digital");
+  return undefined;
+}
+for (const p of packages) p.excludes = p.excludes.map((text) => ({ text, ...(solve(text, p) ? { solution: solve(text, p) } : {}) }));
+
 // Orden dentro de cada línea: de menor a mayor precio (los "a cotizar" mantienen su orden, al final)
 for (const slug of new Set(packages.map((p) => p.lineSlug))) {
   packages

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import NaturalImage from "@/components/site/NaturalImage";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHeader from "@/components/site/PageHeader";
@@ -61,9 +61,7 @@ export default async function ArticuloPage({ params }: Props) {
 
       <article className="bg-cream pb-20">
         <div className="mx-auto max-w-4xl px-6">
-          <div className="relative -mt-6 aspect-[16/9] overflow-hidden rounded-block">
-            <Image src={post.cover.src} alt={post.cover.alt} fill priority sizes="(min-width: 896px) 848px, 100vw" className="object-cover" />
-          </div>
+          <NaturalImage img={post.cover} priority sizes="(min-width: 896px) 848px, 100vw" maxHeight={560} className="mx-auto -mt-6 rounded-block" />
 
           <div
             className="article-body mx-auto mt-12 max-w-2xl"
@@ -91,7 +89,7 @@ export default async function ArticuloPage({ params }: Props) {
         <section className="bg-white py-20">
           <div className="mx-auto max-w-6xl px-6">
             <SectionTitle eyebrow="News" title="Sigue leyendo" />
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="columns-1 gap-6 md:columns-2 lg:columns-3">
               {more.map((p) => (
                 <PostCard key={p.slug} post={p} />
               ))}

@@ -5,6 +5,8 @@ import PageHeader from "@/components/site/PageHeader";
 import PackageCard from "@/components/site/PackageCard";
 import ProjectCard from "@/components/site/ProjectCard";
 import SectionTitle from "@/components/site/SectionTitle";
+import ExclusionList from "@/components/site/ExclusionList";
+import { STAGES } from "@/lib/content/format";
 import { formatPrice, getPackage, getPackages, getProjects, getServiceLine, getServiceLines } from "@/lib/content";
 import { wa } from "@/lib/constants";
 
@@ -77,11 +79,20 @@ export default async function PaquetePage({ params }: Props) {
         <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1fr_360px]">
           {/* Detalle */}
           <div className="space-y-8">
-            {pkg.tagline && <p className="text-lg font-semibold text-teal">{pkg.tagline}</p>}
+            <div className="flex flex-wrap items-center gap-3">
+              <span className={`rounded-full px-3 py-1 text-xs font-semibold ${STAGES[pkg.stage].tone}`}>{STAGES[pkg.stage].label}</span>
+              {pkg.tagline && <p className="text-lg font-semibold text-teal">{pkg.tagline}</p>}
+            </div>
+
+            <div className="rounded-card border-l-4 border-magenta bg-magenta/[0.05] px-6 py-5">
+              <p className="text-xs font-semibold uppercase tracking-widest text-magenta">Qué resuelve</p>
+              <p className="mt-1 text-lg text-navy/80">{pkg.solves}</p>
+              <p className="mt-2 text-sm font-light text-navy/55">{STAGES[pkg.stage].description}</p>
+            </div>
 
             {pkg.includes.length > 0 && (
               <div className="rounded-block bg-white p-8 ring-1 ring-navy/5">
-                <h2 className="font-display text-2xl text-navy">Qué incluye</h2>
+                <h2 className="font-display text-2xl text-navy">Qué entrega</h2>
                 <ul className="mt-6 space-y-3">
                   {pkg.includes.map((x) => (
                     <li key={x} className="flex gap-3 text-navy/75">
@@ -108,11 +119,9 @@ export default async function PaquetePage({ params }: Props) {
                 {pkg.excludes.length > 0 && (
                   <div className="rounded-card bg-white p-6 ring-1 ring-navy/5">
                     <h3 className="font-bold text-navy">No incluye</h3>
-                    <ul className="mt-4 space-y-2 text-sm text-navy/70">
-                      {pkg.excludes.map((x) => (
-                        <li key={x}>— {x}</li>
-                      ))}
-                    </ul>
+                    <div className="mt-4">
+                      <ExclusionList items={pkg.excludes} />
+                    </div>
                   </div>
                 )}
               </div>
@@ -193,7 +202,7 @@ export default async function PaquetePage({ params }: Props) {
         <section className="bg-navy py-20">
           <div className="mx-auto max-w-6xl px-6">
             <SectionTitle dark eyebrow="Portafolio" title="Trabajos relacionados" />
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="columns-1 gap-6 sm:columns-2 lg:columns-3">
               {projects.map((p) => (
                 <ProjectCard key={p.slug} project={p} lineNames={lineNames} />
               ))}

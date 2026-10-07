@@ -1,4 +1,4 @@
-import Image from "next/image";
+import NaturalImage from "@/components/site/NaturalImage";
 
 const team = [
   { role: "Dirección estratégica", detail: "Estrategia de marca, planificación digital y gestión de proyectos" },
@@ -14,15 +14,15 @@ export default function AboutSection() {
   return (
     <section className="bg-cream py-20 md:py-28">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
-        <div className="relative aspect-[4/5] overflow-hidden rounded-block bg-navy lg:aspect-auto">
-          <Image
-            src="https://crealtivadigital.com/wp-content/uploads/2026/02/portada-nico-y-alexis.webp"
-            alt="Estrategas de Crealtiva Digital trabajando con una tablet"
-            fill
-            sizes="(min-width: 1024px) 520px, 100vw"
-            className="object-cover"
-          />
-        </div>
+        <NaturalImage
+          img={{
+            src: "https://crealtivadigital.com/wp-content/uploads/2026/02/portada-nico-y-alexis.webp",
+            alt: "Estrategas de Crealtiva Digital trabajando con una tablet",
+          }}
+          sizes="(min-width: 1024px) 520px, 100vw"
+          maxHeight={620}
+          className="mx-auto self-center rounded-block bg-navy"
+        />
 
         <div>
           <p className="text-xs font-semibold uppercase tracking-widest text-teal">Quiénes somos</p>
