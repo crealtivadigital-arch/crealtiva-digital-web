@@ -22,3 +22,37 @@ body {
   background-color: var(--navy);
   color: var(--navy);
 }
+
+/* Cuerpo de artículos de News (HTML producido por el editor del panel) */
+.article-body {
+  color: rgb(26 26 46 / 0.8);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+.article-body > * + * {
+  margin-top: 1.25rem;
+}
+.article-body h2 {
+  margin-top: 2.75rem;
+  font-family: var(--font-sansation), sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  color: var(--navy);
+}
+.article-body h3 {
+  margin-top: 2rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--navy);
+}
+.article-body ul,
+.article-body ol {
+  padding-left: 1.25rem;
+}
+.article-body ul { list-style: disc; }
+.article-body ol { list-style: decimal; }
+.article-body li + li { margin-top: 0.5rem; }
+.article-body li::marker { color: var(--teal); }
+.article-body strong { color: var(--navy); font-weight: 600; }
+.article-body a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }

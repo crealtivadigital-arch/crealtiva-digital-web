@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Sansation, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+// Manual de marca: Sansation Bold solo para H1/H2; Montserrat es la voz de trabajo (cuerpo, UI, botones).
+const sansation = Sansation({
+  variable: "--font-sansation",
+  subsets: ["latin", "latin-ext"],
+  weight: ["700"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
     "producción audiovisual Quito",
     "Meta Ads Ecuador",
   ],
+  metadataBase: new URL("https://crealtivadigital.com"),
   openGraph: {
     title: "Crealtiva Digital — Departamento de Marketing Externo",
     description: "Tu departamento de marketing externo en Quito, Ecuador.",
@@ -43,7 +45,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${spaceGrotesk.variable} ${inter.variable}`}>
+    <html lang="es" className={`${sansation.variable} ${montserrat.variable}`}>
       <body className="antialiased">
         <Navbar />
         {children}

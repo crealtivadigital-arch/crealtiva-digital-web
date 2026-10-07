@@ -1,0 +1,1631 @@
+{
+  "lines": [
+    {
+      "slug": "marketing-digital",
+      "name": "Marketing Digital",
+      "tagline": "Tu departamento de marketing externo",
+      "summary": "Estrategia, producción de contenido, community management y reportes en una suscripción mensual.",
+      "intro": "Operamos como tu departamento de marketing externo: estrategia, jornada mensual de producción, publicación, comunidad y métricas. Sin armar un equipo interno.",
+      "highlights": [
+        {
+          "value": "6–14 según plan",
+          "label": "Videos al mes"
+        },
+        {
+          "value": "18–30 al mes",
+          "label": "Gráficas e historias"
+        },
+        {
+          "value": "1–2 modelos",
+          "label": "Creadores de contenido"
+        },
+        {
+          "value": "3 meses",
+          "label": "Periodo sugerido"
+        }
+      ],
+      "alwaysIncluded": [],
+      "process": [
+        {
+          "title": "Diagnóstico",
+          "detail": "Auditamos tu presencia actual y definimos el plan ideal"
+        },
+        {
+          "title": "Estrategia",
+          "detail": "Diseñamos el calendario y los ejes de contenido del mes"
+        },
+        {
+          "title": "Jornada",
+          "detail": "Grabación y producción de todo el contenido del mes"
+        },
+        {
+          "title": "Gestión",
+          "detail": "Publicación, comunidad y reportes de métricas mensuales"
+        }
+      ],
+      "extras": null,
+      "conditions": [
+        {
+          "title": "Propiedad intelectual",
+          "detail": "El cliente recibe los formatos finales (.mp4, .jpg). Los archivos crudos y editables son propiedad exclusiva de Crealtiva Digital."
+        },
+        {
+          "title": "Periodo de maduración",
+          "detail": "Se sugiere un mínimo de 3 meses de permanencia para que los algoritmos y estrategias entreguen métricas estadísticamente relevantes."
+        },
+        {
+          "title": "Inversión en Ads",
+          "detail": "En los planes que incluyen pauta, el presupuesto neto de anuncios es pagado directamente por el cliente a Meta, TikTok o Google."
+        },
+        {
+          "title": "Restricción de IA",
+          "detail": "Queda estrictamente prohibido usar el contenido producido para entrenar modelos de Inteligencia Artificial o crear clones digitales."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "¿Cuánto tiempo tarda en verse resultados?",
+          "a": "Los primeros cambios visibles (consistencia y engagement inicial) se notan entre las semanas 3 y 4. Para evaluar conversiones y crecimiento sostenido sugerimos un periodo mínimo de 3 meses."
+        },
+        {
+          "q": "¿Necesito firmar un contrato de permanencia?",
+          "a": "No hay permanencia forzosa: trabajamos con compromisos mensuales renovables. Aun así, recomendamos 3 meses para que las estrategias entreguen métricas estadísticamente relevantes."
+        },
+        {
+          "q": "¿El presupuesto de pauta está incluido?",
+          "a": "No. En los planes que incluyen pauta, el presupuesto neto de anuncios se paga directamente a Meta, TikTok o Google desde tu tarjeta. Crealtiva gestiona la estrategia, los anuncios y la optimización."
+        },
+        {
+          "q": "¿Qué necesito para empezar?",
+          "a": "Una sesión de diagnóstico inicial (gratuita), acceso a tus redes sociales, tu logo en alta resolución y, si lo tienes, tu manual de marca."
+        },
+        {
+          "q": "¿Puedo cambiar de plan durante el servicio?",
+          "a": "Sí. Puedes escalar o ajustar tu plan según las necesidades de tu negocio en cada etapa."
+        }
+      ],
+      "order": 1,
+      "visible": true
+    },
+    {
+      "slug": "produccion-multimedia",
+      "name": "Producción Multimedia",
+      "tagline": "Video profesional para tu marca",
+      "summary": "Videos institucionales, corporativos y de contenido grabados en 4K con dirección y postproducción profesional.",
+      "intro": "Producimos en locación en Quito y Valles: video institucional, contenido para redes y material para pauta, con grabación 4K, audio profesional y postproducción con criterio de retención.",
+      "highlights": [
+        {
+          "value": "4K UHD",
+          "label": "Grabación nativa"
+        },
+        {
+          "value": "9:16 · 16:9",
+          "label": "Según plataforma"
+        },
+        {
+          "value": "Quito y Valles",
+          "label": "Movilización incluida"
+        }
+      ],
+      "alwaysIncluded": [
+        {
+          "title": "Captura de alta fidelidad",
+          "detail": "Grabación nativa en 4K UHD con ópticas profesionales para color, iluminación y detalle."
+        },
+        {
+          "title": "Audio profesional",
+          "detail": "Sonido ambiente o voz en off con micrófonos de solapa o de estudio según el tipo de video."
+        },
+        {
+          "title": "Postproducción Crealtiva",
+          "detail": "Edición rítmica, corrección de color, diseño sonoro básico y subtítulos dinámicos."
+        }
+      ],
+      "process": [],
+      "extras": {
+        "title": "Proyectos especiales y edición independiente",
+        "items": [
+          {
+            "name": "Proyectos de alta complejidad",
+            "detail": "Videos institucionales de más de 3 minutos, documentales corporativos, comerciales de TV, eventos masivos o rodajes de más de un día.",
+            "price": {
+              "amount": null,
+              "currency": "USD",
+              "mode": "cotizar"
+            }
+          },
+          {
+            "name": "Cobertura de eventos corporativos",
+            "detail": "Premiaciones, conferencias y lanzamientos. Cotización según alcance y horas de producción.",
+            "price": {
+              "amount": null,
+              "currency": "USD",
+              "mode": "cotizar"
+            }
+          },
+          {
+            "name": "Edición de video individual",
+            "detail": "Reel de hasta 1 minuto con tus clips: corte de ritmo, color, subtítulos y exportación optimizada.",
+            "price": {
+              "amount": 75,
+              "currency": "USD",
+              "mode": "fijo",
+              "note": "Por pieza terminada"
+            }
+          }
+        ]
+      },
+      "conditions": [],
+      "faqs": [
+        {
+          "q": "¿Trabajan en mis instalaciones?",
+          "a": "Sí. Producimos en locación en Quito y Valles, con movilización y equipos profesionales incluidos en los paquetes."
+        },
+        {
+          "q": "¿Pueden producir fuera de Quito?",
+          "a": "Sí, trabajamos en todo Ecuador. Los costos de desplazamiento se cotizan según la ubicación y la duración del rodaje."
+        },
+        {
+          "q": "¿Pueden hacer video con locución o presentador?",
+          "a": "Sí. Podemos incluir voz en off, presentador en cámara, subtítulos o una combinación. Lo definimos en el brief antes de producir."
+        },
+        {
+          "q": "¿Qué pasa con proyectos más grandes?",
+          "a": "Videos institucionales de más de 3 minutos, documentales, comerciales de TV, eventos masivos o rodajes de más de un día se cotizan de forma independiente."
+        }
+      ],
+      "order": 2,
+      "visible": true
+    },
+    {
+      "slug": "video-ugc",
+      "name": "Video con Modelos UGC",
+      "tagline": "Contenido con rostro humano",
+      "summary": "Videos verticales con actores y creadores de contenido que generan confianza y venden en redes.",
+      "intro": "Producimos videos con actores reales en formato vertical, con guion, grabación 4K y edición dinámica. Incluyen derechos de imagen para uso digital.",
+      "highlights": [
+        {
+          "value": "4–8 según paquete",
+          "label": "Videos por paquete"
+        },
+        {
+          "value": "4K UHD",
+          "label": "Calidad de grabación"
+        },
+        {
+          "value": "9:16",
+          "label": "Formato vertical"
+        },
+        {
+          "value": "3–5 meses",
+          "label": "Derechos de imagen"
+        }
+      ],
+      "alwaysIncluded": [],
+      "process": [],
+      "extras": null,
+      "conditions": [
+        {
+          "title": "Derechos de imagen",
+          "detail": "Uso digital del contenido con el actor incluido por 3 meses (Paq. 1 y 2) o 5 meses (Paq. 3). Renovaciones cotizadas aparte."
+        },
+        {
+          "title": "Propiedad intelectual",
+          "detail": "El cliente recibe los formatos finales (.mp4). Archivos crudos y proyectos editables son propiedad de Crealtiva Digital."
+        },
+        {
+          "title": "Exclusividad de nicho",
+          "detail": "Solo en Paquete 3: durante la vigencia no se produce el mismo tipo de contenido para un competidor directo del cliente."
+        },
+        {
+          "title": "Restricción de IA",
+          "detail": "Prohibido usar el contenido o la imagen del actor para entrenar modelos de IA o crear clones digitales."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "¿Qué es el UGC y por qué funciona?",
+          "a": "Son videos que imitan el estilo del contenido orgánico de los usuarios, pero producidos profesionalmente. Generan cercanía y confianza porque no parecen anuncios tradicionales."
+        },
+        {
+          "q": "¿Puedo usar los videos para Meta Ads o TikTok Ads?",
+          "a": "Sí, dentro del periodo de uso de imagen incluido en tu paquete. Se entregan en formato vertical 9:16 listos para publicar o pautar."
+        },
+        {
+          "q": "¿Los actores trabajan exclusivamente con mi marca?",
+          "a": "La exclusividad de nicho está incluida solo en el Paquete 3 (Corporate Retainer): durante la vigencia no producimos el mismo tipo de contenido para un competidor directo."
+        },
+        {
+          "q": "¿Cuánto dura el derecho de uso de imagen?",
+          "a": "3 meses en los Paquetes 1 y 2, y 5 meses en el Paquete 3. Las renovaciones se cotizan aparte."
+        },
+        {
+          "q": "¿Dónde se realiza la producción?",
+          "a": "Producimos en Quito, en locaciones del cliente o en locaciones neutras según el concepto del video."
+        }
+      ],
+      "order": 3,
+      "visible": true
+    },
+    {
+      "slug": "fotografia-de-producto",
+      "name": "Fotografía de Producto",
+      "tagline": "Fotografía que convierte producto",
+      "summary": "Sesiones para e-commerce, gastronomía, moda y marcas premium, con brief visual y edición incluida.",
+      "intro": "Cada sesión parte de un brief visual aprobado: iluminación, fondos y dirección de arte según el canal donde se venderá tu producto. Entrega editada en 3 a 7 días hábiles.",
+      "highlights": [
+        {
+          "value": "+300",
+          "label": "Sesiones realizadas"
+        },
+        {
+          "value": "3–7 días",
+          "label": "Entrega editada"
+        },
+        {
+          "value": "100%",
+          "label": "Fotos editadas"
+        }
+      ],
+      "alwaysIncluded": [],
+      "process": [
+        {
+          "title": "Brief visual",
+          "detail": "Objetivo comercial, paleta de ambiente y referencias antes de tocar la cámara."
+        },
+        {
+          "title": "Moodboard y set",
+          "detail": "Props, iluminación y ambientación preparados con criterio."
+        },
+        {
+          "title": "Sesión dirigida",
+          "detail": "Captura técnica con eficiencia de jornada."
+        },
+        {
+          "title": "Entrega editada",
+          "detail": "Selección curada y retoque en 3 a 7 días hábiles."
+        }
+      ],
+      "extras": {
+        "title": "Proyectos especiales",
+        "items": [
+          {
+            "name": "Cobertura de Eventos",
+            "detail": "Premiaciones, conferencias, lanzamientos corporativos. Cotización según alcance del evento y horas de producción.",
+            "price": {
+              "amount": null,
+              "currency": "USD",
+              "mode": "cotizar"
+            }
+          },
+          {
+            "name": "Arquitectura y Real Estate",
+            "detail": "Fotografía de espacios comerciales, oficinas, propiedades. Setup especial de ángulos amplios y corrección de líneas.",
+            "price": {
+              "amount": null,
+              "currency": "USD",
+              "mode": "cotizar"
+            }
+          },
+          {
+            "name": "Branding Corporativo",
+            "detail": "Sesiones de equipo humano, headshots corporativos y fotografía de instalaciones para sitio web y materiales B2B.",
+            "price": {
+              "amount": null,
+              "currency": "USD",
+              "mode": "cotizar"
+            }
+          }
+        ]
+      },
+      "conditions": [],
+      "faqs": [
+        {
+          "q": "¿Trabajan en estudio o se desplazan a mi empresa?",
+          "a": "Ambas opciones: podemos trabajar en un espacio del cliente o en locación, según el tipo de producto y el estilo definido en el brief."
+        },
+        {
+          "q": "¿Cuánto tarda la entrega?",
+          "a": "Entregamos la selección editada en 3 a 7 días hábiles después de la sesión."
+        },
+        {
+          "q": "¿Los precios son finales?",
+          "a": "Son precios desde (PVP) y pueden variar según la complejidad del producto y el alcance final de la sesión."
+        }
+      ],
+      "order": 4,
+      "visible": true
+    },
+    {
+      "slug": "trafficker-digital",
+      "name": "Trafficker Digital",
+      "tagline": "Pauta con fee fijo",
+      "summary": "Campañas en Meta, Google y TikTok Ads con tarifa de gestión fija. Tus cuentas siempre son tuyas.",
+      "intro": "Gestionamos tu pauta en Meta, Google y TikTok con una tarifa de gestión fija, sin porcentaje sobre tu inversión. El presupuesto de anuncios lo pagas directo a la plataforma.",
+      "highlights": [
+        {
+          "value": "$150 – $200",
+          "label": "Meta Ads"
+        },
+        {
+          "value": "$110 – $160",
+          "label": "Google Ads"
+        },
+        {
+          "value": "$150 – $200",
+          "label": "TikTok Ads"
+        }
+      ],
+      "alwaysIncluded": [
+        {
+          "title": "Producción de creativos (videos/gráficas según paquete)",
+          "detail": ""
+        },
+        {
+          "title": "Configuración técnica y auditoría inicial de activos",
+          "detail": ""
+        },
+        {
+          "title": "Gestión activa y monitoreo diario de campañas",
+          "detail": ""
+        },
+        {
+          "title": "Reportes de resultados y recomendaciones",
+          "detail": ""
+        },
+        {
+          "title": "Calibración de audiencias y optimización de presupuesto",
+          "detail": ""
+        }
+      ],
+      "process": [],
+      "extras": null,
+      "conditions": [
+        {
+          "title": "Presupuesto de anuncios",
+          "detail": "El presupuesto publicitario se paga directamente desde la tarjeta del cliente en la plataforma correspondiente."
+        },
+        {
+          "title": "No incluido",
+          "detail": "Presupuesto neto de anuncios (pago directo a Meta, Google o TikTok)"
+        },
+        {
+          "title": "No incluido",
+          "detail": "Costos de reestructuración por bloqueos previos ($25/hora)"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "¿El presupuesto de pauta está incluido en el servicio?",
+          "a": "No. El presupuesto se paga directamente a Meta, Google o TikTok desde tu tarjeta. Crealtiva cobra únicamente la tarifa de gestión de las campañas."
+        },
+        {
+          "q": "¿Cuánto presupuesto necesito para empezar?",
+          "a": "Depende del canal y del objetivo. Cada paquete indica una inversión sugerida en anuncios; la ajustamos contigo en el diagnóstico."
+        },
+        {
+          "q": "¿Puedo contratar solo un canal?",
+          "a": "Sí. Puedes contratar la gestión de Meta Ads, Google Ads o TikTok Ads por separado, o combinarlos según tu presupuesto y objetivos."
+        },
+        {
+          "q": "¿Cómo miden el retorno de las campañas?",
+          "a": "Configuramos píxeles y eventos de conversión en tu sitio o landing page para rastrear leads, ventas y formularios, y calcular el costo real por resultado."
+        },
+        {
+          "q": "¿Cuánto tiempo toma ver resultados?",
+          "a": "Las campañas necesitan al menos 2 a 3 semanas para que el algoritmo aprenda y optimice. Los resultados más estables aparecen entre el segundo y el tercer mes."
+        }
+      ],
+      "order": 5,
+      "visible": true
+    },
+    {
+      "slug": "diseno-web",
+      "name": "Diseño y Desarrollo Web",
+      "tagline": "Webs que convierten visitas en clientes",
+      "summary": "Landing pages y webs corporativas de pago único, con SEO técnico y conexión directa a tu CRM.",
+      "intro": "Productos web de pago único con una base técnica que incluye todo desarrollo: SEO técnico, capa de datos para medición y envío inmediato de leads a tu CRM.",
+      "highlights": [
+        {
+          "value": "Pago único",
+          "label": "Sin mensualidades obligatorias"
+        },
+        {
+          "value": "100%",
+          "label": "Responsivo"
+        },
+        {
+          "value": "SEO técnico",
+          "label": "Incluido"
+        }
+      ],
+      "alwaysIncluded": [
+        {
+          "title": "Motor de SEO Técnico",
+          "detail": "Jerarquía HTML estricta (H1/H2/H3), compresión automática de imágenes a .webp y optimización de velocidad para Core Web Vitals de Google."
+        },
+        {
+          "title": "Capa de Datos (Data Layer)",
+          "detail": "Contenedor unificado de etiquetas para instalación de píxeles, mapas de calor y eventos de conversión sin tocar el código raíz recurrentemente."
+        },
+        {
+          "title": "Webhooks y APIs de Salida",
+          "detail": "Despacho inmediato (REST API / Webhooks) para empujar leads al CRM en tiempo real y evitar que caigan en spam."
+        }
+      ],
+      "process": [],
+      "extras": {
+        "title": "Módulos adicionales",
+        "items": [
+          {
+            "name": "Sistema Avanzado de Cuentas de Usuario",
+            "detail": "Backend para registro de usuarios, perfiles de clientes, login seguro y almacenamiento de datos específicos por cuenta.",
+            "price": {
+              "amount": 150,
+              "currency": "USD",
+              "mode": "fijo"
+            }
+          },
+          {
+            "name": "Chatbot de Automatización Comercial",
+            "detail": "Flujos lógicos automatizados, captura de datos estructurados e integración directa con canales de mensajería desde la web.",
+            "price": {
+              "amount": 75,
+              "currency": "USD",
+              "mode": "fijo"
+            }
+          },
+          {
+            "name": "Gestor de Promociones y Cupones",
+            "detail": "Tablero para creación de códigos de descuento, herramientas de urgencia (banners dinámicos, contadores) y analítica de conversión promocional.",
+            "price": {
+              "amount": 100,
+              "currency": "USD",
+              "mode": "fijo"
+            }
+          }
+        ]
+      },
+      "conditions": [
+        {
+          "title": "Dominio",
+          "detail": "El valor del dominio es cancelado directamente por el cliente y es el único costo extra adquirido. Si el cliente ya cuenta con un dominio propio, no asume gasto adicional en este rubro."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "¿Qué necesito tener listo antes de empezar?",
+          "a": "Tu logo en alta resolución (o manual de marca) y los textos principales del sitio. El plazo comienza cuando recibimos todos los materiales."
+        },
+        {
+          "q": "¿El dominio está incluido?",
+          "a": "No. El dominio lo pagas directamente y queda a tu nombre; es el único costo externo del proyecto."
+        },
+        {
+          "q": "¿Cuántas revisiones incluye el proyecto?",
+          "a": "Máximo 2 rondas de revisión por entregable. Los cambios de concepto después de aprobar el brief se cotizan aparte."
+        },
+        {
+          "q": "¿Aceptan pagos en cuotas?",
+          "a": "Sí. La estructura típica es 50% al inicio y 50% a la entrega."
+        }
+      ],
+      "order": 6,
+      "visible": true
+    },
+    {
+      "slug": "optimizacion-procesos",
+      "name": "Optimización de Procesos con IA",
+      "tagline": "Primero auditamos, después automatizamos",
+      "summary": "Automatizaciones, agentes con IA y ecosistemas que liberan a tu equipo de tareas repetitivas.",
+      "intro": "Auditamos tus procesos y automatizamos lo que tiene impacto: CRM, bots de WhatsApp, agendamiento, reportes y flujos de venta. Cada proyecto se cotiza según su alcance.",
+      "highlights": [
+        {
+          "value": "n8n · Make · Zapier",
+          "label": "Herramientas"
+        },
+        {
+          "value": "24/7",
+          "label": "Operación automática"
+        }
+      ],
+      "alwaysIncluded": [],
+      "process": [
+        {
+          "title": "Auditoría",
+          "detail": "Mapeamos tus procesos y detectamos las tareas repetitivas con mayor impacto."
+        },
+        {
+          "title": "Diseño",
+          "detail": "Definimos el flujo, las herramientas y los indicadores de éxito."
+        },
+        {
+          "title": "Implementación",
+          "detail": "Construimos, probamos y conectamos con tus sistemas actuales."
+        },
+        {
+          "title": "Acompañamiento",
+          "detail": "Capacitamos a tu equipo y ajustamos según los resultados."
+        }
+      ],
+      "extras": null,
+      "conditions": [],
+      "faqs": [
+        {
+          "q": "¿Qué tipo de empresa puede beneficiarse?",
+          "a": "Cualquier empresa con procesos repetitivos: responder las mismas preguntas, mover datos entre sistemas, generar reportes o dar seguimiento a clientes. No hace falta ser una empresa grande."
+        },
+        {
+          "q": "¿Cuánto tiempo toma implementar una automatización?",
+          "a": "Las automatizaciones simples se implementan en pocos días; los agentes con IA requieren de 1 a 3 semanas. Los ecosistemas completos tienen plazos según su alcance."
+        },
+        {
+          "q": "¿Necesito conocimientos técnicos?",
+          "a": "No. Las implementamos, las probamos y capacitamos a tu equipo para supervisarlas."
+        },
+        {
+          "q": "¿Trabajan con el software de mi empresa?",
+          "a": "Si tu software tiene API o webhooks, podemos integrarlo. Si no, evaluamos alternativas en el diagnóstico inicial."
+        }
+      ],
+      "order": 7,
+      "visible": true
+    }
+  ],
+  "packages": [
+    {
+      "slug": "crealtiva-bite",
+      "lineSlug": "marketing-digital",
+      "name": "Crealtiva Bite",
+      "tagline": "El Despegue",
+      "summary": "Activa tu huella digital con autenticidad e impacto desde el primer día. Ideal para marcas que recién arrancan o quieren regularizar su presencia en Meta.",
+      "includes": [
+        "1 jornada mensual de producción de contenido",
+        "Dirección estratégica y calendario preventivo",
+        "Community Manager en Meta (Facebook + Instagram)",
+        "Auditoría de salud de perfiles y vinculación Meta + WhatsApp Business"
+      ],
+      "excludes": [
+        "Gestión de TikTok",
+        "Campañas de pauta (Ads)"
+      ],
+      "idealFor": [
+        "Marcas que inician su presencia digital",
+        "Negocios locales y emprendedores",
+        "Presencia orgánica en Meta sin Ads"
+      ],
+      "details": [
+        {
+          "label": "Videos al mes",
+          "value": "6"
+        },
+        {
+          "label": "Gráficas al mes",
+          "value": "18"
+        },
+        {
+          "label": "Historias al mes",
+          "value": "18"
+        }
+      ],
+      "price": {
+        "amount": 250,
+        "currency": "USD",
+        "mode": "mensual",
+        "note": "Con tarjeta: $259"
+      },
+      "featured": false,
+      "order": 1
+    },
+    {
+      "slug": "crealtiva-tasty",
+      "lineSlug": "marketing-digital",
+      "name": "Crealtiva Tasty",
+      "tagline": "La Optimización",
+      "summary": "Posiciona tu marca como la opción preferida mediante Social SEO estratégico. Incluye un creador de contenido (modelo) para producción mensual de alto estándar.",
+      "includes": [
+        "1 jornada con 1 Creador de Contenido (Modelo)",
+        "Estrategia de Social SEO y planificación mensual",
+        "Community Manager para Facebook e Instagram",
+        "Calibración técnica completa para máximo alcance orgánico"
+      ],
+      "excludes": [
+        "TikTok ni LinkedIn",
+        "Campañas de pauta (Ads)"
+      ],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Videos al mes",
+          "value": "8"
+        },
+        {
+          "label": "Gráficas al mes",
+          "value": "28"
+        },
+        {
+          "label": "Historias al mes",
+          "value": "20"
+        },
+        {
+          "label": "Modelos / creadores",
+          "value": "1"
+        }
+      ],
+      "price": {
+        "amount": 350,
+        "currency": "USD",
+        "mode": "mensual",
+        "note": "Con tarjeta: $359"
+      },
+      "featured": true,
+      "order": 2
+    },
+    {
+      "slug": "crealtiva-elemental",
+      "lineSlug": "marketing-digital",
+      "name": "Crealtiva Elemental",
+      "tagline": "El Crecimiento",
+      "summary": "Escalabilidad multiplataforma con pauta incluida. Incluye 2 modelos, gestión en Meta + red adicional (TikTok o LinkedIn) y 2 campañas activas de Meta Ads.",
+      "includes": [
+        "1 jornada avanzada con 2 Creadores de Contenido (Modelos)",
+        "Community Manager Meta + TikTok o LinkedIn + Google Business",
+        "Gestión y monitoreo de 2 campañas segmentadas en Meta Ads",
+        "Configuración de píxeles, conversiones y salud de activos"
+      ],
+      "excludes": [
+        "Presupuesto neto de anuncios (pago directo a Meta)"
+      ],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Videos al mes",
+          "value": "13"
+        },
+        {
+          "label": "Gráficas al mes",
+          "value": "30"
+        },
+        {
+          "label": "Historias al mes",
+          "value": "20"
+        },
+        {
+          "label": "Modelos / creadores",
+          "value": "2"
+        }
+      ],
+      "price": {
+        "amount": 500,
+        "currency": "USD",
+        "mode": "mensual",
+        "note": "Con tarjeta: $534"
+      },
+      "featured": false,
+      "order": 3
+    },
+    {
+      "slug": "crealtiva-full-house",
+      "lineSlug": "marketing-digital",
+      "name": "Crealtiva Full House",
+      "tagline": "El Departamento Integral",
+      "summary": "Tu propio departamento de marketing de élite. Planificación predictiva con 1.5 meses de antelación, 4 campañas dinámicas y tecnología CRM + Chatbot integrada.",
+      "includes": [
+        "1 jornada masiva con 2 Modelos Profesionales",
+        "Estrategia omnicanal predictiva 1.5 meses de antelación",
+        "4 campañas dinámicas (Meta Ads + TikTok o LinkedIn Ads)",
+        "CRM + Chatbot automatizado + capacitación de personal"
+      ],
+      "excludes": [
+        "Presupuesto neto de anuncios",
+        "Licencias de software/APIs de terceros"
+      ],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Videos al mes",
+          "value": "14"
+        },
+        {
+          "label": "Gráficas al mes",
+          "value": "30"
+        },
+        {
+          "label": "Historias al mes",
+          "value": "20"
+        },
+        {
+          "label": "Modelos / creadores",
+          "value": "2"
+        }
+      ],
+      "price": {
+        "amount": 800,
+        "currency": "USD",
+        "mode": "mensual",
+        "note": "Con tarjeta: $853"
+      },
+      "featured": false,
+      "order": 4
+    },
+    {
+      "slug": "identidad-institucional",
+      "lineSlug": "produccion-multimedia",
+      "name": "Identidad Institucional",
+      "tagline": "Presentación corporativa",
+      "summary": "Para renovar la imagen en tu web, Instagram o cartas de presentación B2B. Se enfoca en la esencia del negocio, su infraestructura o procesos clave.",
+      "includes": [
+        "2 videos profesionales (Reels / TikToks de hasta 1 min)",
+        "Tiempo de set: 1 hora en locación",
+        "Movilización en Quito y Valles + equipos profesionales",
+        "Edición, color, sonido y subtítulos"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Videos",
+          "value": "2"
+        },
+        {
+          "label": "Tiempo de set",
+          "value": "1 hora en locación"
+        },
+        {
+          "label": "Valor por video",
+          "value": "$47.50"
+        }
+      ],
+      "price": {
+        "amount": 95,
+        "currency": "USD",
+        "mode": "fijo"
+      },
+      "featured": false,
+      "order": 1
+    },
+    {
+      "slug": "contenido-starter",
+      "lineSlug": "produccion-multimedia",
+      "name": "Contenido Starter",
+      "tagline": "Arranque con contenido constante",
+      "summary": "Para marcas que arrancan el mes con pauta activa o un flujo constante de contenido orgánico en redes.",
+      "includes": [
+        "6 videos profesionales (Reels / TikToks de hasta 1 min)",
+        "Tiempo de set: 2 horas de producción intensiva",
+        "Movilización en Quito y Valles + equipos profesionales",
+        "Edición, color, sonido y subtítulos"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Videos",
+          "value": "6"
+        },
+        {
+          "label": "Tiempo de set",
+          "value": "2 horas de producción intensiva"
+        },
+        {
+          "label": "Valor por video",
+          "value": "$26.67"
+        }
+      ],
+      "price": {
+        "amount": 160,
+        "currency": "USD",
+        "mode": "fijo"
+      },
+      "featured": true,
+      "order": 2
+    },
+    {
+      "slug": "full-content-mensual",
+      "lineSlug": "produccion-multimedia",
+      "name": "Full Content Mensual",
+      "tagline": "Parrilla completa del mes",
+      "summary": "Cubre la parrilla de contenido de todo un mes (2 a 3 publicaciones semanales) o varios embudos de venta en Meta Ads.",
+      "includes": [
+        "10 videos profesionales (Reels / TikToks de hasta 1 min)",
+        "Tiempo de set: 2 h 30 min a 3 horas de rodaje",
+        "Movilización en Quito y Valles + equipos profesionales",
+        "Edición, color, sonido y subtítulos"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Videos",
+          "value": "10"
+        },
+        {
+          "label": "Tiempo de set",
+          "value": "2 h 30 min a 3 horas de rodaje"
+        },
+        {
+          "label": "Valor por video",
+          "value": "$20.00"
+        }
+      ],
+      "price": {
+        "amount": 200,
+        "currency": "USD",
+        "mode": "fijo"
+      },
+      "featured": false,
+      "order": 3
+    },
+    {
+      "slug": "ugc-starter",
+      "lineSlug": "video-ugc",
+      "name": "UGC Starter",
+      "tagline": "El Arranque con Rostro Humano",
+      "summary": "Genera confianza visual inmediata con un actor real. Ideal para marcas que prueban contenido con modelos por primera vez.",
+      "includes": [
+        "4 videos 9:16 (2 promo + 2 enseñanza)",
+        "Grabación 1h 30min con 1 Actor (cámara + voz en off)",
+        "Edición dinámica con subtítulos modernos y SFX",
+        "1 ronda de revisión general por lote"
+      ],
+      "excludes": [
+        "Sin exclusividad de nicho de mercado"
+      ],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Videos",
+          "value": "4"
+        }
+      ],
+      "price": {
+        "amount": 125,
+        "currency": "USD",
+        "mode": "por-lote"
+      },
+      "featured": false,
+      "order": 1
+    },
+    {
+      "slug": "brand-growth",
+      "lineSlug": "video-ugc",
+      "name": "Brand Growth",
+      "tagline": "La Consolidación de Marca",
+      "summary": "Mezcla promoción, enseñanza e identidad para construir una narrativa de marca coherente con un actor profesional.",
+      "includes": [
+        "6 videos 9:16 (2 promo + 3 enseñanza + 1 identidad)",
+        "Grabación 2h con 1 Actor",
+        "Edición rítmica avanzada + subtítulos + SFX",
+        "1 ronda de revisión por lote"
+      ],
+      "excludes": [
+        "Sin exclusividad de nicho de mercado"
+      ],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Videos",
+          "value": "6"
+        }
+      ],
+      "price": {
+        "amount": 180,
+        "currency": "USD",
+        "mode": "por-lote"
+      },
+      "featured": true,
+      "order": 2
+    },
+    {
+      "slug": "corporate-retainer",
+      "lineSlug": "video-ugc",
+      "name": "Corporate Retainer",
+      "tagline": "El Plan Estrella — Exclusividad",
+      "summary": "Flujo mensual constante de contenido con actor asignado exclusivo y exclusividad de nicho de mercado.",
+      "includes": [
+        "8 videos mensuales (2 promo + 4 enseñanza + 2 identidad)",
+        "Portadas personalizadas al mes",
+        "Jornada de hasta 3 horas/mes con actor asignado exclusivo",
+        "Exclusividad de nicho de mercado"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Videos",
+          "value": "8"
+        }
+      ],
+      "price": {
+        "amount": 230,
+        "currency": "USD",
+        "mode": "mensual"
+      },
+      "featured": false,
+      "order": 3
+    },
+    {
+      "slug": "identidad-visual-premium",
+      "lineSlug": "fotografia-de-producto",
+      "name": "Identidad Visual Premium",
+      "tagline": "High-End Product Spotlight",
+      "badge": "High-End & Premium",
+      "summary": "Fotografía de detalle con control estricto de reflejos e iluminación dirigida para destacar acabados metálicos, cuero o cristal. Para marcas que venden lujo, exclusividad y estatus.",
+      "includes": [
+        "Fotografía macro y de detalle con control de reflejos",
+        "Iluminación difusa y dirigida para acabados premium",
+        "Fondos plenos limpios: blanco y negro profesional",
+        "Dirección de arte con props de ambiente lifestyle",
+        "12 fotos en fondo limpio (por producto)",
+        "12 fotos lifestyle individual",
+        "3 fotos de conjunto/colección en ambiente"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Capacidad",
+          "value": "Hasta 12 productos"
+        },
+        {
+          "label": "Tiempos",
+          "value": "15 min planificación · 60 min fotografía · Edición incluida"
+        }
+      ],
+      "price": {
+        "amount": 80,
+        "currency": "USD",
+        "mode": "desde"
+      },
+      "featured": false,
+      "order": 1
+    },
+    {
+      "slug": "volumen-y-consistencia-digital",
+      "lineSlug": "fotografia-de-producto",
+      "name": "Volumen y Consistencia Digital",
+      "tagline": "E-commerce Catalog Scale",
+      "badge": "E-Commerce Masivo",
+      "summary": "Setup de iluminación fija e invariable para garantizar que la foto del producto 1 y la del 50 sean técnicamente idénticas. Consistencia total para tu tienda online.",
+      "includes": [
+        "Configuración de caja de luz o ciclorama indexado",
+        "Recorte y aislamiento perfecto de fondos",
+        "1–2 fotos en fondo limpio por producto",
+        "Total: 50 a 100 fotos entregadas"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Capacidad",
+          "value": "Hasta 50 productos"
+        },
+        {
+          "label": "Tiempos",
+          "value": "20 min planificación · 100 min fotografía"
+        }
+      ],
+      "price": {
+        "amount": 130,
+        "currency": "USD",
+        "mode": "desde"
+      },
+      "featured": false,
+      "order": 2
+    },
+    {
+      "slug": "fotografia-flex-por-item",
+      "lineSlug": "fotografia-de-producto",
+      "name": "Fotografía Flex por Ítem",
+      "tagline": "On-Demand Product Shot",
+      "badge": "E-Commerce Masivo",
+      "summary": "Ideal para marcas con stock dosificado que ingresan productos constantemente. Mismo estándar de calidad, facturación por unidad.",
+      "includes": [
+        "Mínimo 10 productos por sesión (para cubrir despliegue)",
+        "Misma consistencia técnica que el plan de 50 productos",
+        "Precio varía por complejidad del objeto (brillos/transparencias)"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Capacidad",
+          "value": "Mínimo 10 productos por sesión"
+        }
+      ],
+      "price": {
+        "amount": 4,
+        "currency": "USD",
+        "mode": "desde",
+        "note": "$4–$6 por unidad según complejidad"
+      },
+      "featured": false,
+      "order": 3
+    },
+    {
+      "slug": "hasta-12-outfits",
+      "lineSlug": "fotografia-de-producto",
+      "name": "Hasta 12 Outfits",
+      "tagline": "Fashion Capsule Lookbook",
+      "badge": "Moda & Textil",
+      "summary": "Fotografía de estudio con luz suave para evitar sombras duras en textiles. Retoque enfocado en la caída de prendas y fidelidad del color.",
+      "includes": [
+        "Luz suave — sin sombras duras en telas",
+        "Retoque digital: caída, arrugas, fidelidad de color",
+        "1 foto de prenda sola en fondo limpio",
+        "1 foto del conjunto completo con modelo"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Capacidad",
+          "value": "Hasta 12 outfits"
+        }
+      ],
+      "price": {
+        "amount": 120,
+        "currency": "USD",
+        "mode": "desde",
+        "note": "No incluye honorarios de modelo"
+      },
+      "featured": false,
+      "order": 4
+    },
+    {
+      "slug": "temporada-completa-20-a-30-outfits",
+      "lineSlug": "fotografia-de-producto",
+      "name": "Temporada Completa — 20 a 30 Outfits",
+      "tagline": "Seasonal Fashion Editorial",
+      "badge": "Moda & Textil",
+      "summary": "Fotografía en exteriores o locación comercial. Flashes de alta velocidad para congelar movimiento. Retoque editorial de pieles y colorizado de marca.",
+      "includes": [
+        "Scouting previo de locación exterior",
+        "Flashes alta velocidad + difusores para integrar luz natural",
+        "Variedad de ángulos: detalles de texturas y costuras",
+        "Fotos editoriales lifestyle urbano/exterior con modelo"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Capacidad",
+          "value": "20 a 30 outfits"
+        }
+      ],
+      "price": {
+        "amount": 220,
+        "currency": "USD",
+        "mode": "desde",
+        "note": "No incluye honorarios de modelo"
+      },
+      "featured": false,
+      "order": 5
+    },
+    {
+      "slug": "lanzamientos-y-campanas-pop",
+      "lineSlug": "fotografia-de-producto",
+      "name": "Lanzamientos y Campañas Pop",
+      "tagline": "Hero Food Shot",
+      "badge": "Gastronómico",
+      "summary": "Técnicas de Food Styling y esquema de iluminación lateral o contraluz para resaltar brillos, texturas, vapor y humedades que activan el apetito.",
+      "includes": [
+        "Food Styling (maquillaje de alimentos)",
+        "Iluminación lateral/contraluz para texturas y brillo",
+        "1 a 5 fotos de ultra-alta producción",
+        "Optimizadas para Meta Ads y vallas digitales"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Capacidad",
+          "value": "1 a 5 productos"
+        }
+      ],
+      "price": {
+        "amount": 80,
+        "currency": "USD",
+        "mode": "desde"
+      },
+      "featured": false,
+      "order": 6
+    },
+    {
+      "slug": "actualizacion-de-carta-y-delivery",
+      "lineSlug": "fotografia-de-producto",
+      "name": "Actualización de Carta y Delivery",
+      "tagline": "Full Menu Digital Check",
+      "badge": "Gastronómico",
+      "summary": "Tomas estandarizadas a ángulos fijos (45° o 90°). Captura inmediata al salir de cocina para fotografía fresca. Uniforme para menús impresos, QR y delivery.",
+      "includes": [
+        "Ángulos fijos: 45° vista comensal o 90° cenital",
+        "Modificadores de luz grandes tipo ventana",
+        "12 a 15 fotos de platos con estética uniforme",
+        "Listas para menú físico, QR, UberEats, Rappi, Google Maps"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Capacidad",
+          "value": "12 a 15 platos"
+        },
+        {
+          "label": "Tiempos",
+          "value": "20 min planificación · 100 min producción continua"
+        }
+      ],
+      "price": {
+        "amount": 130,
+        "currency": "USD",
+        "mode": "desde"
+      },
+      "featured": false,
+      "order": 7
+    },
+    {
+      "slug": "escala-corporativa",
+      "lineSlug": "fotografia-de-producto",
+      "name": "Escala Corporativa",
+      "tagline": "Unboxing Experience & Corporate Volume",
+      "badge": "Packaging, Unboxing & Healthcare",
+      "summary": "Producción de gran volumen para marcas con ecosistemas de packaging complejos o líneas farmacéuticas/bienestar que requieren fotografía técnica en ambientes controlados.",
+      "includes": [
+        "100+ fotos finales del ecosistema de packaging",
+        "Jornada de captura y edición a escala independiente",
+        "Detalle de todo el sistema gráfico del empaque"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Capacidad",
+          "value": "100+ elementos"
+        },
+        {
+          "label": "Tiempos",
+          "value": "20 min planificación · Jornada de edición completa"
+        }
+      ],
+      "price": {
+        "amount": 350,
+        "currency": "USD",
+        "mode": "desde"
+      },
+      "featured": false,
+      "order": 8
+    },
+    {
+      "slug": "meta-starter",
+      "lineSlug": "trafficker-digital",
+      "name": "Meta Starter",
+      "tagline": "3 semanas de vigencia · 1 campaña activa",
+      "badge": "Meta Ads",
+      "summary": "Campaña enfocada en un objetivo directo: conversaciones a WhatsApp o clientes potenciales. Setup de audiencias y calibración técnica base.",
+      "includes": [
+        "1 Video + 2 Gráficas estáticas",
+        "Copys persuasivos para todos los anuncios",
+        "Calibración técnica y setup de audiencias",
+        "Reporte de resultados al cierre"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Vigencia",
+          "value": "3 semanas de vigencia · 1 campaña activa"
+        },
+        {
+          "label": "Inversión sugerida en anuncios",
+          "value": "$100–$150 USD totales en Meta ($5/día para optimización del algoritmo)"
+        }
+      ],
+      "price": {
+        "amount": 150,
+        "currency": "USD",
+        "mode": "fijo",
+        "note": "Tarifa de gestión"
+      },
+      "featured": false,
+      "order": 1
+    },
+    {
+      "slug": "meta-scale-y-growth",
+      "lineSlug": "trafficker-digital",
+      "name": "Meta Scale & Growth",
+      "tagline": "3 semanas a 1 mes · 2 campañas simultáneas",
+      "badge": "Meta Ads",
+      "summary": "Sistema de doble campaña: 1 de atracción de tráfico y 1 de retargeting para cerrar ventas con quienes ya interactuaron con tu marca.",
+      "includes": [
+        "2 Videos + 3 Gráficas estáticas",
+        "Estrategia de embudo: tráfico + retargeting",
+        "Copys diferenciados por campaña y audiencia",
+        "Calibración de píxeles y seguimiento de conversiones",
+        "Reporte semanal + cierre mensual"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Vigencia",
+          "value": "3 semanas a 1 mes · 2 campañas simultáneas"
+        },
+        {
+          "label": "Inversión sugerida en anuncios",
+          "value": "$200–$300 USD mensuales ($7–$10/día)"
+        }
+      ],
+      "price": {
+        "amount": 200,
+        "currency": "USD",
+        "mode": "mensual",
+        "note": "Tarifa de gestión"
+      },
+      "featured": false,
+      "order": 2
+    },
+    {
+      "slug": "google-search-premium",
+      "lineSlug": "trafficker-digital",
+      "name": "Google Search Premium",
+      "tagline": "1 mes · 1 campaña de búsqueda",
+      "badge": "Google Ads",
+      "summary": "Campaña en la red de búsqueda Google orientada a capturar intención de compra de alta calidad. Análisis exhaustivo de keywords y negativos para evitar gasto innecesario.",
+      "includes": [
+        "Análisis estratégico de palabras clave (keywords)",
+        "Copys de anuncios de texto estructurados",
+        "Configuración de extensiones de anuncio",
+        "Keywords negativas para optimizar el presupuesto"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Vigencia",
+          "value": "1 mes · 1 campaña de búsqueda"
+        },
+        {
+          "label": "Inversión sugerida en anuncios",
+          "value": "$150–$200 USD mensuales en Google"
+        }
+      ],
+      "price": {
+        "amount": 110,
+        "currency": "USD",
+        "mode": "mensual",
+        "note": "Tarifa de gestión"
+      },
+      "featured": false,
+      "order": 3
+    },
+    {
+      "slug": "google-multimedia-y-video",
+      "lineSlug": "trafficker-digital",
+      "name": "Google Multimedia & Video",
+      "tagline": "1 mes · Search + YouTube Display",
+      "badge": "Google Ads",
+      "summary": "Campaña híbrida: anuncios de texto en Google Search + anuncios de video de alta conversión en YouTube o Red de Display. Cobertura completa.",
+      "includes": [
+        "1 Video optimizado (5 segundos de retención garantizados)",
+        "2 Gráficas de Display para la red de Google",
+        "Campaña de búsqueda texto integrada",
+        "Segmentación por intención + audiencias similares"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Vigencia",
+          "value": "1 mes · Search + YouTube Display"
+        },
+        {
+          "label": "Inversión sugerida en anuncios",
+          "value": "$250–$400 USD mensuales"
+        }
+      ],
+      "price": {
+        "amount": 160,
+        "currency": "USD",
+        "mode": "mensual",
+        "note": "Tarifa de gestión"
+      },
+      "featured": false,
+      "order": 4
+    },
+    {
+      "slug": "tiktok-spark",
+      "lineSlug": "trafficker-digital",
+      "name": "TikTok Spark",
+      "tagline": "3 semanas de vigencia · 1 campaña",
+      "badge": "TikTok Ads",
+      "summary": "Campaña de alta retención visual orientada a conversiones o reproducciones masivas. Lenguaje nativo de TikTok para máximo engagement.",
+      "includes": [
+        "1 Video dinámico en lenguaje nativo de TikTok",
+        "2 Gráficas de soporte para la campaña",
+        "Calibración de audiencias y objetivos",
+        "Reporte de resultados al cierre"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Vigencia",
+          "value": "3 semanas de vigencia · 1 campaña"
+        },
+        {
+          "label": "Inversión sugerida en anuncios",
+          "value": "$150 USD mínimo (TikTok requiere mínimo $20/día por grupo de anuncios)"
+        }
+      ],
+      "price": {
+        "amount": 150,
+        "currency": "USD",
+        "mode": "fijo",
+        "note": "Tarifa de gestión"
+      },
+      "featured": false,
+      "order": 5
+    },
+    {
+      "slug": "tiktok-trend-authority",
+      "lineSlug": "trafficker-digital",
+      "name": "TikTok Trend Authority",
+      "tagline": "1 mes de vigencia · 2 campañas (pruebas A/B)",
+      "badge": "TikTok Ads",
+      "summary": "Doble campaña para testear ganchos y públicos con pruebas A/B. Contenido UGC estilo creador de contenido para máxima autenticidad.",
+      "includes": [
+        "2 Videos estilo UGC (creador de contenido)",
+        "3 Gráficas de soporte",
+        "Pruebas A/B entre ganchos y audiencias",
+        "Optimización semanal de la estrategia ganadora",
+        "Reporte mensual con aprendizajes de la plataforma"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Vigencia",
+          "value": "1 mes de vigencia · 2 campañas (pruebas A/B)"
+        },
+        {
+          "label": "Inversión sugerida en anuncios",
+          "value": "$300–$500 USD mensuales"
+        }
+      ],
+      "price": {
+        "amount": 200,
+        "currency": "USD",
+        "mode": "mensual",
+        "note": "Tarifa de gestión"
+      },
+      "featured": false,
+      "order": 6
+    },
+    {
+      "slug": "landing-page-de-conversion",
+      "lineSlug": "diseno-web",
+      "name": "Landing Page de Conversión",
+      "badge": "One-Page",
+      "summary": "Publicidad y conversión directa de un producto o servicio para campañas específicas (Meta / Google Ads).",
+      "includes": [
+        "Diseño de embudo enfocado 100% en la conversión",
+        "Formulario de captura con despacho inmediato del lead",
+        "Motor de SEO técnico y velocidad de carga optimizada",
+        "Lista para conectar a campañas de Meta / Google Ads"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Tipo",
+          "value": "One-Page"
+        },
+        {
+          "label": "Estructura",
+          "value": "Página única continua (One-Page) · Sin Header · Sin Footer · Sin enlaces salientes a otras secciones"
+        },
+        {
+          "label": "Vigencia",
+          "value": "1 a 1.5 meses según la campaña promocional"
+        }
+      ],
+      "price": {
+        "amount": 80,
+        "currency": "USD",
+        "mode": "fijo",
+        "note": "Pago único"
+      },
+      "featured": false,
+      "order": 1
+    },
+    {
+      "slug": "sitio-web-institucional-start",
+      "lineSlug": "diseno-web",
+      "name": "Sitio Web Institucional Start",
+      "badge": "One-Page corporativa",
+      "summary": "Presencia digital corporativa de una sola página para validación de marca frente a clientes.",
+      "includes": [
+        "1 correo corporativo con sistema de webmail",
+        "6 blogs publicados en el transcurso del año (SEO inicial)",
+        "Espacio gestionado para imágenes y recursos gráficos"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Tipo",
+          "value": "One-Page corporativa"
+        },
+        {
+          "label": "Estructura",
+          "value": "Página única en 3 secciones: Hero/Inicio, Productos/Servicios, Información/Testimonios · Incluye Header y Footer · Sin páginas internas o adyacentes"
+        }
+      ],
+      "price": {
+        "amount": 150,
+        "currency": "USD",
+        "mode": "fijo",
+        "note": "Pago único"
+      },
+      "featured": false,
+      "order": 2
+    },
+    {
+      "slug": "web-corporativa-boutique-standard",
+      "lineSlug": "diseno-web",
+      "name": "Web Corporativa Boutique / Standard",
+      "badge": "Multi-página",
+      "summary": "Distribución SEO avanzada y desglose de información para PyMEs y negocios establecidos.",
+      "includes": [
+        "4 correos corporativos con sistema de webmail",
+        "12 blogs en el año (1 por mes) para autoridad en buscadores",
+        "Formularios dinámicos",
+        "Base de datos para registros y captación de contactos",
+        "Distribución SEO establecida"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Tipo",
+          "value": "Multi-página"
+        },
+        {
+          "label": "Estructura",
+          "value": "Arquitectura de hasta 6 páginas: Inicio, Servicios, Productos, Portafolio/Catálogo, Nosotros, Contacto"
+        }
+      ],
+      "price": {
+        "amount": 250,
+        "currency": "USD",
+        "mode": "fijo",
+        "note": "Pago único"
+      },
+      "featured": true,
+      "order": 3
+    },
+    {
+      "slug": "web-corporativa-premium-con-asistente-ia",
+      "lineSlug": "diseno-web",
+      "name": "Web Corporativa Premium (con Asistente IA)",
+      "badge": "Multi-página premium",
+      "summary": "Plataforma corporativa de alta gama con interacciones avanzadas y automatización de atención primaria.",
+      "includes": [
+        "Asistente de IA integrado nativamente que resuelve dudas y redirige a puntos de venta",
+        "Correos corporativos con webmail y bases de datos de registro",
+        "12 blogs al año para escalabilidad orgánica",
+        "Espacio ampliado para imágenes y recursos gráficos"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Tipo",
+          "value": "Multi-página premium"
+        },
+        {
+          "label": "Estructura",
+          "value": "Arquitectura multi-página completa · Secciones detalladas de productos/servicios · Animaciones web clave · Diseño de interfaz optimizado"
+        }
+      ],
+      "price": {
+        "amount": 350,
+        "currency": "USD",
+        "mode": "fijo",
+        "note": "Pago único"
+      },
+      "featured": false,
+      "order": 4
+    },
+    {
+      "slug": "automatizaciones",
+      "lineSlug": "optimizacion-procesos",
+      "name": "Automatizaciones",
+      "tagline": "Alta eficiencia inmediata",
+      "badge": "Nivel 01",
+      "summary": "Flujos que resuelven tareas repetitivas sin intervención humana. La entrada más accesible a la eficiencia operativa.",
+      "includes": [
+        "Clasificación automática de correos y leads",
+        "Reportes centralizados desde múltiples fuentes",
+        "Notificaciones automáticas por WhatsApp o email",
+        "Sincronización entre herramientas (CRM, hojas de cálculo, apps)",
+        "Chatbots de atención básica 24/7"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Herramientas",
+          "value": "n8n · Make · Zapier"
+        }
+      ],
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "mode": "cotizar"
+      },
+      "featured": false,
+      "order": 1
+    },
+    {
+      "slug": "agentes-con-ia",
+      "lineSlug": "optimizacion-procesos",
+      "name": "Agentes con IA",
+      "tagline": "Razonamiento autónomo",
+      "badge": "Nivel 02",
+      "summary": "Agentes que cubren funciones especializadas, toman decisiones y ejecutan tareas complejas de forma autónoma.",
+      "includes": [
+        "Asistente de atención al cliente inteligente",
+        "Control y gestión de inventarios",
+        "Facturación y seguimiento de pagos",
+        "Análisis de datos y generación de informes",
+        "Seguimiento y nutrición de prospectos"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Herramientas",
+          "value": "Modelos de IA + n8n"
+        }
+      ],
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "mode": "cotizar"
+      },
+      "featured": true,
+      "order": 2
+    },
+    {
+      "slug": "ecosistemas",
+      "lineSlug": "optimizacion-procesos",
+      "name": "Ecosistemas",
+      "tagline": "Departamentos completos con IA",
+      "badge": "Nivel 03",
+      "summary": "Varios agentes coordinados para gestionar ventas, atención, operaciones y logística de forma autónoma.",
+      "includes": [
+        "Diseño del ecosistema por departamento",
+        "Agentes coordinados entre sí",
+        "Integración con tus sistemas actuales",
+        "Panel de seguimiento y métricas"
+      ],
+      "excludes": [],
+      "idealFor": [],
+      "details": [
+        {
+          "label": "Herramientas",
+          "value": "Arquitectura a medida"
+        }
+      ],
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "mode": "cotizar"
+      },
+      "featured": false,
+      "order": 3
+    }
+  ]
+}

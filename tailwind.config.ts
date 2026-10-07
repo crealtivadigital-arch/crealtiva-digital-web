@@ -28,8 +28,9 @@ const config: Config = {
         cream: "#F1F1F1",
       },
       fontFamily: {
-        grotesk: ["var(--font-space-grotesk)", "sans-serif"],
-        sans: ["var(--font-inter)", "sans-serif"],
+        display: ["var(--font-sansation)", "sans-serif"],
+        grotesk: ["var(--font-montserrat)", "sans-serif"],
+        sans: ["var(--font-montserrat)", "sans-serif"],
       },
       borderRadius: {
         input: "8px",
