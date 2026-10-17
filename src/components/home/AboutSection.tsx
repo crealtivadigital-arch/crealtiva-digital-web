@@ -6,9 +6,9 @@ import { lineHref } from "@/lib/content/links";
 const team = [
   { role: "Dirección estratégica", href: lineHref("marketing-digital"), icon: "strategy" },
   { role: "Producción multimedia", href: lineHref("produccion-multimedia"), icon: "camera" },
+  { role: "Marketing de Modelos y Micro Influencers", href: lineHref("modelos-e-influencers"), icon: "community" },
   { role: "Diseño y desarrollo web", href: lineHref("diseno-web"), icon: "web" },
   { role: "Pauta digital", href: lineHref("trafficker-digital"), icon: "ads" },
-  { role: "Contenido y comunidad", href: lineHref("marketing-digital"), icon: "community" },
 ] as const;
 
 const icons: Record<(typeof team)[number]["icon"], React.ReactNode> = {
@@ -39,8 +39,9 @@ const icons: Record<(typeof team)[number]["icon"], React.ReactNode> = {
   ),
   community: (
     <>
-      <path d="M4 5h16v10H9l-5 4z" />
-      <path d="M8 9h8M8 12h5" />
+      <circle cx="9" cy="8" r="3.5" />
+      <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+      <path d="m18 4 .9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1L15 6.2l2.1-.3z" />
     </>
   ),
 };
@@ -60,7 +61,7 @@ export default function AboutSection() {
             <li key={t.role}>
               <Link
                 href={t.href}
-                className="group flex h-full items-center gap-3 rounded-card bg-white p-3 pr-4 ring-1 ring-navy/5 transition hover:-translate-y-0.5 hover:shadow-lg hover:ring-teal/40"
+                className="group flex h-full flex-col items-center gap-3 rounded-card bg-white px-3 py-5 text-center ring-1 ring-navy/5 transition hover:-translate-y-0.5 hover:shadow-lg hover:ring-teal/40"
               >
                 <span
                   className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-cream ${
@@ -81,12 +82,6 @@ export default function AboutSection() {
                   </svg>
                 </span>
                 <span className="text-sm font-semibold leading-snug text-navy">{t.role}</span>
-                <span
-                  aria-hidden
-                  className="ml-auto text-teal transition-transform group-hover:translate-x-1"
-                >
-                  →
-                </span>
               </Link>
             </li>
           ))}
