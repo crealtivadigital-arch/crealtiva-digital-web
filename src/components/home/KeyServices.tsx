@@ -1,3 +1,4 @@
+import { lineHref } from "@/lib/content/links";
 import Link from "next/link";
 import NaturalImage from "@/components/site/NaturalImage";
 import SectionTitle from "@/components/site/SectionTitle";
@@ -23,7 +24,7 @@ export default function KeyServices({ lines }: { lines: ServiceLine[] }) {
           {lines.map((l) => (
             <Link
               key={l.slug}
-              href={`/servicios/${l.slug}`}
+              href={lineHref(l.slug)}
               className="group mb-5 block break-inside-avoid overflow-hidden rounded-block bg-navy"
             >
               {l.cover && (

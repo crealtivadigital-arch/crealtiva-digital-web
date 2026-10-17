@@ -1,3 +1,4 @@
+import { lineHref } from "@/lib/content/links";
 import NaturalImage from "@/components/site/NaturalImage";
 import Link from "next/link";
 import { formatPrice } from "@/lib/content/format";
@@ -14,13 +15,13 @@ interface ServiceLineSectionProps {
 export default function ServiceLineSection({ line, packages, index }: ServiceLineSectionProps) {
   const reversed = index % 2 === 1;
   const preview = [...packages].sort((a, b) => Number(b.featured) - Number(a.featured) || a.order - b.order).slice(0, 3);
-  const lineHref = `/servicios/${line.slug}`;
+  const href = lineHref(line.slug);
 
   return (
     <section id={line.slug} className={`scroll-mt-32 py-20 md:py-24 ${reversed ? "bg-white" : "bg-cream"}`}>
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16">
         {line.cover && (
-          <Link href={lineHref} className={`group block ${reversed ? "lg:order-2" : ""}`} aria-label={`Ver ${line.name}`}>
+          <Link href={href} className={`group block ${reversed ? "lg:order-2" : ""}`} aria-label={`Ver ${line.name}`}>
             <NaturalImage
               img={line.cover}
               sizes="(min-width: 1024px) 540px, 100vw"
@@ -78,7 +79,7 @@ export default function ServiceLineSection({ line, packages, index }: ServiceLin
           )}
 
           <Link
-            href={lineHref}
+            href={href}
             className="mt-8 inline-flex rounded-full bg-magenta px-7 py-3.5 text-sm font-semibold text-cream transition-colors hover:bg-magenta-light"
           >
             Ver todos los paquetes de {line.name} →

@@ -1,3 +1,4 @@
+import { lineHref } from "@/lib/content/links";
 import Image from "next/image";
 import Link from "next/link";
 import { getServiceLines } from "@/lib/content";
@@ -44,7 +45,7 @@ export default async function Footer() {
             <ul className="flex flex-col gap-3">
               {lines.map((l) => (
                 <li key={l.slug}>
-                  <Link href={`/servicios/${l.slug}`} className={link}>
+                  <Link href={lineHref(l.slug)} className={link}>
                     {l.name}
                   </Link>
                 </li>

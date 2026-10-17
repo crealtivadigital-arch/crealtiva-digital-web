@@ -1,3 +1,4 @@
+import { lineHref } from "@/lib/content/links";
 import type { Metadata } from "next";
 import NaturalImage from "@/components/site/NaturalImage";
 import Link from "next/link";
@@ -50,7 +51,7 @@ export default async function ProyectoPage({ params }: Props) {
           {project.lineSlugs.map((s) => (
             <Link
               key={s}
-              href={`/servicios/${s}`}
+              href={lineHref(s)}
               className="rounded-full border border-white/20 px-4 py-1.5 text-sm text-cream/80 transition-colors hover:border-teal hover:text-teal"
             >
               {lineNames[s] ?? s}

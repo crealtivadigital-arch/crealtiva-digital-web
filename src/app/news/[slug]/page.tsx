@@ -1,3 +1,4 @@
+import { lineHref } from "@/lib/content/links";
 import type { Metadata } from "next";
 import NaturalImage from "@/components/site/NaturalImage";
 import Link from "next/link";
@@ -75,7 +76,7 @@ export default async function ArticuloPage({ params }: Props) {
               <h2 className="mt-3 font-display text-2xl">{line.name}</h2>
               <p className="mt-2 text-cream/60">{line.summary}</p>
               <Link
-                href={`/servicios/${line.slug}`}
+                href={lineHref(line.slug)}
                 className="mt-6 inline-flex rounded-full bg-magenta px-6 py-3 text-sm font-semibold transition-colors hover:bg-magenta-light"
               >
                 Ver paquetes de {line.name.toLowerCase()} →

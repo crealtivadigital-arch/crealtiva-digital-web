@@ -1,3 +1,4 @@
+import { lineHref } from "@/lib/content/links";
 import Link from "next/link";
 import { formatPrice } from "@/lib/content/format";
 import type { Exclusion } from "@/lib/content/types";
@@ -47,7 +48,7 @@ function Solution({ solution }: { solution: NonNullable<Exclusion["solution"]> }
     );
   }
   return (
-    <Link href={`/servicios/${solution.lineSlug}`} className={`${chip} bg-magenta/[0.12] text-magenta hover:bg-magenta hover:text-cream`}>
+    <Link href={lineHref(solution.lineSlug)} className={`${chip} bg-magenta/[0.12] text-magenta hover:bg-magenta hover:text-cream`}>
       Contrátalo en {solution.name}
       {solution.fromPrice !== null && ` · desde $${solution.fromPrice}`} →
     </Link>

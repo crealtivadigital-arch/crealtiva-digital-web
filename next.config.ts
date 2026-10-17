@@ -4,24 +4,26 @@ import type { NextConfig } from "next";
 // - rutas de la versión anterior de este repo
 // - URLs del sitio WordPress que hoy vive en crealtivadigital.com
 const legacyRedirects: [string, string][] = [
+  // Producción multimedia ahora es Crealtiva Movie Maker
+  ["/servicios/produccion-multimedia", "/movie-maker"],
   // Versión anterior del repo
   ["/marketing-digital", "/servicios/marketing-digital"],
   ["/trafficker-digital", "/servicios/trafficker-digital"],
   ["/diseno-web", "/servicios/diseno-web"],
   ["/optimizacion-procesos", "/servicios/optimizacion-procesos"],
-  ["/produccion-multimedia", "/servicios/produccion-multimedia"],
+  ["/produccion-multimedia", "/movie-maker"],
   ["/produccion-multimedia/ugc", "/servicios/video-ugc"],
-  ["/produccion-multimedia/studio", "/servicios/produccion-multimedia"],
-  ["/produccion-multimedia/eventos", "/servicios/produccion-multimedia"],
+  ["/produccion-multimedia/studio", "/movie-maker"],
+  ["/produccion-multimedia/eventos", "/movie-maker"],
   ["/contacto", "/contactanos"],
   // WordPress
   ["/marketing-digital-estrategico", "/servicios/marketing-digital"],
   ["/traffiker-digital", "/servicios/trafficker-digital"],
   ["/diseno-y-desarrollo-web", "/servicios/diseno-web"],
   ["/optimizacion-de-procesos-con-ai", "/servicios/optimizacion-procesos"],
-  ["/produccion-multimedia-profesional", "/servicios/produccion-multimedia"],
-  ["/produccion-multimedia-4", "/servicios/produccion-multimedia"],
-  ["/fotografos-por-horas", "/servicios/produccion-multimedia"],
+  ["/produccion-multimedia-profesional", "/movie-maker"],
+  ["/produccion-multimedia-4", "/movie-maker"],
+  ["/fotografos-por-horas", "/movie-maker"],
   ["/creacion-de-contenido", "/servicios/video-ugc"],
   ["/fotografia-gastronomica", "/servicios/fotografia-de-producto"],
   ["/institucionales", "/portafolio"],

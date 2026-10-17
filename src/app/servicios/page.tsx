@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/site/PageHeader";
 import ServiceLineSection from "@/components/site/ServiceLineSection";
 import CTABanner from "@/components/CTABanner";
+import MovieMakerTeaser from "@/components/site/MovieMakerTeaser";
+import { MOVIE_MAKER_LINE } from "@/lib/content/links";
 import { getPackages, getServiceLines } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -39,14 +41,18 @@ export default async function ServiciosPage() {
         </ul>
       </nav>
 
-      {lines.map((line, i) => (
+      {lines.map((line, i) =>
+        line.slug === MOVIE_MAKER_LINE ? (
+          <MovieMakerTeaser key={line.slug} id={line.slug} />
+        ) : (
         <ServiceLineSection
           key={line.slug}
           line={line}
           index={i}
           packages={packages.filter((p) => p.lineSlug === line.slug)}
         />
-      ))}
+        )
+      )}
 
       <CTABanner
         headline="¿No sabes por dónde empezar?"
