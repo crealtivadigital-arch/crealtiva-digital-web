@@ -62,9 +62,10 @@ export default function HomeHero() {
             src: "https://crealtivadigital.com/wp-content/uploads/2026/03/equipo-crealtiva-digital.png",
             alt: "Equipo de Crealtiva Digital: estrategia, producción, diseño, pauta y contenido",
           }}
-          sizes="(min-width: 1024px) 540px, 100vw"
+          sizes="(min-width: 1024px) 680px, 125vw"
           priority
-          className="mx-auto rounded-t-block bg-black"
+          className="z-10 mx-auto !overflow-visible bg-transparent"
+          imgClassName="-translate-y-[10%] scale-125"
         />
       </div>
     </section>
