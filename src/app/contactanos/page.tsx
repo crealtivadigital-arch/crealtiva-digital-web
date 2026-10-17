@@ -1,155 +1,143 @@
 import type { Metadata } from "next";
-import { WA_DIAGNOSTICO, EMAIL } from "@/lib/constants";
+import Link from "next/link";
+import PageHeader from "@/components/site/PageHeader";
+import SectionTitle from "@/components/site/SectionTitle";
+import WhatsAppIcon from "@/components/site/WhatsAppIcon";
 import FAQ from "@/components/FAQ";
+import { getServiceLines } from "@/lib/content";
+import { EMAIL, WA_DIAGNOSTICO, wa } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Contacto — Agencia de Marketing Digital en Quito, Ecuador",
+  title: "Contáctanos — Agencia de Marketing Digital en Quito, Ecuador",
   description:
-    "Contáctanos para un diagnóstico gratuito de 45 minutos. Crealtiva Digital: agencia de marketing en Quito. WhatsApp, email o formulario — respondemos en menos de 2 horas.",
+    "Escríbenos por WhatsApp o email y agenda un diagnóstico gratuito. Crealtiva Digital: marketing, producción multimedia, pauta, web y automatización en Quito, Ecuador.",
   keywords: [
     "contacto agencia marketing Quito",
     "diagnóstico gratuito marketing digital",
     "crealtiva digital contacto",
     "agencia marketing Ecuador contacto",
   ],
+  alternates: { canonical: "/contactanos" },
 };
 
-const services = [
-  { label: "Marketing Digital Estratégico", href: "/marketing-digital" },
-  { label: "Trafficker Digital (Meta, Google, TikTok)", href: "/trafficker-digital" },
-  { label: "UGC y Contenido con Actores", href: "/produccion-multimedia/ugc" },
-  { label: "Producción Profesional (Foto/Video)", href: "/produccion-multimedia/studio" },
-  { label: "Eventos y Cobertura por Horas", href: "/produccion-multimedia/eventos" },
-  { label: "Diseño y Desarrollo Web", href: "/diseno-web" },
-  { label: "Automatización de Procesos con IA", href: "/optimizacion-procesos" },
-];
-
+// Solo datos ya publicados en el resto del sitio (Inicio y Términos); no agregar tiempos de respuesta
+// ni horarios hasta que el cliente los confirme.
 const faqs = [
   {
     q: "¿Qué pasa en el diagnóstico gratuito?",
-    a: "Una sesión de 45 minutos donde analizamos tu situación digital actual, tu competencia, tus objetivos y los cuellos de botella en tu marketing. Al final recibes un plan de acción preliminar sin costo ni compromiso de contratar.",
+    a: "Es una sesión de 45 minutos para entender tu marca, tus objetivos y tu situación digital actual. Con eso te enviamos una propuesta personalizada con servicios, alcance y tiempos, sin costo ni compromiso.",
   },
   {
-    q: "¿Cuánto tiempo tardan en responder?",
-    a: "Por WhatsApp respondemos en menos de 2 horas hábiles (lunes a viernes, 9am–6pm). Por email, antes de 24 horas.",
+    q: "No sé qué servicio necesito, ¿por dónde empiezo?",
+    a: "Por el diagnóstico. No necesitas llegar con todo definido: cuéntanos en qué está tu negocio y te recomendamos la combinación de servicios adecuada.",
   },
   {
-    q: "¿Trabajan con empresas de cualquier sector?",
-    a: "Sí, aunque estamos especializados en empresas del mercado medio-premium: servicios profesionales, salud, retail, tecnología, gastronomía y marcas de moda en Ecuador.",
+    q: "¿Los precios de la web son finales?",
+    a: "Son referenciales y están en dólares. El precio final, el alcance y los plazos se confirman en la cotización que te enviamos para tu caso.",
   },
   {
-    q: "¿Tienen contratos de permanencia?",
-    a: "No. Trabajamos con compromisos mensuales renovables. Puedes continuar, escalar o pausar el servicio según las necesidades de tu negocio.",
+    q: "¿La inversión en pauta está incluida?",
+    a: "No. En los servicios de pauta, la inversión publicitaria la pagas directamente a Meta, Google, TikTok o LinkedIn; Crealtiva cobra la tarifa de gestión.",
   },
 ];
 
-export default function Contacto() {
+export default async function Contactanos() {
+  const lines = await getServiceLines();
+
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-navy pt-32 pb-20">
-        <div className="max-w-5xl mx-auto px-6">
-          <span className="inline-block bg-white/8 text-cream/60 text-xs font-grotesk font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wide">
-            Diagnóstico Gratuito · Sin Compromiso · 45 minutos
-          </span>
-          <h1 className="font-grotesk font-bold text-cream text-4xl md:text-5xl leading-[1.1] mb-5 max-w-2xl">
-            Hablemos sobre tu <span className="text-teal">negocio.</span>
-          </h1>
-          <p className="font-sans text-cream/55 text-lg leading-relaxed max-w-xl">
-            No necesitas saber exactamente qué necesitas. Cuéntanos en qué estás y nosotros te proponemos el camino.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        eyebrow="Contáctanos"
+        title="Hablemos de tu negocio"
+        intro="No necesitas saber exactamente qué necesitas. Cuéntanos en qué estás y te proponemos el camino."
+        crumbs={[{ label: "Inicio", href: "/" }, { label: "Contáctanos" }]}
+      />
 
-      {/* Contact options */}
-      <section className="bg-cream py-20">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
-            <a
-              href={WA_DIAGNOSTICO}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-white rounded-block p-7 shadow-sm border border-teal/20 hover:border-teal/50 hover:shadow-md transition-all flex flex-col gap-4"
-            >
-              <span className="text-3xl">💬</span>
-              <div>
-                <h2 className="font-grotesk font-bold text-navy text-lg mb-1">WhatsApp</h2>
-                <p className="font-sans text-navy/55 text-sm leading-relaxed">
-                  La forma más rápida. Respondemos en menos de 2 horas hábiles.
-                </p>
-              </div>
-              <span className="font-sans text-teal text-sm font-semibold group-hover:underline">
+      {/* Canales */}
+      <section className="bg-cream py-16 md:py-20">
+        <div className="mx-auto grid max-w-6xl gap-5 px-6 lg:grid-cols-[1.4fr_1fr]">
+          <a
+            href={WA_DIAGNOSTICO}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex flex-col justify-between gap-10 overflow-hidden rounded-block bg-teal p-8 text-cream transition-colors hover:bg-teal-dark md:p-10"
+          >
+            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/15">
+              <WhatsAppIcon size={28} />
+            </span>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-cream/70">Canal principal</p>
+              <h2 className="mt-2 font-display text-3xl md:text-4xl">Escríbenos por WhatsApp</h2>
+              <p className="mt-3 max-w-md leading-relaxed text-cream/80">
+                Agenda tu diagnóstico gratuito o haz tu consulta directamente con el equipo.
+              </p>
+              <span className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-navy transition-transform group-hover:translate-x-1">
                 +593 959 227 420 →
               </span>
-            </a>
+            </div>
+          </a>
 
+          <div className="grid gap-5">
             <a
               href={`mailto:${EMAIL}`}
-              className="group bg-white rounded-block p-7 shadow-sm border border-magenta/20 hover:border-magenta/50 hover:shadow-md transition-all flex flex-col gap-4"
+              className="group flex flex-col gap-3 rounded-block bg-white p-8 ring-1 ring-navy/5 transition-shadow hover:shadow-md"
             >
-              <span className="text-3xl">📧</span>
-              <div>
-                <h2 className="font-grotesk font-bold text-navy text-lg mb-1">Email</h2>
-                <p className="font-sans text-navy/55 text-sm leading-relaxed">
-                  Para propuestas formales o proyectos más detallados. Respondemos en menos de 24h.
-                </p>
-              </div>
-              <span className="font-sans text-magenta text-sm font-semibold group-hover:underline">
+              <p className="text-xs font-semibold uppercase tracking-widest text-magenta">Email</p>
+              <h2 className="font-display text-2xl text-navy">Propuestas y proyectos</h2>
+              <p className="text-sm leading-relaxed text-navy/60">
+                Para solicitudes formales o proyectos con más detalle.
+              </p>
+              <span className="mt-auto break-all text-sm font-semibold text-magenta group-hover:underline">
                 {EMAIL} →
               </span>
             </a>
 
-            <div className="bg-white rounded-block p-7 shadow-sm border border-green/20 flex flex-col gap-4">
-              <span className="text-3xl">📍</span>
-              <div>
-                <h2 className="font-grotesk font-bold text-navy text-lg mb-1">Ubicación</h2>
-                <p className="font-sans text-navy/55 text-sm leading-relaxed">
-                  Operamos en Quito, Ecuador y atendemos a empresas en todo el país.
-                </p>
-              </div>
-              <span className="font-sans text-green text-sm font-semibold">
-                Quito, Ecuador
-              </span>
-            </div>
-          </div>
-
-          {/* Services quick links */}
-          <div className="bg-navy rounded-block p-8">
-            <h2 className="font-grotesk font-bold text-cream text-xl mb-6">
-              ¿Qué servicio te interesa?
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {services.map((s) => (
-                <a
-                  key={s.href}
-                  href={s.href}
-                  className="flex items-center justify-between bg-white/5 border border-white/8 rounded-card px-5 py-3.5 hover:border-teal/40 hover:bg-white/8 transition-all group"
-                >
-                  <span className="font-sans text-cream/70 text-sm group-hover:text-cream transition-colors">
-                    {s.label}
-                  </span>
-                  <span className="text-cream/30 group-hover:text-teal transition-colors text-sm">→</span>
-                </a>
-              ))}
-            </div>
-            <div className="mt-6 pt-6 border-t border-white/8 text-center">
-              <p className="font-sans text-cream/40 text-sm mb-4">
-                ¿No sabes por dónde empezar? Agenda el diagnóstico y lo definimos juntos.
+            <div className="flex flex-col gap-3 rounded-block bg-navy p-8">
+              <p className="text-xs font-semibold uppercase tracking-widest text-teal">Ubicación</p>
+              <h2 className="font-display text-2xl text-cream">Quito, Ecuador</h2>
+              <p className="text-sm leading-relaxed text-cream/60">
+                Nuestras producciones multimedia en Quito y los Valles incluyen la movilización del equipo.
               </p>
-              <a
-                href={WA_DIAGNOSTICO}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-teal text-cream font-grotesk font-bold text-sm px-7 py-3.5 rounded-full hover:bg-teal-dark transition-colors"
-              >
-                Agendar Diagnóstico Gratuito →
-              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <FAQ items={faqs} bg="navy" title="Preguntas sobre el proceso de contacto" />
+      {/* Servicio de interés → WhatsApp con mensaje prellenado */}
+      <section className="bg-white py-20 md:py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <SectionTitle
+            eyebrow="¿Ya sabes qué buscas?"
+            title="Elige el servicio y escríbenos directo"
+          />
+          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {lines.map((l) => (
+              <li key={l.slug}>
+                <a
+                  href={wa(`Hola, quiero información sobre ${l.name} con Crealtiva Digital.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex h-full flex-col gap-2 rounded-card bg-cream p-5 ring-1 ring-navy/5 transition-all hover:bg-white hover:ring-teal/40"
+                >
+                  <span className="font-bold text-navy">{l.name}</span>
+                  <span className="text-sm text-navy/55">{l.tagline}</span>
+                  <span className="mt-auto inline-flex items-center gap-1.5 pt-3 text-xs font-semibold text-teal">
+                    <WhatsAppIcon size={13} /> Consultar →
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-8 text-sm text-navy/55">
+            ¿Prefieres revisar primero los paquetes?{" "}
+            <Link href="/servicios" className="font-semibold text-teal hover:underline">
+              Ver todos los servicios →
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      <FAQ items={faqs} bg="navy" title="Antes de escribirnos" />
     </main>
   );
 }
