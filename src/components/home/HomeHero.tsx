@@ -46,8 +46,22 @@ export default function HomeHero() {
               Ver servicios →
             </Link>
           </div>
+        </div>
 
-          <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm text-cream/55">
+        <div className="relative pb-12 md:pb-16">
+          <NaturalImage
+            img={{
+              src: "https://crealtivadigital.com/wp-content/uploads/2026/03/equipo-crealtiva-digital.png",
+              alt: "Equipo de Crealtiva Digital: estrategia, producción, diseño, pauta y contenido",
+            }}
+            sizes="(min-width: 1024px) 760px, 110vw"
+            priority
+            className="z-10 mx-auto !overflow-visible bg-transparent"
+            imgClassName="-translate-y-[12%] scale-110 lg:translate-x-[6%] lg:-translate-y-[24%] lg:scale-[1.4]"
+          />
+
+          {/* Pruebas de confianza al pie de la foto */}
+          <ul className="relative z-20 mx-auto -mt-14 flex w-fit max-w-full flex-wrap justify-center gap-x-6 gap-y-2 rounded-2xl border border-white/25 bg-white/15 px-6 py-4 text-sm text-cream shadow-xl backdrop-blur-md lg:-mt-24 lg:translate-x-[6%]">
             {proof.map((p) => (
               <li key={p} className="flex items-center gap-2">
                 <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-teal" />
@@ -56,17 +70,6 @@ export default function HomeHero() {
             ))}
           </ul>
         </div>
-
-        <NaturalImage
-          img={{
-            src: "https://crealtivadigital.com/wp-content/uploads/2026/03/equipo-crealtiva-digital.png",
-            alt: "Equipo de Crealtiva Digital: estrategia, producción, diseño, pauta y contenido",
-          }}
-          sizes="(min-width: 1024px) 680px, 125vw"
-          priority
-          className="z-10 mx-auto !overflow-visible bg-transparent"
-          imgClassName="-translate-y-[10%] scale-125"
-        />
       </div>
     </section>
   );
