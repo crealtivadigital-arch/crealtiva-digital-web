@@ -48,7 +48,8 @@ export default function HomeHero() {
           </div>
         </div>
 
-        <div className="relative pb-12 md:pb-16">
+        {/* Mismo padding inferior que la columna de texto: la base del recuadro queda alineada con la de los botones */}
+        <div className="relative pb-16 md:pb-24">
           <NaturalImage
             img={{
               src: "https://crealtivadigital.com/wp-content/uploads/2026/03/equipo-crealtiva-digital.png",
