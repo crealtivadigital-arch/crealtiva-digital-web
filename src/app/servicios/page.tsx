@@ -12,6 +12,17 @@ export const metadata: Metadata = {
   alternates: { canonical: "/servicios" },
 };
 
+// Nombres cortos para el menú de líneas (los completos alargan demasiado la fila)
+const shortNames: Record<string, string> = {
+  "marketing-digital": "Marketing",
+  "videos-para-redes-sociales": "Videos para redes",
+  "modelos-contenido-organico": "Modelos",
+  "fotografia-de-producto": "Fotografía",
+  "trafficker-digital": "Publicidad Ads",
+  "diseno-web": "Sitios web",
+  "optimizacion-procesos": "Procesos con IA",
+};
+
 export default async function ServiciosPage() {
   const [lines, packages] = await Promise.all([getServiceLines(), getPackages()]);
 
@@ -33,7 +44,7 @@ export default async function ServiciosPage() {
                 href={`#${l.slug}`}
                 className="block rounded-full bg-white px-4 py-2 text-sm font-semibold text-navy/70 ring-1 ring-navy/5 transition-colors hover:bg-teal hover:text-cream"
               >
-                {l.name}
+                {shortNames[l.slug] ?? l.name}
               </a>
             </li>
           ))}
