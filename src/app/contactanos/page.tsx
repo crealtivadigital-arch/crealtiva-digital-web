@@ -4,6 +4,7 @@ import PageHeader from "@/components/site/PageHeader";
 import SectionTitle from "@/components/site/SectionTitle";
 import WhatsAppIcon from "@/components/site/WhatsAppIcon";
 import FAQ from "@/components/FAQ";
+import ModelCasting from "@/components/site/ModelCasting";
 import { getServiceLines } from "@/lib/content";
 import { EMAIL, WA_DIAGNOSTICO, wa } from "@/lib/constants";
 
@@ -136,6 +137,9 @@ export default async function Contactanos() {
           </p>
         </div>
       </section>
+
+      {/* Para modelos que quieren unirse al staff */}
+      <ModelCasting />
 
       <FAQ items={faqs} bg="navy" title="Antes de escribirnos" />
     </main>

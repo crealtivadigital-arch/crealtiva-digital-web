@@ -7,6 +7,7 @@ import ProjectCard from "@/components/site/ProjectCard";
 import PostCard from "@/components/site/PostCard";
 import SectionTitle from "@/components/site/SectionTitle";
 import CTABanner from "@/components/CTABanner";
+import ModelCasting from "@/components/site/ModelCasting";
 import MarketingStrategy from "@/components/marketing/MarketingStrategy";
 import PackageQuiz, { type QuizPackage } from "@/components/marketing/PackageQuiz";
 import PackageCompare, { type ComparePackage } from "@/components/marketing/PackageCompare";
@@ -99,6 +100,15 @@ export default async function LineaPage({ params }: Props) {
               >
                 Cotizar por WhatsApp
               </a>
+              {line.slug === "modelos-contenido-organico" && (
+                <a
+                  href="#staff-modelos"
+                  className="inline-flex items-center gap-2 rounded-full bg-white/10 px-7 py-3.5 text-sm font-semibold text-cream ring-1 ring-magenta/60 transition-colors hover:bg-magenta"
+                >
+                  <span aria-hidden className="h-2 w-2 rounded-full bg-magenta" />
+                  Sé un modelo de contenido con Crealtiva Digital
+                </a>
+              )}
             </div>
           </div>
           {line.cover && (
@@ -314,6 +324,9 @@ export default async function LineaPage({ params }: Props) {
       )}
 
       {line.faqs.length > 0 && <FAQ items={line.faqs} bg="cream" />}
+
+      {/* Convocatoria al staff de modelos */}
+      {line.slug === "modelos-contenido-organico" && <ModelCasting />}
 
       <CTABanner waMessage={`Hola, quiero cotizar ${line.name} con Crealtiva Digital.`} />
     </main>

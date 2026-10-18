@@ -8,6 +8,9 @@ export const WA_DIAGNOSTICO = wa("Hola, quiero agendar mi diagnóstico gratuito 
 export const WA_COTIZAR = wa("Hola, quiero cotizar un servicio con Crealtiva Digital.");
 export const WA_ASESORIA = wa("Hola, quiero solicitar una asesoría para trabajar la estrategia digital de mi empresa.");
 
+// Registro para el staff de modelos (formulario externo; el enlace ya lleva el código de acceso)
+export const MODELOS_REGISTRO = "https://marketing.disperflow.com/modelos-registro/e45c5dd0ab7e47dda5afddef8ea8ac5a";
+
 // Datos del responsable para las páginas legales (LOPDP). Los campos en null aún no los ha
 // confirmado el cliente: se muestran marcados como "por completar" hasta que se llenen.
 export const LEGAL = {
