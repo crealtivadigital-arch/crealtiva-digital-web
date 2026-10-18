@@ -18,6 +18,13 @@ html {
   scroll-padding-top: 72px;
 }
 
+/* Celular: todo el sitio un 10% más compacto (los tamaños de Tailwind están en rem) */
+@media (max-width: 639px) {
+  html {
+    font-size: 90%;
+  }
+}
+
 body {
   background-color: var(--navy);
   color: var(--navy);

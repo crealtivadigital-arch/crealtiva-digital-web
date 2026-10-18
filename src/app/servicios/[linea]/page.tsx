@@ -290,7 +290,7 @@ export default async function LineaPage({ params }: Props) {
                   </span>
                   <div>
                     <dt className="text-sm font-bold text-navy">{c.title}</dt>
-                    <dd className="mt-1 text-[13px] leading-relaxed text-navy/60">{c.detail}</dd>
+                    <dd className="mt-1 text-[0.8125rem] leading-relaxed text-navy/60">{c.detail}</dd>
                   </div>
                 </div>
               ))}

@@ -213,7 +213,7 @@ export default function DigitalCityStory() {
                   <span className="text-xs font-semibold uppercase tracking-widest text-teal">{s.kicker}</span>
                 </div>
                 <h3 className="mt-3 font-display text-xl leading-tight text-cream md:mt-5 md:text-[2rem]">{s.title}</h3>
-                <p className="mt-3 text-[15px] font-light leading-relaxed text-cream/75 md:mt-4 md:text-lg">{s.lead}</p>
+                <p className="mt-3 text-[0.9375rem] font-light leading-relaxed text-cream/75 md:mt-4 md:text-lg">{s.lead}</p>
                 {s.chips && (
                   <ul className="mt-4 flex flex-wrap gap-1.5 md:gap-2">
                     {s.chips.map((c) => (

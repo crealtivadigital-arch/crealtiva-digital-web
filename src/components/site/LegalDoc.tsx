@@ -67,7 +67,7 @@ export default function LegalDoc({ title, intro, sections }: LegalDocProps) {
                 <h2 className="mb-4 font-display text-2xl text-navy">
                   <span className="text-teal">{i + 1}.</span> {s.title}
                 </h2>
-                <div className="space-y-4 text-[15px] leading-relaxed text-navy/75 [&_a]:font-semibold [&_a]:text-teal hover:[&_a]:underline [&_li]:pl-1 [&_strong]:text-navy [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5">
+                <div className="space-y-4 text-[0.9375rem] leading-relaxed text-navy/75 [&_a]:font-semibold [&_a]:text-teal hover:[&_a]:underline [&_li]:pl-1 [&_strong]:text-navy [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5">
                   {s.body}
                 </div>
               </section>

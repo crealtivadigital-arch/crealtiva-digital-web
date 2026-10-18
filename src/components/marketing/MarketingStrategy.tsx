@@ -115,7 +115,7 @@ export default function MarketingStrategy() {
                 <p className="mt-2 text-sm leading-relaxed text-navy/60">{p.detail}</p>
                 <ul className="max-h-0 space-y-1.5 overflow-hidden opacity-0 transition-all duration-300 group-hover:mt-3 group-hover:max-h-80 group-hover:opacity-100 group-focus:mt-3 group-focus:max-h-80 group-focus:opacity-100 lg:pointer-events-none lg:absolute lg:inset-x-0 lg:top-full lg:mt-0 lg:max-h-none lg:-translate-y-1 lg:rounded-b-card lg:bg-white lg:px-5 lg:pb-5 lg:pt-1 lg:shadow-[0_24px_48px_-16px_rgba(26,26,46,0.3)] lg:ring-1 lg:ring-teal/40 lg:[clip-path:inset(0_-40px_-40px_-40px)] lg:group-hover:mt-0 lg:group-hover:translate-y-0 lg:group-focus:mt-0 lg:group-focus:translate-y-0">
                   {p.more.map((m) => (
-                    <li key={m} className="flex gap-2 text-[13px] leading-snug text-navy/80">
+                    <li key={m} className="flex gap-2 text-[0.8125rem] leading-snug text-navy/80">
                       <span aria-hidden className={`font-bold ${i % 2 ? "text-magenta" : "text-teal"}`}>
                         ✓
                       </span>
