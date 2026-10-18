@@ -18,7 +18,7 @@ export const families: {
     name: "Bite",
     tagline: "El despegue · una red",
     description: "Para arrancar o regularizar tu presencia en una sola red, con dirección estratégica, plan mensual y producción.",
-    slugs: ["crealtiva-bite-linkedin", "crealtiva-bite-meta", "crealtiva-bite-tiktok"],
+    slugs: ["crealtiva-bite-meta", "crealtiva-bite-linkedin", "crealtiva-bite-tiktok"],
   },
   {
     id: "tasty",

@@ -1,61 +1,78 @@
-// Antes de los paquetes: qué significa hacer estrategia (no solo publicar), como un flujo de
-// cinco pasos. Al pasar el mouse (o tocar, en celular) cada paso se amplía y muestra más detalle.
+// Antes de los paquetes: cómo trabajamos la estrategia, de la auditoría al reporte, como un flujo
+// de cinco pasos. Al pasar el mouse (o tocar, en celular) cada paso se amplía y muestra el detalle.
 
-const pillars: { title: string; detail: string; more: string; icon: React.ReactNode }[] = [
+const pillars: { title: string; detail: string; more: string[]; icon: React.ReactNode }[] = [
   {
-    title: "Tu web, la matriz",
-    detail: "La base propia de tu marca en internet.",
-    more: "Ahí viven tu catálogo, tu información y tu forma de atender. Las redes llevan público hacia ella.",
-    icon: <path d="M3 11l9-7 9 7v9H3zM9 20v-6h6v6" />,
-  },
-  {
-    title: "Presencia diversificada en redes",
-    detail: "Cada red es como una sucursal con su propio público.",
-    more: "Facebook, Instagram, TikTok, LinkedIn y Google Business: cada canal con su tono y su estrategia.",
+    title: "Auditoría",
+    detail: "Visitamos tu negocio y definimos objetivos SMART.",
+    more: [
+      "Te acompañamos a conocer tu negocio e identificar su calidad",
+      "Definimos qué quieres lograr",
+      "Objetivos claros, medibles, con plazo y alineados a tu crecimiento",
+    ],
     icon: (
       <>
-        <circle cx="12" cy="12" r="3" />
-        <circle cx="4" cy="5" r="2" />
-        <circle cx="20" cy="5" r="2" />
-        <circle cx="4" cy="19" r="2" />
-        <circle cx="20" cy="19" r="2" />
-        <path d="M6 6.5l3.8 3.5M18 6.5l-3.8 3.5M6 17.5l3.8-3.5M18 17.5l-3.8-3.5" />
+        <circle cx="11" cy="11" r="7" />
+        <path d="M21 21l-4.3-4.3M8 11l2 2 4-4" />
       </>
     ),
   },
   {
-    title: "Calidad de producción",
-    detail: "Tu marca se percibe por lo que muestra.",
-    more: "Video, foto y diseño a la altura de tu negocio, en cada publicación y en cada red.",
-    icon: <path d="M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2z" />,
+    title: "Levantamiento de recursos",
+    detail: "Nos empapamos de tu negocio y tu marca.",
+    more: [
+      "Contrato sin permanencia obligatoria: te quedas por la calidad y los resultados",
+      "Registro de cómo recibimos tu marca, para medir su crecimiento",
+      "Brief: mercado, competencia, claves de contenido y forma de comunicar",
+      "Kit creativo: logo, manual de marca, tipografías",
+    ],
+    icon: <path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2zM12 11v5M9.5 13.5h5" />,
   },
   {
-    title: "Constancia mensual",
-    detail: "Un plan de contenido cada mes.",
-    more: "Calendario, producción y publicación sin pausas: una sucursal sin atención solo acumula polvo.",
+    title: "Producción",
+    detail: "Filmamos en tu negocio y armamos el calendario.",
+    more: [
+      "Filmación en tu negocio o locación para el contenido del mes",
+      "Calendario o plan de publicaciones",
+      "Gráficas de nuestro departamento de diseño",
+    ],
     icon: (
       <>
-        <rect x="3" y="5" width="18" height="16" rx="2" />
-        <path d="M3 10h18M8 3v4M16 3v4M8 15l2.5 2.5L16 13" />
+        <rect x="3" y="7" width="13" height="10" rx="2" />
+        <path d="M16 10.5 21 8v8l-5-2.5" />
       </>
     ),
   },
   {
-    title: "Pauta mes a mes",
-    detail: "Campañas que impulsan tus productos clave.",
-    more: "Cada mes elegimos qué productos o servicios impulsar con publicidad y medimos lo que funciona.",
+    title: "Gestión de comunidad",
+    detail: "Revisamos, publicamos e interactuamos.",
+    more: [
+      "Revisión y corrección del material antes de publicar",
+      "El community manager publica e interactúa con tu comunidad",
+      "Reporte de cómo avanza la gestión de tus redes",
+    ],
     icon: (
       <>
-        <path d="M3 10v4h4l8 5V5L7 10z" />
-        <path d="M19 9a4 4 0 010 6" />
+        <path d="M4 5h16v10H9l-5 4z" />
+        <path d="M8 9h8M8 12h5" />
       </>
     ),
+  },
+  {
+    title: "Reporte estratégico",
+    detail: "Medimos el avance hacia tu objetivo.",
+    more: [
+      "Cómo los esfuerzos se alinean al plan aprobado al inicio",
+      "El avance de etapa en etapa hacia el objetivo",
+      "Propuesta de nuevos canales, recursos e ideas para crecer",
+    ],
+    icon: <path d="M4 19h16M6 15l4-4 3 3 5-6M14 8h4v4" />,
   },
 ];
 
 export default function MarketingStrategy() {
   return (
-    <section className="relative overflow-hidden bg-white py-20 md:py-24">
+    <section className="relative z-10 overflow-x-clip bg-white py-20 md:py-24">
       <div aria-hidden className="pointer-events-none absolute -right-32 top-0 h-80 w-80 rounded-full bg-magenta/10 blur-3xl" />
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="max-w-3xl">
@@ -67,18 +84,18 @@ export default function MarketingStrategy() {
             Estrategia, <span className="text-magenta">no solo publicar</span>
           </h2>
           <p className="mt-5 text-lg font-light leading-relaxed text-navy/65">
-            El crecimiento de una marca no es subir posts: es diversificar tu presencia digital y decidir hacia dónde
-            quieres crecer. Todo plan de Crealtiva incluye esta mirada.
+            El crecimiento de una marca no es subir posts: empieza con un análisis estratégico, objetivos claros y un
+            proceso que se mide mes a mes. Así trabajamos en todos los planes:
           </p>
         </div>
 
         {/* Flujo de 5 pasos con flechas */}
-        <ol className="mt-12 flex flex-col items-stretch gap-2 lg:min-h-[17rem] lg:flex-row lg:items-start lg:gap-0">
+        <ol className="mt-12 flex flex-col items-stretch gap-2 lg:flex-row lg:items-start lg:gap-0">
           {pillars.map((p, i) => (
             <li key={p.title} className="flex flex-col items-center lg:flex-1 lg:flex-row lg:items-start">
               <div
                 tabIndex={0}
-                className="group relative w-full cursor-default rounded-card bg-cream p-5 outline-none ring-1 ring-navy/5 transition-all duration-300 ease-out hover:z-10 hover:bg-white hover:shadow-[0_24px_48px_-16px_rgba(26,26,46,0.3)] hover:ring-teal/40 focus:z-10 focus:bg-white focus:shadow-[0_24px_48px_-16px_rgba(26,26,46,0.3)] focus:ring-teal/40 lg:hover:scale-[1.06] lg:focus:scale-[1.06]"
+                className="group relative w-full cursor-default rounded-card bg-cream p-5 outline-none ring-1 ring-navy/5 transition-all duration-300 ease-out hover:z-20 hover:bg-white hover:shadow-[0_24px_48px_-16px_rgba(26,26,46,0.3)] hover:ring-teal/40 focus:z-20 focus:bg-white focus:shadow-[0_24px_48px_-16px_rgba(26,26,46,0.3)] focus:ring-teal/40 lg:hover:scale-[1.06] lg:hover:rounded-b-none lg:focus:scale-[1.06] lg:focus:rounded-b-none"
               >
                 <div className="flex items-center gap-3 lg:block">
                   <span
@@ -96,9 +113,16 @@ export default function MarketingStrategy() {
                   </h3>
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-navy/60">{p.detail}</p>
-                <p className="max-h-0 overflow-hidden text-sm leading-relaxed text-navy/80 opacity-0 transition-all duration-300 group-hover:mt-3 group-hover:max-h-40 group-hover:opacity-100 group-focus:mt-3 group-focus:max-h-40 group-focus:opacity-100">
-                  {p.more}
-                </p>
+                <ul className="max-h-0 space-y-1.5 overflow-hidden opacity-0 transition-all duration-300 group-hover:mt-3 group-hover:max-h-80 group-hover:opacity-100 group-focus:mt-3 group-focus:max-h-80 group-focus:opacity-100 lg:pointer-events-none lg:absolute lg:inset-x-0 lg:top-full lg:mt-0 lg:max-h-none lg:-translate-y-1 lg:rounded-b-card lg:bg-white lg:px-5 lg:pb-5 lg:pt-1 lg:shadow-[0_24px_48px_-16px_rgba(26,26,46,0.3)] lg:ring-1 lg:ring-teal/40 lg:[clip-path:inset(0_-40px_-40px_-40px)] lg:group-hover:mt-0 lg:group-hover:translate-y-0 lg:group-focus:mt-0 lg:group-focus:translate-y-0">
+                  {p.more.map((m) => (
+                    <li key={m} className="flex gap-2 text-[13px] leading-snug text-navy/80">
+                      <span aria-hidden className={`font-bold ${i % 2 ? "text-magenta" : "text-teal"}`}>
+                        ✓
+                      </span>
+                      {m}
+                    </li>
+                  ))}
+                </ul>
               </div>
               {i < pillars.length - 1 && (
                 <span aria-hidden className="flex h-7 w-7 shrink-0 items-center justify-center text-magenta lg:mt-12 lg:h-auto lg:w-6">

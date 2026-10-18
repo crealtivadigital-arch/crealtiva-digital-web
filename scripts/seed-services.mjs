@@ -678,6 +678,9 @@ for (const p of packages) {
   [p.stage, p.solves] = pr;
 }
 
+// Nombre visible: se aclara qué es "Meta" para quien no lo conoce (el slug no cambia)
+for (const p of packages) if (p.slug === "crealtiva-bite-meta") p.name = "Crealtiva Bite Meta (Facebook e Instagram)";
+
 // ── "No incluye" → cómo conseguirlo ───────────────────────────────────────
 const lineBySlug = Object.fromEntries(lines.map((l) => [l.slug, l]));
 const findPkg = (slug) => packages.find((p) => p.slug === slug);
