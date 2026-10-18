@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AddonCard from "@/components/site/AddonCard";
 import ExclusionList from "@/components/site/ExclusionList";
 import { STAGES, formatPrice } from "@/lib/content/format";
 import { wa } from "@/lib/constants";
@@ -78,11 +79,10 @@ export default function ProductSheet({ pkg, lineName }: ProductSheetProps) {
           {pkg.addons.length > 0 && (
             <div className="mt-8 border-t border-navy/5 pt-6">
               <h4 className="text-sm font-semibold uppercase tracking-widest text-navy/50">Complementos opcionales</h4>
-              <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-                {pkg.addons.map((a) => (
-                  <li key={a.name} className="flex items-start justify-between gap-3 rounded-card bg-cream px-4 py-3">
-                    <span className="text-sm font-medium text-navy">{a.name}</span>
-                    {a.price && <span className="shrink-0 text-sm font-bold text-teal">+{formatPrice(a.price).main}</span>}
+              <ul className="mt-4 grid items-start gap-3 sm:grid-cols-2">
+                {pkg.addons.map((a, i) => (
+                  <li key={a.name}>
+                    <AddonCard addon={a} index={i} />
                   </li>
                 ))}
               </ul>

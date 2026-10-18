@@ -344,3 +344,52 @@ export function recommend(a: Answers): Recommendation {
 
   return { slug, alternative, reasons, tips };
 }
+
+/* ------------------------------------------------------------- Ficha de plan */
+
+// Titular de la ficha: qué resuelve el plan y en qué etapa de la estrategia de crecimiento encaja
+export const pitches: Record<string, string> = {
+  "crealtiva-bite-meta": "Ordena y activa tu presencia en Facebook e Instagram: el primer paso de tu estrategia de crecimiento.",
+  "crealtiva-bite-linkedin": "Construye autoridad profesional en LinkedIn: el primer paso para captar clientes B2B.",
+  "crealtiva-bite-tiktok": "Entra a TikTok con dirección y constancia: el primer paso para conectar con un público de alto flujo.",
+  "crealtiva-tasty-popular": "Posiciona tu marca como la opción preferida en Facebook e Instagram: la etapa de crecimiento de tu estrategia.",
+  "crealtiva-tasty-business": "Posiciónate frente a tu público y frente a empresas, en Meta y LinkedIn: la etapa de crecimiento de tu estrategia.",
+  "crealtiva-elemental": "Crece en todas tus plataformas, con estrategia por canal y pauta activa: la etapa multiplataforma de tu estrategia.",
+  "crealtiva-full-house": "Todo un departamento de marketing conectado a tus ventas: la etapa de consolidación de tu marca.",
+};
+
+// Contenido que se crea cada mes (según "Qué incluye" del catálogo)
+export const contentMix: Record<string, { label: string; n: number }[]> = {
+  "crealtiva-bite-meta": [{ label: "Videos", n: 4 }, { label: "Gráficas", n: 6 }, { label: "Carruseles", n: 2 }, { label: "Historias", n: 8 }],
+  "crealtiva-bite-linkedin": [{ label: "Videos", n: 4 }, { label: "Carruseles", n: 4 }],
+  "crealtiva-bite-tiktok": [{ label: "Videos", n: 8 }, { label: "Historias", n: 8 }],
+  "crealtiva-tasty-popular": [{ label: "Videos", n: 8 }, { label: "Gráficas", n: 12 }, { label: "Historias", n: 12 }],
+  "crealtiva-tasty-business": [{ label: "Videos", n: 8 }, { label: "Carruseles", n: 4 }, { label: "Historias", n: 12 }],
+  "crealtiva-elemental": [{ label: "Videos", n: 13 }, { label: "Gráficas", n: 24 }, { label: "Historias", n: 24 }],
+  "crealtiva-full-house": [{ label: "Videos", n: 13 }, { label: "Gráficas", n: 24 }, { label: "Historias", n: 24 }],
+};
+
+// Las 3 claves de cada plan para el slider de la ficha
+export function keySlides(slug: string) {
+  const row = (label: string) => compareRows.find((r) => r.label === label)?.values[slug];
+  return [
+    {
+      kicker: "Estrategia",
+      title: "Una estrategia de contenido para tu crecimiento",
+      body: "Establecemos la estrategia de tu contenido con un calendario de publicaciones que responde al crecimiento de tu marca.",
+      chips: [String(row("Estrategia") ?? "Plan mensual")],
+    },
+    {
+      kicker: "Contenido",
+      title: "El contenido que creamos cada mes",
+      body: "Historias, gráficas, carruseles y videos de información o de venta, producidos para tus redes.",
+      mix: contentMix[slug] ?? [],
+    },
+    {
+      kicker: "Gestión",
+      title: "Publicamos, gestionamos y medimos",
+      body: "El community manager publica, interactúa con tu comunidad y te reporta cómo avanza la gestión de tus redes.",
+      chips: [String(row("Redes gestionadas") ?? ""), String(row("Optimización de perfiles") ?? "")].filter(Boolean),
+    },
+  ];
+}

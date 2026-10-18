@@ -11,7 +11,9 @@ export default function ExclusionList({ items, dark = false }: { items: Exclusio
       {items.map((e) => (
         <li key={e.text} className="text-sm leading-relaxed">
           <span className={`flex gap-2 ${text}`}>
-            <span aria-hidden className="text-navy/30">—</span>
+            <span aria-hidden className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-magenta/15 text-[0.625rem] font-bold text-magenta">
+              ✕
+            </span>
             {e.text}
           </span>
           {e.solution && (

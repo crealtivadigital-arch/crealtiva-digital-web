@@ -5,7 +5,10 @@ import PageHeader from "@/components/site/PageHeader";
 import PackageCard from "@/components/site/PackageCard";
 import ProjectCard from "@/components/site/ProjectCard";
 import SectionTitle from "@/components/site/SectionTitle";
+import AddonCard from "@/components/site/AddonCard";
 import ExclusionList from "@/components/site/ExclusionList";
+import KeySlider from "@/components/marketing/KeySlider";
+import { keySlides, pitches } from "@/content/marketing";
 import { STAGES } from "@/lib/content/format";
 import { formatPrice, getPackage, getPackages, getProjects, getServiceLine, getServiceLines } from "@/lib/content";
 import { wa } from "@/lib/constants";
@@ -66,7 +69,7 @@ export default async function PaquetePage({ params }: Props) {
       <PageHeader
         eyebrow={pkg.badge ?? line.name}
         title={pkg.name}
-        intro={pkg.summary}
+        intro={pitches[pkg.slug] ?? pkg.solves}
         crumbs={[
           { label: "Inicio", href: "/" },
           { label: "Servicios", href: "/servicios" },
@@ -77,12 +80,16 @@ export default async function PaquetePage({ params }: Props) {
 
       <section className="bg-cream py-16 md:py-20">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1fr_360px]">
-          {/* Detalle */}
-          <div className="space-y-8">
+          {/* Detalle (min-w-0: el slider no debe ensanchar la columna en celular) */}
+          <div className="min-w-0 space-y-8">
             <div className="flex flex-wrap items-center gap-3">
               <span className={`rounded-full px-3 py-1 text-xs font-semibold ${STAGES[pkg.stage].tone}`}>{STAGES[pkg.stage].label}</span>
               {pkg.tagline && <p className="text-lg font-semibold text-teal">{pkg.tagline}</p>}
             </div>
+            <p className="-mt-4 text-lg font-light leading-relaxed text-navy/70">{pkg.summary}</p>
+
+            {/* Las 3 claves del plan (Marketing Digital) */}
+            {line.slug === "marketing-digital" && <KeySlider slides={keySlides(pkg.slug)} />}
 
             <div className="rounded-card border-l-4 border-magenta bg-magenta/[0.05] px-6 py-5">
               <p className="text-xs font-semibold uppercase tracking-widest text-magenta">Qué resuelve</p>
@@ -93,11 +100,18 @@ export default async function PaquetePage({ params }: Props) {
             {pkg.includes.length > 0 && (
               <div className="rounded-block bg-white p-8 ring-1 ring-navy/5">
                 <h2 className="font-display text-2xl text-navy">Qué entrega</h2>
-                <ul className="mt-6 space-y-3">
-                  {pkg.includes.map((x) => (
-                    <li key={x} className="flex gap-3 text-navy/75">
-                      <span aria-hidden className="mt-0.5 font-bold text-teal">✓</span>
-                      {x}
+                <ul className="mt-6 grid gap-3 md:grid-cols-2">
+                  {pkg.includes.map((x, i) => (
+                    <li key={x} className="flex items-start gap-3 rounded-card bg-cream/60 p-3 text-sm leading-snug text-navy/80">
+                      <span
+                        aria-hidden
+                        className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br text-xs font-bold text-cream shadow-sm ${
+                          i % 2 ? "from-magenta to-magenta-light" : "from-teal to-teal-dark"
+                        }`}
+                      >
+                        ✓
+                      </span>
+                      <span className="pt-1">{x}</span>
                     </li>
                   ))}
                 </ul>
@@ -109,9 +123,11 @@ export default async function PaquetePage({ params }: Props) {
                 {pkg.idealFor.length > 0 && (
                   <div className="rounded-card bg-white p-6 ring-1 ring-navy/5">
                     <h3 className="font-bold text-navy">Ideal para</h3>
-                    <ul className="mt-4 space-y-2 text-sm text-navy/70">
+                    <ul className="mt-4 flex flex-wrap gap-2">
                       {pkg.idealFor.map((x) => (
-                        <li key={x}>• {x}</li>
+                        <li key={x} className="rounded-full bg-teal/[0.1] px-3 py-1.5 text-xs font-semibold text-teal">
+                          {x}
+                        </li>
                       ))}
                     </ul>
                   </div>
@@ -131,34 +147,35 @@ export default async function PaquetePage({ params }: Props) {
               <div>
                 <h2 className="font-display text-2xl text-navy">Complementos opcionales</h2>
                 <p className="mt-1 text-sm font-light text-navy/60">Súmalos a tu paquete cuando los necesites.</p>
-                <ul className="mt-5 grid gap-4 md:grid-cols-2">
-                  {pkg.addons.map((a) => {
-                    const p = a.price ? formatPrice(a.price) : null;
-                    return (
-                      <li key={a.name} className="flex flex-col rounded-card border border-teal/20 bg-white p-5">
-                        <div className="flex items-start justify-between gap-4">
-                          <h3 className="font-semibold text-navy">{a.name}</h3>
-                          {p && <span className="shrink-0 font-bold text-teal">+{p.main}</span>}
-                        </div>
-                        <p className="mt-2 text-sm leading-relaxed text-navy/60">{a.detail}</p>
-                      </li>
-                    );
-                  })}
+                <ul className="mt-5 grid items-start gap-4 md:grid-cols-2">
+                  {pkg.addons.map((a, i) => (
+                    <li key={a.name} className="rounded-card bg-white">
+                      <AddonCard addon={a} index={i} />
+                    </li>
+                  ))}
                 </ul>
               </div>
             )}
 
             {line.conditions.length > 0 && (
               <div>
-                <h2 className="text-lg font-bold text-navy">Condiciones del servicio</h2>
-                <dl className="mt-4 space-y-3">
+                <h2 className="font-display text-2xl text-navy">Condiciones del servicio</h2>
+                <p className="mt-1 text-sm font-light text-navy/60">Toca cada una para ver el detalle.</p>
+                {/* Desplegables, como preguntas frecuentes: la lista queda corta */}
+                <div className="mt-4 grid gap-2 md:grid-cols-2">
                   {line.conditions.map((c, i) => (
-                    <div key={`${c.title}-${i}`} className="text-sm leading-relaxed">
-                      <dt className="inline font-semibold text-navy">{c.title}: </dt>
-                      <dd className="inline text-navy/60">{c.detail}</dd>
-                    </div>
+                    <details key={`${c.title}-${i}`} className="group rounded-card bg-white ring-1 ring-navy/5 open:ring-teal/40">
+                      <summary className="flex cursor-pointer list-none items-center gap-3 px-4 py-3 text-sm font-semibold text-navy [&::-webkit-details-marker]:hidden">
+                        <span aria-hidden className={`h-2 w-2 shrink-0 rounded-full ${i % 2 ? "bg-magenta" : "bg-teal"}`} />
+                        <span className="flex-1">{c.title}</span>
+                        <span aria-hidden className="text-lg leading-none text-navy/40 transition-transform group-open:rotate-45">
+                          +
+                        </span>
+                      </summary>
+                      <p className="px-4 pb-4 pl-9 text-[0.8125rem] leading-relaxed text-navy/65">{c.detail}</p>
+                    </details>
                   ))}
-                </dl>
+                </div>
               </div>
             )}
           </div>
