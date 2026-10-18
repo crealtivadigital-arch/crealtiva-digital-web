@@ -50,7 +50,12 @@ export default function FamilyTabs({
 
   return (
     <div onMouseEnter={() => setHovering(true)} onMouseLeave={() => setHovering(false)}>
-      <div role="tablist" aria-label="Planes de esta familia" className="no-scrollbar flex gap-2 overflow-x-auto pb-1">
+      {/* Celular: todas las pestañas visibles en una grilla (nombre corto y precio debajo). Escritorio: fila de píldoras */}
+      <div
+        role="tablist"
+        aria-label="Planes de esta familia"
+        className={`grid gap-2 sm:flex sm:flex-wrap ${tabs.length === 3 ? "grid-cols-3" : "grid-cols-2"}`}
+      >
         {tabs.map((t, i) => (
           <button
             key={t.slug}
@@ -60,11 +65,16 @@ export default function FamilyTabs({
             aria-selected={i === active}
             aria-controls={`panel-${t.slug}`}
             onClick={() => setActive(i)}
-            className={`relative shrink-0 overflow-hidden rounded-full px-5 py-2.5 text-sm font-semibold transition-colors ${
+            className={`relative overflow-hidden rounded-2xl px-2 py-2 text-center text-xs font-semibold leading-tight transition-colors sm:rounded-full sm:px-5 sm:py-2.5 sm:text-left sm:text-sm ${
               i === active ? `${on} shadow-lg` : "bg-white text-navy/70 ring-1 ring-navy/10 hover:text-navy"
             }`}
           >
-            {t.label} <span className={i === active ? "text-cream/80" : "text-navy/40"}>· {t.price}</span>
+            <span className="sm:hidden">{t.label.replace(/\s*\(.*\)/, "")}</span>
+            <span className="hidden sm:inline">{t.label}</span>
+            <span className={`block whitespace-nowrap font-normal sm:inline ${i === active ? "text-cream/80" : "text-navy/40"}`}>
+              <span className="hidden sm:inline"> · </span>
+              {t.price}
+            </span>
             {i === active && !hovering && (
               <span
                 key={active}
