@@ -47,6 +47,7 @@ export default async function PaquetePage({ params }: Props) {
   // Primero los trabajos hechos con este paquete exacto, luego el resto de la línea.
   const projects = [...allProjects].sort((a, b) => Number(b.packageSlug === pkg.slug) - Number(a.packageSlug === pkg.slug)).slice(0, 3);
   const others = siblings.filter((p) => p.slug !== pkg.slug);
+  const addonCols = ["", "lg:grid-cols-1", "lg:grid-cols-2", "lg:grid-cols-3", "lg:grid-cols-4"][Math.min(pkg.addons.length, 4)];
   const extraImg =
     projects[0]?.cover ??
     (line.slug === "marketing-digital"
@@ -129,84 +130,49 @@ export default async function PaquetePage({ params }: Props) {
             </div>
 
             {pkg.includes.length > 0 && (
-              <div className="rounded-block bg-white p-8 ring-1 ring-navy/5">
+              <div className="rounded-block bg-white p-6 ring-1 ring-navy/5 md:p-8">
                 <h2 className="font-display text-2xl text-navy">Qué entrega</h2>
-                <ul className="mt-6 grid gap-3 md:grid-cols-2">
-                  {pkg.includes.map((x, i) => (
-                    <li key={x} className="flex items-start gap-3 rounded-card bg-cream/60 p-3 text-sm leading-snug text-navy/80">
-                      <span
-                        aria-hidden
-                        className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br text-xs font-bold text-cream shadow-sm ${
-                          i % 2 ? "from-magenta to-magenta-light" : "from-teal to-teal-dark"
-                        }`}
-                      >
-                        ✓
-                      </span>
-                      <span className="pt-1">{x}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {/* No incluye, junto a una foto de producción */}
-            {pkg.excludes.length > 0 && (
-              <div className={`grid items-center gap-6 ${extraImg ? "md:grid-cols-[1fr_0.8fr]" : ""}`}>
-                <div className="rounded-card bg-white p-6 ring-1 ring-navy/5">
-                  <h3 className="font-bold text-navy">No incluye</h3>
-                  <div className="mt-4">
-                    <ExclusionList items={pkg.excludes} />
-                  </div>
-                </div>
-                {extraImg && (
-                  <div className="relative mx-auto w-fit max-w-full p-2">
-                    <div aria-hidden className="absolute inset-0 -translate-x-3 translate-y-3 rounded-block bg-magenta/80" />
-                    <NaturalImage
-                      img={extraImg}
-                      sizes="(min-width: 1024px) 280px, 100vw"
-                      maxHeight={340}
-                      className="mx-auto rounded-block shadow-[0_20px_40px_-15px_rgba(26,26,46,0.45)]"
-                    />
-                  </div>
-                )}
-              </div>
-            )}
-
-            {pkg.addons.length > 0 && (
-              <div>
-                <h2 className="font-display text-2xl text-navy">Complementos opcionales</h2>
-                <p className="mt-1 text-sm font-light text-navy/60">Súmalos a tu paquete cuando los necesites.</p>
-                <ul className="mt-5 grid items-start gap-4 md:grid-cols-2">
-                  {pkg.addons.map((a, i) => (
-                    <li key={a.name} className="rounded-card bg-white">
-                      <AddonCard addon={a} index={i} />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {line.conditions.length > 0 && (
-              <div>
-                <h2 className="font-display text-2xl text-navy">Condiciones del servicio</h2>
-                <p className="mt-1 text-sm font-light text-navy/60">Toca cada una para ver el detalle.</p>
-                {/* Desplegables, como preguntas frecuentes: la lista queda corta */}
-                <div className="mt-4 grid gap-2 md:grid-cols-2">
-                  {line.conditions.map((c, i) => (
-                    <details key={`${c.title}-${i}`} className="group rounded-card bg-white ring-1 ring-navy/5 open:ring-teal/40">
-                      <summary className="flex cursor-pointer list-none items-center gap-3 px-4 py-3 text-sm font-semibold text-navy [&::-webkit-details-marker]:hidden">
-                        <span aria-hidden className={`h-2 w-2 shrink-0 rounded-full ${i % 2 ? "bg-magenta" : "bg-teal"}`} />
-                        <span className="flex-1">{c.title}</span>
-                        <span aria-hidden className="text-lg leading-none text-navy/40 transition-transform group-open:rotate-45">
-                          +
+                <div className={`mt-6 grid items-center gap-6 ${extraImg ? "md:grid-cols-[1.4fr_1fr]" : ""}`}>
+                  <ul className="grid gap-3">
+                    {pkg.includes.map((x, i) => (
+                      <li key={x} className="flex items-start gap-3 rounded-card bg-cream/60 p-3 text-sm leading-snug text-navy/80">
+                        <span
+                          aria-hidden
+                          className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br text-xs font-bold text-cream shadow-sm ${
+                            i % 2 ? "from-magenta to-magenta-light" : "from-teal to-teal-dark"
+                          }`}
+                        >
+                          ✓
                         </span>
-                      </summary>
-                      <p className="px-4 pb-4 pl-9 text-[0.8125rem] leading-relaxed text-navy/65">{c.detail}</p>
-                    </details>
-                  ))}
+                        <span className="pt-1">{x}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  {/* Foto de producción junto a lo que se entrega */}
+                  {extraImg && (
+                    <div className="relative mx-auto w-fit max-w-full p-2">
+                      <div aria-hidden className="absolute inset-0 -translate-x-3 translate-y-3 rounded-block bg-magenta/80" />
+                      <NaturalImage
+                        img={extraImg}
+                        sizes="(min-width: 1024px) 260px, 100vw"
+                        maxHeight={360}
+                        className="mx-auto rounded-block shadow-[0_20px_40px_-15px_rgba(26,26,46,0.45)]"
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             )}
+
+            {pkg.excludes.length > 0 && (
+              <div className="rounded-card bg-white p-6 ring-1 ring-navy/5">
+                <h3 className="font-bold text-navy">No incluye</h3>
+                <div className="mt-4">
+                  <ExclusionList items={pkg.excludes} />
+                </div>
+              </div>
+            )}
+
           </div>
 
           {/* Precio y CTA */}
@@ -244,6 +210,45 @@ export default async function PaquetePage({ params }: Props) {
             {/* Las 3 claves del plan (Marketing Digital), bajo el precio */}
             {line.slug === "marketing-digital" && <KeySlider slides={keySlides(pkg.slug)} />}
           </aside>
+        </div>
+
+        {/* A todo el ancho: complementos en una fila y condiciones desplegables */}
+      <div className="mx-auto mt-14 max-w-6xl space-y-14 px-6">
+          {pkg.addons.length > 0 && (
+            <div>
+              <h2 className="font-display text-2xl text-navy">Complementos opcionales</h2>
+              <p className="mt-1 text-sm font-light text-navy/60">Súmalos a tu paquete cuando los necesites.</p>
+              <ul className={`mt-5 grid items-start gap-4 sm:grid-cols-2 ${addonCols}`}>
+                {pkg.addons.map((a, i) => (
+                  <li key={a.name} className="rounded-card bg-white">
+                    <AddonCard addon={a} index={i} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {line.conditions.length > 0 && (
+            <div>
+              <h2 className="font-display text-2xl text-navy">Condiciones del servicio</h2>
+              <p className="mt-1 text-sm font-light text-navy/60">Toca cada una para ver el detalle.</p>
+              {/* Desplegables, como preguntas frecuentes: la lista queda corta */}
+              <div className="mt-4 grid items-start gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                {line.conditions.map((c, i) => (
+                  <details key={`${c.title}-${i}`} className="group rounded-card bg-white ring-1 ring-navy/5 open:ring-teal/40">
+                    <summary className="flex cursor-pointer list-none items-center gap-3 px-4 py-3 text-sm font-semibold text-navy [&::-webkit-details-marker]:hidden">
+                      <span aria-hidden className={`h-2 w-2 shrink-0 rounded-full ${i % 2 ? "bg-magenta" : "bg-teal"}`} />
+                      <span className="flex-1">{c.title}</span>
+                      <span aria-hidden className="text-lg leading-none text-navy/40 transition-transform group-open:rotate-45">
+                        +
+                      </span>
+                    </summary>
+                    <p className="px-4 pb-4 pl-9 text-[0.8125rem] leading-relaxed text-navy/65">{c.detail}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
