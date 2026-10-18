@@ -102,22 +102,24 @@ export default async function LineaPage({ params }: Props) {
             </div>
           </div>
           {line.cover && (
-            <NaturalImage img={line.cover} sizes="(min-width: 1024px) 520px, 100vw" maxHeight={500} priority className="mx-auto rounded-block" />
+            <div className="relative">
+              <NaturalImage img={line.cover} sizes="(min-width: 1024px) 520px, 100vw" maxHeight={500} priority className="mx-auto rounded-block" />
+              {/* Lo clave de la línea, al pie de la foto (como en el inicio) */}
+              <ul className="relative z-10 mx-auto -mt-12 grid w-[calc(100%-2rem)] max-w-[480px] gap-x-5 gap-y-2.5 rounded-2xl border border-white/25 bg-white/15 p-5 text-sm text-cream shadow-xl backdrop-blur-md sm:grid-cols-2">
+                {line.keyPoints.map((k) => (
+                  <li key={k} className="flex gap-2.5 leading-snug">
+                    <span aria-hidden className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-teal text-[11px] font-bold text-cream">
+                      ✓
+                    </span>
+                    {k}
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
         </div>
       </section>
 
-      {/* Lo clave de la línea */}
-      <section className="border-b border-navy/5 bg-white py-12">
-        <ul className="mx-auto grid max-w-6xl gap-4 px-6 sm:grid-cols-2 lg:grid-cols-4">
-          {line.keyPoints.map((k) => (
-            <li key={k} className="flex gap-3 text-sm leading-snug text-navy/80">
-              <span aria-hidden className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-teal text-[11px] font-bold text-cream">✓</span>
-              {k}
-            </li>
-          ))}
-        </ul>
-      </section>
 
       {isMarketing && <MarketingStrategy />}
       {isMarketing && <PackageQuiz pkgs={quizPkgs} />}
@@ -269,11 +271,27 @@ export default async function LineaPage({ params }: Props) {
         <section className="bg-cream py-20">
           <div className="mx-auto max-w-6xl px-6">
             <SectionTitle eyebrow="Condiciones" title="Lo que debes saber" />
-            <dl className="grid gap-4 md:grid-cols-2">
+            {/* Mosaico en 3 columnas: los textos de distinto largo se acomodan sin filas vacías */}
+            <dl className="gap-4 sm:columns-2 lg:columns-3">
               {line.conditions.map((c, i) => (
-                <div key={`${c.title}-${i}`} className="rounded-card bg-white p-6 ring-1 ring-navy/5">
-                  <dt className="font-semibold text-navy">{c.title}</dt>
-                  <dd className="mt-2 text-sm leading-relaxed text-navy/60">{c.detail}</dd>
+                <div
+                  key={`${c.title}-${i}`}
+                  className={`mb-4 flex break-inside-avoid gap-3 rounded-card border-l-4 bg-white p-4 shadow-[0_8px_20px_-12px_rgba(26,26,46,0.18)] ${
+                    i % 2 ? "border-magenta" : "border-teal"
+                  }`}
+                >
+                  <span
+                    aria-hidden
+                    className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-bold text-cream ${
+                      i % 2 ? "bg-magenta" : "bg-teal"
+                    }`}
+                  >
+                    {i + 1}
+                  </span>
+                  <div>
+                    <dt className="text-sm font-bold text-navy">{c.title}</dt>
+                    <dd className="mt-1 text-[13px] leading-relaxed text-navy/60">{c.detail}</dd>
+                  </div>
                 </div>
               ))}
             </dl>

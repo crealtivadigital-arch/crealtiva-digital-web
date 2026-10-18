@@ -427,8 +427,8 @@ const lines = [
       { title: "Lo que necesitamos de ti", detail: "La información de tu negocio para el brief y, si ya lo tienes, tu kit creativo: logo, manual de marca y tipografías." },
       { title: "Pauta en Bite y Tasty", detail: "Estos planes no incluyen campañas de anuncios; puedes sumar una campaña como complemento, armada con el contenido del mes. Elemental incluye 1 campaña y Full House 2." },
       { title: "Fotografía de producto", detail: "No está incluida en los planes Bite. Se contrata aparte en la línea de Fotografía de Producto." },
-      { title: "Mensajes de clientes", detail: "En Elemental y Full House la atención de los mensajes de tus clientes no está incluida: los mensajes de las plataformas se redirigen a tu WhatsApp o a tu canal de ventas." },
-      { title: "Cambio de plan", detail: "Puedes escalar o ajustar tu plan según la etapa de tu negocio." },
+      { title: "Gestión de ventas", detail: "No somos tu equipo de ventas: desarrollamos tu crecimiento y presencia digital, y las campañas atraen leads. La atención de esos mensajes y el cierre de ventas están a cargo del equipo comercial de tu empresa; los mensajes de las plataformas se redirigen a tu WhatsApp o canal de ventas." },
+      { title: "Planes adaptables", detail: "Cada plan se puede adaptar a tus necesidades: ampliar servicios, sumar acompañamiento o ajustar detalles según la etapa de tu negocio." },
     ],
     faqs: faq([
       ["¿Cuánto tiempo tarda en verse resultados?", "Los primeros cambios visibles (consistencia y engagement inicial) se notan entre las semanas 3 y 4. Para evaluar conversiones y crecimiento sostenido sugerimos un periodo mínimo de 3 meses."],
