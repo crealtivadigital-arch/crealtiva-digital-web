@@ -88,9 +88,6 @@ export default async function PaquetePage({ params }: Props) {
             </div>
             <p className="-mt-4 text-lg font-light leading-relaxed text-navy/70">{pkg.summary}</p>
 
-            {/* Las 3 claves del plan (Marketing Digital) */}
-            {line.slug === "marketing-digital" && <KeySlider slides={keySlides(pkg.slug)} />}
-
             <div className="rounded-card border-l-4 border-magenta bg-magenta/[0.05] px-6 py-5">
               <p className="text-xs font-semibold uppercase tracking-widest text-magenta">Qué resuelve</p>
               <p className="mt-1 text-lg text-navy/80">{pkg.solves}</p>
@@ -181,7 +178,7 @@ export default async function PaquetePage({ params }: Props) {
           </div>
 
           {/* Precio y CTA */}
-          <aside className="lg:sticky lg:top-24 lg:self-start">
+          <aside className="space-y-6 lg:self-start">
             <div className="rounded-block bg-navy p-8 text-cream">
               {price.prefix && <span className="block text-xs font-semibold uppercase tracking-wide text-cream/50">{price.prefix}</span>}
               <span className="font-display text-5xl">{price.main}</span>
@@ -211,6 +208,9 @@ export default async function PaquetePage({ params }: Props) {
                 o escríbenos por el formulario
               </Link>
             </div>
+
+            {/* Las 3 claves del plan (Marketing Digital), bajo el precio */}
+            {line.slug === "marketing-digital" && <KeySlider slides={keySlides(pkg.slug)} />}
           </aside>
         </div>
       </section>

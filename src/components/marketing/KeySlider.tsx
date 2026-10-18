@@ -44,7 +44,7 @@ export default function KeySlider({ slides }: { slides: KeySlide[] }) {
       <div className="overflow-hidden">
         <div className="flex transition-transform duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)]" style={{ transform: `translateX(-${active * 100}%)` }}>
           {slides.map((s, i) => (
-            <div key={s.kicker} className="w-full shrink-0 p-6 md:p-8" inert={i !== active} aria-roledescription="lámina" aria-label={`${i + 1} de ${slides.length}`}>
+            <div key={s.kicker} className="w-full shrink-0 p-6" inert={i !== active} aria-roledescription="lámina" aria-label={`${i + 1} de ${slides.length}`}>
               <div className="flex items-center gap-3">
                 <span className={`flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br ${i % 2 ? "from-magenta to-magenta-light" : "from-teal to-teal-dark"} shadow-lg`}>
                   <svg aria-hidden viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -55,13 +55,13 @@ export default function KeySlider({ slides }: { slides: KeySlide[] }) {
                   {String(i + 1).padStart(2, "0")} · {s.kicker}
                 </span>
               </div>
-              <h3 className="mt-4 font-display text-2xl leading-tight md:text-3xl">{s.title}</h3>
-              <p className="mt-2 max-w-xl text-cream/70">{s.body}</p>
+              <h3 className="mt-4 font-display text-xl leading-tight md:text-2xl">{s.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-cream/70">{s.body}</p>
               {s.mix && s.mix.length > 0 && (
-                <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                <ul className="mt-5 grid grid-cols-2 gap-2.5">
                   {s.mix.map((m, j) => (
-                    <li key={m.label} className={`rounded-card bg-gradient-to-br ${tiles[j % tiles.length]} p-4 text-center ring-1 ring-white/10`}>
-                      <span className="block font-display text-3xl">{m.n}</span>
+                    <li key={m.label} className={`rounded-card bg-gradient-to-br ${tiles[j % tiles.length]} p-3 text-center ring-1 ring-white/10`}>
+                      <span className="block font-display text-2xl">{m.n}</span>
                       <span className="text-xs font-semibold text-cream/85">{m.label} al mes</span>
                     </li>
                   ))}
@@ -70,7 +70,7 @@ export default function KeySlider({ slides }: { slides: KeySlide[] }) {
               {s.chips && s.chips.length > 0 && (
                 <ul className="mt-5 flex flex-wrap gap-2">
                   {s.chips.map((c) => (
-                    <li key={c} className="rounded-full bg-white/10 px-3 py-1.5 text-sm font-semibold">
+                    <li key={c} className="rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold">
                       {c}
                     </li>
                   ))}
@@ -81,7 +81,7 @@ export default function KeySlider({ slides }: { slides: KeySlide[] }) {
         </div>
       </div>
 
-      <div className="flex items-center gap-3 border-t border-white/10 px-6 py-4 md:px-8">
+      <div className="flex items-center gap-3 border-t border-white/10 px-6 py-4">
         {slides.map((s, i) => (
           <button
             key={s.kicker}
