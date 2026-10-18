@@ -6,6 +6,7 @@ import PackageCard from "@/components/site/PackageCard";
 import ProjectCard from "@/components/site/ProjectCard";
 import SectionTitle from "@/components/site/SectionTitle";
 import AddonCard from "@/components/site/AddonCard";
+import NaturalImage from "@/components/site/NaturalImage";
 import ExclusionList from "@/components/site/ExclusionList";
 import KeySlider from "@/components/marketing/KeySlider";
 import { keySlides, pitches } from "@/content/marketing";
@@ -46,6 +47,11 @@ export default async function PaquetePage({ params }: Props) {
   // Primero los trabajos hechos con este paquete exacto, luego el resto de la línea.
   const projects = [...allProjects].sort((a, b) => Number(b.packageSlug === pkg.slug) - Number(a.packageSlug === pkg.slug)).slice(0, 3);
   const others = siblings.filter((p) => p.slug !== pkg.slug);
+  const extraImg =
+    projects[0]?.cover ??
+    (line.slug === "marketing-digital"
+      ? { src: "https://crealtivadigital.com/wp-content/uploads/2026/04/creacion-d-econtenido-scaled.webp", alt: "Creadora de contenido grabando un video en un restaurante" }
+      : undefined);
   const price = formatPrice(pkg.price);
   const quote = wa(`Hola, quiero cotizar el paquete "${pkg.name}" (${line.name}) con Crealtiva Digital.`);
 
@@ -88,10 +94,38 @@ export default async function PaquetePage({ params }: Props) {
             </div>
             <p className="-mt-4 text-lg font-light leading-relaxed text-navy/70">{pkg.summary}</p>
 
-            <div className="rounded-card border-l-4 border-magenta bg-magenta/[0.05] px-6 py-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-magenta">Qué resuelve</p>
-              <p className="mt-1 text-lg text-navy/80">{pkg.solves}</p>
-              <p className="mt-2 text-sm font-light text-navy/55">{STAGES[pkg.stage].description}</p>
+            {/* Qué resuelve + para quién es, junto a la foto de la línea */}
+            <div className={`grid items-center gap-6 ${line.cover ? "md:grid-cols-[1.25fr_1fr]" : ""}`}>
+              <div className="space-y-4">
+                <div className="rounded-card border-l-4 border-magenta bg-magenta/[0.05] px-6 py-5">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-magenta">Qué resuelve</p>
+                  <p className="mt-1 text-lg text-navy/80">{pkg.solves}</p>
+                  <p className="mt-2 text-sm font-light text-navy/55">{STAGES[pkg.stage].description}</p>
+                </div>
+                {pkg.idealFor.length > 0 && (
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-navy/50">Ideal para</p>
+                    <ul className="mt-2 flex flex-wrap gap-2">
+                      {pkg.idealFor.map((x) => (
+                        <li key={x} className="rounded-full bg-teal/[0.1] px-3 py-1.5 text-xs font-semibold text-teal">
+                          {x}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+              {line.cover && (
+                <div className="relative mx-auto w-fit max-w-full p-2">
+                  <div aria-hidden className="absolute inset-0 translate-x-3 translate-y-3 rounded-block bg-teal/80" />
+                  <NaturalImage
+                    img={line.cover}
+                    sizes="(min-width: 1024px) 300px, 100vw"
+                    maxHeight={320}
+                    className="mx-auto rounded-block shadow-[0_20px_40px_-15px_rgba(26,26,46,0.45)]"
+                  />
+                </div>
+              )}
             </div>
 
             {pkg.includes.length > 0 && (
@@ -115,26 +149,24 @@ export default async function PaquetePage({ params }: Props) {
               </div>
             )}
 
-            {(pkg.excludes.length > 0 || pkg.idealFor.length > 0) && (
-              <div className="grid gap-6 md:grid-cols-2">
-                {pkg.idealFor.length > 0 && (
-                  <div className="rounded-card bg-white p-6 ring-1 ring-navy/5">
-                    <h3 className="font-bold text-navy">Ideal para</h3>
-                    <ul className="mt-4 flex flex-wrap gap-2">
-                      {pkg.idealFor.map((x) => (
-                        <li key={x} className="rounded-full bg-teal/[0.1] px-3 py-1.5 text-xs font-semibold text-teal">
-                          {x}
-                        </li>
-                      ))}
-                    </ul>
+            {/* No incluye, junto a una foto de producción */}
+            {pkg.excludes.length > 0 && (
+              <div className={`grid items-center gap-6 ${extraImg ? "md:grid-cols-[1fr_0.8fr]" : ""}`}>
+                <div className="rounded-card bg-white p-6 ring-1 ring-navy/5">
+                  <h3 className="font-bold text-navy">No incluye</h3>
+                  <div className="mt-4">
+                    <ExclusionList items={pkg.excludes} />
                   </div>
-                )}
-                {pkg.excludes.length > 0 && (
-                  <div className="rounded-card bg-white p-6 ring-1 ring-navy/5">
-                    <h3 className="font-bold text-navy">No incluye</h3>
-                    <div className="mt-4">
-                      <ExclusionList items={pkg.excludes} />
-                    </div>
+                </div>
+                {extraImg && (
+                  <div className="relative mx-auto w-fit max-w-full p-2">
+                    <div aria-hidden className="absolute inset-0 -translate-x-3 translate-y-3 rounded-block bg-magenta/80" />
+                    <NaturalImage
+                      img={extraImg}
+                      sizes="(min-width: 1024px) 280px, 100vw"
+                      maxHeight={340}
+                      className="mx-auto rounded-block shadow-[0_20px_40px_-15px_rgba(26,26,46,0.45)]"
+                    />
                   </div>
                 )}
               </div>
@@ -178,7 +210,7 @@ export default async function PaquetePage({ params }: Props) {
           </div>
 
           {/* Precio y CTA */}
-          <aside className="space-y-6 lg:self-start">
+          <aside className="min-w-0 space-y-6 lg:self-start">
             <div className="rounded-block bg-navy p-8 text-cream">
               {price.prefix && <span className="block text-xs font-semibold uppercase tracking-wide text-cream/50">{price.prefix}</span>}
               <span className="font-display text-5xl">{price.main}</span>
