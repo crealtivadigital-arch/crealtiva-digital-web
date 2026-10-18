@@ -44,12 +44,11 @@ export default async function Home() {
 
       <HomeHero />
       <AboutSection />
-      <KeyServices lines={lines} />
-      <Differentiators />
       <HowWeStart />
+      <KeyServices lines={lines} />
 
       {projects.length > 0 && (
-        <section className="bg-white py-20 md:py-28">
+        <section className="bg-cream py-20 md:py-28">
           <div className="mx-auto max-w-6xl px-6">
             <SectionTitle
               eyebrow="Portafolio"
@@ -69,21 +68,24 @@ export default async function Home() {
         </section>
       )}
 
+      <Differentiators />
+
       {posts.length > 0 && (
         <section className="bg-cream py-20 md:py-28">
           <div className="mx-auto max-w-6xl px-6">
             <SectionTitle
               eyebrow="News"
-              title="Ideas claras para hacer crecer tu marca"
+              title="¿Te gustaría saber más?"
+              intro="Blogs informativos y las noticias más recientes sobre marketing, redes y crecimiento digital, explicados de forma clara para que tomes mejores decisiones para tu marca."
               action={
                 <Link href="/news" className="text-sm font-semibold text-teal hover:text-navy">
                   Ver todos los artículos →
                 </Link>
               }
             />
-            <div className="columns-1 gap-6 md:columns-2 lg:columns-3">
+            <div className="grid gap-4 md:grid-cols-3">
               {posts.map((p) => (
-                <PostCard key={p.slug} post={p} />
+                <PostCard key={p.slug} post={p} compact />
               ))}
             </div>
           </div>

@@ -6,10 +6,11 @@ import type { Post } from "@/lib/content/types";
 interface PostCardProps {
   post: Post;
   featured?: boolean;
+  compact?: boolean; // versión discreta para listados cortos (home): miniatura al lado del texto
 }
 
 // Tarjeta de News. La foto conserva su proporción original; el texto va debajo (o al lado, en la destacada).
-export default function PostCard({ post, featured = false }: PostCardProps) {
+export default function PostCard({ post, featured = false, compact = false }: PostCardProps) {
   const meta = (
     <div className="mb-3 flex flex-wrap items-center gap-3 text-xs">
       <span className="rounded-full bg-magenta px-3 py-1 font-semibold text-cream">{post.category}</span>
@@ -18,6 +19,27 @@ export default function PostCard({ post, featured = false }: PostCardProps) {
       </span>
     </div>
   );
+
+  if (compact) {
+    return (
+      <article className="group relative flex items-center gap-4 rounded-card bg-white/70 p-3 ring-1 ring-navy/5 transition hover:bg-white hover:shadow-md">
+        <div className="w-24 shrink-0">
+          <NaturalImage img={post.cover} sizes="96px" maxHeight={96} className="mx-auto rounded-lg" />
+        </div>
+        <div className="min-w-0">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-magenta">
+            {post.category} <span className="font-normal normal-case tracking-normal text-navy/40">· {post.readingMinutes} min</span>
+          </p>
+          <h3 className="mt-1 line-clamp-2 text-sm font-bold leading-snug text-navy">
+            <Link href={`/news/${post.slug}`} className="after:absolute after:inset-0">
+              {post.title}
+            </Link>
+          </h3>
+          <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-navy/55">{post.excerpt}</p>
+        </div>
+      </article>
+    );
+  }
 
   if (featured) {
     return (

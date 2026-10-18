@@ -80,3 +80,9 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .letterbox-top, .letterbox-bottom, .credits-in { animation: none; }
 }
+
+/* Barra de avance del slider "Cómo funciona el crecimiento digital" */
+@keyframes story-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
