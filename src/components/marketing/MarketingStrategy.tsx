@@ -1,17 +1,17 @@
-import { families } from "@/content/marketing";
+// Antes de los paquetes: qué significa hacer estrategia (no solo publicar), como un flujo de
+// cinco pasos. Al pasar el mouse (o tocar, en celular) cada paso se amplía y muestra más detalle.
 
-// Antes de los paquetes: qué significa hacer estrategia (no solo publicar) y la ruta de
-// crecimiento Bite → Tasty → Elemental → Full House.
-
-const pillars: { title: string; detail: string; icon: React.ReactNode }[] = [
+const pillars: { title: string; detail: string; more: string; icon: React.ReactNode }[] = [
   {
-    title: "Tu web es la matriz",
-    detail: "La base propia de tu marca en internet. Las redes llevan público hacia ella.",
+    title: "Tu web, la matriz",
+    detail: "La base propia de tu marca en internet.",
+    more: "Ahí viven tu catálogo, tu información y tu forma de atender. Las redes llevan público hacia ella.",
     icon: <path d="M3 11l9-7 9 7v9H3zM9 20v-6h6v6" />,
   },
   {
-    title: "Diversifica tu presencia",
-    detail: "Cada red es como una sucursal en un barrio distinto, con su propio público e idioma.",
+    title: "Presencia diversificada en redes",
+    detail: "Cada red es como una sucursal con su propio público.",
+    more: "Facebook, Instagram, TikTok, LinkedIn y Google Business: cada canal con su tono y su estrategia.",
     icon: (
       <>
         <circle cx="12" cy="12" r="3" />
@@ -24,13 +24,15 @@ const pillars: { title: string; detail: string; icon: React.ReactNode }[] = [
     ),
   },
   {
-    title: "Calidad en cada vitrina",
-    detail: "Tu marca se percibe por lo que muestra: diseño, foto y video a la altura de tu negocio.",
+    title: "Calidad de producción",
+    detail: "Tu marca se percibe por lo que muestra.",
+    more: "Video, foto y diseño a la altura de tu negocio, en cada publicación y en cada red.",
     icon: <path d="M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2z" />,
   },
   {
     title: "Constancia mensual",
-    detail: "Un plan de contenido cada mes. Una sucursal sin atención solo acumula polvo.",
+    detail: "Un plan de contenido cada mes.",
+    more: "Calendario, producción y publicación sin pausas: una sucursal sin atención solo acumula polvo.",
     icon: (
       <>
         <rect x="3" y="5" width="18" height="16" rx="2" />
@@ -39,8 +41,9 @@ const pillars: { title: string; detail: string; icon: React.ReactNode }[] = [
     ),
   },
   {
-    title: "Pauta e interacción",
-    detail: "La publicidad impulsa; la conversación y las reseñas construyen confianza.",
+    title: "Pauta mes a mes",
+    detail: "Campañas que impulsan tus productos clave.",
+    more: "Cada mes elegimos qué productos o servicios impulsar con publicidad y medimos lo que funciona.",
     icon: (
       <>
         <path d="M3 10v4h4l8 5V5L7 10z" />
@@ -49,13 +52,6 @@ const pillars: { title: string; detail: string; icon: React.ReactNode }[] = [
     ),
   },
 ];
-
-const steps: Record<string, { label: string; color: string }> = {
-  bite: { label: "Arranque", color: "bg-teal" },
-  tasty: { label: "Posicionamiento", color: "bg-magenta" },
-  elemental: { label: "Multiplataforma", color: "bg-navy" },
-  "full-house": { label: "Departamento completo", color: "bg-gradient-to-br from-teal to-magenta" },
-};
 
 export default function MarketingStrategy() {
   return (
@@ -76,57 +72,48 @@ export default function MarketingStrategy() {
           </p>
         </div>
 
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        {/* Flujo de 5 pasos con flechas */}
+        <ol className="mt-12 flex flex-col items-stretch gap-2 lg:min-h-[17rem] lg:flex-row lg:items-start lg:gap-0">
           {pillars.map((p, i) => (
-            <li key={p.title} className="rounded-card bg-cream p-5 ring-1 ring-navy/5">
-              <span
-                className={`flex h-10 w-10 items-center justify-center rounded-full text-cream ${i % 2 ? "bg-magenta" : "bg-teal"}`}
+            <li key={p.title} className="flex flex-col items-center lg:flex-1 lg:flex-row lg:items-start">
+              <div
+                tabIndex={0}
+                className="group relative w-full cursor-default rounded-card bg-cream p-5 outline-none ring-1 ring-navy/5 transition-all duration-300 ease-out hover:z-10 hover:bg-white hover:shadow-[0_24px_48px_-16px_rgba(26,26,46,0.3)] hover:ring-teal/40 focus:z-10 focus:bg-white focus:shadow-[0_24px_48px_-16px_rgba(26,26,46,0.3)] focus:ring-teal/40 lg:hover:scale-[1.06] lg:focus:scale-[1.06]"
               >
-                <svg aria-hidden viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  {p.icon}
-                </svg>
-              </span>
-              <h3 className="mt-4 font-bold leading-snug text-navy">{p.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-navy/60">{p.detail}</p>
+                <div className="flex items-center gap-3 lg:block">
+                  <span
+                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-cream transition-transform duration-300 group-hover:scale-110 group-focus:scale-110 ${
+                      i % 2 ? "bg-magenta" : "bg-teal"
+                    }`}
+                  >
+                    <svg aria-hidden viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      {p.icon}
+                    </svg>
+                  </span>
+                  <h3 className="font-bold leading-snug text-navy lg:mt-4">
+                    <span className={`mr-1 font-display ${i % 2 ? "text-magenta" : "text-teal"}`}>{i + 1}.</span>
+                    {p.title}
+                  </h3>
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-navy/60">{p.detail}</p>
+                <p className="max-h-0 overflow-hidden text-sm leading-relaxed text-navy/80 opacity-0 transition-all duration-300 group-hover:mt-3 group-hover:max-h-40 group-hover:opacity-100 group-focus:mt-3 group-focus:max-h-40 group-focus:opacity-100">
+                  {p.more}
+                </p>
+              </div>
+              {i < pillars.length - 1 && (
+                <span aria-hidden className="flex h-7 w-7 shrink-0 items-center justify-center text-magenta lg:mt-12 lg:h-auto lg:w-6">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5 rotate-90 lg:rotate-0" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              )}
             </li>
           ))}
-        </ul>
+        </ol>
 
-        {/* Ruta de crecimiento */}
-        <div className="mt-14 rounded-block bg-navy p-6 md:p-10">
-          <h3 className="font-display text-2xl text-cream md:text-3xl">¿Hacia dónde quieres crecer?</h3>
-          <p className="mt-2 text-cream/60">Cada familia de planes es una etapa. Puedes empezar en cualquiera y escalar cuando lo necesites.</p>
-          <ol className="mt-8 grid gap-3 md:grid-cols-4">
-            {families.map((f, i) => (
-              <li key={f.id} className="relative">
-                <a
-                  href={`#familia-${f.id}`}
-                  className="group flex h-full flex-col rounded-card bg-white/[0.05] p-5 ring-1 ring-white/10 transition hover:-translate-y-0.5 hover:bg-white/[0.09]"
-                >
-                  <span className="flex items-center gap-2">
-                    <span className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold text-cream ${steps[f.id].color} ring-1 ring-white/20`}>
-                      {i + 1}
-                    </span>
-                    <span className="text-xs font-semibold uppercase tracking-widest text-teal">{steps[f.id].label}</span>
-                  </span>
-                  <span className="mt-3 font-display text-2xl text-cream">{f.name}</span>
-                  <span className="mt-1 text-sm leading-snug text-cream/60">{f.description}</span>
-                  <span className="mt-auto pt-4 text-sm font-semibold text-cream transition-transform group-hover:translate-x-1">
-                    Ver planes →
-                  </span>
-                </a>
-                {i < families.length - 1 && (
-                  <span aria-hidden className="absolute -right-2.5 top-1/2 z-10 hidden -translate-y-1/2 text-lg text-magenta md:block">
-                    ›
-                  </span>
-                )}
-              </li>
-            ))}
-          </ol>
-          <a href="#quiz" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-magenta hover:text-magenta-light">
-            ¿No sabes cuál es tu etapa? Responde 7 preguntas rápidas ↓
-          </a>
-        </div>
+        <a href="#quiz" className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-magenta hover:text-magenta-light">
+          ¿No sabes qué plan necesitas? Responde 7 preguntas rápidas ↓
+        </a>
       </div>
     </section>
   );
