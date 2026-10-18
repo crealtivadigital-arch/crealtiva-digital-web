@@ -7,6 +7,11 @@ import ProjectCard from "@/components/site/ProjectCard";
 import PostCard from "@/components/site/PostCard";
 import SectionTitle from "@/components/site/SectionTitle";
 import CTABanner from "@/components/CTABanner";
+import MarketingStrategy from "@/components/marketing/MarketingStrategy";
+import PackageQuiz, { type QuizPackage } from "@/components/marketing/PackageQuiz";
+import PackageCompare, { type ComparePackage } from "@/components/marketing/PackageCompare";
+import PackageFamilies from "@/components/marketing/PackageFamilies";
+import { familyOf } from "@/content/marketing";
 import FAQ from "@/components/FAQ";
 import { formatPrice, getPackages, getPosts, getProjects, getServiceLine, getServiceLines } from "@/lib/content";
 import { STAGES, STAGE_ORDER } from "@/lib/content/format";
@@ -42,6 +47,21 @@ export default async function LineaPage({ params }: Props) {
     getServiceLines(),
   ]);
   const lineNames = Object.fromEntries(lines.map((l) => [l.slug, l.name]));
+
+  // Marketing Digital tiene su propia guía: estrategia, quiz, familias de planes y comparador
+  const isMarketing = line.slug === "marketing-digital";
+  const priceLabel = (p: (typeof packages)[number]) => {
+    const pr = formatPrice(p.price);
+    return [pr.prefix, pr.main, pr.suffix].filter(Boolean).join(" ");
+  };
+  const quizPkgs: Record<string, QuizPackage> = isMarketing
+    ? Object.fromEntries(
+        packages.map((p) => [p.slug, { name: p.name, tagline: p.tagline, price: priceLabel(p), family: familyOf(p.slug).name }]),
+      )
+    : {};
+  const comparePkgs: ComparePackage[] = isMarketing
+    ? packages.map((p) => ({ slug: p.slug, name: p.name, price: priceLabel(p), family: familyOf(p.slug).name, stage: STAGES[p.stage].short }))
+    : [];
 
   return (
     <main>
@@ -99,7 +119,11 @@ export default async function LineaPage({ params }: Props) {
         </ul>
       </section>
 
+      {isMarketing && <MarketingStrategy />}
+      {isMarketing && <PackageQuiz pkgs={quizPkgs} />}
+
       {/* Guía por fase de crecimiento */}
+      {!isMarketing && (
       <section className="bg-cream pt-20">
         <div className="mx-auto max-w-6xl px-6">
           <SectionTitle
@@ -135,16 +159,23 @@ export default async function LineaPage({ params }: Props) {
           </div>
         </div>
       </section>
+      )}
 
       {/* Fichas completas */}
-      <section id="paquetes" className="scroll-mt-20 bg-cream py-20">
+      <section id="paquetes" className={`scroll-mt-20 bg-cream ${isMarketing ? "pb-2 pt-20" : "py-20"}`}>
         <div className="mx-auto max-w-6xl px-6">
-          <SectionTitle eyebrow="Paquetes" title={`Todos los paquetes de ${line.name}`} />
-          <div className="space-y-8">
-            {packages.map((p) => (
-              <ProductSheet key={p.slug} pkg={p} lineName={line.name} />
-            ))}
-          </div>
+          <SectionTitle
+            eyebrow="Paquetes"
+            title={`Todos los paquetes de ${line.name}`}
+            intro={isMarketing ? "Agrupados por familia: cada una es una etapa de crecimiento y suma sobre la anterior." : undefined}
+          />
+          {!isMarketing && (
+            <div className="space-y-8">
+              {packages.map((p) => (
+                <ProductSheet key={p.slug} pkg={p} lineName={line.name} />
+              ))}
+            </div>
+          )}
 
           {line.alwaysIncluded.length > 0 && (
             <div className="mt-14 rounded-block bg-white p-8 ring-1 ring-navy/5">
@@ -188,6 +219,9 @@ export default async function LineaPage({ params }: Props) {
           )}
         </div>
       </section>
+
+      {isMarketing && <PackageFamilies packages={packages} lineName={line.name} />}
+      {isMarketing && <PackageCompare pkgs={comparePkgs} />}
 
       {/* Proceso */}
       {line.process.length > 0 && (
