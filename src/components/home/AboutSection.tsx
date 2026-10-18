@@ -5,7 +5,7 @@ import { lineHref } from "@/lib/content/links";
 // Cada especialidad lleva a la línea de servicio que la representa.
 const team = [
   { role: "Dirección estratégica", href: lineHref("marketing-digital"), icon: "strategy" },
-  { role: "Producción multimedia", href: lineHref("produccion-multimedia"), icon: "camera" },
+  { role: "Videos para redes sociales", href: lineHref("videos-para-redes-sociales"), icon: "camera" },
   { role: "Modelos para Contenido Orgánico", href: lineHref("modelos-contenido-organico"), icon: "community" },
   { role: "Diseño y desarrollo web", href: lineHref("diseno-web"), icon: "web" },
   { role: "Pauta digital", href: lineHref("trafficker-digital"), icon: "ads" },

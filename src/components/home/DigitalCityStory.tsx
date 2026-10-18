@@ -52,7 +52,7 @@ const slides: {
     title: "La calidad hace que tu marca se perciba por lo que vale",
     body: "El diseño, la foto y el video deben representar la calidad real de tu negocio en cada vitrina. No sirve una matriz hermosa y una sucursal descuidada: el público juzga tu marca por lo que ve.",
     icon: "sparkle",
-    info: { label: "Producción multimedia", href: lineHref("produccion-multimedia") },
+    info: { label: "Videos para redes", href: lineHref("videos-para-redes-sociales") },
   },
   {
     kicker: "Constancia",

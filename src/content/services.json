@@ -98,25 +98,29 @@
       "visible": true
     },
     {
-      "slug": "produccion-multimedia",
-      "name": "Producción Multimedia",
-      "tagline": "Video profesional para tu marca",
-      "summary": "Videos institucionales, corporativos y de contenido grabados en 4K con dirección y postproducción profesional.",
-      "intro": "Producimos en locación en Quito y Valles: video institucional, contenido para redes y material para pauta, con grabación 4K, audio profesional y postproducción con criterio de retención.",
+      "slug": "videos-para-redes-sociales",
+      "name": "Filmación y Videos para Redes Sociales",
+      "tagline": "Video fresco para tus canales digitales",
+      "summary": "Reels y TikToks grabados en locación, con edición dinámica, color, sonido y subtítulos, listos para publicar o pautar.",
+      "intro": "Filmamos en tu negocio, en Quito y Valles, videos verticales pensados para redes sociales y canales digitales: con ritmo, ganchos y subtítulos que retienen. Para producciones de gran escala, documentales o films está Crealtiva Movie Maker.",
       "keyPoints": [
-        "Grabación nativa en 4K con ópticas profesionales",
-        "Audio profesional y postproducción completa",
-        "Videos institucionales, corporativos y para redes",
-        "Movilización en Quito y Valles incluida"
+        "Reels y TikToks de hasta 1 minuto en formato 9:16",
+        "Grabación 4K en locación en Quito y Valles",
+        "Edición dinámica, color, sonido y subtítulos",
+        "Listos para publicar en orgánico o para pautar"
       ],
       "highlights": [
         {
-          "value": "4K UHD",
-          "label": "Grabación nativa"
+          "value": "Desde $95",
+          "label": "Por lote de videos"
         },
         {
-          "value": "9:16 · 16:9",
-          "label": "Según plataforma"
+          "value": "2–10",
+          "label": "Videos por lote"
+        },
+        {
+          "value": "9:16",
+          "label": "Formato vertical"
         },
         {
           "value": "Quito y Valles",
@@ -139,26 +143,8 @@
       ],
       "process": [],
       "extras": {
-        "title": "Proyectos especiales y edición independiente",
+        "title": "Edición independiente",
         "items": [
-          {
-            "name": "Proyectos de alta complejidad",
-            "detail": "Videos institucionales de más de 3 minutos, documentales corporativos, comerciales de TV, eventos masivos o rodajes de más de un día.",
-            "price": {
-              "amount": null,
-              "currency": "USD",
-              "mode": "cotizar"
-            }
-          },
-          {
-            "name": "Cobertura de eventos corporativos",
-            "detail": "Premiaciones, conferencias y lanzamientos. Cotización según alcance y horas de producción.",
-            "price": {
-              "amount": null,
-              "currency": "USD",
-              "mode": "cotizar"
-            }
-          },
           {
             "name": "Edición de video individual",
             "detail": "Reel de hasta 1 minuto con tus clips: corte de ritmo, color, subtítulos y exportación optimizada.",
@@ -187,7 +173,7 @@
         },
         {
           "q": "¿Qué pasa con proyectos más grandes?",
-          "a": "Videos institucionales de más de 3 minutos, documentales, comerciales de TV, eventos masivos o rodajes de más de un día se cotizan de forma independiente."
+          "a": "Videos institucionales de más de 3 minutos, documentales, podcasts, comerciales de TV, eventos o rodajes de más de un día se trabajan en Crealtiva Movie Maker, con cotización por proyecto."
         }
       ],
       "order": 2,
@@ -200,7 +186,7 @@
     {
       "slug": "modelos-contenido-organico",
       "name": "Modelos para Contenido Orgánico de tu Marca",
-      "tagline": "Rostros reales que generan confianza",
+      "tagline": "Tenemos modelos que serán la voz de tu marca",
       "summary": "Videos UGC con actores y creadores, modelos para fotos y videos y colaboraciones con influencers, con derechos de imagen claros.",
       "intro": "Ponemos rostro humano a tu marca: videos verticales con actores y creadores de contenido, modelos para sesiones de fotos y videos, contenido para campañas e influencers que crean a su estilo. Cada servicio define por cuánto tiempo y dónde se puede usar la imagen.",
       "keyPoints": [
@@ -387,7 +373,7 @@
     {
       "slug": "trafficker-digital",
       "name": "Trafficker Digital",
-      "tagline": "Pauta con tarifa de gestión fija",
+      "tagline": "Publicidad pautada en Ads",
       "summary": "Campañas en Meta, Google y TikTok Ads con tarifa de gestión fija y creativos incluidos. Tus cuentas siempre son tuyas.",
       "intro": "Creamos y gestionamos tus campañas en Meta, Google y TikTok con una tarifa de gestión fija, sin porcentaje sobre tu inversión. El presupuesto de anuncios lo pagas directo a la plataforma.",
       "keyPoints": [
@@ -2389,7 +2375,7 @@
     },
     {
       "slug": "identidad-institucional",
-      "lineSlug": "produccion-multimedia",
+      "lineSlug": "videos-para-redes-sociales",
       "excludes": [],
       "idealFor": [],
       "addons": [],
@@ -2428,7 +2414,7 @@
     },
     {
       "slug": "contenido-starter",
-      "lineSlug": "produccion-multimedia",
+      "lineSlug": "videos-para-redes-sociales",
       "excludes": [],
       "idealFor": [],
       "addons": [],
@@ -2467,7 +2453,7 @@
     },
     {
       "slug": "full-content-mensual",
-      "lineSlug": "produccion-multimedia",
+      "lineSlug": "videos-para-redes-sociales",
       "excludes": [],
       "idealFor": [],
       "addons": [],

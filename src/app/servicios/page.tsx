@@ -3,13 +3,12 @@ import PageHeader from "@/components/site/PageHeader";
 import ServiceLineSection from "@/components/site/ServiceLineSection";
 import CTABanner from "@/components/CTABanner";
 import MovieMakerTeaser from "@/components/site/MovieMakerTeaser";
-import { MOVIE_MAKER_LINE } from "@/lib/content/links";
 import { getPackages, getServiceLines } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Servicios — Marketing, producción, pauta, web y automatización",
   description:
-    "Servicios de Crealtiva Digital en Quito: marketing digital, producción multimedia, modelos para contenido orgánico (UGC e influencers), fotografía de producto, trafficker digital, diseño web y automatización con IA.",
+    "Servicios de Crealtiva Digital en Quito: marketing digital, videos para redes sociales, modelos para contenido orgánico (UGC e influencers), fotografía de producto, trafficker digital, diseño web y automatización con IA.",
   alternates: { canonical: "/servicios" },
 };
 
@@ -38,21 +37,28 @@ export default async function ServiciosPage() {
               </a>
             </li>
           ))}
+          <li className="shrink-0">
+            <a
+              href="#movie-maker"
+              className="block rounded-full bg-black px-4 py-2 text-sm font-semibold text-cream transition-colors hover:bg-magenta"
+            >
+              Movie Maker
+            </a>
+          </li>
         </ul>
       </nav>
 
-      {lines.map((line, i) =>
-        line.slug === MOVIE_MAKER_LINE ? (
-          <MovieMakerTeaser key={line.slug} id={line.slug} />
-        ) : (
+      {lines.map((line, i) => (
         <ServiceLineSection
           key={line.slug}
           line={line}
           index={i}
           packages={packages.filter((p) => p.lineSlug === line.slug)}
         />
-        )
-      )}
+      ))}
+
+      {/* Producciones de gran escala: viven en Crealtiva Movie Maker */}
+      <MovieMakerTeaser id="movie-maker" />
 
       <CTABanner
         headline="¿No sabes por dónde empezar?"

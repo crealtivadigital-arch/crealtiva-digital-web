@@ -370,7 +370,7 @@ const manual = (lineSlug, list) =>
     packages.push({ slug: slugify(p.name), lineSlug, excludes: [], idealFor: [], addons: [], featured: false, order: i + 1, ...p })
   );
 
-manual("produccion-multimedia", [
+manual("videos-para-redes-sociales", [
   { name: "Identidad Institucional", tagline: "Presentación corporativa", summary: "Para renovar la imagen en tu web, Instagram o cartas de presentación B2B. Se enfoca en la esencia del negocio, su infraestructura o procesos clave.", videos: 2, set: "1 hora en locación", price: usd(95, "fijo") },
   { name: "Contenido Starter", tagline: "Arranque con contenido constante", summary: "Para marcas que arrancan el mes con pauta activa o un flujo constante de contenido orgánico en redes.", videos: 6, set: "2 horas de producción intensiva", price: usd(160, "fijo"), featured: true },
   { name: "Full Content Mensual", tagline: "Parrilla completa del mes", summary: "Cubre la parrilla de contenido de todo un mes (2 a 3 publicaciones semanales) o varios embudos de venta en Meta Ads.", videos: 10, set: "2 h 30 min a 3 horas de rodaje", price: usd(200, "fijo") },
@@ -433,16 +433,17 @@ const lines = [
     order: 1,
   },
   {
-    slug: "produccion-multimedia",
-    name: "Producción Multimedia",
-    tagline: "Video profesional para tu marca",
-    summary: "Videos institucionales, corporativos y de contenido grabados en 4K con dirección y postproducción profesional.",
-    intro: "Producimos en locación en Quito y Valles: video institucional, contenido para redes y material para pauta, con grabación 4K, audio profesional y postproducción con criterio de retención.",
-    keyPoints: ["Grabación nativa en 4K con ópticas profesionales", "Audio profesional y postproducción completa", "Videos institucionales, corporativos y para redes", "Movilización en Quito y Valles incluida"],
+    slug: "videos-para-redes-sociales",
+    name: "Filmación y Videos para Redes Sociales",
+    tagline: "Video fresco para tus canales digitales",
+    summary: "Reels y TikToks grabados en locación, con edición dinámica, color, sonido y subtítulos, listos para publicar o pautar.",
+    intro: "Filmamos en tu negocio, en Quito y Valles, videos verticales pensados para redes sociales y canales digitales: con ritmo, ganchos y subtítulos que retienen. Para producciones de gran escala, documentales o films está Crealtiva Movie Maker.",
+    keyPoints: ["Reels y TikToks de hasta 1 minuto en formato 9:16", "Grabación 4K en locación en Quito y Valles", "Edición dinámica, color, sonido y subtítulos", "Listos para publicar en orgánico o para pautar"],
     cover: ["2026/04/fotografa-scaled.webp", "Fotógrafa de Crealtiva con cámara profesional"],
     highlights: [
-      { value: "4K UHD", label: "Grabación nativa" },
-      { value: "9:16 · 16:9", label: "Según plataforma" },
+      { value: minPrice("videos-para-redes-sociales"), label: "Por lote de videos" },
+      { value: "2–10", label: "Videos por lote" },
+      { value: "9:16", label: "Formato vertical" },
       { value: "Quito y Valles", label: "Movilización incluida" },
     ],
     alwaysIncluded: [
@@ -452,10 +453,8 @@ const lines = [
     ],
     process: [],
     extras: {
-      title: "Proyectos especiales y edición independiente",
+      title: "Edición independiente",
       items: [
-        { name: "Proyectos de alta complejidad", detail: "Videos institucionales de más de 3 minutos, documentales corporativos, comerciales de TV, eventos masivos o rodajes de más de un día.", price: usd(null, "cotizar") },
-        { name: "Cobertura de eventos corporativos", detail: "Premiaciones, conferencias y lanzamientos. Cotización según alcance y horas de producción.", price: usd(null, "cotizar") },
         { name: "Edición de video individual", detail: "Reel de hasta 1 minuto con tus clips: corte de ritmo, color, subtítulos y exportación optimizada.", price: usd(75, "fijo", "Por pieza terminada") },
       ],
     },
@@ -464,14 +463,14 @@ const lines = [
       ["¿Trabajan en mis instalaciones?", "Sí. Producimos en locación en Quito y Valles, con movilización y equipos profesionales incluidos en los paquetes."],
       ["¿Pueden producir fuera de Quito?", "Sí, trabajamos en todo Ecuador. Los costos de desplazamiento se cotizan según la ubicación y la duración del rodaje."],
       ["¿Pueden hacer video con locución o presentador?", "Sí. Podemos incluir voz en off, presentador en cámara, subtítulos o una combinación. Lo definimos en el brief antes de producir."],
-      ["¿Qué pasa con proyectos más grandes?", "Videos institucionales de más de 3 minutos, documentales, comerciales de TV, eventos masivos o rodajes de más de un día se cotizan de forma independiente."],
+      ["¿Qué pasa con proyectos más grandes?", "Videos institucionales de más de 3 minutos, documentales, podcasts, comerciales de TV, eventos o rodajes de más de un día se trabajan en Crealtiva Movie Maker, con cotización por proyecto."],
     ]),
     order: 2,
   },
   {
     slug: "modelos-contenido-organico",
     name: "Modelos para Contenido Orgánico de tu Marca",
-    tagline: "Rostros reales que generan confianza",
+    tagline: "Tenemos modelos que serán la voz de tu marca",
     summary: "Videos UGC con actores y creadores, modelos para fotos y videos y colaboraciones con influencers, con derechos de imagen claros.",
     intro: "Ponemos rostro humano a tu marca: videos verticales con actores y creadores de contenido, modelos para sesiones de fotos y videos, contenido para campañas e influencers que crean a su estilo. Cada servicio define por cuánto tiempo y dónde se puede usar la imagen.",
     keyPoints: ["Actores, modelos e influencers con derechos de imagen claros", "Videos verticales 9:16 con guion y edición dinámica con subtítulos", "Sesiones de fotos y videos con modelo para tu marca", "Prohibida la replicación de imagen con IA"],
@@ -541,7 +540,7 @@ const lines = [
   {
     slug: "trafficker-digital",
     name: "Trafficker Digital",
-    tagline: "Pauta con tarifa de gestión fija",
+    tagline: "Publicidad pautada en Ads",
     summary: "Campañas en Meta, Google y TikTok Ads con tarifa de gestión fija y creativos incluidos. Tus cuentas siempre son tuyas.",
     intro: "Creamos y gestionamos tus campañas en Meta, Google y TikTok con una tarifa de gestión fija, sin porcentaje sobre tu inversión. El presupuesto de anuncios lo pagas directo a la plataforma.",
     keyPoints: ["Meta, Google y TikTok Ads", "Tarifa de gestión fija, sin porcentaje sobre tu inversión", "Creativos y copys incluidos en cada campaña", "Calibración de píxeles y reporte de resultados"],

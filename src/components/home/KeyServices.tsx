@@ -11,7 +11,7 @@ type Tone = "navy" | "teal" | "magenta";
 // "banner": en escritorio, foto a la izquierda en su tamaño natural y texto al lado.
 const layout: Record<string, { span: string; banner?: boolean; tone: Tone }> = {
   "marketing-digital": { span: "sm:col-span-2", tone: "teal" },
-  "produccion-multimedia": { span: "", tone: "navy" },
+  "videos-para-redes-sociales": { span: "", tone: "navy" },
   "modelos-contenido-organico": { span: "", tone: "navy" },
   "fotografia-de-producto": { span: "", tone: "magenta" },
   "optimizacion-procesos": { span: "sm:col-span-2", tone: "navy" },

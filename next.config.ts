@@ -4,8 +4,8 @@ import type { NextConfig } from "next";
 // - rutas de la versión anterior de este repo
 // - URLs del sitio WordPress que hoy vive en crealtivadigital.com
 const legacyRedirects: [string, string][] = [
-  // Producción multimedia ahora es Crealtiva Movie Maker
-  ["/servicios/produccion-multimedia", "/movie-maker"],
+  // Producción multimedia: los paquetes de video para redes tienen su línea; Movie Maker, la gran escala
+  ["/servicios/produccion-multimedia", "/servicios/videos-para-redes-sociales"],
   // Video UGC y Modelos e Influencers se unieron en una sola línea
   ["/servicios/video-ugc", "/servicios/modelos-contenido-organico"],
   ["/servicios/modelos-e-influencers", "/servicios/modelos-contenido-organico"],
@@ -56,9 +56,13 @@ const nextConfig: NextConfig = {
         { source: `${source}/`, destination, permanent: true },
       ]),
       // Fichas de paquete de las líneas unidas: mismo paquete, nueva línea
-      ...["video-ugc", "modelos-e-influencers"].map((old) => ({
+      ...[
+        ["video-ugc", "modelos-contenido-organico"],
+        ["modelos-e-influencers", "modelos-contenido-organico"],
+        ["produccion-multimedia", "videos-para-redes-sociales"],
+      ].map(([old, line]) => ({
         source: `/servicios/${old}/:paquete`,
-        destination: "/servicios/modelos-contenido-organico/:paquete",
+        destination: `/servicios/${line}/:paquete`,
         permanent: true,
       })),
     ];

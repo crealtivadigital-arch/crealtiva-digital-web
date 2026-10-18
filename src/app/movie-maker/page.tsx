@@ -3,7 +3,7 @@ import Link from "next/link";
 import ProjectCard from "@/components/site/ProjectCard";
 import WhatsAppIcon from "@/components/site/WhatsAppIcon";
 import { formatPrice, getPackages, getProjects, getServiceLine, getServiceLines } from "@/lib/content";
-import { MOVIE_MAKER_LINE } from "@/lib/content/links";
+import { SOCIAL_VIDEO_LINE } from "@/lib/content/links";
 import { wa } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -47,9 +47,9 @@ const formats = [
 
 export default async function MovieMakerPage() {
   const [line, packages, projects, lines] = await Promise.all([
-    getServiceLine(MOVIE_MAKER_LINE),
-    getPackages(MOVIE_MAKER_LINE),
-    getProjects({ lineSlug: MOVIE_MAKER_LINE }),
+    getServiceLine(SOCIAL_VIDEO_LINE),
+    getPackages(SOCIAL_VIDEO_LINE),
+    getProjects({ lineSlug: SOCIAL_VIDEO_LINE }),
     getServiceLines(),
   ]);
   const lineNames = Object.fromEntries(lines.map((l) => [l.slug, l.name]));
