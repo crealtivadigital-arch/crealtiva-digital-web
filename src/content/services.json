@@ -198,33 +198,33 @@
       "visible": true
     },
     {
-      "slug": "video-ugc",
-      "name": "Video con Modelos UGC",
-      "tagline": "Contenido con rostro humano",
-      "summary": "Videos verticales con actores y creadores de contenido que generan confianza y venden en redes.",
-      "intro": "Producimos videos con actores reales en formato vertical, con guion, grabación profesional y edición dinámica con subtítulos. Incluyen derechos de imagen para uso digital.",
+      "slug": "modelos-contenido-organico",
+      "name": "Modelos para Contenido Orgánico de tu Marca",
+      "tagline": "Rostros reales que generan confianza",
+      "summary": "Videos UGC con actores y creadores, modelos para fotos y videos y colaboraciones con influencers, con derechos de imagen claros.",
+      "intro": "Ponemos rostro humano a tu marca: videos verticales con actores y creadores de contenido, modelos para sesiones de fotos y videos, contenido para campañas e influencers que crean a su estilo. Cada servicio define por cuánto tiempo y dónde se puede usar la imagen.",
       "keyPoints": [
-        "Actores reales con derechos de imagen incluidos",
-        "Guiones pensados para enganchar en segundos",
-        "Formato vertical 9:16 listo para Reels y TikTok",
-        "Edición dinámica con subtítulos y efectos de sonido"
+        "Actores, modelos e influencers con derechos de imagen claros",
+        "Videos verticales 9:16 con guion y edición dinámica con subtítulos",
+        "Sesiones de fotos y videos con modelo para tu marca",
+        "Prohibida la replicación de imagen con IA"
       ],
       "highlights": [
         {
-          "value": "Desde $150",
-          "label": "Por lote de videos"
+          "value": "Desde $70",
+          "label": "Por sesión o lote"
         },
         {
           "value": "4–6",
-          "label": "Videos por paquete"
+          "label": "Videos por lote UGC"
         },
         {
           "value": "9:16",
           "label": "Formato vertical"
         },
         {
-          "value": "3 meses",
-          "label": "Derechos de imagen"
+          "value": "2 h",
+          "label": "Sesión con modelo"
         }
       ],
       "alwaysIncluded": [],
@@ -233,19 +233,23 @@
       "conditions": [
         {
           "title": "Derechos de imagen",
-          "detail": "Uso digital del contenido con el actor incluido por 3 meses. Las renovaciones se cotizan aparte."
+          "detail": "Cada servicio define por cuánto tiempo y en qué canal se puede usar la imagen (en los videos UGC, 3 meses de uso digital). Su uso fuera de ese periodo requiere una extensión."
+        },
+        {
+          "title": "Uso en pauta",
+          "detail": "Los servicios de contenido orgánico con modelo no incluyen uso en campañas de anuncios; puede agregarse como complemento."
         },
         {
           "title": "Propiedad intelectual",
-          "detail": "El cliente recibe los formatos finales (.mp4). Los archivos crudos y proyectos editables son propiedad de Crealtiva Digital."
+          "detail": "El cliente recibe los formatos finales (.mp4, .jpg). Los archivos crudos y proyectos editables son propiedad de Crealtiva Digital."
         },
         {
           "title": "Exclusividad de nicho",
-          "detail": "No incluida en los paquetes estándar: el mismo actor puede trabajar con otras marcas."
+          "detail": "No incluida en los paquetes estándar: el mismo actor o modelo puede trabajar con otras marcas."
         },
         {
           "title": "Restricción de IA",
-          "detail": "Prohibido usar el contenido o la imagen del actor para entrenar modelos de IA o crear clones digitales."
+          "detail": "Prohibido usar el contenido o la imagen del actor o modelo para entrenar modelos de IA, replicarla o crear clones digitales."
         }
       ],
       "faqs": [
@@ -254,72 +258,12 @@
           "a": "Son videos que imitan el estilo del contenido orgánico de los usuarios, pero producidos profesionalmente. Generan cercanía y confianza porque no parecen anuncios tradicionales."
         },
         {
-          "q": "¿Puedo usar los videos en pauta?",
-          "a": "Sí, dentro del periodo de uso de imagen incluido. Se entregan en formato vertical 9:16 listos para publicar o pautar."
+          "q": "¿Puedo usar las fotos o videos en anuncios?",
+          "a": "Los videos UGC, sí, dentro del periodo de uso de imagen incluido. En los servicios con modelo, solo si el servicio lo incluye (Contenido para Campañas Publicitarias) o si agregas el complemento de uso en campañas por 30 días."
         },
         {
           "q": "¿Cuánto dura el derecho de uso de imagen?",
-          "a": "3 meses desde la entrega. Las renovaciones se cotizan aparte."
-        },
-        {
-          "q": "¿Dónde se realiza la producción?",
-          "a": "Producimos en Quito, en locaciones del cliente o en locaciones neutras según el concepto del video."
-        }
-      ],
-      "order": 3,
-      "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/creacion-d-econtenido-scaled.webp",
-        "alt": "Creadora de contenido grabando un video UGC en un restaurante"
-      },
-      "visible": true
-    },
-    {
-      "slug": "modelos-e-influencers",
-      "name": "Modelos e Influencers",
-      "tagline": "Rostros para tu marca",
-      "summary": "Modelos para fotografía y video, contenido para campañas y colaboraciones con influencers, con derechos de imagen claros.",
-      "intro": "Ponemos rostro a tu marca: modelos para sesiones de fotos y videos, contenido para campañas publicitarias e influencers que crean a su estilo. Cada servicio define por cuánto tiempo y dónde se puede usar la imagen.",
-      "keyPoints": [
-        "2 horas de producción y 2 cambios de vestuario",
-        "Derechos de difusión orgánica incluidos",
-        "Extensión para pauta o uso de por vida opcional",
-        "Prohibida la replicación de imagen con IA"
-      ],
-      "highlights": [
-        {
-          "value": "Desde $70",
-          "label": "Por sesión"
-        },
-        {
-          "value": "2 h",
-          "label": "De producción"
-        },
-        {
-          "value": "2 cambios",
-          "label": "De vestuario"
-        }
-      ],
-      "alwaysIncluded": [],
-      "process": [],
-      "extras": null,
-      "conditions": [
-        {
-          "title": "Derechos de difusión",
-          "detail": "El uso de la imagen se limita al periodo y al canal indicados en cada servicio. Su uso fuera de ese tiempo requiere una extensión."
-        },
-        {
-          "title": "Uso en pauta",
-          "detail": "Los servicios de contenido orgánico no incluyen uso en campañas de anuncios; puede agregarse como complemento."
-        },
-        {
-          "title": "Restricción de IA",
-          "detail": "Prohibida la replicación o modificación de la imagen del modelo con inteligencia artificial."
-        }
-      ],
-      "faqs": [
-        {
-          "q": "¿Puedo usar las fotos o videos en anuncios?",
-          "a": "Solo si el servicio lo incluye (Contenido para Campañas Publicitarias) o si agregas el complemento de uso en campañas por 30 días."
+          "a": "Depende del servicio: en los videos UGC son 3 meses desde la entrega. Las renovaciones y los derechos extendidos se cotizan aparte."
         },
         {
           "q": "¿Puedo usar la imagen de por vida?",
@@ -328,12 +272,16 @@
         {
           "q": "¿Puedo elegir el modelo?",
           "a": "Sí. Te proponemos perfiles según el estilo de tu marca y tu cliente ideal."
+        },
+        {
+          "q": "¿Dónde se realiza la producción?",
+          "a": "Producimos en Quito, en locaciones del cliente o en locaciones neutras según el concepto del contenido."
         }
       ],
-      "order": 4,
+      "order": 3,
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/EMLIA-BOOK-16-scaled.webp",
-        "alt": "Modelo de contenido de Crealtiva Digital"
+        "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/creacion-d-econtenido-scaled.webp",
+        "alt": "Creadora de contenido grabando un video UGC en un restaurante"
       },
       "visible": true
     },
@@ -429,7 +377,7 @@
           "a": "Son precios desde y pueden variar según la complejidad del producto y el alcance final de la sesión."
         }
       ],
-      "order": 5,
+      "order": 4,
       "cover": {
         "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/produccion-fotos.webp",
         "alt": "Set de fotografía de producto con iluminación de estudio"
@@ -514,7 +462,7 @@
           "a": "Las campañas necesitan al menos 2 a 3 semanas para que el algoritmo aprenda y optimice."
         }
       ],
-      "order": 6,
+      "order": 5,
       "cover": {
         "src": "https://crealtivadigital.com/wp-content/uploads/2026/02/NICO-PORTADA-scaled.webp",
         "alt": "Especialista de pauta digital revisando campañas"
@@ -582,7 +530,7 @@
           "a": "Para carrito y pagos en línea necesitas un sistema a medida; las webs estándar captan clientes por formulario y WhatsApp."
         }
       ],
-      "order": 7,
+      "order": 6,
       "cover": {
         "src": "https://crealtivadigital.com/wp-content/uploads/2026/06/ECOMMERCE.jpg",
         "alt": "Tienda online en laptop y celular"
@@ -650,7 +598,7 @@
           "a": "Si tu software tiene API o webhooks, podemos integrarlo. Si no, evaluamos alternativas en el diagnóstico inicial."
         }
       ],
-      "order": 8,
+      "order": 7,
       "cover": {
         "src": "https://crealtivadigital.com/wp-content/uploads/2026/06/portada-paginas-web.jpg",
         "alt": "Equipo trabajando con herramientas digitales"
@@ -1878,9 +1826,10 @@
     },
     {
       "slug": "video-reels-start",
-      "lineSlug": "video-ugc",
+      "lineSlug": "modelos-contenido-organico",
       "name": "Video Reels Start",
       "tagline": "El Arranque con Rostro Humano",
+      "badge": "Video UGC",
       "summary": "Genera confianza visual inmediata con un actor real. Ideal para marcas que desean contenido de video continuo.",
       "includes": [
         "4 videos 9:16 (2 promo + 2 enseñanza)",
@@ -1926,15 +1875,16 @@
         "mode": "fijo"
       },
       "featured": false,
-      "order": 1,
+      "order": 5,
       "stage": "arranque",
       "solves": "Tu contenido no genera confianza porque no muestra personas reales."
     },
     {
       "slug": "brand-growth",
-      "lineSlug": "video-ugc",
+      "lineSlug": "modelos-contenido-organico",
       "name": "Brand Growth",
       "tagline": "La Consolidación de Marca",
+      "badge": "Video UGC",
       "summary": "Mezcla promoción, enseñanza e identidad para construir una narrativa de marca coherente con un actor profesional.",
       "includes": [
         "6 videos 9:16 (2 promo + 3 enseñanza + 1 identidad)",
@@ -1962,15 +1912,16 @@
         "mode": "fijo"
       },
       "featured": true,
-      "order": 3,
+      "order": 7,
       "stage": "crecimiento",
       "solves": "Necesitas una narrativa de marca coherente que combine promoción, enseñanza e identidad."
     },
     {
       "slug": "corporate-retainer",
-      "lineSlug": "video-ugc",
+      "lineSlug": "modelos-contenido-organico",
       "name": "Corporate Retainer",
       "tagline": "Video institucional",
+      "badge": "Video UGC",
       "summary": "Video institucional con dirección de guion y estructura de escenas, entregado en versión horizontal y vertical.",
       "includes": [
         "Dirección de guion y estructura de escenas",
@@ -1980,13 +1931,7 @@
       ],
       "excludes": [
         {
-          "text": "Modelos o personas que salgan a camara",
-          "solution": {
-            "type": "line",
-            "lineSlug": "modelos-e-influencers",
-            "name": "Modelos e Influencers",
-            "fromPrice": 70
-          }
+          "text": "Modelos o personas que salgan a camara"
         },
         {
           "text": "Indumentarias"
@@ -2001,7 +1946,7 @@
         "mode": "fijo"
       },
       "featured": false,
-      "order": 2,
+      "order": 6,
       "stage": "consolidacion",
       "solves": "Tu organización necesita un video institucional sólido en formato horizontal y vertical."
     },
@@ -2094,8 +2039,8 @@
           "text": "Modelos de Contenido",
           "solution": {
             "type": "line",
-            "lineSlug": "modelos-e-influencers",
-            "name": "Modelos e Influencers",
+            "lineSlug": "modelos-contenido-organico",
+            "name": "Modelos para Contenido Orgánico de tu Marca",
             "fromPrice": 70
           }
         }
@@ -2155,8 +2100,9 @@
     },
     {
       "slug": "modelo-para-fotografia",
-      "lineSlug": "modelos-e-influencers",
+      "lineSlug": "modelos-contenido-organico",
       "name": "Modelo para Fotografía",
+      "badge": "Modelos e influencers",
       "summary": "Modelo para sesiones fotográficas de producto. Ideal para tiendas de ropa y marcas de experiencia.",
       "includes": [
         "2 Horas de producción tiempo de Modelo para fotografías",
@@ -2229,8 +2175,9 @@
     },
     {
       "slug": "modelo-para-videos-de-redes-sociales",
-      "lineSlug": "modelos-e-influencers",
+      "lineSlug": "modelos-contenido-organico",
       "name": "Modelo para Videos de Redes Sociales",
+      "badge": "Modelos e influencers",
       "summary": "Modelo para filmación de videos orgánicos para redes sociales. Ideal para tiendas de ropa y marcas de experiencia.",
       "includes": [
         "2 Horas de producción tiempo de Modelo filmación",
@@ -2303,8 +2250,9 @@
     },
     {
       "slug": "contenido-para-campanas-publicitarias",
-      "lineSlug": "modelos-e-influencers",
+      "lineSlug": "modelos-contenido-organico",
       "name": "Contenido para Campañas Publicitarias",
+      "badge": "Modelos e influencers",
       "summary": "Modelo para filmación y fotografía de campañas publicitarias, con derechos de uso en anuncios incluidos.",
       "includes": [
         "2 Horas de producción tiempo de Modelo filmación",
@@ -2365,9 +2313,10 @@
     },
     {
       "slug": "contenido-influencer-made",
-      "lineSlug": "modelos-e-influencers",
+      "lineSlug": "modelos-contenido-organico",
       "name": "Contenido Influencer Made",
       "tagline": "Colaboración con influencer",
+      "badge": "Modelos e influencers",
       "summary": "El influencer crea contenido a su estilo que tu marca puede usar en etiquetas colaborativas, menciones en historias y campañas de Ads de 30 días. El presupuesto se ajusta al perfil elegido.",
       "includes": [
         "2 Horas de producción tiempo de Modelo filmación",

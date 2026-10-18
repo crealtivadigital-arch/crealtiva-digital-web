@@ -6,13 +6,16 @@ import type { NextConfig } from "next";
 const legacyRedirects: [string, string][] = [
   // Producción multimedia ahora es Crealtiva Movie Maker
   ["/servicios/produccion-multimedia", "/movie-maker"],
+  // Video UGC y Modelos e Influencers se unieron en una sola línea
+  ["/servicios/video-ugc", "/servicios/modelos-contenido-organico"],
+  ["/servicios/modelos-e-influencers", "/servicios/modelos-contenido-organico"],
   // Versión anterior del repo
   ["/marketing-digital", "/servicios/marketing-digital"],
   ["/trafficker-digital", "/servicios/trafficker-digital"],
   ["/diseno-web", "/servicios/diseno-web"],
   ["/optimizacion-procesos", "/servicios/optimizacion-procesos"],
   ["/produccion-multimedia", "/movie-maker"],
-  ["/produccion-multimedia/ugc", "/servicios/video-ugc"],
+  ["/produccion-multimedia/ugc", "/servicios/modelos-contenido-organico"],
   ["/produccion-multimedia/studio", "/movie-maker"],
   ["/produccion-multimedia/eventos", "/movie-maker"],
   ["/contacto", "/contactanos"],
@@ -24,7 +27,7 @@ const legacyRedirects: [string, string][] = [
   ["/produccion-multimedia-profesional", "/movie-maker"],
   ["/produccion-multimedia-4", "/movie-maker"],
   ["/fotografos-por-horas", "/movie-maker"],
-  ["/creacion-de-contenido", "/servicios/video-ugc"],
+  ["/creacion-de-contenido", "/servicios/modelos-contenido-organico"],
   ["/fotografia-gastronomica", "/servicios/fotografia-de-producto"],
   ["/institucionales", "/portafolio"],
   ["/contctanos", "/contactanos"],
@@ -47,10 +50,18 @@ const nextConfig: NextConfig = {
     ],
   },
   async redirects() {
-    return legacyRedirects.flatMap(([source, destination]) => [
-      { source, destination, permanent: true },
-      { source: `${source}/`, destination, permanent: true },
-    ]);
+    return [
+      ...legacyRedirects.flatMap(([source, destination]) => [
+        { source, destination, permanent: true },
+        { source: `${source}/`, destination, permanent: true },
+      ]),
+      // Fichas de paquete de las líneas unidas: mismo paquete, nueva línea
+      ...["video-ugc", "modelos-e-influencers"].map((old) => ({
+        source: `/servicios/${old}/:paquete`,
+        destination: "/servicios/modelos-contenido-organico/:paquete",
+        permanent: true,
+      })),
+    ];
   },
 };
 

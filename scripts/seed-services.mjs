@@ -169,9 +169,15 @@ const categoryToLine = {
   "Marketing digital": "marketing-digital",
   "Páginas web": "diseno-web",
   "Traffiker / Ads": "trafficker-digital",
-  "Producción · Video UGC": "video-ugc",
+  "Producción · Video UGC": "modelos-contenido-organico",
   "Producción · Fotografía": "fotografia-de-producto",
-  "Modelos e Influencers": "modelos-e-influencers",
+  "Modelos e Influencers": "modelos-contenido-organico",
+};
+
+// Video UGC y Modelos e Influencers se venden como una sola línea; la etiqueta distingue el tipo
+const subgroup = {
+  "Producción · Video UGC": "Video UGC",
+  "Modelos e Influencers": "Modelos e influencers",
 };
 
 // Paquete destacado ("Más elegido") por línea
@@ -183,7 +189,7 @@ function toPackage(p, order) {
   const { tagline, summary } = describe(p);
   const notes = notesText(p);
   const details = [];
-  let badge;
+  let badge = subgroup[p.category];
   let mode = p.recurrence === "Mensual" ? "mensual" : "fijo";
 
   const vig = noteField(p, "Vigencia");
@@ -207,9 +213,9 @@ function toPackage(p, order) {
     take(/^Estructura web:?/i, "Estructura");
     if (/Sistemas Institucionales/.test(name)) mode = "desde";
   }
-  if (lineSlug === "marketing-digital" || lineSlug === "modelos-e-influencers") {
+  if (lineSlug === "marketing-digital") {
     // Los planes de marketing son mensuales aunque algún producto no lo marque
-    if (lineSlug === "marketing-digital") mode = "mensual";
+    mode = "mensual";
   }
 
   const ideal = notes.match(/Ideal para:\s*(.+?)(?:\s-\s|$)/)?.[1];
@@ -463,63 +469,38 @@ const lines = [
     order: 2,
   },
   {
-    slug: "video-ugc",
-    name: "Video con Modelos UGC",
-    tagline: "Contenido con rostro humano",
-    summary: "Videos verticales con actores y creadores de contenido que generan confianza y venden en redes.",
-    intro: "Producimos videos con actores reales en formato vertical, con guion, grabación profesional y edición dinámica con subtítulos. Incluyen derechos de imagen para uso digital.",
-    keyPoints: ["Actores reales con derechos de imagen incluidos", "Guiones pensados para enganchar en segundos", "Formato vertical 9:16 listo para Reels y TikTok", "Edición dinámica con subtítulos y efectos de sonido"],
+    slug: "modelos-contenido-organico",
+    name: "Modelos para Contenido Orgánico de tu Marca",
+    tagline: "Rostros reales que generan confianza",
+    summary: "Videos UGC con actores y creadores, modelos para fotos y videos y colaboraciones con influencers, con derechos de imagen claros.",
+    intro: "Ponemos rostro humano a tu marca: videos verticales con actores y creadores de contenido, modelos para sesiones de fotos y videos, contenido para campañas e influencers que crean a su estilo. Cada servicio define por cuánto tiempo y dónde se puede usar la imagen.",
+    keyPoints: ["Actores, modelos e influencers con derechos de imagen claros", "Videos verticales 9:16 con guion y edición dinámica con subtítulos", "Sesiones de fotos y videos con modelo para tu marca", "Prohibida la replicación de imagen con IA"],
     cover: ["2026/04/creacion-d-econtenido-scaled.webp", "Creadora de contenido grabando un video UGC en un restaurante"],
     highlights: [
-      { value: minPrice("video-ugc"), label: "Por lote de videos" },
-      { value: "4–6", label: "Videos por paquete" },
+      { value: minPrice("modelos-contenido-organico"), label: "Por sesión o lote" },
+      { value: "4–6", label: "Videos por lote UGC" },
       { value: "9:16", label: "Formato vertical" },
-      { value: "3 meses", label: "Derechos de imagen" },
+      { value: "2 h", label: "Sesión con modelo" },
     ],
     alwaysIncluded: [],
     process: [],
     extras: null,
     conditions: [
-      { title: "Derechos de imagen", detail: "Uso digital del contenido con el actor incluido por 3 meses. Las renovaciones se cotizan aparte." },
-      { title: "Propiedad intelectual", detail: "El cliente recibe los formatos finales (.mp4). Los archivos crudos y proyectos editables son propiedad de Crealtiva Digital." },
-      { title: "Exclusividad de nicho", detail: "No incluida en los paquetes estándar: el mismo actor puede trabajar con otras marcas." },
-      { title: "Restricción de IA", detail: "Prohibido usar el contenido o la imagen del actor para entrenar modelos de IA o crear clones digitales." },
+      { title: "Derechos de imagen", detail: "Cada servicio define por cuánto tiempo y en qué canal se puede usar la imagen (en los videos UGC, 3 meses de uso digital). Su uso fuera de ese periodo requiere una extensión." },
+      { title: "Uso en pauta", detail: "Los servicios de contenido orgánico con modelo no incluyen uso en campañas de anuncios; puede agregarse como complemento." },
+      { title: "Propiedad intelectual", detail: "El cliente recibe los formatos finales (.mp4, .jpg). Los archivos crudos y proyectos editables son propiedad de Crealtiva Digital." },
+      { title: "Exclusividad de nicho", detail: "No incluida en los paquetes estándar: el mismo actor o modelo puede trabajar con otras marcas." },
+      { title: "Restricción de IA", detail: "Prohibido usar el contenido o la imagen del actor o modelo para entrenar modelos de IA, replicarla o crear clones digitales." },
     ],
     faqs: faq([
       ["¿Qué es el UGC y por qué funciona?", "Son videos que imitan el estilo del contenido orgánico de los usuarios, pero producidos profesionalmente. Generan cercanía y confianza porque no parecen anuncios tradicionales."],
-      ["¿Puedo usar los videos en pauta?", "Sí, dentro del periodo de uso de imagen incluido. Se entregan en formato vertical 9:16 listos para publicar o pautar."],
-      ["¿Cuánto dura el derecho de uso de imagen?", "3 meses desde la entrega. Las renovaciones se cotizan aparte."],
-      ["¿Dónde se realiza la producción?", "Producimos en Quito, en locaciones del cliente o en locaciones neutras según el concepto del video."],
-    ]),
-    order: 3,
-  },
-  {
-    slug: "modelos-e-influencers",
-    name: "Modelos e Influencers",
-    tagline: "Rostros para tu marca",
-    summary: "Modelos para fotografía y video, contenido para campañas y colaboraciones con influencers, con derechos de imagen claros.",
-    intro: "Ponemos rostro a tu marca: modelos para sesiones de fotos y videos, contenido para campañas publicitarias e influencers que crean a su estilo. Cada servicio define por cuánto tiempo y dónde se puede usar la imagen.",
-    keyPoints: ["2 horas de producción y 2 cambios de vestuario", "Derechos de difusión orgánica incluidos", "Extensión para pauta o uso de por vida opcional", "Prohibida la replicación de imagen con IA"],
-    cover: ["2026/04/EMLIA-BOOK-16-scaled.webp", "Modelo de contenido de Crealtiva Digital"],
-    highlights: [
-      { value: minPrice("modelos-e-influencers"), label: "Por sesión" },
-      { value: "2 h", label: "De producción" },
-      { value: "2 cambios", label: "De vestuario" },
-    ],
-    alwaysIncluded: [],
-    process: [],
-    extras: null,
-    conditions: [
-      { title: "Derechos de difusión", detail: "El uso de la imagen se limita al periodo y al canal indicados en cada servicio. Su uso fuera de ese tiempo requiere una extensión." },
-      { title: "Uso en pauta", detail: "Los servicios de contenido orgánico no incluyen uso en campañas de anuncios; puede agregarse como complemento." },
-      { title: "Restricción de IA", detail: "Prohibida la replicación o modificación de la imagen del modelo con inteligencia artificial." },
-    ],
-    faqs: faq([
-      ["¿Puedo usar las fotos o videos en anuncios?", "Solo si el servicio lo incluye (Contenido para Campañas Publicitarias) o si agregas el complemento de uso en campañas por 30 días."],
+      ["¿Puedo usar las fotos o videos en anuncios?", "Los videos UGC, sí, dentro del periodo de uso de imagen incluido. En los servicios con modelo, solo si el servicio lo incluye (Contenido para Campañas Publicitarias) o si agregas el complemento de uso en campañas por 30 días."],
+      ["¿Cuánto dura el derecho de uso de imagen?", "Depende del servicio: en los videos UGC son 3 meses desde la entrega. Las renovaciones y los derechos extendidos se cotizan aparte."],
       ["¿Puedo usar la imagen de por vida?", "Sí, con el complemento de derechos de imagen extendidos. Aun así, no se permite replicar la imagen con IA."],
       ["¿Puedo elegir el modelo?", "Sí. Te proponemos perfiles según el estilo de tu marca y tu cliente ideal."],
+      ["¿Dónde se realiza la producción?", "Producimos en Quito, en locaciones del cliente o en locaciones neutras según el concepto del contenido."],
     ]),
-    order: 4,
+    order: 3,
   },
   {
     slug: "fotografia-de-producto",
@@ -555,7 +536,7 @@ const lines = [
       ["¿Cuánto tarda la entrega?", "Entregamos la selección editada en 3 a 7 días hábiles después de la sesión."],
       ["¿Los precios son finales?", "Son precios desde y pueden variar según la complejidad del producto y el alcance final de la sesión."],
     ]),
-    order: 5,
+    order: 4,
   },
   {
     slug: "trafficker-digital",
@@ -589,7 +570,7 @@ const lines = [
       ["¿Cómo miden el retorno de las campañas?", "Configuramos píxeles y eventos de conversión para rastrear leads, ventas y formularios, y calcular el costo real por resultado."],
       ["¿Cuánto tiempo toma ver resultados?", "Las campañas necesitan al menos 2 a 3 semanas para que el algoritmo aprenda y optimice."],
     ]),
-    order: 6,
+    order: 5,
   },
   {
     slug: "diseno-web",
@@ -618,7 +599,7 @@ const lines = [
       ["¿Qué pasa después del primer año?", "El mantenimiento y la garantía del primer año están incluidos. Desde el segundo año aplica un valor anual según el producto."],
       ["¿Puedo vender en línea con mi web?", "Para carrito y pagos en línea necesitas un sistema a medida; las webs estándar captan clientes por formulario y WhatsApp."],
     ]),
-    order: 7,
+    order: 6,
   },
   {
     slug: "optimizacion-procesos",
@@ -647,7 +628,7 @@ const lines = [
       ["¿Necesito conocimientos técnicos?", "No. Las implementamos, las probamos y capacitamos a tu equipo para supervisarlas."],
       ["¿Trabajan con el software de mi empresa?", "Si tu software tiene API o webhooks, podemos integrarlo. Si no, evaluamos alternativas en el diagnóstico inicial."],
     ]),
-    order: 8,
+    order: 7,
   },
 ].map(({ cover, ...l }) => ({ ...l, cover: { src: WP + cover[0], alt: cover[1] }, visible: true }));
 
@@ -724,7 +705,7 @@ function solve(text, pkg) {
   if (tk) return addon(pkg, /tiktok/i) ?? (pkg.lineSlug === "marketing-digital" ? asPackage(findPkg("crealtiva-bite-tiktok")) : asLine("marketing-digital"));
   if (li) return asPackage(findPkg("crealtiva-bite-linkedin"));
   if (/fotograf/.test(t) && pkg.lineSlug !== "fotografia-de-producto") return asLine("fotografia-de-producto");
-  if (/modelos|personas que salgan|honorarios de modelo/.test(t) && pkg.lineSlug !== "modelos-e-influencers") return asLine("modelos-e-influencers");
+  if (/modelos|personas que salgan|honorarios de modelo/.test(t) && pkg.lineSlug !== "modelos-contenido-organico") return asLine("modelos-contenido-organico");
   if (/pasarela|e-commerce|carrito/.test(t)) return asPackage(findPkg("sistemas-institucionales-a-medida"));
   if (/blogs?|panel autogestionable|páginas internas|subpáginas/.test(t) && pkg.slug !== "web-corporativa-started")
     return asPackage(findPkg("web-corporativa-started"));

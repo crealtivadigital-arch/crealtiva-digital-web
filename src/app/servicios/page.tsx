@@ -9,7 +9,7 @@ import { getPackages, getServiceLines } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Servicios — Marketing, producción, pauta, web y automatización",
   description:
-    "Servicios de Crealtiva Digital en Quito: marketing digital, producción multimedia, video UGC, fotografía de producto, trafficker digital, diseño web y automatización con IA.",
+    "Servicios de Crealtiva Digital en Quito: marketing digital, producción multimedia, modelos para contenido orgánico (UGC e influencers), fotografía de producto, trafficker digital, diseño web y automatización con IA.",
   alternates: { canonical: "/servicios" },
 };
 

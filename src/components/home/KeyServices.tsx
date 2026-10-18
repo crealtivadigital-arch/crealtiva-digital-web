@@ -4,9 +4,6 @@ import NaturalImage from "@/components/site/NaturalImage";
 import SectionTitle from "@/components/site/SectionTitle";
 import type { ServiceLine } from "@/lib/content/types";
 
-// Modelos e Influencers se presenta junto a Video con Modelos UGC: en el home va una sola tarjeta.
-const HIDDEN = new Set(["modelos-e-influencers"]);
-
 type Tone = "navy" | "teal" | "magenta";
 
 // Mosaico: tarjetas de distinto ancho. Cada foto ocupa todo el ancho de su tarjeta, de borde a borde
@@ -15,7 +12,7 @@ type Tone = "navy" | "teal" | "magenta";
 const layout: Record<string, { span: string; banner?: boolean; tone: Tone }> = {
   "marketing-digital": { span: "sm:col-span-2", tone: "teal" },
   "produccion-multimedia": { span: "", tone: "navy" },
-  "video-ugc": { span: "", tone: "navy" },
+  "modelos-contenido-organico": { span: "", tone: "navy" },
   "fotografia-de-producto": { span: "", tone: "magenta" },
   "optimizacion-procesos": { span: "sm:col-span-2", tone: "navy" },
   "trafficker-digital": { span: "", tone: "navy" },
@@ -31,7 +28,7 @@ const tones: Record<Tone, { card: string; tagline: string; summary: string }> = 
 
 export default function KeyServices({ lines }: { lines: ServiceLine[] }) {
   const shown = lines
-    .filter((l) => !HIDDEN.has(l.slug))
+    .slice()
     .sort((a, b) => rank(a.slug) - rank(b.slug));
 
   return (

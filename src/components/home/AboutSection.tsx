@@ -6,7 +6,7 @@ import { lineHref } from "@/lib/content/links";
 const team = [
   { role: "Dirección estratégica", href: lineHref("marketing-digital"), icon: "strategy" },
   { role: "Producción multimedia", href: lineHref("produccion-multimedia"), icon: "camera" },
-  { role: "Marketing de Modelos y Micro Influencers", href: lineHref("modelos-e-influencers"), icon: "community" },
+  { role: "Modelos para Contenido Orgánico", href: lineHref("modelos-contenido-organico"), icon: "community" },
   { role: "Diseño y desarrollo web", href: lineHref("diseno-web"), icon: "web" },
   { role: "Pauta digital", href: lineHref("trafficker-digital"), icon: "ads" },
 ] as const;

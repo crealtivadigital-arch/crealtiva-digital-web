@@ -45,7 +45,7 @@ const slides: {
     title: "Cada sucursal le habla a su público",
     body: "Instagram es como el centro comercial: un público más comercial. LinkedIn, como la zona de oficinas y empresas. TikTok, como el barrio artístico de alto flujo. Cada canal se comunica de forma única con la comunidad que va construyendo.",
     icon: "chat",
-    info: { label: "Contenido UGC", href: lineHref("video-ugc") },
+    info: { label: "Contenido UGC", href: lineHref("modelos-contenido-organico") },
   },
   {
     kicker: "Calidad",
@@ -73,7 +73,7 @@ const slides: {
     title: "La conversación construye confianza",
     body: "Cuando tu público comenta, comparte, responde y deja reseñas, y se suman colaboraciones e influencers que cuentan su experiencia, tu marca gana credibilidad, confianza y renombre.",
     icon: "heart",
-    info: { label: "Modelos e influencers", href: lineHref("modelos-e-influencers") },
+    info: { label: "Modelos e influencers", href: lineHref("modelos-contenido-organico") },
   },
   {
     kicker: "Resultado",
