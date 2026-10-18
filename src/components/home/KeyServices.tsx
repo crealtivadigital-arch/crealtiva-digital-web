@@ -1,6 +1,6 @@
 import { lineHref } from "@/lib/content/links";
 import Link from "next/link";
-import NaturalImage from "@/components/site/NaturalImage";
+import NaturalImage, { imageRatio } from "@/components/site/NaturalImage";
 import SectionTitle from "@/components/site/SectionTitle";
 import type { ServiceLine } from "@/lib/content/types";
 
@@ -15,7 +15,7 @@ const layout: Record<string, { span: string; banner?: boolean; tone: Tone }> = {
   "modelos-contenido-organico": { span: "", tone: "navy" },
   "fotografia-de-producto": { span: "", tone: "magenta" },
   "optimizacion-procesos": { span: "sm:col-span-2", tone: "navy" },
-  "trafficker-digital": { span: "", tone: "navy" },
+  "trafficker-digital": { span: "", tone: "teal" },
   "diseno-web": { span: "sm:col-span-2 lg:col-span-4", banner: true, tone: "navy" },
 };
 const ORDER = Object.keys(layout);
@@ -50,16 +50,18 @@ export default function KeyServices({ lines }: { lines: ServiceLine[] }) {
             const cfg = layout[l.slug] ?? { span: "", tone: "navy" as Tone };
             const tone = tones[cfg.tone];
             const wide = cfg.span.includes("col-span-2");
+            // Celular: foto en miniatura al lado del texto (tarjeta compacta, sin scroll eterno).
+            // Tablet: las tarjetas anchas ponen la foto al costado. Escritorio: el mosaico original.
+            const compact = !cfg.banner && (imageRatio(l.cover?.src ?? "") ?? 1) < 1.4;
+            const side = wide && !cfg.banner;
             return (
               <Link
                 key={l.slug}
                 href={lineHref(l.slug)}
-                className={`group flex flex-col overflow-hidden rounded-block ${tone.card} ${cfg.span} ${
-                  cfg.banner ? "lg:flex-row" : ""
-                }`}
+                className={`group flex overflow-hidden rounded-block ${tone.card} ${cfg.span} ${layoutClass(compact, side, !!cfg.banner)}`}
               >
                 {l.cover && (
-                  <div className={cfg.banner ? "lg:shrink-0" : ""}>
+                  <div className={imageClass(compact, side, !!cfg.banner)}>
                     <NaturalImage
                       img={l.cover}
                       sizes={
@@ -69,16 +71,19 @@ export default function KeyServices({ lines }: { lines: ServiceLine[] }) {
                             ? "(min-width: 1024px) 540px, 100vw"
                             : "(min-width: 1024px) 270px, (min-width: 640px) 50vw, 100vw"
                       }
+                      className={compact ? `overflow-hidden rounded-xl ${side ? "sm:rounded-none" : "lg:rounded-none"}` : ""}
                       imgClassName="transition-opacity duration-300 group-hover:opacity-85"
                     />
                   </div>
                 )}
-                <div className={`flex flex-1 flex-col p-5 ${cfg.banner ? "lg:justify-center lg:p-8" : ""}`}>
+                <div className={`flex min-w-0 flex-1 flex-col ${compact ? "p-4 lg:p-5" : "p-5"} ${cfg.banner ? "lg:justify-center lg:p-8" : ""}`}>
                   <p className={`text-xs font-semibold ${tone.tagline}`}>{l.tagline}</p>
-                  <h3 className={`mt-1 font-bold leading-tight text-cream ${wide ? "text-2xl" : "text-xl"}`}>
+                  <h3 className={`mt-1 font-bold leading-tight text-cream ${wide ? "text-2xl" : "text-lg lg:text-xl"}`}>
                     {l.name}
                   </h3>
-                  <p className={`mt-2 text-sm leading-relaxed ${tone.summary}`}>{l.summary}</p>
+                  <p className={`mt-2 text-sm leading-relaxed ${tone.summary} ${compact ? "line-clamp-3 lg:line-clamp-none" : ""}`}>
+                    {l.summary}
+                  </p>
                   <span
                     className={`mt-auto inline-block pt-4 text-sm font-semibold text-cream transition-transform group-hover:translate-x-1 ${
                       cfg.banner ? "lg:mt-0" : ""
@@ -94,6 +99,23 @@ export default function KeyServices({ lines }: { lines: ServiceLine[] }) {
       </div>
     </section>
   );
+}
+
+// Celular y tablet: compact = miniatura al lado del texto; side = foto al costado en tarjetas anchas (tablet).
+function layoutClass(compact: boolean, side: boolean, banner: boolean): string {
+  if (banner) return "flex-col lg:flex-row";
+  if (compact && side) return "flex-row items-center lg:flex-col lg:items-stretch";
+  if (compact) return "flex-row items-center lg:flex-col lg:items-stretch";
+  if (side) return "flex-col sm:flex-row sm:items-center lg:flex-col lg:items-stretch";
+  return "flex-col";
+}
+
+function imageClass(compact: boolean, side: boolean, banner: boolean): string {
+  if (banner) return "lg:shrink-0";
+  if (compact && side) return "w-[38%] shrink-0 p-2 sm:w-1/2 sm:p-0 lg:w-auto";
+  if (compact) return "w-[38%] shrink-0 p-2 lg:w-auto lg:p-0";
+  if (side) return "sm:w-1/2 sm:shrink-0 lg:w-auto";
+  return "";
 }
 
 function rank(slug: string): number {

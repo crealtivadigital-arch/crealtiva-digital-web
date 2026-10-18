@@ -4,11 +4,11 @@ import { lineHref } from "@/lib/content/links";
 
 // Cada especialidad lleva a la línea de servicio que la representa.
 const team = [
-  { role: "Dirección estratégica", href: lineHref("marketing-digital"), icon: "strategy" },
-  { role: "Videos para redes sociales", href: lineHref("videos-para-redes-sociales"), icon: "camera" },
-  { role: "Modelos para Contenido Orgánico", href: lineHref("modelos-contenido-organico"), icon: "community" },
-  { role: "Diseño y desarrollo web", href: lineHref("diseno-web"), icon: "web" },
-  { role: "Pauta digital", href: lineHref("trafficker-digital"), icon: "ads" },
+  { role: "Dirección estratégica", short: "Estrategia", href: lineHref("marketing-digital"), icon: "strategy" },
+  { role: "Videos para redes sociales", short: "Videos para redes", href: lineHref("videos-para-redes-sociales"), icon: "camera" },
+  { role: "Modelos para Contenido Orgánico", short: "Modelos", href: lineHref("modelos-contenido-organico"), icon: "community" },
+  { role: "Diseño y desarrollo web", short: "Diseño web", href: lineHref("diseno-web"), icon: "web" },
+  { role: "Pauta digital", short: "Pauta digital", href: lineHref("trafficker-digital"), icon: "ads" },
 ] as const;
 
 const icons: Record<(typeof team)[number]["icon"], React.ReactNode> = {
@@ -56,22 +56,22 @@ export default function AboutSection() {
         <h3 className="text-center text-sm font-semibold uppercase tracking-widest text-navy/50">
           5 especialistas trabajando como uno solo
         </h3>
-        <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+        <ul className="mt-5 flex flex-wrap justify-center gap-2 sm:gap-3">
           {team.map((t, i) => (
-            <li key={t.role}>
+            <li key={t.role} className="w-[calc((100%-1rem)/3)] sm:w-[calc((100%-1.5rem)/3)] lg:w-[calc((100%-3rem)/5)]">
               <Link
                 href={t.href}
-                className="group flex h-full flex-col items-center gap-3 rounded-card bg-white px-3 py-5 text-center ring-1 ring-navy/5 transition hover:-translate-y-0.5 hover:shadow-lg hover:ring-teal/40"
+                className="group flex h-full flex-col items-center gap-2 rounded-card bg-white px-1.5 py-3 text-center sm:gap-3 sm:px-3 sm:py-5 ring-1 ring-navy/5 transition hover:-translate-y-0.5 hover:shadow-lg hover:ring-teal/40"
               >
                 <span
-                  className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-cream ${
+                  className={`flex h-9 w-9 shrink-0 sm:h-11 sm:w-11 items-center justify-center rounded-full text-cream ${
                     i % 2 === 0 ? "bg-teal" : "bg-magenta"
                   }`}
                 >
                   <svg
                     aria-hidden
                     viewBox="0 0 24 24"
-                    className="h-5 w-5"
+                    className="h-4 w-4 sm:h-5 sm:w-5"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="1.8"
@@ -81,7 +81,10 @@ export default function AboutSection() {
                     {icons[t.icon]}
                   </svg>
                 </span>
-                <span className="text-sm font-semibold leading-snug text-navy">{t.role}</span>
+                <span className="text-xs font-semibold leading-snug text-navy sm:text-sm">
+                  <span className="sm:hidden">{t.short}</span>
+                  <span className="hidden sm:inline">{t.role}</span>
+                </span>
               </Link>
             </li>
           ))}

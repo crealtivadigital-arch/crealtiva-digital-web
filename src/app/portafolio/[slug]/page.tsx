@@ -120,7 +120,7 @@ export default async function ProyectoPage({ params }: Props) {
         <section className="bg-navy py-20">
           <div className="mx-auto max-w-6xl px-6">
             <SectionTitle dark eyebrow="Portafolio" title="Proyectos relacionados" />
-            <div className="columns-1 gap-6 sm:columns-2 lg:columns-3">
+            <div className="columns-2 gap-3 sm:gap-6 lg:columns-3">
               {related.map((p) => (
                 <ProjectCard key={p.slug} project={p} lineNames={lineNames} />
               ))}

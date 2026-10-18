@@ -59,7 +59,7 @@ export default async function Home() {
                 </Link>
               }
             />
-            <div className="columns-1 gap-6 sm:columns-2 lg:columns-3">
+            <div className="columns-2 gap-3 sm:gap-6 lg:columns-3">
               {projects.slice(0, 3).map((p) => (
                 <ProjectCard key={p.slug} project={p} lineNames={lineNames} />
               ))}

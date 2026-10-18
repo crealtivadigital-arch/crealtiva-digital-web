@@ -182,7 +182,7 @@ export default async function MovieMakerPage() {
                 Ver todo el portafolio
               </Link>
             </div>
-            <div className="columns-1 gap-6 sm:columns-2 lg:columns-3">
+            <div className="columns-2 gap-3 sm:gap-6 lg:columns-3">
               {projects.map((p) => (
                 <ProjectCard key={p.slug} project={p} lineNames={lineNames} />
               ))}

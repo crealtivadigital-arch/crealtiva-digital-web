@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { lineHref } from "@/lib/content/links";
 
 // Slider: la presencia digital como una ciudad. La web es la matriz y cada red una sucursal
@@ -13,72 +13,104 @@ const INTERVAL = 5000;
 
 type IconName = "user" | "globe" | "network" | "chat" | "sparkle" | "calendar" | "megaphone" | "heart" | "rocket";
 
-const slides: {
+// Cada lámina: una frase corta y, según el tema, etiquetas, pares (canal → barrio) o una lista,
+// para que el texto se lea rápido y no sea solo un párrafo.
+type Slide = {
   kicker: string;
   title: string;
-  body: string;
+  lead: string;
+  chips?: string[];
+  pairs?: [string, string][];
+  list?: { text: string; bad?: boolean }[];
+  note?: string;
   icon: IconName;
   info?: { label: string; href: string };
-}[] = [
+};
+
+const slides: Slide[] = [
   {
     kicker: "Tú y tu negocio",
     title: "Tú te encargas de tu negocio",
-    body: "Tus productos o servicios, tus cuentas, tu equipo. Marketing no son solo redes: es una estrategia de posicionamiento digital, y por eso es clave que entiendas cómo funciona un crecimiento digital real. Tú sigue con tu negocio; nosotros nos encargamos de construir tu presencia.",
+    lead: "Marketing no son solo redes: es una estrategia de posicionamiento digital. Por eso es clave entender cómo funciona un crecimiento digital real.",
+    chips: ["Productos o servicios", "Cuentas", "Tu equipo"],
+    note: "Tú sigue con tu negocio; nosotros construimos tu presencia.",
     icon: "user",
   },
   {
     kicker: "La matriz",
     title: "Tu web es como tu tienda principal",
-    body: "Es como tu casa en la gran ciudad digital que es internet: ahí viven tu marca, tu catálogo y tu forma de atender. Pero abrir un solo local y esperar que todos lleguen es cubrir un solo punto del mapa.",
+    lead: "Es como tu casa en la gran ciudad digital que es internet. Ahí viven:",
+    chips: ["Tu marca", "Tu catálogo", "Tu forma de atender"],
+    note: "Pero un solo local cubre un solo punto del mapa.",
     icon: "globe",
     info: { label: "Sitios web", href: lineHref("diseno-web") },
   },
   {
     kicker: "Las sucursales",
     title: "Las redes son como sucursales en distintos centros comerciales",
-    body: "Facebook, Instagram, TikTok, LinkedIn, Google Business, YouTube… e incluso aliados, plataformas de reservas y otras webs. Cada una es como una sucursal que abre tu marca a un público diferente, con vitrinas pensadas para él.",
+    lead: "Cada una abre tu marca a un público diferente, con vitrinas pensadas para él.",
+    chips: ["Facebook", "Instagram", "TikTok", "LinkedIn", "Google Business", "YouTube", "Aliados y otras webs"],
     icon: "network",
     info: { label: "Gestión de redes", href: lineHref("marketing-digital") },
   },
   {
     kicker: "Cada barrio, su idioma",
     title: "Cada sucursal le habla a su público",
-    body: "Instagram es como el centro comercial: un público más comercial. LinkedIn, como la zona de oficinas y empresas. TikTok, como el barrio artístico de alto flujo. Cada canal se comunica de forma única con la comunidad que va construyendo.",
+    lead: "Cada canal tiene su público —más comercial, ejecutivo o de alto flujo— y le habla en su idioma:",
+    pairs: [
+      ["Instagram", "Centro comercial"],
+      ["LinkedIn", "Zona de oficinas"],
+      ["TikTok", "Barrio artístico"],
+    ],
     icon: "chat",
     info: { label: "Contenido UGC", href: lineHref("modelos-contenido-organico") },
   },
   {
     kicker: "Calidad",
     title: "La calidad hace que tu marca se perciba por lo que vale",
-    body: "El diseño, la foto y el video deben representar la calidad real de tu negocio en cada vitrina. No sirve una matriz hermosa y una sucursal descuidada: el público juzga tu marca por lo que ve.",
+    lead: "El diseño, la foto y el video deben representar la calidad real de tu negocio en cada vitrina.",
+    note: "No sirve una matriz hermosa y una sucursal descuidada: el público juzga tu marca por lo que ve.",
     icon: "sparkle",
     info: { label: "Videos para redes", href: lineHref("videos-para-redes-sociales") },
   },
   {
     kicker: "Constancia",
     title: "Como una tienda sin atención: acumula polvo",
-    body: "No hay fórmula mágica. Si abres todas las sucursales en un mes y luego no publicas ni gestionas nada, solo acumulan polvo: el público pierde el interés y el foco de quién eres. Crecer es un trabajo continuo.",
+    lead: "No hay fórmula mágica: crecer es un trabajo continuo.",
+    list: [
+      { text: "Abrir todas las sucursales en un mes", bad: true },
+      { text: "Y luego no publicar ni gestionar nada", bad: true },
+    ],
+    note: "El público pierde el interés y el foco de quién eres.",
     icon: "calendar",
     info: { label: "Marketing mensual", href: lineHref("marketing-digital") },
   },
   {
     kicker: "Pauta digital",
     title: "La publicidad es como la gran apertura",
-    body: "Google Ads, Meta Ads y TikTok Ads activan e impulsan cada sucursal: atraen gente en la apertura, con ofertas especiales y acciones de valor, hasta que la tienda se establece.",
+    lead: "Activa e impulsa cada sucursal hasta que la tienda se establece.",
+    chips: ["Google Ads", "Meta Ads", "TikTok Ads"],
+    list: [{ text: "Atrae gente en la apertura" }, { text: "Ofertas especiales" }, { text: "Acciones de valor" }],
     icon: "megaphone",
     info: { label: "Pauta digital", href: lineHref("trafficker-digital") },
   },
   {
     kicker: "Contenido e interacción",
     title: "La conversación construye confianza",
-    body: "Cuando tu público comenta, comparte, responde y deja reseñas, y se suman colaboraciones e influencers que cuentan su experiencia, tu marca gana credibilidad, confianza y renombre.",
+    lead: "Tu marca gana credibilidad, confianza y renombre cuando:",
+    list: [
+      { text: "Tu público comenta, comparte y responde" },
+      { text: "Deja reseñas en Google" },
+      { text: "Colaboraciones e influencers cuentan su experiencia" },
+    ],
     icon: "heart",
     info: { label: "Modelos e influencers", href: lineHref("modelos-contenido-organico") },
   },
   {
     kicker: "Resultado",
     title: "La ciudad digital te reconoce",
-    body: "Toda esta construcción le dice a internet que tu tienda es seria e importante y que todos deberían conocerla. Así se forma una red amplia que hace despegar tu marca.",
+    lead: "Toda esta construcción le dice a internet que tu tienda es seria e importante y que todos deberían conocerla.",
+    note: "Así se forma una red amplia que hace despegar tu marca.",
     icon: "rocket",
   },
 ];
@@ -88,6 +120,19 @@ export default function DigitalCityStory() {
   const [hovering, setHovering] = useState(false);
   const [advanced, setAdvanced] = useState(false);
   const [reduced, setReduced] = useState(false);
+  // El alto del texto sigue a la lámina activa (no a la más larga): en celular cabe en pantalla
+  const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [trackHeight, setTrackHeight] = useState<number>();
+
+  useEffect(() => {
+    const el = slideRefs.current[active];
+    if (!el) return;
+    const update = () => setTrackHeight(el.offsetHeight);
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [active]);
 
   useEffect(() => {
     setReduced(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
@@ -112,7 +157,7 @@ export default function DigitalCityStory() {
 
   return (
     <div
-      className="overflow-hidden rounded-[2.5rem] bg-white/[0.04] ring-1 ring-white/10 lg:grid lg:grid-cols-2"
+      className="overflow-hidden rounded-[2.5rem] bg-white/[0.04] ring-1 ring-white/10 md:grid md:grid-cols-2"
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
       onFocus={() => setHovering(true)}
@@ -120,8 +165,8 @@ export default function DigitalCityStory() {
       aria-roledescription="carrusel"
     >
       {/* Ilustración */}
-      <div className="relative m-3 min-w-0 rounded-[2rem] bg-white p-4 md:p-6">
-        <span className="absolute left-5 top-5 z-10 inline-flex items-center gap-1.5 rounded-full bg-magenta/10 px-3 py-1 text-[11px] font-semibold text-magenta">
+      <div className="relative m-3 flex min-w-0 items-center justify-center rounded-[2rem] bg-white p-2 pt-7 md:p-6 md:pt-12">
+        <span className="absolute left-4 top-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-magenta/10 px-2.5 py-0.5 text-[10px] md:left-5 md:top-5 md:px-3 md:py-1 md:text-[11px] font-semibold text-magenta">
           <svg aria-hidden viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" />
             <circle cx="12" cy="12" r="3" />
@@ -132,19 +177,26 @@ export default function DigitalCityStory() {
       </div>
 
       {/* Texto */}
-      <div className="flex min-w-0 flex-col p-6 pt-4 md:p-10 lg:pl-6">
-        <p className="font-display text-sm text-cream/40">
+      <div className="flex min-w-0 flex-col p-5 pt-2 md:p-8 md:pl-4 lg:p-10 lg:pl-6">
+        <p className="hidden font-display text-sm text-cream/40 md:block">
           <span className="text-magenta">{String(active + 1).padStart(2, "0")}</span> / {String(slides.length).padStart(2, "0")}
         </p>
 
-        <div className="mt-6 overflow-hidden" aria-live={paused ? "polite" : "off"}>
+        <div
+          className="mt-3 overflow-hidden transition-[height] duration-500 md:mt-6"
+          style={{ height: trackHeight }}
+          aria-live={paused ? "polite" : "off"}
+        >
           <div
-            className="flex transition-transform duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)]"
+            className="flex items-start transition-transform duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)]"
             style={{ transform: `translateX(-${active * 100}%)` }}
           >
             {slides.map((s, i) => (
               <div
                 key={s.kicker}
+                ref={(el) => {
+                  slideRefs.current[i] = el;
+                }}
                 className="w-full shrink-0 pr-2"
                 inert={i !== active}
                 aria-roledescription="lámina"
@@ -152,7 +204,7 @@ export default function DigitalCityStory() {
               >
                 <div className="flex items-center gap-3">
                   <span
-                    className={`flex h-10 w-10 items-center justify-center rounded-full text-cream ${
+                    className={`flex h-8 w-8 items-center justify-center rounded-full text-cream md:h-10 md:w-10 ${
                       i % 2 ? "bg-magenta" : "bg-teal"
                     }`}
                   >
@@ -160,12 +212,49 @@ export default function DigitalCityStory() {
                   </span>
                   <span className="text-xs font-semibold uppercase tracking-widest text-teal">{s.kicker}</span>
                 </div>
-                <h3 className="mt-5 font-display text-2xl leading-tight text-cream md:text-[2rem]">{s.title}</h3>
-                <p className="mt-4 text-base font-light leading-relaxed text-cream/70 md:text-lg">{s.body}</p>
+                <h3 className="mt-3 font-display text-xl leading-tight text-cream md:mt-5 md:text-[2rem]">{s.title}</h3>
+                <p className="mt-3 text-[15px] font-light leading-relaxed text-cream/75 md:mt-4 md:text-lg">{s.lead}</p>
+                {s.chips && (
+                  <ul className="mt-4 flex flex-wrap gap-1.5 md:gap-2">
+                    {s.chips.map((c) => (
+                      <li key={c} className="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-cream md:text-sm">
+                        {c}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {s.pairs && (
+                  <ul className="mt-4 space-y-2">
+                    {s.pairs.map(([a, b]) => (
+                      <li key={a} className="flex items-center gap-2 text-sm md:text-base">
+                        <span className="w-24 shrink-0 font-semibold text-cream">{a}</span>
+                        <span aria-hidden className="text-magenta">→</span>
+                        <span className="text-cream/70">{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {s.list && (
+                  <ul className="mt-4 space-y-1.5">
+                    {s.list.map((it) => (
+                      <li key={it.text} className="flex gap-2 text-sm text-cream/80 md:text-base">
+                        <span aria-hidden className={`font-bold ${it.bad ? "text-magenta" : "text-teal"}`}>
+                          {it.bad ? "✕" : "✓"}
+                        </span>
+                        {it.text}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {s.note && (
+                  <p className="mt-4 border-l-2 border-magenta pl-3 text-sm font-semibold leading-snug text-cream md:text-base">
+                    {s.note}
+                  </p>
+                )}
                 {s.info && (
                   <Link
                     href={s.info.href}
-                    className="mt-6 inline-flex items-center gap-2 rounded-full border border-teal/40 px-4 py-1.5 text-sm font-semibold text-teal transition-colors hover:border-teal hover:bg-teal hover:text-cream"
+                    className="mt-4 inline-flex items-center gap-2 rounded-full border border-teal/40 px-4 py-1.5 md:mt-6 text-sm font-semibold text-teal transition-colors hover:border-teal hover:bg-teal hover:text-cream"
                   >
                     <svg aria-hidden viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
                       <circle cx="12" cy="12" r="9" />
@@ -180,7 +269,7 @@ export default function DigitalCityStory() {
         </div>
 
         {/* Controles */}
-        <div className="mt-auto pt-8">
+        <div className="mt-auto pt-4 md:pt-8">
           <div className="h-0.5 overflow-hidden rounded-full bg-white/10">
             <div
               key={`${active}-${paused}`}
@@ -192,7 +281,7 @@ export default function DigitalCityStory() {
               }}
             />
           </div>
-          <div className="mt-5 flex items-center gap-4">
+          <div className="mt-3 flex items-center gap-3 md:mt-5 md:gap-4">
             <ArrowButton dir="prev" onClick={() => go(active - 1)} />
             <ArrowButton dir="next" onClick={() => go(active + 1)} />
             <div className="ml-auto flex flex-wrap justify-end gap-1.5">
@@ -326,7 +415,7 @@ function CityScene({ step }: { step: number }) {
   return (
     <svg
       viewBox="0 0 400 430"
-      className="mx-auto h-auto w-full max-w-[480px]"
+      className="mx-auto h-auto w-full max-w-[175px] sm:max-w-[300px] md:max-w-[380px] lg:max-w-[480px]"
       role="img"
       aria-label="Ejemplo visual: tu presencia digital como una ciudad"
     >
