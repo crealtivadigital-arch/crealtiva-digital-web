@@ -223,8 +223,8 @@ export default async function LineaPage({ params }: Props) {
       {isMarketing && <PackageFamilies packages={packages} lineName={line.name} />}
       {isMarketing && <PackageCompare pkgs={comparePkgs} />}
 
-      {/* Proceso */}
-      {line.process.length > 0 && (
+      {/* Proceso (en Marketing ya lo cuenta la sección de estrategia) */}
+      {line.process.length > 0 && !isMarketing && (
         <section className="bg-white py-20">
           <div className="mx-auto max-w-6xl px-6">
             <SectionTitle eyebrow="Cómo trabajamos" title="Un proceso claro, sin improvisar" />

@@ -422,6 +422,13 @@ const lines = [
       { title: "Periodo de maduración", detail: "Se sugiere un mínimo de 3 meses para que los algoritmos y la estrategia entreguen métricas relevantes." },
       { title: "Inversión en anuncios", detail: "El presupuesto de pauta no está incluido: se paga directamente a Meta, TikTok o Google." },
       { title: "Pago con tarjeta", detail: "Los pagos con tarjeta tienen un recargo del 5% sobre el precio base." },
+      { title: "Sin permanencia obligatoria", detail: "El contrato se renueva mes a mes: te quedas por la calidad de la gestión y los resultados, no por una cláusula." },
+      { title: "Tus cuentas son tuyas", detail: "Las cuentas de tus redes y sus datos siempre están a nombre de tu empresa." },
+      { title: "Lo que necesitamos de ti", detail: "La información de tu negocio para el brief y, si ya lo tienes, tu kit creativo: logo, manual de marca y tipografías." },
+      { title: "Pauta en Bite y Tasty", detail: "Estos planes no incluyen campañas de anuncios; puedes sumar una campaña como complemento, armada con el contenido del mes. Elemental incluye 1 campaña y Full House 2." },
+      { title: "Fotografía de producto", detail: "No está incluida en los planes Bite. Se contrata aparte en la línea de Fotografía de Producto." },
+      { title: "Mensajes de clientes", detail: "En Elemental y Full House la atención de los mensajes de tus clientes no está incluida: los mensajes de las plataformas se redirigen a tu WhatsApp o a tu canal de ventas." },
+      { title: "Cambio de plan", detail: "Puedes escalar o ajustar tu plan según la etapa de tu negocio." },
     ],
     faqs: faq([
       ["¿Cuánto tiempo tarda en verse resultados?", "Los primeros cambios visibles (consistencia y engagement inicial) se notan entre las semanas 3 y 4. Para evaluar conversiones y crecimiento sostenido sugerimos un periodo mínimo de 3 meses."],
