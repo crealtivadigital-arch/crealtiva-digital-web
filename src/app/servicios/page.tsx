@@ -45,6 +45,8 @@ export default async function ServiciosPage() {
               Movie Maker
             </a>
           </li>
+          {/* Espaciador: en un flex con scroll horizontal el padding derecho no cuenta en el área desplazable */}
+          <li aria-hidden className="w-4 shrink-0" />
         </ul>
       </nav>
 
