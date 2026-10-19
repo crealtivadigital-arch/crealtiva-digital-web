@@ -1,47 +1,28 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/site/PageHeader";
-import FilterGrid from "@/components/site/FilterGrid";
-import ProjectCard from "@/components/site/ProjectCard";
-import CTABanner from "@/components/CTABanner";
-import { getProjects, getServiceLines } from "@/lib/content";
+import PortfolioExplorer from "@/components/portfolio/PortfolioExplorer";
+import { getPortfolioCategories, getServiceLines } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Portafolio — Trabajos de producción, fotografía, UGC y web",
+  title: "Portafolio — Fotografía y video por sector",
   description:
-    "Proyectos reales de Crealtiva Digital: producción en campo, video institucional, fotografía gastronómica y de producto, contenido UGC y sitios web.",
+    "Trabajos reales de Crealtiva Digital por sector: gastronomía, imagen empresarial, salud, hotelería, inmobiliario, turismo, moda, e-commerce, automotriz, construcción y agroindustria.",
   alternates: { canonical: "/portafolio" },
 };
 
 export default async function PortafolioPage() {
-  const [projects, lines] = await Promise.all([getProjects(), getServiceLines()]);
+  const [categories, lines] = await Promise.all([getPortfolioCategories(), getServiceLines()]);
   const lineNames = Object.fromEntries(lines.map((l) => [l.slug, l.name]));
-  // Solo se ofrecen como filtro las líneas que tienen trabajos publicados.
-  const usedLines = lines.filter((l) => projects.some((p) => p.lineSlugs.includes(l.slug)));
 
   return (
     <main>
       <PageHeader
         eyebrow="Portafolio"
-        title="Trabajos que hablan por nosotros"
-        intro="Producción en campo, video institucional, fotografía, contenido con actores y sitios web. Cada proyecto partió de un brief y un objetivo comercial."
+        title="Lo que hacemos se ve"
+        intro="Elige tu sector y mira el trabajo."
         crumbs={[{ label: "Inicio", href: "/" }, { label: "Portafolio" }]}
       />
-
-      <section className="bg-cream py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <FilterGrid
-            gridClassName="columns-2 gap-3 sm:gap-6 lg:columns-3"
-            options={usedLines.map((l) => ({ value: l.slug, label: l.name }))}
-            items={projects.map((p) => ({
-              key: p.slug,
-              tags: p.lineSlugs,
-              node: <ProjectCard project={p} lineNames={lineNames} />,
-            }))}
-          />
-        </div>
-      </section>
-
-      <CTABanner headline="¿Quieres un proyecto así para tu marca?" />
+      <PortfolioExplorer categories={categories} lineNames={lineNames} />
     </main>
   );
 }

@@ -115,3 +115,23 @@ export interface Post {
   bodyHtml: string; // contenido enriquecido (lo producirá el editor del panel)
   featured: boolean;
 }
+
+// Portafolio por rubro: galería visual + invitación comercial propia de cada sector
+export interface PortfolioVideo {
+  youtube: string; // ID o URL de YouTube
+  title: string;
+}
+
+export interface PortfolioCategory {
+  slug: string;
+  name: string;
+  phrases: string[]; // frases cortas que se intercalan en el mosaico
+  photos: Img[];
+  videos: PortfolioVideo[]; // máximo 3 se muestran
+  cta: {
+    title: string;
+    text: string;
+    wa: string; // mensaje de WhatsApp ya escrito para ese rubro
+    line: string; // slug de la línea de servicio relacionada
+  };
+}

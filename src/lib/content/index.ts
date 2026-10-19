@@ -2,7 +2,8 @@ import "server-only";
 import servicesData from "@/content/services.json";
 import portfolioData from "@/content/portfolio.json";
 import postsData from "@/content/posts.json";
-import type { Package, Post, Project, ServiceLine } from "./types";
+import portfolioCategoriesData from "@/content/portfolio-categories.json";
+import type { Package, PortfolioCategory, Post, Project, ServiceLine } from "./types";
 
 // Único punto de lectura del contenido. Las páginas no importan los JSON directamente:
 // cuando el panel de admin guarde en la base de datos, solo cambia este archivo.
@@ -10,6 +11,7 @@ import type { Package, Post, Project, ServiceLine } from "./types";
 const lines = (servicesData.lines as ServiceLine[]).filter((l) => l.visible).sort((a, b) => a.order - b.order);
 const packages = (servicesData.packages as Package[]).sort((a, b) => a.order - b.order);
 const projects = (portfolioData.projects as Project[]).sort((a, b) => a.order - b.order);
+const portfolioCategories = portfolioCategoriesData.categories as PortfolioCategory[];
 const posts = (postsData.posts as Post[]).sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 
 export async function getServiceLines(): Promise<ServiceLine[]> {
@@ -37,6 +39,11 @@ export async function getProjects(opts: { lineSlug?: string; featured?: boolean 
 
 export async function getProject(slug: string): Promise<Project | undefined> {
   return projects.find((p) => p.slug === slug);
+}
+
+// Solo rubros con fotos: los que aún no tienen material aparecen solos al cargarlo.
+export async function getPortfolioCategories(): Promise<PortfolioCategory[]> {
+  return portfolioCategories.filter((c) => c.photos.length > 0);
 }
 
 export async function getPosts(opts: { lineSlug?: string; limit?: number } = {}): Promise<Post[]> {

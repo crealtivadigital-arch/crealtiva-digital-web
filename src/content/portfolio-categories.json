@@ -1,0 +1,706 @@
+{
+  "categories": [
+    {
+      "slug": "gastronomia",
+      "name": "Gastronomía y restaurantes",
+      "phrases": [
+        "Tus platos se disfrutan primero con la mirada.",
+        "Cada foto es una invitación a reservar mesa.",
+        "Luz, textura y color: el antojo empieza en la pantalla."
+      ],
+      "photos": [
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262359/gastronomico_19_ss6x1d.jpg",
+          "alt": "Fotografía gastronómica de Crealtiva Digital — foto 1"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262358/gastronomico_14_sf3t2d.jpg",
+          "alt": "Fotografía gastronómica de Crealtiva Digital — foto 2"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262360/gastronomico_20_cbsgfd.jpg",
+          "alt": "Fotografía gastronómica de Crealtiva Digital — foto 3"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262413/contenido_con_modelos_11_hmlc7y.jpg",
+          "alt": "Fotografía gastronómica de Crealtiva Digital — foto 4"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262361/gastronomico_23_emtdpd.jpg",
+          "alt": "Fotografía gastronómica de Crealtiva Digital — foto 5"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262356/gastronomico_9_zlkbut.jpg",
+          "alt": "Fotografía gastronómica de Crealtiva Digital — foto 6"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262355/gastronomico_4_dvj8gr.jpg",
+          "alt": "Fotografía gastronómica de Crealtiva Digital — foto 7"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262360/gastronomico_21_oymgeq.jpg",
+          "alt": "Fotografía gastronómica de Crealtiva Digital — foto 8"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262352/produccion_y_experiencias_15_pcaxlk.jpg",
+          "alt": "Fotografía gastronómica de Crealtiva Digital — foto 9"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262414/contenido_con_modelos_15_qzgnp2.jpg",
+          "alt": "Fotografía gastronómica de Crealtiva Digital — foto 10"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262358/gastronomico_16_gwgw4c.jpg",
+          "alt": "Fotografía gastronómica de Crealtiva Digital — foto 11"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262361/gastronomico_25_e3pskq.jpg",
+          "alt": "Fotografía gastronómica de Crealtiva Digital — foto 12"
+        }
+      ],
+      "videos": [],
+      "cta": {
+        "title": "¿Tienes un restaurante o una cadena de comida?",
+        "text": "Además del contenido, te ayudamos con una estrategia de crecimiento digital para que lleguen más clientes de tu zona y tu mesa se llene más seguido.",
+        "wa": "Hola, vi su portafolio gastronómico. Tengo un restaurante y quiero una estrategia digital para atraer más clientes.",
+        "line": "marketing-digital"
+      }
+    },
+    {
+      "slug": "imagen-empresarial",
+      "name": "Imagen empresarial",
+      "phrases": [
+        "Tu equipo es tu mejor carta de presentación.",
+        "La confianza también se construye con imágenes."
+      ],
+      "photos": [
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262418/contenido_institucional_10_thwsiu.jpg",
+          "alt": "Imagen corporativa producida por Crealtiva Digital — foto 1"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262404/contenido_institucional_11_ftb47o.jpg",
+          "alt": "Imagen corporativa producida por Crealtiva Digital — foto 2"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262406/contenido_institucional_13_vx8prg.jpg",
+          "alt": "Imagen corporativa producida por Crealtiva Digital — foto 3"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262398/contenido_institucional_8_mtl0nr.jpg",
+          "alt": "Imagen corporativa producida por Crealtiva Digital — foto 4"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262404/contenido_institucional_9_gxxtkc.jpg",
+          "alt": "Imagen corporativa producida por Crealtiva Digital — foto 5"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262397/contenido_institucional_1_lmsj7t.jpg",
+          "alt": "Imagen corporativa producida por Crealtiva Digital — foto 6"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262419/contenido_institucional_12_narnt3.jpg",
+          "alt": "Imagen corporativa producida por Crealtiva Digital — foto 7"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262352/produccion_y_experiencias_16_fasexn.jpg",
+          "alt": "Imagen corporativa producida por Crealtiva Digital — foto 8"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262384/contenido_institucional_4_tgdn41.jpg",
+          "alt": "Imagen corporativa producida por Crealtiva Digital — foto 9"
+        }
+      ],
+      "videos": [],
+      "cta": {
+        "title": "¿Tu empresa se ve tan sólida como realmente es?",
+        "text": "Producimos la imagen institucional de tu equipo y la convertimos en una presencia digital coherente que transmite trayectoria a clientes y aliados.",
+        "wa": "Hola, vi su portafolio de imagen empresarial. Quiero mejorar la imagen digital de mi empresa.",
+        "line": "marketing-digital"
+      }
+    },
+    {
+      "slug": "marca-personal",
+      "name": "Marca personal",
+      "phrases": [
+        "Tu rostro es tu marca.",
+        "Proyecta en una foto lo que tardaste años en construir."
+      ],
+      "photos": [
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262394/imagen_profesional_1_a11nwm.jpg",
+          "alt": "Retrato de marca personal por Crealtiva Digital — foto 1"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262395/imagen_profesional_2_tjmayv.jpg",
+          "alt": "Retrato de marca personal por Crealtiva Digital — foto 2"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262395/imagen_profesional_6_wjpawe.jpg",
+          "alt": "Retrato de marca personal por Crealtiva Digital — foto 3"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262397/imagen_profesional_7_my5dew.jpg",
+          "alt": "Retrato de marca personal por Crealtiva Digital — foto 4"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262397/imagen_profesional_8_vdlsoc.jpg",
+          "alt": "Retrato de marca personal por Crealtiva Digital — foto 5"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262398/imagen_profesional_9_h5scbq.jpg",
+          "alt": "Retrato de marca personal por Crealtiva Digital — foto 6"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262417/contenido_con_modelos_21_rseix1.jpg",
+          "alt": "Retrato de marca personal por Crealtiva Digital — foto 7"
+        }
+      ],
+      "videos": [],
+      "cta": {
+        "title": "¿Eres profesional independiente o líder de tu empresa?",
+        "text": "Construimos tu marca personal: retratos, contenido y una estrategia para que te reconozcan como referente en tu sector.",
+        "wa": "Hola, vi su portafolio de marca personal. Quiero trabajar mi imagen y presencia digital.",
+        "line": "marketing-digital"
+      }
+    },
+    {
+      "slug": "salud",
+      "name": "Profesionales de la salud",
+      "phrases": [
+        "La confianza del paciente empieza antes de la consulta.",
+        "Cercanía y profesionalismo en una sola imagen."
+      ],
+      "photos": [
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262404/contenido_institucional_16_chla22.jpg",
+          "alt": "Fotografía para profesionales de la salud — foto 1"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262405/contenido_institucional_17_qcgbv3.jpg",
+          "alt": "Fotografía para profesionales de la salud — foto 2"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262407/contenido_institucional_14_e47ido.jpg",
+          "alt": "Fotografía para profesionales de la salud — foto 3"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262394/imagen_profesional_3_j9wape.jpg",
+          "alt": "Fotografía para profesionales de la salud — foto 4"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262397/imagen_profesional_4_wo9fql.jpg",
+          "alt": "Fotografía para profesionales de la salud — foto 5"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262350/produccion_y_experiencias_7_i65kcs.jpg",
+          "alt": "Fotografía para profesionales de la salud — foto 6"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392802/dsc-0867.webp",
+          "alt": "Fotografía para profesionales de la salud — foto 7"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392806/doctor.webp",
+          "alt": "Fotografía para profesionales de la salud — foto 8"
+        }
+      ],
+      "videos": [],
+      "cta": {
+        "title": "¿Tienes una consulta, clínica o centro médico?",
+        "text": "Te ayudamos a comunicar tu experiencia con contenido serio y cercano, y con una estrategia para que nuevos pacientes te encuentren y agenden.",
+        "wa": "Hola, vi su portafolio para profesionales de la salud. Quiero atraer más pacientes con una estrategia digital.",
+        "line": "marketing-digital"
+      }
+    },
+    {
+      "slug": "hoteleria",
+      "name": "Hotelería",
+      "phrases": [
+        "Que se imaginen ahí antes de reservar.",
+        "Cada espacio cuenta una experiencia."
+      ],
+      "photos": [
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262353/produccion_y_experiencias_20_gveu7f.jpg",
+          "alt": "Fotografía para hotelería — foto 1"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262424/contenido_con_modelos_26_y4ujcn.jpg",
+          "alt": "Fotografía para hotelería — foto 2"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262353/produccion_y_experiencias_19_pebwbc.jpg",
+          "alt": "Fotografía para hotelería — foto 3"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262382/contenido_con_modelos_7_wwnw25.jpg",
+          "alt": "Fotografía para hotelería — foto 4"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262404/contenido_con_modelos_28_latr8j.jpg",
+          "alt": "Fotografía para hotelería — foto 5"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262383/contenido_con_modelos_8_cwdlci.jpg",
+          "alt": "Fotografía para hotelería — foto 6"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262401/contenido_con_modelos_25_qarfid.jpg",
+          "alt": "Fotografía para hotelería — foto 7"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262346/drone_6_ns2uah.jpg",
+          "alt": "Fotografía para hotelería — foto 8"
+        }
+      ],
+      "videos": [],
+      "cta": {
+        "title": "¿Tienes un hotel, hostería o alojamiento?",
+        "text": "Mostramos tus espacios como se viven y armamos una estrategia digital para que recibas más reservas directas, sin depender solo de las plataformas.",
+        "wa": "Hola, vi su portafolio de hotelería. Quiero más reservas con una estrategia digital.",
+        "line": "marketing-digital"
+      }
+    },
+    {
+      "slug": "inmobiliario",
+      "name": "Inmobiliario",
+      "phrases": [
+        "No vendes metros cuadrados: vendes un hogar.",
+        "Desde el aire o desde la sala, el proyecto se entiende mejor."
+      ],
+      "photos": [
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262382/contenido_con_modelos_6_txxpab.jpg",
+          "alt": "Fotografía y video para proyectos inmobiliarios — foto 1"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262350/produccion_y_experiencias_10_j6zt7h.jpg",
+          "alt": "Fotografía y video para proyectos inmobiliarios — foto 2"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262347/produccion_y_experiencias_6_ysao7c.jpg",
+          "alt": "Fotografía y video para proyectos inmobiliarios — foto 3"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262351/produccion_y_experiencias_9_rmpdum.jpg",
+          "alt": "Fotografía y video para proyectos inmobiliarios — foto 4"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262350/produccion_y_experiencias_8_zuvsbl.jpg",
+          "alt": "Fotografía y video para proyectos inmobiliarios — foto 5"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262346/drone_4_catmuf.jpg",
+          "alt": "Fotografía y video para proyectos inmobiliarios — foto 6"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262346/drone_3_wnifu6.jpg",
+          "alt": "Fotografía y video para proyectos inmobiliarios — foto 7"
+        }
+      ],
+      "videos": [],
+      "cta": {
+        "title": "¿Tienes un proyecto inmobiliario o una constructora?",
+        "text": "Producimos fotos, video y tomas con dron de tus proyectos, y una estrategia digital para generar visitas y prospectos calificados.",
+        "wa": "Hola, vi su portafolio inmobiliario. Quiero generar prospectos para mi proyecto.",
+        "line": "marketing-digital"
+      }
+    },
+    {
+      "slug": "turismo",
+      "name": "Turismo y aventura",
+      "phrases": [
+        "El viaje empieza en la primera imagen.",
+        "Paisajes que convencen sin necesidad de explicar."
+      ],
+      "photos": [
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262346/drone_1_ygy5io.jpg",
+          "alt": "Contenido para turismo y aventura — foto 1"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262411/producciones_empresariales_3_jwvrlo.jpg",
+          "alt": "Contenido para turismo y aventura — foto 2"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262346/drone_5_ljh15l.jpg",
+          "alt": "Contenido para turismo y aventura — foto 3"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262370/paginas_web_7_zwwntk.png",
+          "alt": "Contenido para turismo y aventura — foto 4"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392828/andean-roots-celuclar.jpg",
+          "alt": "Contenido para turismo y aventura — foto 5"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392826/dacartours.png",
+          "alt": "Contenido para turismo y aventura — foto 6"
+        }
+      ],
+      "videos": [],
+      "cta": {
+        "title": "¿Tienes una agencia, operadora o destino turístico?",
+        "text": "Creamos el contenido y la web que tu destino necesita, y una estrategia para atraer viajeros nacionales y extranjeros.",
+        "wa": "Hola, vi su portafolio de turismo. Quiero atraer más viajeros con una estrategia digital.",
+        "line": "marketing-digital"
+      }
+    },
+    {
+      "slug": "belleza-bienestar",
+      "name": "Belleza, fitness y bienestar",
+      "phrases": [
+        "El bienestar también se contagia por la pantalla.",
+        "Resultados que se ven, marcas que se recuerdan."
+      ],
+      "photos": [
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262425/contenido_con_modelos_1_texcpz.jpg",
+          "alt": "Contenido para belleza, fitness y bienestar — foto 1"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262400/contenido_con_modelos_2_wfeada.jpg",
+          "alt": "Contenido para belleza, fitness y bienestar — foto 2"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262347/produccion_y_experiencias_5_h39iao.jpg",
+          "alt": "Contenido para belleza, fitness y bienestar — foto 3"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262384/imagen_profesional_5_jb5bg8.jpg",
+          "alt": "Contenido para belleza, fitness y bienestar — foto 4"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262416/contenido_con_modelos_17_m2b0tq.jpg",
+          "alt": "Contenido para belleza, fitness y bienestar — foto 5"
+        }
+      ],
+      "videos": [],
+      "cta": {
+        "title": "¿Tienes un gimnasio, spa, salón o centro de bienestar?",
+        "text": "Producimos contenido con energía real y una estrategia para que nuevos clientes de tu sector te encuentren y se inscriban.",
+        "wa": "Hola, vi su portafolio de belleza y bienestar. Quiero atraer más clientes con una estrategia digital.",
+        "line": "marketing-digital"
+      }
+    },
+    {
+      "slug": "moda",
+      "name": "Moda y diseñadores",
+      "phrases": [
+        "La prenda cobra vida cuando alguien la lleva.",
+        "Tu colección merece una pasarela digital."
+      ],
+      "photos": [
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262364/modelos_de_contenido_1_ta3bcp.jpg",
+          "alt": "Fotografía de moda con modelos — foto 1"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262363/modelos_de_contenido_11_gwamzr.jpg",
+          "alt": "Fotografía de moda con modelos — foto 2"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262361/modelos_de_contenido_12_mxtakh.jpg",
+          "alt": "Fotografía de moda con modelos — foto 3"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262364/modelos_de_contenido_2_crs7vt.jpg",
+          "alt": "Fotografía de moda con modelos — foto 4"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262365/modelos_de_contenido_3_z14uzn.jpg",
+          "alt": "Fotografía de moda con modelos — foto 5"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262365/modelos_de_contenido_4_t1thjy.jpg",
+          "alt": "Fotografía de moda con modelos — foto 6"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262365/modelos_de_contenido_5_tcrno4.jpg",
+          "alt": "Fotografía de moda con modelos — foto 7"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262364/modelos_de_contenido_6_vmmapl.jpg",
+          "alt": "Fotografía de moda con modelos — foto 8"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262362/modelos_de_contenido_8_cbkbmi.jpg",
+          "alt": "Fotografía de moda con modelos — foto 9"
+        }
+      ],
+      "videos": [],
+      "cta": {
+        "title": "¿Tienes una marca de ropa o eres diseñador?",
+        "text": "Te ofrecemos modelos, producción de fotos y una estrategia digital para que tu colección llegue al cliente que la va a comprar.",
+        "wa": "Hola, vi su portafolio de moda. Quiero producir mi colección y venderla mejor en digital.",
+        "line": "modelos-contenido-organico"
+      }
+    },
+    {
+      "slug": "accesorios-joyeria",
+      "name": "Accesorios y joyería",
+      "phrases": [
+        "Los detalles hacen la diferencia.",
+        "Brillo, textura y precisión en cada toma."
+      ],
+      "photos": [],
+      "videos": [],
+      "cta": {
+        "title": "¿Tienes una marca de accesorios o joyería?",
+        "text": "Fotografiamos cada pieza con el detalle que merece y te ayudamos a venderla en redes y en tu tienda online.",
+        "wa": "Hola, vi su portafolio. Tengo una marca de accesorios o joyería y quiero fotos y estrategia digital.",
+        "line": "fotografia-de-producto"
+      }
+    },
+    {
+      "slug": "ecommerce",
+      "name": "Productos y e-commerce",
+      "phrases": [
+        "En línea, la foto es el vendedor.",
+        "Un buen catálogo vende mientras duermes."
+      ],
+      "photos": [
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262371/fotografia_de_productos_1_kyuu11.jpg",
+          "alt": "Fotografía de producto para e-commerce — foto 1"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262377/fotografia_de_productos_18_sm2yv8.jpg",
+          "alt": "Fotografía de producto para e-commerce — foto 2"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262377/fotografia_de_productos_19_ljkhnt.jpg",
+          "alt": "Fotografía de producto para e-commerce — foto 3"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262378/fotografia_de_productos_20_h2jbcg.jpg",
+          "alt": "Fotografía de producto para e-commerce — foto 4"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262377/fotografia_de_productos_17_qcclsb.jpg",
+          "alt": "Fotografía de producto para e-commerce — foto 5"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392827/ecommerce.jpg",
+          "alt": "Fotografía de producto para e-commerce — foto 6"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262373/fotografia_de_productos_7_lgoamb.jpg",
+          "alt": "Fotografía de producto para e-commerce — foto 7"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262374/fotografia_de_productos_8_ic6eyw.jpg",
+          "alt": "Fotografía de producto para e-commerce — foto 8"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262372/fotografia_de_productos_2_bjamzv.jpg",
+          "alt": "Fotografía de producto para e-commerce — foto 9"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262372/fotografia_de_productos_3_vrqsws.jpg",
+          "alt": "Fotografía de producto para e-commerce — foto 10"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262388/contenido_con_modelos_22_mb5gst.jpg",
+          "alt": "Fotografía de producto para e-commerce — foto 11"
+        }
+      ],
+      "videos": [],
+      "cta": {
+        "title": "¿Vendes productos en línea o en tienda?",
+        "text": "Fotografiamos tu catálogo para vender, armamos tu tienda online y una estrategia para que lleguen compradores, no solo visitas.",
+        "wa": "Hola, vi su portafolio de productos. Quiero fotos para mi catálogo y vender más en línea.",
+        "line": "fotografia-de-producto"
+      }
+    },
+    {
+      "slug": "automotriz",
+      "name": "Automotriz: vehículos y piezas",
+      "phrases": [
+        "Cada entrega es una historia que vale contar.",
+        "El detalle del vehículo, la emoción del cliente."
+      ],
+      "photos": [
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262351/produccion_y_experiencias_12_ybobmr.jpg",
+          "alt": "Contenido para el sector automotriz — foto 1"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262351/produccion_y_experiencias_13_xyvuwr.jpg",
+          "alt": "Contenido para el sector automotriz — foto 2"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262352/produccion_y_experiencias_17_sn47ex.jpg",
+          "alt": "Contenido para el sector automotriz — foto 3"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262352/produccion_y_experiencias_18_ujgsdu.jpg",
+          "alt": "Contenido para el sector automotriz — foto 4"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262347/produccion_y_experiencias_4_qy5yxt.jpg",
+          "alt": "Contenido para el sector automotriz — foto 5"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262426/producciones_empresariales_20_oge6hm.jpg",
+          "alt": "Contenido para el sector automotriz — foto 6"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262428/producciones_empresariales_21_sabe59.jpg",
+          "alt": "Contenido para el sector automotriz — foto 7"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262426/producciones_empresariales_22_zrzinq.jpg",
+          "alt": "Contenido para el sector automotriz — foto 8"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262431/producciones_empresariales_24_avvwg5.jpg",
+          "alt": "Contenido para el sector automotriz — foto 9"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262426/producciones_empresariales_19_fybfdx.jpg",
+          "alt": "Contenido para el sector automotriz — foto 10"
+        }
+      ],
+      "videos": [],
+      "cta": {
+        "title": "¿Tienes un concesionario, taller o venta de repuestos?",
+        "text": "Cubrimos entregas, activaciones y producto, y diseñamos una estrategia para generar consultas y visitas a tu local.",
+        "wa": "Hola, vi su portafolio automotriz. Quiero atraer más clientes a mi negocio con una estrategia digital.",
+        "line": "marketing-digital"
+      }
+    },
+    {
+      "slug": "construccion",
+      "name": "Arquitectura y construcción",
+      "phrases": [
+        "La obra habla de quién la construyó.",
+        "Escala, avance y equipo: tu proyecto documentado."
+      ],
+      "photos": [
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262432/producciones_empresariales_12_ixtfrl.jpg",
+          "alt": "Producción para arquitectura y construcción — foto 1"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262432/producciones_empresariales_11_xklc3a.jpg",
+          "alt": "Producción para arquitectura y construcción — foto 2"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262429/producciones_empresariales_17_zwupay.jpg",
+          "alt": "Producción para arquitectura y construcción — foto 3"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262420/producciones_empresariales_4_bycioh.jpg",
+          "alt": "Producción para arquitectura y construcción — foto 4"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262421/producciones_empresariales_7_xzkgs5.jpg",
+          "alt": "Producción para arquitectura y construcción — foto 5"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262420/producciones_empresariales_8_ankdee.jpg",
+          "alt": "Producción para arquitectura y construcción — foto 6"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262419/contenido_institucional_5_mvwob2.jpg",
+          "alt": "Producción para arquitectura y construcción — foto 7"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262385/contenido_institucional_2_dr90ki.jpg",
+          "alt": "Producción para arquitectura y construcción — foto 8"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262408/producciones_empresariales_1_rguks3.jpg",
+          "alt": "Producción para arquitectura y construcción — foto 9"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262408/producciones_empresariales_2_m2poad.jpg",
+          "alt": "Producción para arquitectura y construcción — foto 10"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262427/producciones_empresariales_13_vjpyo7.jpg",
+          "alt": "Producción para arquitectura y construcción — foto 11"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262427/producciones_empresariales_9_jzi8pq.jpg",
+          "alt": "Producción para arquitectura y construcción — foto 12"
+        }
+      ],
+      "videos": [],
+      "cta": {
+        "title": "¿Tienes una constructora o un estudio de arquitectura?",
+        "text": "Documentamos tus obras en tierra y con dron, y las convertimos en contenido que respalda tu experiencia ante clientes e inversionistas.",
+        "wa": "Hola, vi su portafolio de construcción. Quiero documentar mis proyectos y fortalecer mi presencia digital.",
+        "line": "videos-para-redes-sociales"
+      }
+    },
+    {
+      "slug": "agroindustria",
+      "name": "Agroindustria",
+      "phrases": [
+        "Del campo al mundo, con la imagen que tu producto merece.",
+        "El origen también se vende."
+      ],
+      "photos": [
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392830/cam-fincas-1.jpg",
+          "alt": "Producción para agroindustria y exportación — foto 1"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262376/fotografia_de_productos_15_e12yrx.jpg",
+          "alt": "Producción para agroindustria y exportación — foto 2"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392832/cam-fincas-3.jpg",
+          "alt": "Producción para agroindustria y exportación — foto 3"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392835/fruta-en-campo-1.jpg",
+          "alt": "Producción para agroindustria y exportación — foto 4"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392834/cam-fincas-6.jpg",
+          "alt": "Producción para agroindustria y exportación — foto 5"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392838/producto-1.jpg",
+          "alt": "Producción para agroindustria y exportación — foto 6"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392840/producto-4.jpg",
+          "alt": "Producción para agroindustria y exportación — foto 7"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262347/produccion_y_experiencias_3_eftqpp.jpg",
+          "alt": "Producción para agroindustria y exportación — foto 8"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392831/cam-fincas-2.jpg",
+          "alt": "Producción para agroindustria y exportación — foto 9"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392835/fruta-en-campo-2.jpg",
+          "alt": "Producción para agroindustria y exportación — foto 10"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262347/produccion_y_experiencias_2_vzid6a.jpg",
+          "alt": "Producción para agroindustria y exportación — foto 11"
+        },
+        {
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392840/producto-3.jpg",
+          "alt": "Producción para agroindustria y exportación — foto 12"
+        }
+      ],
+      "videos": [],
+      "cta": {
+        "title": "¿Tienes una finca, agroindustria o exportadora?",
+        "text": "Mostramos el origen, la escala y el cuidado de tu producción, y te ayudamos a presentarte ante compradores y mercados internacionales.",
+        "wa": "Hola, vi su portafolio de agroindustria. Quiero mejorar la imagen de mi producción ante compradores.",
+        "line": "fotografia-de-producto"
+      }
+    }
+  ]
+}

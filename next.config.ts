@@ -41,6 +41,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "res.cloudinary.com",
       },
+      {
+        // Miniaturas de los videos de YouTube del portafolio
+        protocol: "https",
+        hostname: "i.ytimg.com",
+      },
     ],
   },
   async redirects() {
