@@ -6,12 +6,12 @@ const rubros = ["Servicios", "Productos", "Ropa y moda", "Gastronomía", "Y más
 
 // Fotos de sesiones con modelos (portafolio "Contenido UGC con actores")
 const shots: Img[] = [
-  { src: "https://crealtivadigital.com/wp-content/uploads/2026/04/EMLIA-BOOK-16-scaled.webp", alt: "Modelo de contenido de Crealtiva Digital" },
-  { src: "https://crealtivadigital.com/wp-content/uploads/2026/04/DSC01842-scaled.webp", alt: "Sesión de contenido con modelo" },
-  { src: "https://crealtivadigital.com/wp-content/uploads/2026/04/creacion-d-econtenido-scaled.webp", alt: "Creadora de contenido grabando en un restaurante" },
-  { src: "https://crealtivadigital.com/wp-content/uploads/2026/04/DSC06495-scaled.webp", alt: "Sesión de contenido con modelo" },
-  { src: "https://crealtivadigital.com/wp-content/uploads/2026/04/DSC06297-scaled.webp", alt: "Sesión de contenido con modelo" },
-  { src: "https://crealtivadigital.com/wp-content/uploads/2026/04/gym-scaled.webp", alt: "Contenido con modelo para gimnasio" },
+  { src: "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392805/emlia-book-16.webp", alt: "Modelo de contenido de Crealtiva Digital" },
+  { src: "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392800/dsc01842.webp", alt: "Sesión de contenido con modelo" },
+  { src: "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392806/creacion-d-econtenido.webp", alt: "Creadora de contenido grabando en un restaurante" },
+  { src: "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392802/dsc06495.webp", alt: "Sesión de contenido con modelo" },
+  { src: "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392801/dsc06297.webp", alt: "Sesión de contenido con modelo" },
+  { src: "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392808/gym.webp", alt: "Contenido con modelo para gimnasio" },
 ];
 
 // Convocatoria al staff de modelos: va al final de la línea de Modelos y en Contáctanos.

@@ -120,7 +120,7 @@
       ],
       "order": 1,
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/02/portada-nico-y-alexis.webp",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392798/portada-nico-y-alexis.webp",
         "alt": "Estrategas de Crealtiva Digital planificando contenido"
       },
       "visible": true
@@ -206,7 +206,7 @@
       ],
       "order": 2,
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/fotografa-scaled.webp",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392807/fotografa.webp",
         "alt": "Fotógrafa de Crealtiva con cámara profesional"
       },
       "visible": true
@@ -294,7 +294,7 @@
       ],
       "order": 3,
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/creacion-d-econtenido-scaled.webp",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392806/creacion-d-econtenido.webp",
         "alt": "Creadora de contenido grabando un video UGC en un restaurante"
       },
       "visible": true
@@ -393,7 +393,7 @@
       ],
       "order": 4,
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/produccion-fotos.webp",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392815/produccion-fotos.webp",
         "alt": "Set de fotografía de producto con iluminación de estudio"
       },
       "visible": true
@@ -478,7 +478,7 @@
       ],
       "order": 5,
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/02/NICO-PORTADA-scaled.webp",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392797/nico-portada.webp",
         "alt": "Especialista de pauta digital revisando campañas"
       },
       "visible": true
@@ -546,7 +546,7 @@
       ],
       "order": 6,
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/06/ECOMMERCE.jpg",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392827/ecommerce.jpg",
         "alt": "Tienda online en laptop y celular"
       },
       "visible": true
@@ -614,7 +614,7 @@
       ],
       "order": 7,
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/06/portada-paginas-web.jpg",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392829/portada-paginas-web.jpg",
         "alt": "Equipo trabajando con herramientas digitales"
       },
       "visible": true

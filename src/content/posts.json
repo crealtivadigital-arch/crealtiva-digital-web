@@ -7,7 +7,7 @@
       "category": "Estrategia",
       "lineSlug": "marketing-digital",
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/03/equipo-crealtiva-digital.png",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392799/equipo-crealtiva-digital.png",
         "alt": "Equipo de Crealtiva Digital"
       },
       "publishedAt": "2026-10-01",
@@ -22,7 +22,7 @@
       "category": "Pauta",
       "lineSlug": "trafficker-digital",
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/02/portada-nico-y-alexis.webp",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392798/portada-nico-y-alexis.webp",
         "alt": "Gestión de campañas de pauta digital"
       },
       "publishedAt": "2026-09-24",
@@ -37,7 +37,7 @@
       "category": "Producción",
       "lineSlug": "fotografia-de-producto",
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/05/DSC_0387.avif",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392823/dsc-0387.avif",
         "alt": "Fotografía gastronómica de producto"
       },
       "publishedAt": "2026-09-17",
@@ -52,7 +52,7 @@
       "category": "Producción",
       "lineSlug": "modelos-contenido-organico",
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/EMLIA-BOOK-16-scaled.webp",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392805/emlia-book-16.webp",
         "alt": "Actriz de contenido UGC"
       },
       "publishedAt": "2026-09-10",
@@ -67,7 +67,7 @@
       "category": "Web",
       "lineSlug": "diseno-web",
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/06/ECOMMERCE.jpg",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392827/ecommerce.jpg",
         "alt": "Página web de tienda online en laptop y celular"
       },
       "publishedAt": "2026-09-03",
@@ -82,7 +82,7 @@
       "category": "Automatización",
       "lineSlug": "optimizacion-procesos",
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/06/portada-paginas-web.jpg",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392829/portada-paginas-web.jpg",
         "alt": "Equipo trabajando con herramientas digitales"
       },
       "publishedAt": "2026-08-27",

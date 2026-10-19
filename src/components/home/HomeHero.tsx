@@ -52,7 +52,7 @@ export default function HomeHero() {
         <div className="relative pb-16 md:pb-24">
           <NaturalImage
             img={{
-              src: "https://crealtivadigital.com/wp-content/uploads/2026/03/equipo-crealtiva-digital.png",
+              src: "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392799/equipo-crealtiva-digital.png",
               alt: "Equipo de Crealtiva Digital: estrategia, producción, diseño, pauta y contenido",
             }}
             sizes="(min-width: 1024px) 760px, 110vw"

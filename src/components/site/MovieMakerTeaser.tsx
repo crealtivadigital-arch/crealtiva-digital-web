@@ -6,9 +6,9 @@ const formats = ["Filmación", "Documentales", "Podcast", "Films", "Rodajes espe
 
 // Muestra de producciones (se pueden cambiar cuando lleguen nuevas fotos)
 const shots: Img[] = [
-  { src: "https://crealtivadigital.com/wp-content/uploads/2026/07/drone-1.jpg", alt: "Toma aérea con dron" },
-  { src: "https://crealtivadigital.com/wp-content/uploads/2026/07/drone-3.jpg", alt: "Toma aérea vertical con dron" },
-  { src: "https://crealtivadigital.com/wp-content/uploads/2026/07/contenido-institucional-2.jpg", alt: "Obra de infraestructura — contenido institucional" },
+  { src: "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262346/drone_1_ygy5io.jpg", alt: "Toma aérea con dron" },
+  { src: "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262346/drone_3_wnifu6.jpg", alt: "Toma aérea vertical con dron" },
+  { src: "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262385/contenido_institucional_2_dr90ki.jpg", alt: "Obra de infraestructura — contenido institucional" },
 ];
 
 // Cierre de /servicios: las producciones de gran escala viven en /movie-maker.

@@ -107,7 +107,7 @@ export default function AboutSection() {
           <span aria-hidden className="absolute right-0 top-16 h-3 w-3 rounded-full bg-teal" />
           <NaturalImage
             img={{
-              src: "https://crealtivadigital.com/wp-content/uploads/2026/02/portada-nico-y-alexis.webp",
+              src: "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392798/portada-nico-y-alexis.webp",
               alt: "Estrategas de Crealtiva Digital trabajando con una tablet",
             }}
             sizes="(min-width: 1024px) 520px, 100vw"

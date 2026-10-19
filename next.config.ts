@@ -38,12 +38,6 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        // Temporal: imágenes del sitio WordPress actual. Deben migrarse a Cloudinary
-        // antes de apuntar el dominio a esta web, o dejarán de cargar.
-        protocol: "https",
-        hostname: "crealtivadigital.com",
-      },
-      {
         protocol: "https",
         hostname: "res.cloudinary.com",
       },

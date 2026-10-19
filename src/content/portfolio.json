@@ -12,44 +12,44 @@
       "challenge": "Mostrar el origen, la escala y el cuidado del cultivo con imágenes que transmitan confianza a compradores que nunca han visitado la finca.",
       "solution": "Producción en exteriores con brief visual previo, logística de luz natural en campo y fotografía del producto en su contexto real.",
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/CAM-FINCAS-1-scaled.jpg",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392830/cam-fincas-1.jpg",
         "alt": "Cultivo de pitahaya en finca — producción en campo"
       },
       "gallery": [
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/CAM-FINCAS-2-scaled.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392831/cam-fincas-2.jpg",
           "alt": "Finca de pitahaya 2"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/CAM-FINCAS-3-scaled.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392832/cam-fincas-3.jpg",
           "alt": "Finca de pitahaya 3"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/CAM-FINCAS-4-scaled.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392832/cam-fincas-4.jpg",
           "alt": "Finca de pitahaya 4"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/CAM-FINCAS-5-scaled.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392833/cam-fincas-5.jpg",
           "alt": "Finca de pitahaya 5"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/CAM-FINCAS-6-scaled.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392834/cam-fincas-6.jpg",
           "alt": "Finca de pitahaya 6"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/fruta-en-campo-1-scaled.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392835/fruta-en-campo-1.jpg",
           "alt": "Fruta en campo 1"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/fruta-en-campo-2-scaled.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392835/fruta-en-campo-2.jpg",
           "alt": "Fruta en campo 2"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/fruta-en-campo-3-scaled.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392836/fruta-en-campo-3.jpg",
           "alt": "Fruta en campo 3"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/fruta-en-campo-4-scaled.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392838/fruta-en-campo-4.jpg",
           "alt": "Fruta en campo 4"
         }
       ],
@@ -67,28 +67,28 @@
       "challenge": "Documentar obras de gran escala de forma que el material sirva para comunicación institucional y relación con la comunidad.",
       "solution": "Narrativa visual institucional en obra, combinada con tomas de detalle del equipo y del proceso constructivo.",
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/contenido-institucional-2.jpg",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262385/contenido_institucional_2_dr90ki.jpg",
         "alt": "Obra de infraestructura — contenido institucional"
       },
       "gallery": [
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/contenido-institucional-3.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262407/contenido_institucional_3_bl1ouf.jpg",
           "alt": "Contenido institucional 3"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/contenido-institucional-4.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262384/contenido_institucional_4_tgdn41.jpg",
           "alt": "Contenido institucional 4"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/contenido-institucional-5.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262419/contenido_institucional_5_mvwob2.jpg",
           "alt": "Contenido institucional 5"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/contenido-institucional-7.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262399/contenido_institucional_7_at5kzd.jpg",
           "alt": "Contenido institucional 7"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/contenido-institucional-8.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262398/contenido_institucional_8_mtl0nr.jpg",
           "alt": "Contenido institucional 8"
         }
       ],
@@ -105,20 +105,20 @@
       ],
       "summary": "Contenido de producto para una marca farmacéutica, producido con control de iluminación y composición limpia.",
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/producto-1-scaled.jpg",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392838/producto-1.jpg",
         "alt": "Fotografía de producto"
       },
       "gallery": [
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/producto-2-scaled.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392839/producto-2.jpg",
           "alt": "Fotografía de producto 2"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/producto-3-scaled.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392840/producto-3.jpg",
           "alt": "Fotografía de producto 3"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/producto-4-scaled.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392840/producto-4.jpg",
           "alt": "Fotografía de producto 4"
         }
       ],
@@ -134,20 +134,20 @@
       ],
       "summary": "Tomas aéreas de alta resolución para mostrar la magnitud de fincas, complejos y proyectos de infraestructura.",
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/drone-1.jpg",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262346/drone_1_ygy5io.jpg",
         "alt": "Toma aérea con dron"
       },
       "gallery": [
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/drone-3.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262346/drone_3_wnifu6.jpg",
           "alt": "Toma aérea con dron 3"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/drone-4.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262346/drone_4_catmuf.jpg",
           "alt": "Toma aérea con dron 4"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/07/drone-6.jpg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1782262346/drone_6_ns2uah.jpg",
           "alt": "Toma aérea con dron 6"
         }
       ],
@@ -166,40 +166,40 @@
       "challenge": "Que cada plato se vea tan bien como sabe, con un estilo consistente entre carta, apps de delivery e Instagram.",
       "solution": "Brief visual por plato, set con props y ambientación, y entrega curada y retocada en 3 a 7 días hábiles.",
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/05/DSC_0005.avif",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392822/dsc-0005.avif",
         "alt": "Plato gastronómico — fotografía de restaurante"
       },
       "gallery": [
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/05/DSC_0387.avif",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392823/dsc-0387.avif",
           "alt": "Fotografía gastronómica"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/05/DSC06188.avif",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392819/dsc06188.avif",
           "alt": "Fotografía gastronómica"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/05/DSC06252.avif",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392821/dsc06252.avif",
           "alt": "Fotografía gastronómica"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/05/DSC06239.avif",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392820/dsc06239.avif",
           "alt": "Fotografía gastronómica"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/05/DSC06100.avif",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392818/dsc06100.avif",
           "alt": "Fotografía gastronómica"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/05/DSC_4160.avif",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392824/dsc-4160.avif",
           "alt": "Fotografía gastronómica"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/05/DSC_2415.avif",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392823/dsc-2415.avif",
           "alt": "Fotografía gastronómica"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/05/DSC_5878.avif",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392825/dsc-5878.avif",
           "alt": "Fotografía gastronómica"
         }
       ],
@@ -215,28 +215,28 @@
       ],
       "summary": "Videos con actores entrenados para hablar a cámara con naturalidad, grabados en Quito y entregados listos para Reels y TikTok.",
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/EMLIA-BOOK-16-scaled.webp",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392805/emlia-book-16.webp",
         "alt": "Actriz de contenido UGC"
       },
       "gallery": [
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/restaurantes-scaled.webp",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392816/restaurantes.webp",
           "alt": "Contenido UGC para restaurante"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/gym-scaled.webp",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392808/gym.webp",
           "alt": "Contenido UGC para gimnasio"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/DSC01842-scaled.webp",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392800/dsc01842.webp",
           "alt": "Sesión UGC"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/DSC06495-scaled.webp",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392802/dsc06495.webp",
           "alt": "Sesión UGC"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/DSC06297-scaled.webp",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392801/dsc06297.webp",
           "alt": "Sesión UGC"
         }
       ],
@@ -252,24 +252,24 @@
       ],
       "summary": "Sesiones de perfiles profesionales, instalaciones y experiencia de servicio que generan confianza antes de la primera cita.",
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/optica-scaled.webp",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392815/optica.webp",
         "alt": "Fotografía corporativa en óptica"
       },
       "gallery": [
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/doctor-scaled.webp",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392806/doctor.webp",
           "alt": "Fotografía de profesional de salud"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/DSC_14-13-scaled.webp",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392803/dsc-14-13.webp",
           "alt": "Fotografía corporativa"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/DSC_0867-scaled.webp",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392802/dsc-0867.webp",
           "alt": "Fotografía corporativa"
         },
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/04/DSC_2312-scaled.webp",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392804/dsc-2312.webp",
           "alt": "Fotografía corporativa"
         }
       ],
@@ -285,7 +285,7 @@
       ],
       "summary": "Sitio web para operador turístico, pensado para mostrar destinos y convertir visitas en consultas.",
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/05/Dacartours.png",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392826/dacartours.png",
         "alt": "Sitio web de Dacartours"
       },
       "gallery": [],
@@ -301,12 +301,12 @@
       ],
       "summary": "Web de turismo con enfoque en experiencias en los Andes y captación de consultas.",
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/05/Andena-Roots-Travel.png",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392817/andena-roots-travel.png",
         "alt": "Sitio web de Andean Roots Travel"
       },
       "gallery": [
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/06/andean-roots-celuclar.jpeg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392828/andean-roots-celuclar.jpg",
           "alt": "Andean Roots Travel en celular"
         }
       ],
@@ -322,12 +322,12 @@
       ],
       "summary": "Web del estudio de producción visual, con portafolio y cotización directa.",
       "cover": {
-        "src": "https://crealtivadigital.com/wp-content/uploads/2026/05/crealtiva-studio.png",
+        "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392826/crealtiva-studio.png",
         "alt": "Sitio web de Crealtiva Studio"
       },
       "gallery": [
         {
-          "src": "https://crealtivadigital.com/wp-content/uploads/2026/06/creltiva-studio-celular.jpeg",
+          "src": "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392828/creltiva-studio-celular.jpg",
           "alt": "Crealtiva Studio en celular"
         }
       ],

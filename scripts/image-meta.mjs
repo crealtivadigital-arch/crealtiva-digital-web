@@ -8,7 +8,7 @@ import sharp from "sharp";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outPath = join(root, "src", "content", "images.json");
-const urlRe = /https:\/\/(?:crealtivadigital\.com\/wp-content\/uploads|res\.cloudinary\.com)\/[^"'`\s)]+?\.(?:png|jpe?g|webp|avif)/gi;
+const urlRe = /https:\/\/res\.cloudinary\.com\/[^"'`\s)]+?\.(?:png|jpe?g|webp|avif)/gi;
 
 function walk(dir) {
   return readdirSync(dir).flatMap((f) => {
@@ -33,7 +33,7 @@ for (const url of [...urls].sort()) {
   if (!res.ok) throw new Error(`${res.status} ${url}`);
   const { width, height } = await sharp(Buffer.from(await res.arrayBuffer())).metadata();
   meta[url] = { width, height };
-  console.log(`${width}×${height}  ${url.split("/uploads/")[1] ?? url}`);
+  console.log(`${width}×${height}  ${url.split("/upload/")[1] ?? url}`);
 }
 
 writeFileSync(outPath, JSON.stringify(meta, null, 2) + "\n");

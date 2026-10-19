@@ -13,7 +13,6 @@ import { fileURLToPath } from "node:url";
 const here = dirname(fileURLToPath(import.meta.url));
 const catalogPath = join(here, "..", "..", "catalogo-productos.md");
 const out = join(here, "..", "src", "content", "services.json");
-const WP = "https://crealtivadigital.com/wp-content/uploads/"; // temporal hasta migrar a Cloudinary
 
 const slugify = (s) =>
   s
@@ -402,7 +401,7 @@ const lines = [
     summary: "Estrategia, producción de contenido, community management y reportes en una suscripción mensual.",
     intro: "Operamos como tu departamento de marketing externo: estrategia, producción mensual de contenido, publicación, comunidad y métricas en Meta, TikTok y LinkedIn. Sin armar un equipo interno.",
     keyPoints: ["Estrategia y plan de contenido mensual", "Producción mensual de videos, gráficas e historias", "Community manager en Meta, TikTok o LinkedIn", "Calibración y optimización de tus perfiles"],
-    cover: [`2026/02/portada-nico-y-alexis.webp`, "Estrategas de Crealtiva Digital planificando contenido"],
+    cover: ["https://res.cloudinary.com/dhua4dpza/image/upload/v1792392798/portada-nico-y-alexis.webp", "Estrategas de Crealtiva Digital planificando contenido"],
     highlights: [
       { value: minPrice("marketing-digital"), label: "Plan mensual" },
       { value: "4–13", label: "Videos al mes" },
@@ -446,7 +445,7 @@ const lines = [
     summary: "Reels y TikToks grabados en locación, con edición dinámica, color, sonido y subtítulos, listos para publicar o pautar.",
     intro: "Filmamos en tu negocio, en Quito y Valles, videos verticales pensados para redes sociales y canales digitales: con ritmo, ganchos y subtítulos que retienen. Para producciones de gran escala, documentales o films está Crealtiva Movie Maker.",
     keyPoints: ["Reels y TikToks de hasta 1 minuto en formato 9:16", "Grabación 4K en locación en Quito y Valles", "Edición dinámica, color, sonido y subtítulos", "Listos para publicar en orgánico o para pautar"],
-    cover: ["2026/04/fotografa-scaled.webp", "Fotógrafa de Crealtiva con cámara profesional"],
+    cover: ["https://res.cloudinary.com/dhua4dpza/image/upload/v1792392807/fotografa.webp", "Fotógrafa de Crealtiva con cámara profesional"],
     highlights: [
       { value: minPrice("videos-para-redes-sociales"), label: "Por lote de videos" },
       { value: "2–10", label: "Videos por lote" },
@@ -481,7 +480,7 @@ const lines = [
     summary: "Videos UGC con actores y creadores, modelos para fotos y videos y colaboraciones con influencers, con derechos de imagen claros.",
     intro: "Ponemos rostro humano a tu marca: videos verticales con actores y creadores de contenido, modelos para sesiones de fotos y videos, contenido para campañas e influencers que crean a su estilo. Cada servicio define por cuánto tiempo y dónde se puede usar la imagen.",
     keyPoints: ["Actores, modelos e influencers con derechos de imagen claros", "Videos verticales 9:16 con guion y edición dinámica con subtítulos", "Sesiones de fotos y videos con modelo para tu marca", "Prohibida la replicación de imagen con IA"],
-    cover: ["2026/04/creacion-d-econtenido-scaled.webp", "Creadora de contenido grabando un video UGC en un restaurante"],
+    cover: ["https://res.cloudinary.com/dhua4dpza/image/upload/v1792392806/creacion-d-econtenido.webp", "Creadora de contenido grabando un video UGC en un restaurante"],
     highlights: [
       { value: minPrice("modelos-contenido-organico"), label: "Por sesión o lote" },
       { value: "4–6", label: "Videos por lote UGC" },
@@ -515,7 +514,7 @@ const lines = [
     summary: "Sesiones para e-commerce, gastronomía, moda y marcas premium, con brief visual y edición incluida.",
     intro: "Cada sesión parte de un brief visual aprobado: iluminación, fondos y dirección de arte según el canal donde se venderá tu producto. Entrega editada en 3 a 7 días hábiles.",
     keyPoints: ["Brief visual aprobado antes de cada sesión", "Sesiones para premium, e-commerce, moda y gastronomía", "Edición incluida y entrega en 3 a 7 días hábiles", "Fondos limpios o ambientados según el canal de venta"],
-    cover: ["2026/04/produccion-fotos.webp", "Set de fotografía de producto con iluminación de estudio"],
+    cover: ["https://res.cloudinary.com/dhua4dpza/image/upload/v1792392815/produccion-fotos.webp", "Set de fotografía de producto con iluminación de estudio"],
     highlights: [
       { value: minPrice("fotografia-de-producto"), label: "Por sesión" },
       { value: "+300", label: "Sesiones realizadas" },
@@ -551,7 +550,7 @@ const lines = [
     summary: "Campañas en Meta, Google y TikTok Ads con tarifa de gestión fija y creativos incluidos. Tus cuentas siempre son tuyas.",
     intro: "Creamos y gestionamos tus campañas en Meta, Google y TikTok con una tarifa de gestión fija, sin porcentaje sobre tu inversión. El presupuesto de anuncios lo pagas directo a la plataforma.",
     keyPoints: ["Meta, Google y TikTok Ads", "Tarifa de gestión fija, sin porcentaje sobre tu inversión", "Creativos y copys incluidos en cada campaña", "Calibración de píxeles y reporte de resultados"],
-    cover: ["2026/02/NICO-PORTADA-scaled.webp", "Especialista de pauta digital revisando campañas"],
+    cover: ["https://res.cloudinary.com/dhua4dpza/image/upload/v1792392797/nico-portada.webp", "Especialista de pauta digital revisando campañas"],
     highlights: [
       { value: minPrice("trafficker-digital", (p) => p.badge === "Meta Ads"), label: "Meta Ads" },
       { value: minPrice("trafficker-digital", (p) => p.badge === "Google Ads"), label: "Google Ads" },
@@ -585,7 +584,7 @@ const lines = [
     summary: "Landing pages, webs institucionales y corporativas de pago único, con dominio, correos y garantía técnica el primer año.",
     intro: "Desde una landing para campañas hasta sistemas a medida: webs de pago único con dominio propio, correos corporativos, formulario y WhatsApp integrados, y garantía técnica durante el primer año.",
     keyPoints: ["Pago único, sin mensualidades", "Dominio propio y correos corporativos", "Garantía técnica el primer año", "Panel autogestionable para blog o portafolio"],
-    cover: ["2026/06/ECOMMERCE.jpg", "Tienda online en laptop y celular"],
+    cover: ["https://res.cloudinary.com/dhua4dpza/image/upload/v1792392827/ecommerce.jpg", "Tienda online en laptop y celular"],
     highlights: [
       { value: minPrice("diseno-web"), label: "Pago único" },
       { value: "1er año", label: "Garantía técnica incluida" },
@@ -614,7 +613,7 @@ const lines = [
     summary: "Automatizaciones, agentes con IA y ecosistemas que liberan a tu equipo de tareas repetitivas.",
     intro: "Auditamos tus procesos y automatizamos lo que tiene impacto: CRM, bots de WhatsApp, agendamiento, reportes y flujos de venta. Cada proyecto se cotiza según su alcance.",
     keyPoints: ["Primero auditamos, después automatizamos", "Automatizaciones con n8n, Make y Zapier", "Agentes con IA para atención y seguimiento", "Capacitación para que tu equipo sea autónomo"],
-    cover: ["2026/06/portada-paginas-web.jpg", "Equipo trabajando con herramientas digitales"],
+    cover: ["https://res.cloudinary.com/dhua4dpza/image/upload/v1792392829/portada-paginas-web.jpg", "Equipo trabajando con herramientas digitales"],
     highlights: [
       { value: "n8n · Make · Zapier", label: "Herramientas" },
       { value: "24/7", label: "Operación automática" },
@@ -636,7 +635,7 @@ const lines = [
     ]),
     order: 7,
   },
-].map(({ cover, ...l }) => ({ ...l, cover: { src: WP + cover[0], alt: cover[1] }, visible: true }));
+].map(({ cover, ...l }) => ({ ...l, cover: { src: cover[0], alt: cover[1] }, visible: true }));
 
 // ── Qué resuelve y fase de crecimiento de cada paquete ────────────────────
 // arranque: empezar o regularizar la presencia · crecimiento: más alcance, clientes y ventas ·

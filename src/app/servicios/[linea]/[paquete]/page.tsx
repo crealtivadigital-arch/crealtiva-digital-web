@@ -51,7 +51,7 @@ export default async function PaquetePage({ params }: Props) {
   const extraImg =
     projects[0]?.cover ??
     (line.slug === "marketing-digital"
-      ? { src: "https://crealtivadigital.com/wp-content/uploads/2026/04/creacion-d-econtenido-scaled.webp", alt: "Creadora de contenido grabando un video en un restaurante" }
+      ? { src: "https://res.cloudinary.com/dhua4dpza/image/upload/v1792392806/creacion-d-econtenido.webp", alt: "Creadora de contenido grabando un video en un restaurante" }
       : undefined);
   const price = formatPrice(pkg.price);
   const quote = wa(`Hola, quiero cotizar el paquete "${pkg.name}" (${line.name}) con Crealtiva Digital.`);
