@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Medicion from "@/components/site/Medicion";
 
 // Sitio público: menú y pie. El panel /admin tiene su propio layout.
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
@@ -8,6 +9,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       <Navbar />
       {children}
       <Footer />
+      <Medicion />
     </>
   );
 }

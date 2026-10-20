@@ -39,6 +39,9 @@ export default function FAQ({ items, title = "Preguntas Frecuentes", bg = "navy"
                   isDark ? "text-cream" : "text-navy"
                 }`}
                 onClick={() => setOpen(open === i ? null : i)}
+                // Solo se mide al abrir (ver Medicion.tsx)
+                data-evento={open === i ? undefined : "faq_abierta"}
+                data-pregunta={item.q}
               >
                 <span>{item.q}</span>
                 <span
