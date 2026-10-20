@@ -10,7 +10,8 @@ import { formatDate, getPost, getPosts, getServiceLine } from "@/lib/content";
 
 type Props = { params: Promise<{ slug: string }> };
 
-export const dynamicParams = false;
+// Los artículos nuevos del panel se generan al primer pedido, sin volver a desplegar
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
   return (await getPosts()).map((p) => ({ slug: p.slug }));

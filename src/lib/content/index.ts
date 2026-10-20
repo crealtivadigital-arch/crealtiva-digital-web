@@ -12,7 +12,6 @@ import type { Package, PortfolioCategory, Post, Project, ServiceLine } from "./t
 const lines = (servicesData.lines as ServiceLine[]).filter((l) => l.visible).sort((a, b) => a.order - b.order);
 const packages = (servicesData.packages as Package[]).sort((a, b) => a.order - b.order);
 const projects = (portfolioData.projects as Project[]).sort((a, b) => a.order - b.order);
-const posts = (postsData.posts as Post[]).sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 
 export async function getServiceLines(): Promise<ServiceLine[]> {
   return lines;
@@ -57,13 +56,24 @@ export async function getPortfolioCategories(): Promise<PortfolioCategory[]> {
   return (await getAllPortfolioCategories()).filter((c) => c.photos.length > 0);
 }
 
+export const POSTS_KEY = "posts";
+
+// Todos, borradores incluidos (para el panel), del más nuevo al más viejo
+export async function getAllPosts(): Promise<Post[]> {
+  const saved = await readDoc<{ posts: Post[] }>(POSTS_KEY).catch((e) => {
+    console.error("No se pudieron leer los artículos de la base de datos:", e);
+    return null;
+  });
+  return [...((saved ?? postsData).posts as Post[])].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+}
+
 export async function getPosts(opts: { lineSlug?: string; limit?: number } = {}): Promise<Post[]> {
-  const list = posts.filter((p) => !opts.lineSlug || p.lineSlug === opts.lineSlug);
+  const list = (await getAllPosts()).filter((p) => !p.draft && (!opts.lineSlug || p.lineSlug === opts.lineSlug));
   return opts.limit ? list.slice(0, opts.limit) : list;
 }
 
 export async function getPost(slug: string): Promise<Post | undefined> {
-  return posts.find((p) => p.slug === slug);
+  return (await getPosts()).find((p) => p.slug === slug);
 }
 
 export { formatDate, formatPrice } from "./format";

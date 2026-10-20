@@ -115,8 +115,9 @@ export interface Post {
   cover: Img;
   publishedAt: string; // ISO date
   readingMinutes: number;
-  bodyHtml: string; // contenido enriquecido (lo producirá el editor del panel)
+  bodyHtml: string; // contenido enriquecido (lo produce el editor del panel)
   featured: boolean;
+  draft?: boolean; // borrador: solo se ve en el panel
 }
 
 // Portafolio por rubro: galería visual + invitación comercial propia de cada sector

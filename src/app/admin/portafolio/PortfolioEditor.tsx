@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useRef, useState, useTransition } from "react";
 import type { Img, PortfolioCategory, PortfolioVideo } from "@/lib/content/types";
-import { saveRubro, signUpload } from "./actions";
+import { thumb, uploadImage } from "../uploadImage";
+import { saveRubro } from "./actions";
 
 interface Draft {
   phrases: string[];
@@ -14,9 +15,6 @@ const toDraft = (c: PortfolioCategory): Draft => ({
   photos: c.photos,
   videos: c.videos,
 });
-
-// Miniatura liviana para el panel: Cloudinary la reduce sin recortar
-const thumb = (src: string) => src.replace("/image/upload/", "/image/upload/c_limit,w_400,q_auto,f_auto/");
 
 function move<T>(list: T[], from: number, to: number): T[] {
   if (to < 0 || to >= list.length) return list;
@@ -61,17 +59,7 @@ export default function PortfolioEditor({ categories, canSave }: { categories: P
       const list = Array.from(files);
       for (const [i, file] of list.entries()) {
         setUploading(`Subiendo ${i + 1} de ${list.length}…`);
-        const ticket = await signUpload(cat.slug);
-        const body = new FormData();
-        body.append("file", file);
-        body.append("api_key", ticket.apiKey);
-        body.append("timestamp", String(ticket.timestamp));
-        body.append("folder", ticket.folder);
-        body.append("signature", ticket.signature);
-        const res = await fetch(ticket.url, { method: "POST", body });
-        const data = await res.json();
-        if (!res.ok) throw new Error(data?.error?.message ?? "Cloudinary rechazó la foto.");
-        added.push({ src: data.secure_url, alt: `${cat.name} — Crealtiva Digital`, width: data.width, height: data.height });
+        added.push(await uploadImage(file, "portafolio", cat.slug, `${cat.name} — Crealtiva Digital`));
       }
     } catch (e) {
       setMessage({ ok: false, text: e instanceof Error ? e.message : "No se pudo subir." });

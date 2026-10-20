@@ -7,7 +7,7 @@ const SECTIONS = [
   { href: "/admin/estadisticas", name: "Estadísticas", text: "Visitas, contactos por WhatsApp, búsquedas en Google y anuncios.", ready: true },
   { href: "/admin/portafolio", name: "Portafolio", text: "Fotos y videos de cada rubro: subir, ordenar, quitar.", ready: true },
   { href: null, name: "Servicios y paquetes", text: "Textos, precios y condiciones de cada línea.", ready: false },
-  { href: null, name: "News", text: "Crear y editar artículos.", ready: false },
+  { href: "/admin/news", name: "News", text: "Crear, editar y publicar artículos.", ready: true },
   { href: null, name: "Presentaciones internas", text: "Material solo para el equipo.", ready: false },
 ];
 

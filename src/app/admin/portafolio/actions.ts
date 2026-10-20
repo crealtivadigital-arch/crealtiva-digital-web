@@ -1,5 +1,4 @@
 "use server";
-import { createHash } from "node:crypto";
 import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/admin";
 import { getAllPortfolioCategories, PORTFOLIO_KEY } from "@/lib/content";
@@ -7,27 +6,6 @@ import type { Img, PortfolioVideo } from "@/lib/content/types";
 import { writeDoc } from "@/lib/db";
 
 const CLOUD = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
-const UPLOAD_FOLDER = "Crealtiva-digital/sitio/portafolio";
-
-export interface UploadTicket {
-  url: string;
-  apiKey: string;
-  timestamp: number;
-  folder: string;
-  signature: string;
-}
-
-// El navegador sube la foto directo a Cloudinary con esta firma (el secreto nunca sale del servidor)
-export async function signUpload(rubro: string): Promise<UploadTicket> {
-  await requireAdmin();
-  const apiKey = process.env.CLOUDINARY_API_KEY;
-  const secret = process.env.CLOUDINARY_API_SECRET;
-  if (!CLOUD || !apiKey || !secret) throw new Error("Faltan las claves de Cloudinary en el servidor.");
-  const folder = `${UPLOAD_FOLDER}/${rubro.replace(/[^a-z0-9-]/g, "")}`;
-  const timestamp = Math.floor(Date.now() / 1000);
-  const signature = createHash("sha1").update(`folder=${folder}&timestamp=${timestamp}${secret}`).digest("hex");
-  return { url: `https://api.cloudinary.com/v1_1/${CLOUD}/image/upload`, apiKey, timestamp, folder, signature };
-}
 
 export interface RubroInput {
   slug: string;
