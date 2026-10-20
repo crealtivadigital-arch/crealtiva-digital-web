@@ -3,6 +3,7 @@ import servicesData from "@/content/services.json";
 import portfolioData from "@/content/portfolio.json";
 import postsData from "@/content/posts.json";
 import portfolioCategoriesData from "@/content/portfolio-categories.json";
+import { readDoc } from "@/lib/db";
 import type { Package, PortfolioCategory, Post, Project, ServiceLine } from "./types";
 
 // Único punto de lectura del contenido. Las páginas no importan los JSON directamente:
@@ -11,7 +12,6 @@ import type { Package, PortfolioCategory, Post, Project, ServiceLine } from "./t
 const lines = (servicesData.lines as ServiceLine[]).filter((l) => l.visible).sort((a, b) => a.order - b.order);
 const packages = (servicesData.packages as Package[]).sort((a, b) => a.order - b.order);
 const projects = (portfolioData.projects as Project[]).sort((a, b) => a.order - b.order);
-const portfolioCategories = portfolioCategoriesData.categories as PortfolioCategory[];
 const posts = (postsData.posts as Post[]).sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 
 export async function getServiceLines(): Promise<ServiceLine[]> {
@@ -41,9 +41,20 @@ export async function getProject(slug: string): Promise<Project | undefined> {
   return projects.find((p) => p.slug === slug);
 }
 
+// Lo guardado desde el panel manda; si no hay base de datos o aún no se guardó, el JSON del repo.
+export const PORTFOLIO_KEY = "portfolio-categories";
+
+export async function getAllPortfolioCategories(): Promise<PortfolioCategory[]> {
+  const saved = await readDoc<{ categories: PortfolioCategory[] }>(PORTFOLIO_KEY).catch((e) => {
+    console.error("No se pudo leer el portafolio de la base de datos:", e);
+    return null;
+  });
+  return (saved ?? portfolioCategoriesData).categories as PortfolioCategory[];
+}
+
 // Solo rubros con fotos: los que aún no tienen material aparecen solos al cargarlo.
 export async function getPortfolioCategories(): Promise<PortfolioCategory[]> {
-  return portfolioCategories.filter((c) => c.photos.length > 0);
+  return (await getAllPortfolioCategories()).filter((c) => c.photos.length > 0);
 }
 
 export async function getPosts(opts: { lineSlug?: string; limit?: number } = {}): Promise<Post[]> {

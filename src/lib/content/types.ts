@@ -4,6 +4,9 @@
 export interface Img {
   src: string;
   alt: string;
+  // Medidas reales: las fotos subidas desde el panel las traen; las del repo salen de images.json
+  width?: number;
+  height?: number;
 }
 
 export type PriceMode = "desde" | "fijo" | "mensual" | "por-lote" | "cotizar";

@@ -17,7 +17,7 @@ interface NaturalImageProps {
 // Regla de marca: las fotos se muestran en su proporción original, sin recortes,
 // y nunca más anchas que su tamaño real (no se amplían). El contenedor se adapta a la foto.
 export default function NaturalImage({ img, sizes, className = "", imgClassName = "", priority, maxHeight, children }: NaturalImageProps) {
-  const dims = meta[img.src];
+  const dims = imageDims(img);
   if (!dims) {
     throw new Error(`Sin medidas para ${img.src}. Corre: node scripts/image-meta.mjs`);
   }
@@ -38,6 +38,10 @@ export default function NaturalImage({ img, sizes, className = "", imgClassName 
       {children}
     </div>
   );
+}
+
+export function imageDims(img: Img): { width: number; height: number } | undefined {
+  return img.width && img.height ? { width: img.width, height: img.height } : meta[img.src];
 }
 
 export function imageRatio(src: string): number | undefined {

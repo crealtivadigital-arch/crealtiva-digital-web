@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Sansation, Montserrat } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 // Manual de marca: Sansation Bold solo para H1/H2; Montserrat es la voz de trabajo (cuerpo, UI, botones).
 const sansation = Sansation({
@@ -46,11 +44,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${sansation.variable} ${montserrat.variable}`}>
-      <body className="antialiased">
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

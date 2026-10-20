@@ -2,13 +2,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import NaturalImage from "@/components/site/NaturalImage";
+import NaturalImage, { imageDims } from "@/components/site/NaturalImage";
 import WhatsAppIcon from "@/components/site/WhatsAppIcon";
-import imageMeta from "@/content/images.json";
 import { wa } from "@/lib/constants";
 import type { PortfolioCategory } from "@/lib/content/types";
 
-const meta = imageMeta as Record<string, { width: number; height: number }>;
 const MAX_VIDEOS = 3;
 
 // Las frases se intercalan en el mosaico como piezas del diseño, no como párrafo
@@ -227,8 +225,8 @@ export default function PortfolioExplorer({ categories, lineNames }: PortfolioEx
                 <Image
                   src={photo.src}
                   alt={photo.alt}
-                  width={meta[photo.src].width}
-                  height={meta[photo.src].height}
+                  width={imageDims(photo)!.width}
+                  height={imageDims(photo)!.height}
                   sizes="92vw"
                   className="h-auto max-h-[85vh] w-auto max-w-full rounded-card object-contain"
                 />
