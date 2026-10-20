@@ -35,3 +35,16 @@ export async function writeDoc(key: string, data: unknown): Promise<void> {
     insert into content (key, data, updated_at) values (${key}, ${JSON.stringify(data)}::jsonb, now())
     on conflict (key) do update set data = excluded.data, updated_at = now()`;
 }
+
+export async function deleteDoc(key: string): Promise<void> {
+  if (!sql) throw new Error("La base de datos no está conectada (falta DATABASE_URL).");
+  await ensureTable();
+  await sql`delete from content where key = ${key}`;
+}
+
+export async function docUpdatedAt(key: string): Promise<string | null> {
+  if (!sql) return null;
+  await ensureTable();
+  const rows = await sql`select updated_at from content where key = ${key}`;
+  return rows.length ? new Date(rows[0].updated_at).toISOString() : null;
+}

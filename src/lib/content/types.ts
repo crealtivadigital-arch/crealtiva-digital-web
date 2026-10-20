@@ -88,6 +88,7 @@ export interface Package {
   price: Price;
   featured: boolean;
   order: number;
+  hidden?: boolean; // oculto desde el panel: no se ve en el sitio
 }
 
 export interface Project {

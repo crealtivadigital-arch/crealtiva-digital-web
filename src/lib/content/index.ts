@@ -1,4 +1,5 @@
 import "server-only";
+import { cache } from "react";
 import servicesData from "@/content/services.json";
 import portfolioData from "@/content/portfolio.json";
 import postsData from "@/content/posts.json";
@@ -9,21 +10,61 @@ import type { Package, PortfolioCategory, Post, Project, ServiceLine } from "./t
 // Único punto de lectura del contenido. Las páginas no importan los JSON directamente:
 // cuando el panel de admin guarde en la base de datos, solo cambia este archivo.
 
-const lines = (servicesData.lines as ServiceLine[]).filter((l) => l.visible).sort((a, b) => a.order - b.order);
-const packages = (servicesData.packages as Package[]).sort((a, b) => a.order - b.order);
 const projects = (portfolioData.projects as Project[]).sort((a, b) => a.order - b.order);
 
+export const SERVICES_KEY = "services";
+
+export interface ServicesDoc {
+  lines: ServiceLine[];
+  packages: Package[];
+}
+
+// Catálogo completo, ocultos incluidos (para el panel). Lo guardado en el panel manda sobre services.json.
+// cache(): una sola lectura de la base por pedido aunque la página llame a varias funciones.
+export const getServicesDoc = cache(async (): Promise<ServicesDoc> => {
+  const saved = await readDoc<ServicesDoc>(SERVICES_KEY).catch((e) => {
+    console.error("No se pudo leer el catálogo de la base de datos:", e);
+    return null;
+  });
+  const doc = saved ?? (servicesData as unknown as ServicesDoc);
+  const packages = [...doc.packages].sort((a, b) => a.order - b.order);
+
+  // Las soluciones de "No incluye" llevan copia del nombre y precio de otro paquete o línea:
+  // se recalculan aquí para que un cambio de precio en el panel se vea en todas partes.
+  const byKey = new Map(packages.map((p) => [`${p.lineSlug}/${p.slug}`, p]));
+  const fromPrice = (line: string) => {
+    const amounts = packages.filter((p) => p.lineSlug === line && !p.hidden && p.price.amount !== null).map((p) => p.price.amount!);
+    return amounts.length ? Math.min(...amounts) : null;
+  };
+  const synced = packages.map((p) => ({
+    ...p,
+    excludes: p.excludes.map((e) => {
+      const sol = e.solution;
+      if (sol?.type === "package") {
+        const target = byKey.get(`${sol.lineSlug}/${sol.slug}`);
+        return target ? { ...e, solution: { ...sol, name: target.name, price: target.price } } : e;
+      }
+      if (sol?.type === "line") return { ...e, solution: { ...sol, fromPrice: fromPrice(sol.lineSlug) ?? sol.fromPrice } };
+      return e;
+    }),
+  }));
+
+  return { lines: [...doc.lines].sort((a, b) => a.order - b.order), packages: synced };
+});
+
 export async function getServiceLines(): Promise<ServiceLine[]> {
-  return lines;
+  return (await getServicesDoc()).lines.filter((l) => l.visible);
 }
 
 export async function getServiceLine(slug: string): Promise<ServiceLine | undefined> {
-  return lines.find((l) => l.slug === slug);
+  return (await getServiceLines()).find((l) => l.slug === slug);
 }
 
 export async function getPackages(lineSlug?: string): Promise<Package[]> {
-  const visible = new Set(lines.map((l) => l.slug));
-  return packages.filter((p) => visible.has(p.lineSlug) && (!lineSlug || p.lineSlug === lineSlug));
+  const visible = new Set((await getServiceLines()).map((l) => l.slug));
+  return (await getServicesDoc()).packages.filter(
+    (p) => !p.hidden && visible.has(p.lineSlug) && (!lineSlug || p.lineSlug === lineSlug)
+  );
 }
 
 export async function getPackage(lineSlug: string, slug: string): Promise<Package | undefined> {
