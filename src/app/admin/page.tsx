@@ -8,7 +8,7 @@ const SECTIONS = [
   { href: "/admin/portafolio", name: "Portafolio", text: "Fotos y videos de cada rubro: subir, ordenar, quitar.", ready: true },
   { href: "/admin/servicios", name: "Servicios y paquetes", text: "Textos, precios, complementos y condiciones de cada línea.", ready: true },
   { href: "/admin/news", name: "News", text: "Crear, editar y publicar artículos.", ready: true },
-  { href: null, name: "Presentaciones internas", text: "Material solo para el equipo.", ready: false },
+  { href: "/admin/presentaciones", name: "Presentaciones internas", text: "Material solo para el equipo: crear, editar y presentar.", ready: true },
 ];
 
 export default async function AdminHome() {
