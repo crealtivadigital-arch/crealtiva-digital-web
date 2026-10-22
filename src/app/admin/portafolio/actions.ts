@@ -4,6 +4,7 @@ import { requireAdmin } from "@/lib/admin";
 import { getAllPortfolioCategories, PORTFOLIO_KEY } from "@/lib/content";
 import type { Img, PortfolioVideo } from "@/lib/content/types";
 import { writeDoc } from "@/lib/db";
+import { notifySearchEngines } from "@/lib/indexnow";
 
 const CLOUD = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
 
@@ -39,6 +40,7 @@ export async function saveRubro(input: RubroInput): Promise<{ ok: true } | { ok:
     const updated = all.map((c) => (c.slug === cat.slug ? { ...c, photos, videos, phrases } : c));
     await writeDoc(PORTFOLIO_KEY, { categories: updated });
     revalidatePath("/portafolio");
+    notifySearchEngines(["/portafolio"]);
     return { ok: true };
   } catch (e) {
     return { ok: false, error: e instanceof Error ? e.message : "No se pudo guardar." };

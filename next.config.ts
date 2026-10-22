@@ -32,6 +32,16 @@ const legacyRedirects: [string, string][] = [
   ["/institucionales", "/portafolio"],
   ["/contctanos", "/contactanos"],
   ["/about", "/"],
+  ["/feed", "/news"],
+];
+
+// Secciones enteras de WordPress (sitemap viejo: entradas por fecha, proyectos de demo, categorías, autor)
+const legacyPatterns: [string, string][] = [
+  ["/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug*", "/news"],
+  ["/project/:slug*", "/portafolio"],
+  ["/category/:slug*", "/news"],
+  ["/tag/:slug*", "/news"],
+  ["/author/:slug*", "/"],
 ];
 
 const nextConfig: NextConfig = {
@@ -54,6 +64,7 @@ const nextConfig: NextConfig = {
         { source, destination, permanent: true },
         { source: `${source}/`, destination, permanent: true },
       ]),
+      ...legacyPatterns.map(([source, destination]) => ({ source, destination, permanent: true })),
       // Fichas de paquete de las líneas unidas: mismo paquete, nueva línea
       ...[
         ["video-ugc", "modelos-contenido-organico"],

@@ -4,6 +4,8 @@ import { requireAdmin } from "@/lib/admin";
 import { getAllPosts, POSTS_KEY } from "@/lib/content";
 import type { Img, Post, PostLink } from "@/lib/content/types";
 import { writeDoc } from "@/lib/db";
+import { notifySearchEngines } from "@/lib/indexnow";
+import { tagHref } from "@/lib/content/links";
 import { readingMinutes, sanitizeArticle, slugify } from "@/lib/sanitize";
 
 type Result = { ok: true; slug: string } | { ok: false; error: string };
@@ -100,6 +102,17 @@ export async function savePost(input: PostInput): Promise<Result> {
     const rest = all.filter((p) => p.slug !== input.originalSlug);
     await writeDoc(POSTS_KEY, { posts: [post, ...rest] });
     refresh();
+    // También la dirección vieja y las etiquetas que tenía: los buscadores ven que cambiaron o ya no existen.
+    // Un borrador nuevo no se avisa (nunca estuvo publicado).
+    const before = all.find((p) => p.slug === input.originalSlug);
+    if (!post.draft || (before && !before.draft)) {
+      notifySearchEngines([
+        "/news",
+        `/news/${slug}`,
+        ...(before ? [`/news/${before.slug}`] : []),
+        ...[...(post.tags ?? []), ...(before?.tags ?? [])].map(tagHref),
+      ]);
+    }
     return { ok: true, slug };
   } catch (e) {
     return { ok: false, error: e instanceof Error ? e.message : "No se pudo guardar." };
@@ -112,6 +125,8 @@ export async function deletePost(slug: string): Promise<Result> {
     const all = await getAllPosts();
     await writeDoc(POSTS_KEY, { posts: all.filter((p) => p.slug !== slug) });
     refresh();
+    const gone = all.find((p) => p.slug === slug);
+    if (gone && !gone.draft) notifySearchEngines(["/news", `/news/${slug}`, ...(gone.tags ?? []).map(tagHref)]);
     return { ok: true, slug };
   } catch (e) {
     return { ok: false, error: e instanceof Error ? e.message : "No se pudo borrar." };

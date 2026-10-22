@@ -4,6 +4,8 @@ import { requireAdmin } from "@/lib/admin";
 import { getServicesDoc, SERVICES_KEY } from "@/lib/content";
 import type { Detail, Extra, Faq, Img, Package, Price, PriceMode, ServiceLine, Stage, Topic } from "@/lib/content/types";
 import { deleteDoc, writeDoc } from "@/lib/db";
+import { notifySearchEngines } from "@/lib/indexnow";
+import { lineHref } from "@/lib/content/links";
 
 type Result = { ok: true } | { ok: false; error: string };
 
@@ -47,6 +49,7 @@ function image(v: unknown): Img | undefined {
 async function persist(doc: { lines: ServiceLine[]; packages: Package[] }) {
   await writeDoc(SERVICES_KEY, doc);
   revalidatePath("/", "layout");
+  notifySearchEngines(["/servicios", ...doc.lines.map((l) => lineHref(l.slug))]);
 }
 
 export async function saveLine(slug: string, input: Partial<ServiceLine>): Promise<Result> {
