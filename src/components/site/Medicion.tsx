@@ -1,6 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { GA4_ID } from "@/lib/constants";
 
 // Medición del sitio público: GA4 + Google Ads sobre un solo gtag.js.
 // Solo se activa en el dominio real: las pruebas en vercel.app o en local no ensucian los datos.
@@ -10,8 +11,7 @@ import { usePathname } from "next/navigation";
 //   - lectura_25/50/75/100 por página y faq_abierta (data-pregunta)
 // ?interno=1 excluye este navegador (equipo); ?interno=0 lo deshace.
 
-// El ID de medición es público (sale en el HTML): va por defecto para no depender de la variable en Vercel
-const GA4 = process.env.NEXT_PUBLIC_GA4_ID || "G-HJVTSGR6JR";
+const GA4 = GA4_ID;
 const ADS = process.env.NEXT_PUBLIC_GADS_ID;
 const ADS_WA_LABEL = process.env.NEXT_PUBLIC_GADS_WA_LABEL;
 const HOSTS = ["crealtivadigital.com", "www.crealtivadigital.com"];
@@ -68,10 +68,13 @@ function start() {
   gtag("js", new Date());
   if (ADS) gtag("config", ADS);
   gtag("config", GA4);
-  const s = document.createElement("script");
-  s.async = true;
-  s.src = `https://www.googletagmanager.com/gtag/js?id=${ADS ?? GA4}`;
-  document.head.appendChild(s);
+  // El layout ya pone gtag.js en el HTML (así lo detecta el probador de Google); solo falta con Google Ads
+  if (!document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js"]')) {
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = `https://www.googletagmanager.com/gtag/js?id=${ADS ?? GA4}`;
+    document.head.appendChild(s);
+  }
   secondsOnSite();
   return true;
 }

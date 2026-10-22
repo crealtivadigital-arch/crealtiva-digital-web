@@ -22,3 +22,6 @@ export const LEGAL = {
   email: EMAIL,
   actualizado: "16 de octubre de 2026",
 };
+
+// ID de medición de Google Analytics 4 (es público: sale en el HTML de cada página)
+export const GA4_ID = process.env.NEXT_PUBLIC_GA4_ID || "G-HJVTSGR6JR";
