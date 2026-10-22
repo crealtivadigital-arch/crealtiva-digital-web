@@ -10,7 +10,8 @@ import { usePathname } from "next/navigation";
 //   - lectura_25/50/75/100 por página y faq_abierta (data-pregunta)
 // ?interno=1 excluye este navegador (equipo); ?interno=0 lo deshace.
 
-const GA4 = process.env.NEXT_PUBLIC_GA4_ID;
+// El ID de medición es público (sale en el HTML): va por defecto para no depender de la variable en Vercel
+const GA4 = process.env.NEXT_PUBLIC_GA4_ID || "G-HJVTSGR6JR";
 const ADS = process.env.NEXT_PUBLIC_GADS_ID;
 const ADS_WA_LABEL = process.env.NEXT_PUBLIC_GADS_WA_LABEL;
 const HOSTS = ["crealtivadigital.com", "www.crealtivadigital.com"];
