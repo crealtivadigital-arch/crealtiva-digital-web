@@ -119,6 +119,16 @@ export interface Post {
   bodyHtml: string; // contenido enriquecido (lo produce el editor del panel)
   featured: boolean;
   draft?: boolean; // borrador: solo se ve en el panel
+  tags?: string[]; // etiquetas: cada una tiene su página /news/etiqueta/[slug]
+  gallery?: Img[]; // galería opcional al final del artículo
+  links?: PostLink[]; // botones destacados al final del artículo
+  seoTitle?: string; // si falta, Google ve el título
+  seoDescription?: string; // si falta, Google ve el resumen
+}
+
+export interface PostLink {
+  label: string;
+  href: string;
 }
 
 // Portafolio por rubro: galería visual + invitación comercial propia de cada sector

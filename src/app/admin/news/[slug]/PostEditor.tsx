@@ -2,8 +2,8 @@
 import { useEffect, useRef, useState, useTransition } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import type { Img, Post } from "@/lib/content/types";
-import { slugify } from "@/lib/sanitize";
+import type { Img, Post, PostLink } from "@/lib/content/types";
+import { slugify, videoHtml, youtubeId } from "@/lib/sanitize";
 import { thumb, uploadImage } from "../../uploadImage";
 import { deletePost, savePost } from "../actions";
 
@@ -12,6 +12,17 @@ interface Props {
   categories: string[];
   lines: { slug: string; name: string }[];
   canSave: boolean;
+}
+
+// Fotos dentro del texto: Cloudinary las entrega a 1600 px de ancho como máximo, sin recortar ni ampliar
+const BODY_MAX = 1600;
+function figureHtml(img: Img, caption: string) {
+  const esc = (v: string) => v.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+  const w = img.width ?? 0;
+  const h = img.height ?? 0;
+  const scale = w > BODY_MAX ? BODY_MAX / w : 1;
+  const size = w && h ? ` width="${Math.round(w * scale)}" height="${Math.round(h * scale)}"` : "";
+  return `<figure><img src="${thumb(img.src, BODY_MAX)}" alt="${esc(img.alt)}"${size}>${caption ? `<figcaption>${esc(caption)}</figcaption>` : ""}</figure><p><br></p>`;
 }
 
 const today = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Guayaquil" }).format(new Date());
@@ -50,6 +61,14 @@ export default function PostEditor({ post, categories, lines, canSave }: Props) 
   const [featured, setFeatured] = useState(post?.featured ?? false);
   const [draft, setDraft] = useState(post ? Boolean(post.draft) : true);
   const [cover, setCover] = useState<Img | null>(post?.cover ?? null);
+  const [tags, setTags] = useState<string[]>(post?.tags ?? []);
+  const [tagDraft, setTagDraft] = useState("");
+  const [gallery, setGallery] = useState<Img[]>(post?.gallery ?? []);
+  const [links, setLinks] = useState<PostLink[]>(post?.links ?? []);
+  const [seoTitle, setSeoTitle] = useState(post?.seoTitle ?? "");
+  const [seoDescription, setSeoDescription] = useState(post?.seoDescription ?? "");
+  const savedRange = useRef<Range | null>(null);
+  const bodyPhoto = useRef<HTMLInputElement>(null);
   const [uploading, setUploading] = useState(false);
   const [dirty, setDirty] = useState(false);
   const [message, setMessage] = useState<{ ok: boolean; text: string } | null>(null);
@@ -85,6 +104,86 @@ export default function PostEditor({ post, categories, lines, canSave }: Props) 
     }
   }
 
+  // El selector de archivos le quita el foco al texto: se guarda dónde estaba el cursor para volver ahí
+  function rememberCursor() {
+    const sel = window.getSelection();
+    const range = sel && sel.rangeCount ? sel.getRangeAt(0) : null;
+    savedRange.current = range && body.current?.contains(range.commonAncestorContainer) ? range.cloneRange() : null;
+  }
+
+  function insertAtCursor(html: string) {
+    const el = body.current;
+    const sel = window.getSelection();
+    if (!el || !sel) return;
+    el.focus();
+    let range = savedRange.current;
+    if (!range) {
+      // Sin cursor en el texto: va al final del artículo
+      range = document.createRange();
+      range.selectNodeContents(el);
+      range.collapse(false);
+    }
+    sel.removeAllRanges();
+    sel.addRange(range);
+    document.execCommand("insertHTML", false, html);
+    savedRange.current = null;
+    setDirty(true);
+    setMessage(null);
+  }
+
+  async function onBodyPhoto(file: File) {
+    const caption = (window.prompt("Pie de foto (opcional)") ?? "").trim();
+    setUploading(true);
+    setMessage(null);
+    try {
+      const img = await uploadImage(file, "news", "", caption || title || "Crealtiva Digital");
+      insertAtCursor(figureHtml(img, caption));
+    } catch (e) {
+      setMessage({ ok: false, text: e instanceof Error ? e.message : "No se pudo subir." });
+    } finally {
+      setUploading(false);
+    }
+  }
+
+  function onVideo() {
+    rememberCursor();
+    const raw = window.prompt("Enlace del video de YouTube");
+    if (!raw) return;
+    const id = youtubeId(raw);
+    if (!id) return setMessage({ ok: false, text: "Ese enlace no es de un video de YouTube." });
+    insertAtCursor(`${videoHtml(id)}<p><br></p>`);
+  }
+
+  async function onGallery(files: FileList) {
+    setUploading(true);
+    setMessage(null);
+    try {
+      for (const file of Array.from(files)) {
+        const img = await uploadImage(file, "news", "", title || "Crealtiva Digital");
+        setGallery((g) => [...g, img]);
+        setDirty(true);
+      }
+    } catch (e) {
+      setMessage({ ok: false, text: e instanceof Error ? e.message : "No se pudo subir." });
+    } finally {
+      setUploading(false);
+    }
+  }
+
+  const moveInGallery = (i: number, d: -1 | 1) => {
+    const j = i + d;
+    if (j < 0 || j >= gallery.length) return;
+    const next = [...gallery];
+    [next[i], next[j]] = [next[j], next[i]];
+    touch(setGallery)(next);
+  };
+
+  function addTag(raw: string) {
+    const t = raw.replace(/,/g, " ").trim();
+    if (t && !tags.some((o) => slugify(o) === slugify(t))) touch(setTags)([...tags, t]);
+    setTagDraft("");
+  }
+
   const save = () =>
     start(async () => {
       const res = await savePost({
@@ -99,6 +198,11 @@ export default function PostEditor({ post, categories, lines, canSave }: Props) 
         bodyHtml: body.current?.innerHTML ?? "",
         featured,
         draft,
+        tags: tagDraft.trim() ? [...tags, tagDraft.trim()] : tags,
+        gallery,
+        links,
+        seoTitle,
+        seoDescription,
       });
       if (!res.ok) return setMessage({ ok: false, text: res.error });
       setDirty(false);
@@ -155,6 +259,40 @@ export default function PostEditor({ post, categories, lines, canSave }: Props) 
                   {t.label}
                 </button>
               ))}
+              <button
+                type="button"
+                title="Insertar una foto donde está el cursor"
+                onMouseDown={(e) => {
+                  e.preventDefault();
+                  rememberCursor();
+                  bodyPhoto.current?.click();
+                }}
+                disabled={uploading}
+                className="rounded px-2.5 py-1 text-xs font-semibold text-teal hover:bg-cream disabled:opacity-40"
+              >
+                {uploading ? "Subiendo…" : "＋ Foto"}
+              </button>
+              <button
+                type="button"
+                title="Insertar un video de YouTube donde está el cursor"
+                onMouseDown={(e) => {
+                  e.preventDefault();
+                  onVideo();
+                }}
+                className="rounded px-2.5 py-1 text-xs font-semibold text-teal hover:bg-cream"
+              >
+                ＋ Video
+              </button>
+              <input
+                ref={bodyPhoto}
+                type="file"
+                accept="image/*"
+                hidden
+                onChange={(e) => {
+                  if (e.target.files?.[0]) onBodyPhoto(e.target.files[0]);
+                  e.target.value = "";
+                }}
+              />
             </div>
             <div
               ref={body}
@@ -234,11 +372,131 @@ export default function PostEditor({ post, categories, lines, canSave }: Props) 
               <span className="font-semibold">Fecha de publicación</span>
               <input type="date" value={publishedAt} onChange={(e) => touch(setPublishedAt)(e.target.value)} className={`${input} mt-1`} />
             </label>
+            <div className="block text-sm">
+              <span className="font-semibold">Etiquetas</span>
+              {tags.length > 0 && (
+                <div className="mt-1 flex flex-wrap gap-1">
+                  {tags.map((t) => (
+                    <span key={t} className="inline-flex items-center gap-1 rounded-full bg-teal/10 px-2.5 py-0.5 text-xs font-semibold text-teal">
+                      {t}
+                      <button type="button" aria-label={`Quitar ${t}`} onClick={() => touch(setTags)(tags.filter((o) => o !== t))} className="hover:text-magenta">
+                        ✕
+                      </button>
+                    </span>
+                  ))}
+                </div>
+              )}
+              <input
+                value={tagDraft}
+                onChange={(e) => (e.target.value.endsWith(",") ? addTag(e.target.value) : setTagDraft(e.target.value))}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    addTag(tagDraft);
+                  }
+                }}
+                onBlur={() => tagDraft && addTag(tagDraft)}
+                placeholder="Escribe y presiona Enter"
+                className={`${input} mt-1`}
+              />
+            </div>
             <label className="flex items-center gap-2 text-sm">
               <input type="checkbox" checked={featured} onChange={(e) => touch(setFeatured)(e.target.checked)} /> Destacado
             </label>
             <label className="flex items-center gap-2 text-sm">
               <input type="checkbox" checked={draft} onChange={(e) => touch(setDraft)(e.target.checked)} /> Borrador (no se ve en el sitio)
+            </label>
+          </div>
+
+          <div className="rounded-card bg-white p-4 shadow-sm">
+            <p className="text-sm font-semibold">Galería al final</p>
+            <p className="text-xs text-navy/50">Opcional. Se abren en grande al hacer clic.</p>
+            {gallery.length > 0 && (
+              <ul className="mt-2 space-y-2">
+                {gallery.map((g, i) => (
+                  <li key={g.src} className="flex items-center gap-2">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={thumb(g.src, 160)} alt="" className="h-12 w-12 shrink-0 rounded bg-cream object-contain" />
+                    <input
+                      value={g.alt}
+                      onChange={(e) => touch(setGallery)(gallery.map((o, k) => (k === i ? { ...o, alt: e.target.value } : o)))}
+                      placeholder="Descripción"
+                      className={`${input} min-w-0 text-xs`}
+                    />
+                    <div className="flex shrink-0 flex-col text-xs leading-none text-navy/50">
+                      <button type="button" aria-label="Subir" onClick={() => moveInGallery(i, -1)} className="hover:text-teal">▲</button>
+                      <button type="button" aria-label="Bajar" onClick={() => moveInGallery(i, 1)} className="hover:text-teal">▼</button>
+                    </div>
+                    <button type="button" aria-label="Quitar foto" onClick={() => touch(setGallery)(gallery.filter((_, k) => k !== i))} className="shrink-0 text-xs text-magenta">
+                      ✕
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+            <label className={`mt-2 block cursor-pointer rounded-full border border-teal px-4 py-2 text-center text-sm font-semibold text-teal hover:bg-teal/10 ${uploading ? "pointer-events-none opacity-60" : ""}`}>
+              {uploading ? "Subiendo…" : "Agregar fotos"}
+              <input
+                type="file"
+                accept="image/*"
+                multiple
+                hidden
+                onChange={(e) => {
+                  if (e.target.files?.length) onGallery(e.target.files);
+                  e.target.value = "";
+                }}
+              />
+            </label>
+          </div>
+
+          <div className="rounded-card bg-white p-4 shadow-sm">
+            <p className="text-sm font-semibold">Enlaces destacados</p>
+            <p className="text-xs text-navy/50">Botones al final del artículo: un servicio, WhatsApp, una web externa…</p>
+            {links.map((l, i) => (
+              <div key={i} className="mt-2 space-y-1 rounded-lg bg-cream/60 p-2">
+                <div className="flex gap-1">
+                  <input
+                    value={l.label}
+                    onChange={(e) => touch(setLinks)(links.map((o, k) => (k === i ? { ...o, label: e.target.value } : o)))}
+                    placeholder="Texto del botón"
+                    maxLength={60}
+                    className={`${input} text-xs`}
+                  />
+                  <button type="button" aria-label="Quitar enlace" onClick={() => touch(setLinks)(links.filter((_, k) => k !== i))} className="px-1 text-xs text-magenta">
+                    ✕
+                  </button>
+                </div>
+                <input
+                  value={l.href}
+                  onChange={(e) => touch(setLinks)(links.map((o, k) => (k === i ? { ...o, href: e.target.value.trim() } : o)))}
+                  placeholder="https://… o /servicios/…"
+                  className={`${input} text-xs`}
+                />
+              </div>
+            ))}
+            {links.length < 6 && (
+              <button type="button" onClick={() => touch(setLinks)([...links, { label: "", href: "" }])} className="mt-2 text-sm font-semibold text-teal hover:underline">
+                ＋ Agregar enlace
+              </button>
+            )}
+          </div>
+
+          <div className="space-y-3 rounded-card bg-white p-4 shadow-sm">
+            <div>
+              <p className="text-sm font-semibold">Cómo se ve en Google</p>
+              <p className="text-xs text-navy/50">Opcional. Si lo dejas vacío se usan el título y el resumen.</p>
+            </div>
+            <label className="block text-xs">
+              <span className="flex justify-between font-semibold">
+                Título para Google <span className={seoTitle.length > 60 ? "text-magenta" : "text-navy/40"}>{seoTitle.length}/60</span>
+              </span>
+              <input value={seoTitle} onChange={(e) => touch(setSeoTitle)(e.target.value)} maxLength={70} placeholder={title} className={`${input} mt-1 text-xs`} />
+            </label>
+            <label className="block text-xs">
+              <span className="flex justify-between font-semibold">
+                Descripción para Google <span className={seoDescription.length > 160 ? "text-magenta" : "text-navy/40"}>{seoDescription.length}/160</span>
+              </span>
+              <textarea value={seoDescription} onChange={(e) => touch(setSeoDescription)(e.target.value)} maxLength={170} rows={3} placeholder={excerpt} className={`${input} mt-1 text-xs`} />
             </label>
           </div>
 

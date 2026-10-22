@@ -1,4 +1,4 @@
-import { lineHref } from "@/lib/content/links";
+import { lineHref, tagHref } from "@/lib/content/links";
 import type { MetadataRoute } from "next";
 import { getPackages, getPosts, getProjects, getServiceLines } from "@/lib/content";
 
@@ -27,5 +27,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...packages.map((p) => ({ url: `${BASE}/servicios/${p.lineSlug}/${p.slug}`, priority: 0.6 })),
     ...projects.map((p) => ({ url: `${BASE}/portafolio/${p.slug}`, priority: 0.5 })),
     ...posts.map((p) => ({ url: `${BASE}/news/${p.slug}`, lastModified: p.publishedAt, priority: 0.6 })),
+    ...[...new Set(posts.flatMap((p) => p.tags ?? []).map(tagHref))].map((path) => ({ url: `${BASE}${path}`, priority: 0.4 })),
   ];
 }

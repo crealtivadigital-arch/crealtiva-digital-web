@@ -2,7 +2,7 @@
 import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/admin";
 import { getAllPosts, POSTS_KEY } from "@/lib/content";
-import type { Post } from "@/lib/content/types";
+import type { Img, Post, PostLink } from "@/lib/content/types";
 import { writeDoc } from "@/lib/db";
 import { readingMinutes, sanitizeArticle, slugify } from "@/lib/sanitize";
 
@@ -23,6 +23,27 @@ export interface PostInput {
   bodyHtml: string;
   featured: boolean;
   draft: boolean;
+  tags: string[];
+  gallery: Img[];
+  links: PostLink[];
+  seoTitle: string;
+  seoDescription: string;
+}
+
+const fromCloud = (img: Img | null | undefined): img is Img => Boolean(img?.src?.startsWith(`https://res.cloudinary.com/${CLOUD}/`));
+
+function cleanTags(tags: unknown): string[] {
+  const list = Array.isArray(tags) ? tags.map((t) => text(t, 40)).filter(Boolean) : [];
+  // Sin repetidas (ignorando mayúsculas y tildes): cada etiqueta tiene una sola página
+  return list.filter((t, i) => list.findIndex((o) => slugify(o) === slugify(t)) === i).slice(0, 12);
+}
+
+function cleanLinks(links: unknown): PostLink[] {
+  if (!Array.isArray(links)) return [];
+  return links
+    .map((l) => ({ label: text(l?.label, 60), href: text(l?.href, 500) }))
+    .filter((l) => l.label && (/^(https?:|mailto:|tel:)/i.test(l.href) || l.href.startsWith("/")))
+    .slice(0, 6);
 }
 
 // Inicio, News, fichas de servicio y sitemap muestran artículos: se refresca todo el sitio
@@ -37,10 +58,18 @@ export async function savePost(input: PostInput): Promise<Result> {
     const slug = slugify(input.slug || title);
     if (!title) return { ok: false, error: "Falta el título." };
     if (!slug) return { ok: false, error: "Falta la dirección (slug)." };
-    if (!input.cover?.src?.startsWith(`https://res.cloudinary.com/${CLOUD}/`)) return { ok: false, error: "Falta la imagen de portada." };
+    if (!fromCloud(input.cover)) return { ok: false, error: "Falta la imagen de portada." };
     if (!/^\d{4}-\d{2}-\d{2}$/.test(input.publishedAt)) return { ok: false, error: "Fecha de publicación inválida." };
     const bodyHtml = sanitizeArticle(String(input.bodyHtml ?? ""));
     if (!bodyHtml) return { ok: false, error: "El artículo está vacío." };
+
+    const tags = cleanTags(input.tags);
+    const links = cleanLinks(input.links);
+    const gallery = (Array.isArray(input.gallery) ? input.gallery : []).filter(fromCloud).slice(0, 40).map((g) => ({
+      src: g.src,
+      alt: text(g.alt, 200) || title,
+      ...(g.width && g.height ? { width: Number(g.width), height: Number(g.height) } : {}),
+    }));
 
     const all = await getAllPosts();
     if (slug !== input.originalSlug && all.some((p) => p.slug === slug)) return { ok: false, error: "Ya existe un artículo con esa dirección." };
@@ -61,6 +90,11 @@ export async function savePost(input: PostInput): Promise<Result> {
       bodyHtml,
       featured: Boolean(input.featured),
       ...(input.draft ? { draft: true } : {}),
+      ...(tags.length ? { tags } : {}),
+      ...(gallery.length ? { gallery } : {}),
+      ...(links.length ? { links } : {}),
+      ...(text(input.seoTitle, 70) ? { seoTitle: text(input.seoTitle, 70) } : {}),
+      ...(text(input.seoDescription, 170) ? { seoDescription: text(input.seoDescription, 170) } : {}),
     };
 
     const rest = all.filter((p) => p.slug !== input.originalSlug);
